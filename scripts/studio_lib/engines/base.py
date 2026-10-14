@@ -488,8 +488,10 @@ class Engine:
         d = ImageDraw.Draw(img, "RGBA")
         tw = f.getlength(text)
         pad = U * 0.012
-        x = img.width - tw - pad * 3
-        y = pad * 2
+        # badge_pos: tr (default) | tl | br | bl, so the badge never covers an engine's own corner furniture
+        pos = str(self.ctx.scene.get("badge_pos", "tr"))
+        x = img.width - tw - pad * 3 if pos.endswith("r") else pad * 3
+        y = pad * 2 if pos.startswith("t") else img.height - U * 0.022 - pad * 3
         d.rounded_rectangle((x - pad, y - pad * 0.6, x + tw + pad, y + U * 0.022 + pad * 0.9),
                             radius=pad, fill=(0, 0, 0, 120))
         d.text((x, y), text, font=f, fill=(255, 255, 255, 230))

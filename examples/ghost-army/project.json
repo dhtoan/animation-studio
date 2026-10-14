@@ -145,7 +145,8 @@
         "page": "pieces/mg-map/index.html",
         "era": true
       },
-      "transition": "cut"
+      "transition": "cut",
+      "badge_pos": "bl"
     },
     {
       "id": "g03",
@@ -347,7 +348,8 @@
       "transition": {
         "type": "crossfade",
         "dur": 0.5
-      }
+      },
+      "badge_pos": "bl"
     },
     {
       "id": "g08",
@@ -756,7 +758,8 @@
       "transition": {
         "type": "crossfade",
         "dur": 0.5
-      }
+      },
+      "badge_pos": "bl"
     },
     {
       "id": "g17",

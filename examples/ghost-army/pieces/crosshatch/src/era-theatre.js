@@ -86,6 +86,6 @@ function gaEngineers(s) {
   const tTr = gaAt(s, 0.3, 2.6, 1e9, 3.0);
   if (TT >= tTr) { planInk([[rear + 40, y - 40], [Math.min(W - 40, rear + 700), y - 40]], { key: 'trline', frac: ev(tTr, 0.6) }); handText('fake tank tracks', rear + 60, y - 52, 42, GA.fake, { key: 'trt', frac: ev(tTr + 0.3, 0.6) }); }
   gaTag(s, '406th Engineers');
-  gaCap('fake tank tracks, a guarded perimeter, soldiers posing as MPs', gaAt(s, 0.08, 0.6, 1.4), { y: 1030, size: 40 });
+  gaCap('fake tank tracks, a guarded perimeter, soldiers posing as MPs', gaAt(s, 0.08, 0.6, 1.4), { y: 996, size: 40 });
 }
 const thBlade = (s) => { const { y, s: ds } = TH.dozer, dx = thDozerX(s); return [dx - ds * 0.53, y - ds * 0.34, ds * 0.12, ds * 0.36]; };

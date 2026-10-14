@@ -575,6 +575,8 @@ for _s in S:
         # the crosshatch piece morphs g10->g11, g13->g14, g18->g19 inside the piece: hard cuts here
         # look changes dissolve; the in-piece hop from the night river to the title desk dips to black
         _s["transition"] = LOOK_TRANSITIONS.get(_s["id"], "cut")
+        if _s["id"] in ("g02", "g07", "g16"):  # map date / kinetic-type progress rail live top-right
+            _s["badge_pos"] = "bl"
     else:
         # g20-g45 are outside the g01-g19 rebuild: native visuals kept, reported by visual QA
         _s["allow_native"] = True

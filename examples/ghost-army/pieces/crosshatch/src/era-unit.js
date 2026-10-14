@@ -77,6 +77,6 @@ function gaPlan(s) {
   gaNote(['MEMO', 'R. INGERSOLL PROPOSES', 'A UNIT DEDICATED', 'TO DECEPTION'], 250, 730, 32, { t: tMemo, colors: [C.ink, C.ink, GA.fake, GA.fake] });
   gaLabel('figure: illustrative', 1560, 340, 22);
   gaTag(s, 'Fortitude planning');
-  gaCap('Ralph Ingersoll proposed a unit dedicated to deception', gaAt(s, 0.06, 0.5, 1.2), { y: 1010 });
+  gaCap('Ralph Ingersoll proposed a unit dedicated to deception', gaAt(s, 0.06, 0.5, 1.2), { y: 996 });
 }
 function gaPlanCam(s, t) { return push(t, gaAt(s, 0.55, 5.0), gaAt(s, 0.8, 7.0), { z: 1.1, p: [520, 830], to: [600, 750] }); }
