@@ -112,13 +112,16 @@ def cmd_dry_run(a):
            for k, v in narration_texts(p["scenes"]).items()}
     tl = timeline.build(p["scenes"], est, p.get("fps", 30), p.get("target_duration"), p.get("tolerance", 0.05))
     st = RenderSettings("long", a.quality)
-    cost = sum(r["frames"] * (pl["routes"][r["id"]]["est_ms_per_frame"] or 150) for r in tl["scenes"]) / 1000
+    cost = sum(r["frames"] * (pl["routes"].get(r["id"], {}).get("est_ms_per_frame") or 150) for r in tl["scenes"]) / 1000
     print(f"estimated runtime {timeline.fmt_ts(tl['total'])} vs target {timeline.fmt_ts(tl['target'] or 0)} -> {tl['status']}"
           f" (estimate at 156 wpm; real TTS timing decides)")
     print(f"render estimate @{a.quality}: {cost * st.width * st.height / (1920 * 1080) / 60:.1f} CPU-min "
           f"({sum(r['frames'] for r in tl['scenes'])} frames)")
     for s in p["scenes"]:
-        r = pl["routes"][s["id"]]
+        r = pl["routes"].get(s["id"])
+        if not r:
+            print(f"  {s['id']:<8} UNROUTED (see ERROR below)")
+            continue
         print(f"  {s['id']:<8} {r['engine']:<16} fb={','.join(r['fallbacks']) or '-':<26} {r['reason'][:60]}")
     for e in pl["errors"]:
         print("ERROR", e)

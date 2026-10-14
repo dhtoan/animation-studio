@@ -19,7 +19,7 @@ from . import research, subtitles, timeline
 from .config import RenderSettings
 from .engines import availability
 from .render import render_all, scene_job
-from .router import route
+from .router import EngineUnavailable, route
 from .spec import ensure_dirs, load_project, save_json, validate
 from .tts import synthesize
 
@@ -95,7 +95,12 @@ def plan(pdir: Path, log=print, avail=None) -> dict:
     errs += style_errs
     cont = direction.continuity(p)
     warns += [f"continuity: {x}" for x in cont["issues"]]
-    routes = {s["id"]: route(s, p, avail) for s in p["scenes"]}
+    routes = {}
+    for s in p["scenes"]:
+        try:
+            routes[s["id"]] = route(s, p, avail)
+        except EngineUnavailable as e:  # premium profile: report the dependency, never degrade silently
+            errs.append(str(e))
     return {"project": p, "errors": errs, "warnings": warns, "routes": routes, "availability": avail,
             "direction": {"bible": direction.style_bible(p), "continuity": cont, "shot_plan": shot_log}}
 

@@ -23,6 +23,19 @@ ENGINES: dict[str, type[Engine]] = {
 
 NATIVE = {"whiteboard", "handdrawn", "motion", "kinetic", "artistic", "image_whiteboard", "archival"}
 
+# Visual tier. "authentic" engines run the upstream repositories' own rendering code
+# (pages, kits, stroke physics); "native" engines are this studio's Pillow drawings
+# (simple figures, icon clip-art, flat maps). Projects with
+# quality_profile = "documentary-premium" may only use authentic engines unless a scene
+# opts in with allow_native + native_reason; they never fall back to a native engine.
+AUTHENTIC = {"huashu_clip", "animate_piece", "html_seek"}
+TIER = {n: ("authentic" if n in AUTHENTIC else "native") for n in ENGINES}
+PREMIUM_PROFILES = {"documentary-premium"}
+
+
+def is_premium(project: dict) -> bool:
+    return project.get("quality_profile") in PREMIUM_PROFILES
+
 # If an engine cannot initialise or fails during render, the scene is re-rendered
 # with the next engine whose output carries the same information (elements are
 # engine-agnostic, so the facts on screen do not change).

@@ -10,7 +10,11 @@ from __future__ import annotations
 
 import re
 
-from .engines import FALLBACKS, availability
+from .engines import FALLBACKS, TIER, availability, is_premium
+
+
+class EngineUnavailable(RuntimeError):
+    """A premium scene has no authentic engine available; never silently degraded."""
 
 # measured on the dev machine (1080p, ms/frame, single core) — see references/rendering.md
 COST_MS = {"kinetic": 115, "motion": 115, "whiteboard": 120, "handdrawn": 135, "artistic": 145,
@@ -105,8 +109,21 @@ def route(scene: dict, project: dict, avail: dict | None = None, aspect: str = "
             seen.add(e)
             final.append(e)
     usable = [e for e in final if e in ok]
+    strict = is_premium(project) and not scene.get("allow_native")
+    excluded = []
+    if strict:
+        # premium: never route to (or silently fall back to) a native drawing engine
+        excluded = [e for e in usable if TIER.get(e) != "authentic"]
+        usable = [e for e in usable if TIER.get(e) == "authentic"]
+        if not usable:
+            missing = [e for e in final if TIER.get(e) == "authentic" and e not in ok]
+            raise EngineUnavailable(
+                f"scene {scene.get('id')}: no authentic engine available for quality_profile="
+                f"{project.get('quality_profile')!r} (requested {explicit!r}; unavailable: {missing or 'none in chain'}; "
+                f"native engines excluded: {excluded}). Fix the dependency or set allow_native + native_reason.")
     if not usable:
         usable = ["motion"]
     return {"engine": usable[0], "fallbacks": usable[1:4], "requested": explicit, "reason": reason, "aspect": aspect,
-            "skipped_unavailable": [e for e in final if e not in ok],
+            "skipped_unavailable": [e for e in final if e not in ok], "strict": strict,
+            "excluded_native": excluded, "tier": TIER.get(usable[0]),
             "est_ms_per_frame": COST_MS.get(usable[0])}
