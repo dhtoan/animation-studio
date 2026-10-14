@@ -1,0 +1,256 @@
+{
+  "native.whiteboard": {
+    "checked_at": "2026-10-14T22:07:41",
+    "engine": "whiteboard",
+    "ok": true,
+    "sample": "styles\\samples\\native.whiteboard.mp4",
+    "still": "styles\\samples\\native.whiteboard.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 121.4
+  },
+  "native.handdrawn-wash": {
+    "checked_at": "2026-10-14T22:07:52",
+    "engine": "handdrawn",
+    "ok": true,
+    "sample": "styles\\samples\\native.handdrawn-wash.mp4",
+    "still": "styles\\samples\\native.handdrawn-wash.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 69.6
+  },
+  "native.handdrawn-hatch": {
+    "checked_at": "2026-10-14T22:07:58",
+    "engine": "handdrawn",
+    "ok": true,
+    "sample": "styles\\samples\\native.handdrawn-hatch.mp4",
+    "still": "styles\\samples\\native.handdrawn-hatch.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 86.0
+  },
+  "native.motion-dark": {
+    "checked_at": "2026-10-14T22:08:06",
+    "engine": "motion",
+    "ok": true,
+    "sample": "styles\\samples\\native.motion-dark.mp4",
+    "still": "styles\\samples\\native.motion-dark.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 69.3
+  },
+  "native.kinetic": {
+    "checked_at": "2026-10-14T22:08:12",
+    "engine": "kinetic",
+    "ok": true,
+    "sample": "styles\\samples\\native.kinetic.mp4",
+    "still": "styles\\samples\\native.kinetic.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 54.8
+  },
+  "native.artistic-night": {
+    "checked_at": "2026-10-14T22:08:17",
+    "engine": "artistic",
+    "ok": true,
+    "sample": "styles\\samples\\native.artistic-night.mp4",
+    "still": "styles\\samples\\native.artistic-night.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 99.2
+  },
+  "native.image-whiteboard": {
+    "checked_at": "2026-10-14T22:23:42",
+    "engine": "image_whiteboard",
+    "ok": true,
+    "sample": "styles\\samples\\native.image-whiteboard.mp4",
+    "still": "styles\\samples\\native.image-whiteboard.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 99.0
+  },
+  "huashu.finance-chart": {
+    "checked_at": "2026-10-14T22:44:39",
+    "engine": "huashu_clip",
+    "ok": true,
+    "sample": "styles\\samples\\huashu.finance-chart.mp4",
+    "still": "styles\\samples\\huashu.finance-chart.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "content_spread": 42.4,
+    "ms_per_frame": 691.5
+  },
+  "huashu.kinetic-type": {
+    "checked_at": "2026-10-14T22:23:51",
+    "engine": "huashu_clip",
+    "ok": true,
+    "sample": "styles\\samples\\huashu.kinetic-type.mp4",
+    "still": "styles\\samples\\huashu.kinetic-type.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 899.2
+  },
+  "huashu.3b1b": {
+    "checked_at": "2026-10-14T22:25:12",
+    "engine": "huashu_clip",
+    "ok": true,
+    "sample": "styles\\samples\\huashu.3b1b.mp4",
+    "still": "styles\\samples\\huashu.3b1b.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 863.6
+  },
+  "animate.cut-paper": {
+    "checked_at": "2026-10-14T22:13:11",
+    "engine": "animate_piece",
+    "ok": true,
+    "sample": "styles\\samples\\animate.cut-paper.mp4",
+    "still": "styles\\samples\\animate.cut-paper.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 1059.2
+  },
+  "lemo.whiteboard": {
+    "checked_at": "2026-10-14T22:39:54",
+    "engine": "html_seek",
+    "degraded": "font fallback used for 1 missing upstream font file(s): ArchitectsDaughter-Regular.ttf",
+    "ok": true,
+    "sample": "styles\\samples\\lemo.whiteboard.mp4",
+    "still": "styles\\samples\\lemo.whiteboard.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 310.1
+  },
+  "dashi.handdrawn-notes": {
+    "checked_at": "2026-10-14T22:40:22",
+    "engine": "html_seek",
+    "ok": true,
+    "sample": "styles\\samples\\dashi.handdrawn-notes.mp4",
+    "still": "styles\\samples\\dashi.handdrawn-notes.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 135.4
+  },
+  "dashi.black-gold-tech": {
+    "checked_at": "2026-10-14T22:40:34",
+    "engine": "html_seek",
+    "ok": true,
+    "sample": "styles\\samples\\dashi.black-gold-tech.mp4",
+    "still": "styles\\samples\\dashi.black-gold-tech.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 225.1
+  },
+  "dashi.flat-flowchart": {
+    "checked_at": "2026-10-14T22:40:54",
+    "engine": "html_seek",
+    "ok": true,
+    "sample": "styles\\samples\\dashi.flat-flowchart.mp4",
+    "still": "styles\\samples\\dashi.flat-flowchart.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 101.6
+  },
+  "lemo.pixel-rpg": {
+    "checked_at": "2026-10-14T22:26:29",
+    "engine": "html_seek",
+    "ok": true,
+    "sample": "styles\\samples\\lemo.pixel-rpg.mp4",
+    "still": "styles\\samples\\lemo.pixel-rpg.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 550.8
+  },
+  "mg.flat-vector": {
+    "checked_at": "2026-10-14T22:45:42",
+    "engine": "html_seek",
+    "degraded": "font fallback used for 2 missing upstream font file(s): Fredoka-VF.ttf, ResourceHanRoundedCN-Bold.ttf",
+    "ok": true,
+    "sample": "styles\\samples\\mg.flat-vector.mp4",
+    "still": "styles\\samples\\mg.flat-vector.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "content_spread": 45.7,
+    "ms_per_frame": 908.1
+  },
+  "mg.pixel": {
+    "checked_at": "2026-10-14T22:41:10",
+    "engine": "html_seek",
+    "degraded": "font fallback used for 2 missing upstream font file(s): PressStart2P-Regular.ttf, fusion-pixel-12px-proportional-zh_hans.ttf",
+    "ok": true,
+    "sample": "styles\\samples\\mg.pixel.mp4",
+    "still": "styles\\samples\\mg.pixel.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "ms_per_frame": 134.1
+  },
+  "mg.liquid": {
+    "checked_at": "2026-10-14T22:48:51",
+    "engine": "html_seek",
+    "degraded": "font fallback used for 5 missing upstream font file(s): Fraunces-Liquid-72-900-Soft.ttf, InstrumentSerif-Italic.ttf, InstrumentSerif-Regular.ttf, Inter-VF.ttf, NotoSerifSC-VF.ttf",
+    "ok": false,
+    "sample": "styles\\samples\\mg.liquid.mp4",
+    "still": "styles\\samples\\mg.liquid.png",
+    "size": [
+      640,
+      360
+    ],
+    "frames_change": true,
+    "content_spread": 0.0,
+    "ms_per_frame": 1070.4
+  }
+}

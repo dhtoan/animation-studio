@@ -66,6 +66,35 @@ def video_checks(video: Path, expect_fmt: str, quality: str, expect_dur: float |
     return res
 
 
+def richness(video: Path, step: float = 2.5, exclude_bottom: float = 0.18) -> dict:
+    """Visual-change metric (ported idea: dashi-animationstyle 丰富度检查, MIT): mean absolute
+    difference between frames sampled every `step` s, subtitle band excluded. ~10+ reads as 'alive'."""
+    import tempfile
+
+    from PIL import Image
+
+    pr = FF.probe(video)
+    diffs = []
+    prev = None
+    with tempfile.TemporaryDirectory() as td:
+        t = 0.5
+        k = 0
+        while t < pr.duration - 0.1:
+            f = Path(td) / f"r{k}.png"
+            FF.extract_frame(video, t, f)
+            im = Image.open(f).convert("L").resize((320, 180))
+            arr = np.asarray(im, dtype="float32")[: int(180 * (1 - exclude_bottom))]
+            if prev is not None:
+                diffs.append(float(np.mean(np.abs(arr - prev))))
+            prev = arr
+            t += step
+            k += 1
+    if not diffs:
+        return {"mean": None, "samples": 0}
+    return {"mean": round(float(np.mean(diffs)), 2), "min": round(float(np.min(diffs)), 2), "samples": len(diffs),
+            "low_change_pairs": int(sum(d < 2.0 for d in diffs))}
+
+
 def narration_gaps(pdir: Path, tl: dict, max_gap: float = 4.0) -> list[str]:
     """Silence between consecutive narration clips (music bed can hide it in the mix)."""
     out = []
@@ -99,6 +128,8 @@ def run_qa(pdir: Path, quality: str = "preview") -> dict:
     name = "long-video.mp4" if quality == "final" else f"long-video-{quality}.mp4"
     long_v = pdir / "renders" / name
     rep["checks"]["long_video"] = video_checks(long_v, "long", quality, tl["total"] if tl else None, p.get("fps", 30))
+    if long_v.exists():
+        rep["checks"]["long_video"]["richness"] = richness(long_v, step=5.0)
     if tl:
         rep["checks"]["timing"] = {"total": tl["total"], "target": tl["target"], "status": tl["status"],
                                    "deviation_pct": round(100 * (tl["deviation"] or 0), 2)}
@@ -196,6 +227,9 @@ def run_qa(pdir: Path, quality: str = "preview") -> dict:
     if rep["checks"].get("narration", {}).get("deliverable") is False:
         blockers.append("narration is a placeholder (estimate provider) — not deliverable")
     warnings = list(rep["checks"]["long_video"].get("warnings", [])) + rep["checks"].get("narration_gaps", [])
+    rich = rep["checks"]["long_video"].get("richness") or {}
+    if rich.get("mean") is not None and rich["mean"] < 6:
+        warnings.append(f"low visual change (richness {rich['mean']} < 6): risk of a slideshow feel")
     for sh in shorts:
         warnings += [f"{sh['id']}: {w}" for w in sh.get("warnings", [])]
     if rep["checks"].get("timing", {}).get("status") not in ("ok", None):

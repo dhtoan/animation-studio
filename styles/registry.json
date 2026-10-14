@@ -1,0 +1,612 @@
+{
+ "schema": "studio.style-registry/v1",
+ "note": "A style is 'operational' only after `studio.py styles --verify` renders its sample on this machine; results go to styles/verification.json (machine-local). 'declared' = defined here but not yet verified.",
+ "styles": [
+  {
+   "id": "native.whiteboard",
+   "name": "Whiteboard marker",
+   "engine": "whiteboard",
+   "source": "native",
+   "license": "project",
+   "description": "Marker strokes on a board with pen cursor; translucent fills after outlines; hand lettering.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [],
+   "perf_ms": 120,
+   "params": {},
+   "visual": [
+    "white board",
+    "black marker",
+    "amber/red/green accents",
+    "pen hand"
+   ],
+   "best_for": [
+    "explain",
+    "process",
+    "tutorial",
+    "timeline"
+   ]
+  },
+  {
+   "id": "native.handdrawn-wash",
+   "name": "Pencil & watercolour",
+   "engine": "handdrawn",
+   "source": "native",
+   "license": "project",
+   "description": "Cream paper, boiling pencil lines on 2s, soft watercolour wash fills.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [],
+   "perf_ms": 135,
+   "params": {},
+   "visual": [
+    "paper grain",
+    "line boil 8fps",
+    "wash fills"
+   ],
+   "best_for": [
+    "story",
+    "character",
+    "recreation"
+   ]
+  },
+  {
+   "id": "native.handdrawn-hatch",
+   "name": "Pencil crosshatch",
+   "engine": "handdrawn",
+   "source": "native",
+   "license": "project",
+   "description": "Pencil drawing with diagonal hatching fills.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [],
+   "perf_ms": 150,
+   "params": {
+    "fill": "hatch"
+   },
+   "visual": [
+    "hatching",
+    "line boil"
+   ],
+   "best_for": [
+    "story",
+    "history"
+   ]
+  },
+  {
+   "id": "native.motion-dark",
+   "name": "Dark data motion",
+   "engine": "motion",
+   "source": "native",
+   "license": "project",
+   "description": "Flat vector motion graphics on a navy field with drifting grid; charts, counters, networks.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [],
+   "perf_ms": 115,
+   "params": {},
+   "visual": [
+    "navy gradient",
+    "flat fills",
+    "pop/slide"
+   ],
+   "best_for": [
+    "data",
+    "comparison",
+    "evidence",
+    "reveal"
+   ]
+  },
+  {
+   "id": "native.kinetic",
+   "name": "Word-synced kinetic type",
+   "engine": "kinetic",
+   "source": "native",
+   "license": "project",
+   "description": "Narration-synced kinetic typography with accent emphasis words.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [],
+   "perf_ms": 115,
+   "params": {},
+   "visual": [
+    "display type",
+    "accent words"
+   ],
+   "best_for": [
+    "hook",
+    "quote",
+    "cta"
+   ]
+  },
+  {
+   "id": "native.artistic-night",
+   "name": "Atmospheric parallax",
+   "engine": "artistic",
+   "source": "native",
+   "license": "project",
+   "description": "Gradient sky, parallax silhouettes, lit windows, fog, grain, vignette.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [],
+   "perf_ms": 145,
+   "params": {
+    "layers": [
+     "mountains",
+     "towers",
+     "city"
+    ],
+    "fog": true
+   },
+   "visual": [
+    "silhouettes",
+    "glow",
+    "film grain"
+   ],
+   "best_for": [
+    "atmosphere",
+    "metaphor",
+    "reveal"
+   ]
+  },
+  {
+   "id": "native.image-whiteboard",
+   "name": "Illustration draw-on",
+   "engine": "image_whiteboard",
+   "source": "native+vendored (sweety stroke_paths MIT, SRT grid MIT)",
+   "license": "MIT notices in adapters/vendor",
+   "description": "Redraws a supplied line illustration stroke by stroke, then colours it.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [
+    "an illustration asset with a licence"
+   ],
+   "perf_ms": 160,
+   "params": {
+    "order": "strokes"
+   },
+   "visual": [
+    "traced pen strokes",
+    "colour sweep"
+   ],
+   "best_for": [
+    "illustration"
+   ]
+  },
+  {
+   "id": "huashu.finance-chart",
+   "name": "Editorial finance chart",
+   "engine": "huashu_clip",
+   "source": "alchaincyf/huashu-art-motion",
+   "license": "MIT",
+   "description": "Paper-toned editorial bar/line chart grammar with source line and highlight.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [
+    "huashu checkout",
+    "playwright",
+    "chromium"
+   ],
+   "perf_ms": 60,
+   "params": {
+    "grammar": "t3_finance_chart",
+    "theme": "paper"
+   },
+   "best_for": [
+    "data"
+   ],
+   "sample_params": {
+    "data": {
+     "title": "Revenue (fictional)",
+     "unit": "$ millions",
+     "source": "illustrative",
+     "chart": "bar",
+     "decimals": 0,
+     "series": [
+      {
+       "label": "2021",
+       "value": 40
+      },
+      {
+       "label": "2022",
+       "value": 110
+      },
+      {
+       "label": "2023",
+       "value": 260
+      }
+     ],
+     "highlight": {
+      "index": 2,
+      "text": "6.5x",
+      "sub": "in two years"
+     }
+    },
+    "cues": [
+     {
+      "at": 0.2,
+      "kind": "bar",
+      "data": {
+       "index": [
+        0,
+        1
+       ]
+      }
+     },
+     {
+      "at": 1.2,
+      "kind": "bar",
+      "data": {
+       "index": 2
+      }
+     },
+     {
+      "at": 2.2,
+      "kind": "highlight"
+     }
+    ]
+   }
+  },
+  {
+   "id": "huashu.kinetic-type",
+   "name": "Poster kinetic type",
+   "engine": "huashu_clip",
+   "source": "alchaincyf/huashu-art-motion",
+   "license": "MIT",
+   "description": "Poster-style kinetic typography grammar (numbers, points, highlight).",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [
+    "huashu checkout",
+    "playwright",
+    "chromium"
+   ],
+   "perf_ms": 60,
+   "params": {
+    "grammar": "y5_kinetic_type",
+    "theme": "poster"
+   },
+   "best_for": [
+    "hook",
+    "quote"
+   ],
+   "sample_params": {
+    "cues": [
+     {
+      "at": 0.2,
+      "kind": "number",
+      "text": "Share of volume",
+      "data": {
+       "value": 38,
+       "suffix": "%"
+      }
+     },
+     {
+      "at": 1.6,
+      "kind": "point",
+      "text": "One customer",
+      "sub": "one point of failure",
+      "data": {
+       "label": "Risk",
+       "key": "38%"
+      }
+     },
+     {
+      "at": 2.4,
+      "kind": "highlight",
+      "data": {
+       "word": "One customer"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "huashu.3b1b",
+   "name": "Math explainer (3b1b-like grammar)",
+   "engine": "huashu_clip",
+   "source": "alchaincyf/huashu-art-motion",
+   "license": "MIT",
+   "description": "Dark math/diagram grammar from huashu's clip library.",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "huashu checkout",
+    "playwright",
+    "chromium"
+   ],
+   "perf_ms": 60,
+   "params": {
+    "grammar": "t1_3b1b",
+    "theme": "ink"
+   },
+   "best_for": [
+    "explain",
+    "science"
+   ],
+   "sample_params": {
+    "cues": [
+     {
+      "at": 0.0,
+      "kind": "line",
+      "text": "Cash on hand",
+      "data": {
+       "values": [
+        2,
+        3,
+        4.5,
+        6,
+        7,
+        7.5,
+        6,
+        3.5,
+        1.2
+       ],
+       "color": "BLUE_C"
+      }
+     },
+     {
+      "at": 1.5,
+      "kind": "point",
+      "text": "Growth hides losses"
+     },
+     {
+      "at": 2.3,
+      "kind": "highlight",
+      "data": {
+       "target": "line"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "animate.cut-paper",
+   "name": "Cut-paper morph piece",
+   "engine": "animate_piece",
+   "source": "cth9191/animate",
+   "license": "MIT",
+   "description": "Cut-paper style piece with shape-morph bridges (example: history-of-ai).",
+   "aspects": [
+    "9:16",
+    "16:9",
+    "1:1"
+   ],
+   "deps": [
+    "animate checkout",
+    "node",
+    "playwright",
+    "chromium"
+   ],
+   "perf_ms": 400,
+   "params": {
+    "piece": "upstream:examples/history-of-ai",
+    "offset": 24.0
+   },
+   "best_for": [
+    "timeline",
+    "history"
+   ]
+  },
+  {
+   "id": "lemo.whiteboard",
+   "name": "Whiteboard explainer (lemo)",
+   "engine": "html_seek",
+   "source": "lemomo-ai/lemo-opuscar",
+   "license": "MIT (demo assets per CREDITS)",
+   "description": "lemo-opuscar whiteboard film engine with stroke physics and camera. Upstream demo film: \"Einstein in Your Pocket\" (111.0 s).",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "lemo checkout",
+    "playwright",
+    "chromium",
+    "upstream font binaries are not in git; html_seek serves a local fallback font (degraded typography) unless you supply the OFL fonts"
+   ],
+   "perf_ms": null,
+   "params": {
+    "page": "lemo:styles/whiteboard/demo/index.html",
+    "offset": 55.5
+   },
+   "best_for": [
+    "explain"
+   ]
+  },
+  {
+   "id": "lemo.pixel-rpg",
+   "name": "Pixel RPG (lemo)",
+   "engine": "html_seek",
+   "source": "lemomo-ai/lemo-opuscar",
+   "license": "MIT (demo assets per CREDITS)",
+   "description": "16-bit pixel-art RPG film engine. Upstream demo film: \"The Last Save Point\" (54.5 s). The only lemo demo whose assets are fully present in git at fdc46d7.",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "lemo checkout",
+    "playwright",
+    "chromium"
+   ],
+   "perf_ms": null,
+   "params": {
+    "page": "lemo:styles/pixel-rpg/demo/index.html",
+    "offset": 27.25
+   },
+   "best_for": [
+    "story",
+    "history"
+   ]
+  },
+  {
+   "id": "dashi.handdrawn-notes",
+   "name": "Hand-drawn notes (dashi)",
+   "engine": "html_seek",
+   "source": "chuspeeism/dashi-animationstyle",
+   "license": "MIT",
+   "description": "Off-white paper, ink-blue line art with orange, stroke-by-stroke writing with following pen.",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "dashi checkout",
+    "playwright",
+    "chromium"
+   ],
+   "perf_ms": 274,
+   "params": {
+    "page": "dashi:styles/手绘笔记/示例_Token.html",
+    "offset": 7.5
+   },
+   "best_for": [
+    "explain"
+   ]
+  },
+  {
+   "id": "dashi.black-gold-tech",
+   "name": "Black & gold tech (dashi)",
+   "engine": "html_seek",
+   "source": "chuspeeism/dashi-animationstyle",
+   "license": "MIT",
+   "description": "Near-black with gold hairlines; serif text resolving from blur.",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "dashi checkout",
+    "playwright",
+    "chromium"
+   ],
+   "perf_ms": 850,
+   "params": {
+    "page": "dashi:styles/黑底科技/示例_Token.html",
+    "offset": 7.5
+   },
+   "best_for": [
+    "hook",
+    "technology"
+   ]
+  },
+  {
+   "id": "dashi.flat-flowchart",
+   "name": "Flat flowchart (dashi)",
+   "engine": "html_seek",
+   "source": "chuspeeism/dashi-animationstyle",
+   "license": "MIT",
+   "description": "Cream background, amber title band, numbered horizontal flow.",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "dashi checkout",
+    "playwright",
+    "chromium"
+   ],
+   "perf_ms": null,
+   "params": {
+    "page": "dashi:styles/扁平流程图/示例_Token.html",
+    "offset": 7.5
+   },
+   "best_for": [
+    "process"
+   ]
+  },
+  {
+   "id": "mg.flat-vector",
+   "name": "Flat Vector (mg-styles-15)",
+   "engine": "html_seek",
+   "source": "Vincentwei1021/mg-styles-15 (tree 49052d8, source files only)",
+   "license": "MIT (fonts not distributed upstream)",
+   "description": "Bright flat SVG character scene with spring pops. 10 s upstream demo film.",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "mg-styles-15 source checkout",
+    "playwright",
+    "chromium",
+    "font fallback (upstream fonts not distributed)"
+   ],
+   "perf_ms": null,
+   "params": {
+    "page": "mg:demos/01-flat-vector/index.html",
+    "offset": 5.0
+   },
+   "best_for": [
+    "explain",
+    "hook"
+   ]
+  },
+  {
+   "id": "mg.pixel",
+   "name": "Pixel (mg-styles-15)",
+   "engine": "html_seek",
+   "source": "Vincentwei1021/mg-styles-15 (tree 49052d8, source files only)",
+   "license": "MIT (fonts not distributed upstream)",
+   "description": "320x180 pixel side-scroller with a CRT pass. 10 s upstream demo film.",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "mg-styles-15 source checkout",
+    "playwright",
+    "chromium",
+    "font fallback (upstream fonts not distributed)"
+   ],
+   "perf_ms": null,
+   "params": {
+    "page": "mg:demos/20-pixel/index.html",
+    "offset": 5.0
+   },
+   "best_for": [
+    "story",
+    "history"
+   ]
+  },
+  {
+   "id": "mg.liquid",
+   "name": "Liquid (mg-styles-15)",
+   "engine": "html_seek",
+   "source": "Vincentwei1021/mg-styles-15 (tree 49052d8, source files only)",
+   "license": "MIT (fonts not distributed upstream)",
+   "description": "Glossy WebGL2 SDF metaballs forming a wordmark. 10 s upstream demo film.",
+   "aspects": [
+    "16:9"
+   ],
+   "deps": [
+    "mg-styles-15 source checkout",
+    "playwright",
+    "chromium",
+    "font fallback (upstream fonts not distributed)"
+   ],
+   "perf_ms": null,
+   "params": {
+    "page": "mg:demos/07-liquid/index.html",
+    "offset": 6.0
+   },
+   "best_for": [
+    "title",
+    "metaphor"
+   ]
+  }
+ ]
+}

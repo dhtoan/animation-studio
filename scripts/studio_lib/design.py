@@ -166,6 +166,22 @@ def spring(t: float, freq: float = 3.2, damp: float = 5.0) -> float:
     return 1 - math.exp(-damp * t) * math.cos(freq * math.tau * t * 0.5)
 
 
+# Spring presets (angular frequency w, damping ratio z), tiers ported from
+# xilo-opus-video craft rules (MIT): buttons / cards+camera / titles / mascots.
+SPRINGS = {"snappy": (24.0, 0.8), "card": (15.0, 0.72), "title": (10.0, 0.92), "playful": (18.0, 0.45)}
+
+
+def spring_ease(t: float, preset: str = "card") -> float:
+    """Closed-form damped spring from 0 -> 1 (t in seconds)."""
+    w, z = SPRINGS.get(preset, SPRINGS["card"])
+    if t <= 0:
+        return 0.0
+    if z < 1:
+        wd = w * math.sqrt(1 - z * z)
+        return 1 - math.exp(-z * w * t) * (math.cos(wd * t) + z * w / wd * math.sin(wd * t))
+    return 1 - math.exp(-w * t) * (1 + w * t)
+
+
 def lerp(a, b, t):
     return a + (b - a) * t
 

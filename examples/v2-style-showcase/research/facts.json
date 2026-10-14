@@ -1,0 +1,4 @@
+{"facts": [
+ {"id": "fic", "claim": "Corvane Logistics, Halden Home and all percentages are fictional.", "status": "fictional", "risk": "low", "framing": "Badge + disclaimer."},
+ {"id": "gen", "claim": "Customer concentration is a recognised business risk.", "status": "hypothesis", "risk": "low", "framing": "Presented as general advice, no specific company named."}
+]}

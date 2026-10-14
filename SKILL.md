@@ -27,7 +27,9 @@ A working pipeline, not a prompt pack. Everything below runs from `scripts/studi
    - One scene per narrative beat.
    - Every scene has narration, purpose, visual, camera, transition and elements.
    - Element timing uses `"cue:word"` so motion lands on the spoken word.
-5. **Art direction** ([art direction](references/art-direction.md)):
+5. **Art direction and shot planning** ([art direction](references/art-direction.md), [shot planning](references/shot-planning.md), [style registry](references/style-registry.md), [image art direction](references/image-art-direction.md)):
+   - Set `art_style` on scenes to a registry id (`studio.py styles` lists them with verified status). The engine and default params are then filled automatically.
+   - `studio.py direction <slug>` prints the style bible, the auto-filled shot plan, continuity issues, and a 1 + 2 style proposal drawn only from styles verified on this machine.
    - Pick a theme and the engine per scene, either explicitly or with `engine: "auto"` (router).
    - Keep the palette meaning fixed: amber = attention, red = loss, green = growth.
 6. **Validate and dry-run**: `studio.py validate <slug>`, then `studio.py dry-run <slug>`. Fix every error; read every warning.
@@ -57,6 +59,11 @@ A working pipeline, not a prompt pack. Everything below runs from `scripts/studi
 | `image_whiteboard` | draw a supplied illustration stroke by stroke | [whiteboard](references/whiteboard-animation.md) |
 | `huashu_clip` | huashu-art-motion grammars (finance chart, 3b1b, Vox…) | [rendering](references/rendering.md) |
 | `animate_piece` | cth9191/animate pieces (cut-paper, riso…) | [rendering](references/rendering.md) |
+| `html_seek` | seekable HTML pages: lemo-opuscar `render(t)`, dashi `seek(t)`, any `renderFrame(t)` page | [rendering](references/rendering.md) |
+
+Cinematic transitions (from the video-shotcraft recipes): `crash_zoom`, `flash_cut`, `iris`, `blinds`, `glitch`, `light_leak`, plus cut, fade, crossfade, wipe, erase, push, whip, zoom_through and slide_up.
+
+A style counts as **operational** only after `studio.py styles --verify` has rendered and validated a sample on this machine. Check `references/style-registry.md` before promising any look.
 
 Each scene gets an explicit fallback chain. If an engine fails, the same elements are rendered by the fallback, so the facts on screen do not change.
 
@@ -74,5 +81,6 @@ Each scene gets an explicit fallback chain. If an engine fails, the same element
 - `templates/`: project and research templates
 - `agents/`: sub-agent briefs (researcher, scriptwriter, storyboard artist, QA reviewer)
 - `examples/billion-dollar-collapse/`: complete demo
-- `references/source-audit.md`: what each upstream repo really does
+- `references/source-audit.md` and `references/v2-source-audit.md`: what each upstream repo really does
+- `styles/registry.json`: unified style registry; verification results live in `styles/verification.json`
 - `tests/`: unit and integration tests (`python -m unittest discover -s tests`)

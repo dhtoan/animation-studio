@@ -14,7 +14,9 @@ from .engines import FALLBACKS, availability
 
 # measured on the dev machine (1080p, ms/frame, single core) — see references/rendering.md
 COST_MS = {"kinetic": 115, "motion": 115, "whiteboard": 120, "handdrawn": 135, "artistic": 145,
-           "image_whiteboard": 160, "huashu_clip": 250, "animate_piece": 250}
+           "image_whiteboard": 160, "huashu_clip": 60, "animate_piece": 400, "html_seek": 400}
+# engines whose upstream pages are authored for one aspect only (unless the scene says otherwise)
+LANDSCAPE_ONLY = {"html_seek"}
 
 PURPOSE_PREF = {
     "hook": ["kinetic", "artistic", "motion"],
@@ -49,9 +51,11 @@ DATA_TYPES = {"bar_chart", "line_chart", "donut", "counter", "network", "timelin
 DRAW_TYPES = {"icon", "arrow", "process", "character", "shape"}
 
 
-def route(scene: dict, project: dict, avail: dict | None = None) -> dict:
+def route(scene: dict, project: dict, avail: dict | None = None, aspect: str = "16:9") -> dict:
     avail = avail or availability()
     ok = {k for k, v in avail.items() if v.get("ok")}
+    if aspect == "9:16" and not scene.get("params", {}).get("vertical_ok"):
+        ok -= LANDSCAPE_ONLY
     explicit = scene.get("engine", "auto")
     chain: list[str]
     reason: str
@@ -78,6 +82,11 @@ def route(scene: dict, project: dict, avail: dict | None = None) -> dict:
             scores["artistic"] = scores.get("artistic", 0) + 3
         if emotion in ("urgency", "shock", "surprise"):
             scores["kinetic"] = scores.get("kinetic", 0) + 2
+        density = len(types) + sum(len(e.get("bars", []) or e.get("nodes", []) or e.get("items", [])) for e in scene.get("elements", []))
+        if density >= 8:  # dense information: clean vector rendering reads best
+            scores["motion"] = scores.get("motion", 0) + 3
+            scores["artistic"] = scores.get("artistic", 0) - 3
+            scores["handdrawn"] = scores.get("handdrawn", 0) - 1
         if not types and str(scene.get("narration", "")).strip():
             scores["kinetic"] = scores.get("kinetic", 0) + 3  # nothing to draw: let the words carry it
         if scene.get("params", {}).get("src"):
@@ -97,6 +106,6 @@ def route(scene: dict, project: dict, avail: dict | None = None) -> dict:
     usable = [e for e in final if e in ok]
     if not usable:
         usable = ["motion"]
-    return {"engine": usable[0], "fallbacks": usable[1:4], "requested": explicit, "reason": reason,
+    return {"engine": usable[0], "fallbacks": usable[1:4], "requested": explicit, "reason": reason, "aspect": aspect,
             "skipped_unavailable": [e for e in final if e not in ok],
             "est_ms_per_frame": COST_MS.get(usable[0])}

@@ -40,14 +40,16 @@ def _config() -> dict:
 
 
 def external_dir(name: str, rel_check: str) -> Path | None:
-    env = {"huashu": "STUDIO_HUASHU_DIR", "animate": "STUDIO_ANIMATE_DIR"}[name]
+    env = {"huashu": "STUDIO_HUASHU_DIR", "animate": "STUDIO_ANIMATE_DIR", "lemo": "STUDIO_LEMO_DIR",
+           "dashi": "STUDIO_DASHI_DIR", "mg": "STUDIO_MG_DIR"}[name]
     cands = []
     if os.environ.get(env):
         cands.append(Path(os.environ[env]))
     ext = _config().get("external", {})
     if ext.get(name):
         cands.append((SKILL_ROOT / ext[name]).resolve() if not Path(ext[name]).is_absolute() else Path(ext[name]))
-    default = {"huashu": "huashu-art-motion", "animate": "animate/plugins/animate/skills/animate"}[name]
+    default = {"huashu": "huashu-art-motion", "animate": "animate/plugins/animate/skills/animate",
+               "lemo": "lemo-opuscar", "dashi": "dashi-animationstyle", "mg": "mg-styles-15-src"}[name]
     cands.append(SKILL_ROOT / "_upstream" / default)
     cands.append(SKILL_ROOT.parent / "_upstream" / default)
     for c in cands:
@@ -86,7 +88,12 @@ def availability() -> dict:
     an = external_dir("animate", "tools/build.mjs")
     node = shutil.which("node")
     pw, ch = playwright_ok(), chromium_path()
+    lemo = external_dir("lemo", "core/lib.js")
+    dashi = external_dir("dashi", "pipeline/render.mjs")
     return {
+        "html_seek": {"ok": bool(pw), "lemo_dir": str(lemo) if lemo else None,
+                      "dashi_dir": str(dashi) if dashi else None, "playwright": pw, "chromium": ch,
+                      "note": "project pages always; lemo:/dashi: pages need the matching checkout"},
         "huashu_clip": {"ok": bool(hu and pw), "dir": str(hu) if hu else None, "playwright": pw, "chromium": ch},
         "animate_piece": {"ok": bool(an and pw and node), "dir": str(an) if an else None, "node": node,
                           "playwright": pw, "chromium": ch},

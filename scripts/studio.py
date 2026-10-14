@@ -201,6 +201,28 @@ def cmd_all(a):
     print(json.dumps(r["summary"], indent=2))
 
 
+def cmd_styles(a):
+    from studio_lib import styles
+
+    if a.verify:
+        styles.verify(a.only.split(",") if a.only else None)
+    else:
+        for s in styles.load():
+            print(f"{s['id']:<28} {styles.status(s['id']):<12} {s['engine']:<16} {s['description'][:70]}")
+    print("registry doc:", styles.write_markdown())
+
+
+def cmd_direction(a):
+    from studio_lib.pipeline import plan
+
+    pl = plan(_pdir(a))
+    d = pl["direction"]
+    from studio_lib import direction
+
+    print(json.dumps({"bible": d["bible"], "continuity": d["continuity"], "shot_plan_filled": d["shot_plan"],
+                      "style_proposal": direction.propose_styles(pl["project"])}, indent=2, ensure_ascii=False))
+
+
 def cmd_status(a):
     from studio_lib.qa import status
 
@@ -251,6 +273,10 @@ def main(argv=None):
     sp.add_argument("--approve", action="store_true")
     sp.add_argument("--notes")
     add("status", cmd_status)
+    sp = add("styles", cmd_styles, slug=False)
+    sp.add_argument("--verify", action="store_true", help="render a 3 s sample per style and record results")
+    sp.add_argument("--only")
+    add("direction", cmd_direction)
     a = ap.parse_args(argv)
     if getattr(a, "cmd", "") == "all":
         a.only = None

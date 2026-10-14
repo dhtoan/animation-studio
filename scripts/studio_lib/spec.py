@@ -17,8 +17,6 @@ SCHEMA_VERSION = 2
 
 SCENE_DEFAULTS = {
     "engine": "auto",
-    "transition": "cut",
-    "camera": {"move": "drift"},
     "elements": [],
     "params": {},
     "illustrative": True,

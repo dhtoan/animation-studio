@@ -10,3 +10,8 @@ client_secret*.json
 __pycache__/
 *.pyc
 .DS_Store
+# machine-local style verification artefacts (stills + verification.json are kept as evidence)
+styles/samples/*.mp4
+styles/samples/_work/
+# machine-local provider verification (may contain account details)
+voice/provider-status.json

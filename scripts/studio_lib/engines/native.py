@@ -142,11 +142,11 @@ class KineticEngine(Engine):
             cy = self.ctx.H * 0.5 - block_h / 2
             if off == -1:  # previous phrase drifts up and fades
                 nxt = self.phrases[idx][0][0]
-                u = D.clamp((t - nxt + 0.05) / 0.35)
+                u = D.clamp((t - nxt + 0.05) / 0.22)
                 if u >= 1:
                     continue
-                cy -= U * 0.12 * D.ease_out_cubic(u)
-                alpha_mul = 1 - u
+                cy -= (block_h * 0.6 + U * 0.08) * D.ease_out_cubic(u)
+                alpha_mul = (1 - u) ** 2
             else:
                 alpha_mul = 1.0
             for li, ln in enumerate(lines):

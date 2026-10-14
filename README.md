@@ -87,6 +87,21 @@ python scripts/studio.py build billion-dollar-collapse --quality final --workers
 
 See [references/rendering.md](references/rendering.md) and [references/source-audit.md](references/source-audit.md).
 
+## V2: styles, art direction, shot planning
+```bash
+python scripts/studio.py styles                 # registry with verified status
+python scripts/studio.py styles --verify        # render a 3 s sample per style on this machine
+python scripts/studio.py direction my-video     # style bible, shot plan, continuity, style proposal
+```
+- Scenes can set `art_style` (a registry id) instead of an engine.
+- Missing `shot`, `camera` and `transition` values are planned automatically from the scene `purpose` and chapter structure.
+- New cinematic transitions: `crash_zoom`, `flash_cut`, `iris`, `blinds`, `glitch`, `light_leak`.
+- The `html_seek` engine drives lemo-opuscar, dashi-animationstyle, or your own seekable HTML pages:
+  - Set `STUDIO_LEMO_DIR` and `STUDIO_DASHI_DIR` for those checkouts.
+  - Upstream pages stay unmodified, and every network request outside 127.0.0.1 is blocked.
+- `reports/production-report.json` records stage timings, cache hits, worker render seconds, engines used, and paid services used (none).
+- `examples/v2-style-showcase/` is a ~45 s demo that mixes 5 verified styles and includes a vertical Short.
+
 ## Narration
 | Provider | Notes |
 |---|---|

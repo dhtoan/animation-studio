@@ -38,7 +38,10 @@ def stills(pdir: Path, scene_id: str, times: list[float] | None, fmt: str = "lon
         if row:
             dur, words = row["duration"], [tuple(w) for w in row["words"]]
     ctx, st = _ctx_for(sc, p, fmt, quality, dur, words)
-    eng = ENGINES[route(sc, p)["engine"]](ctx)
+    from . import styles as _styles
+
+    _styles.apply_style(sc)
+    eng = ENGINES[route(sc, p, aspect="9:16" if fmt == "short" else "16:9")["engine"]](ctx)
     times = times or [ctx.duration * f for f in (0.15, 0.5, 0.95)]
     out = []
     for t in times:

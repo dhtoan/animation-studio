@@ -108,12 +108,17 @@ def _segments(p: dict, short: dict) -> list[dict]:
         base = copy.deepcopy(byid[seg["from"]]) if seg.get("from") else {
             "engine": "kinetic", "elements": [], "params": {}, "camera": {"move": "drift"}, "transition": "cut",
             "pad": {"lead": 0.2, "tail": 0.4}, "illustrative": True, "_project_dir": p["_dir"]}
-        for key in ("narration", "engine", "params", "camera", "transition", "min_duration", "audio", "purpose", "pad"):
+        for key in ("narration", "engine", "camera", "transition", "min_duration", "audio", "purpose", "pad"):
             if key in seg:
                 base[key] = copy.deepcopy(seg[key])
+        if "params" in seg:  # merge, so a segment can override cues without losing the scene's data
+            base["params"] = {**(base.get("params") or {}), **copy.deepcopy(seg["params"])}
         if "elements" in seg:
             base["elements"] = copy.deepcopy(seg["elements"])
         base["pad"] = seg.get("pad", {"lead": 0.15, "tail": 0.35})
+        from . import styles as _styles
+
+        _styles.apply_style(base)  # art_style -> engine + default params, same as the long video
         base["id"] = f"{short['id']}-{k:02d}"
         base["_source"] = seg.get("from")
         base["_captions"] = seg.get("captions", base.get("engine") != "kinetic")
@@ -159,7 +164,7 @@ def build_shorts(pdir: Path, quality: str = "preview", workers: int = 3, only: l
             if s.get("_captions") and r["words"]:
                 caps = [[c["start"], c["end"], c["text"], [list(w) for w in c["words"]]]
                         for c in subtitles.chunk(r["words"], r["duration"], max_chars=34, max_dur=2.6)]
-            rt = route(s, p, avail)
+            rt = route(s, p, avail, aspect="9:16")
             j = scene_job(s, r, st, p.get("theme", "documentary"), p.get("theme_overrides", {}), prev,
                           badge if s.get("illustrative", True) else None, caps, rt["engine"], rt["fallbacks"], out_dir)
             jobs.append(j)

@@ -10,7 +10,7 @@ import math
 import re
 from dataclasses import dataclass, field
 
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 from .. import design as D
 from ..draw import Shape, roughen, seed_of, stroke_poly, fill_poly, hatch_layer, shapes_bbox, sub_path
@@ -395,7 +395,90 @@ class Engine:
             off = int(H * (1 - u))
             out.paste(img, (0, off))
             return out
-        return Image.blend(prev, img, u)
+        return self._cinematic_transition(kind, prev, img, t, dur)
+
+    # ---------------- V2 cinematic transitions
+    # Parameters ported from video-shotcraft recipe cards (Apache-2.0, re-implemented in Pillow):
+    # crash-zoom-punch, flash-cut, circle-match-iris, blinds-slice, glitch-displace, light-leak-burn.
+    def _cinematic_transition(self, kind, prev, img, t, dur):
+        W, H = img.size
+        fps = self.ctx.fps
+        f = t * fps  # frames since cut
+        if kind == "crash_zoom":
+            # 6-frame 3.5% pull-back, 6-frame ease-in push to 2.6x on the outgoing shot,
+            # then the new shot lands with a decaying 14 px shake (e^(-f/1.8)).
+            if f < 6:
+                z = 1 - 0.035 * D.ease_in_out(f / 6)
+                return self._zoom(prev, z)
+            if f < 12:
+                z = 0.965 + (2.6 - 0.965) * D.ease_in_cubic((f - 6) / 6)
+                out = self._zoom(prev, z)
+                return out.filter(ImageFilter.GaussianBlur(max(0.1, (z - 1) * W * 0.004)))
+            k = f - 12
+            amp = 14 * (W / 1920) * math.exp(-k / 1.8)
+            dx = int(amp * math.sin(k * 2.7))
+            dy = int(amp * 0.6 * math.cos(k * 3.1))
+            out = Image.new("RGB", img.size)
+            out.paste(self._zoom(img, 1.0 + 0.04 * math.exp(-k / 3)), (dx, dy))
+            return out
+        if kind == "flash_cut":
+            white = Image.new("RGB", img.size, (255, 255, 255))
+            if f < 3:
+                return Image.blend(prev, white, f / 3)
+            return Image.blend(white, img, D.clamp((f - 3) / 8))
+        if kind == "iris":
+            u = D.ease_in_out(t / dur)
+            mask = Image.new("L", img.size, 0)
+            r = math.hypot(W, H) / 2 * u
+            ImageDraw.Draw(mask).ellipse((W / 2 - r, H / 2 - r, W / 2 + r, H / 2 + r), fill=255)
+            return Image.composite(img, prev, mask)
+        if kind == "blinds":
+            u = D.ease_in_out(t / dur)
+            n = 8
+            mask = Image.new("L", img.size, 0)
+            d = ImageDraw.Draw(mask)
+            sh = H / n
+            for i in range(n):
+                local = D.clamp(u * 1.6 - i * 0.6 / n)
+                d.rectangle((0, i * sh, W, i * sh + sh * local), fill=255)
+            return Image.composite(img, prev, mask)
+        if kind == "glitch":
+            import random as _r
+
+            u = t / dur
+            base = prev if u < 0.5 else img
+            rnd = _r.Random(int(f) * 7919 + 13)
+            out = base.copy()
+            for _ in range(10):
+                y0 = rnd.randrange(0, H)
+                hgt = rnd.randrange(max(2, H // 60), max(3, H // 12))
+                off = int(rnd.uniform(-0.08, 0.08) * W * math.sin(math.pi * u))
+                band = base.crop((0, y0, W, min(H, y0 + hgt)))
+                out.paste(band, (off, y0))
+            r, g, b = out.split()
+            sh = int(W * 0.008 * math.sin(math.pi * u))
+            r = r.transform(r.size, Image.AFFINE, (1, 0, sh, 0, 1, 0))
+            b = b.transform(b.size, Image.AFFINE, (1, 0, -sh, 0, 1, 0))
+            return Image.merge("RGB", (r, g, b))
+        if kind == "light_leak":
+            u = t / dur
+            mixd = Image.blend(prev, img, D.ease_in_out(u))
+            leak = Image.radial_gradient("L").resize((W, H)).point(lambda v: 255 - v)
+            k = math.sin(math.pi * u) * 0.85
+            warm = Image.merge("RGB", (leak, leak.point(lambda v: int(v * 0.62)), leak.point(lambda v: int(v * 0.25))))
+            return ImageChops.screen(mixd, warm.point(lambda v: int(v * k)))
+        return Image.blend(prev, img, D.ease_in_out(t / dur))
+
+    @staticmethod
+    def _zoom(im, z):
+        W, H = im.size
+        if z >= 1:
+            cw, ch = W / z, H / z
+            return im.resize((W, H), Image.BILINEAR, box=((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2))
+        small = im.resize((max(1, int(W * z)), max(1, int(H * z))), Image.BILINEAR)
+        out = Image.new("RGB", (W, H), (0, 0, 0))
+        out.paste(small, ((W - small.width) // 2, (H - small.height) // 2))
+        return out
 
     # ---------------- burned overlays
     def draw_badge(self, img: Image.Image):

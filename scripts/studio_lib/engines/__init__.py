@@ -5,6 +5,7 @@ from .base import Engine, SceneContext, Style  # noqa: F401
 from .native import ArtisticEngine, HandDrawnEngine, KineticEngine, MotionEngine, WhiteboardEngine
 from .image_whiteboard import ImageWhiteboardEngine
 from .browser import AnimatePieceEngine, HuashuClipEngine, availability as browser_availability
+from .html_seek import HtmlSeekEngine
 
 ENGINES: dict[str, type[Engine]] = {
     "whiteboard": WhiteboardEngine,
@@ -15,6 +16,7 @@ ENGINES: dict[str, type[Engine]] = {
     "image_whiteboard": ImageWhiteboardEngine,
     "huashu_clip": HuashuClipEngine,
     "animate_piece": AnimatePieceEngine,
+    "html_seek": HtmlSeekEngine,
 }
 
 NATIVE = {"whiteboard", "handdrawn", "motion", "kinetic", "artistic", "image_whiteboard"}
@@ -25,6 +27,7 @@ NATIVE = {"whiteboard", "handdrawn", "motion", "kinetic", "artistic", "image_whi
 FALLBACKS = {
     "huashu_clip": ["motion"],
     "animate_piece": ["handdrawn", "artistic"],
+    "html_seek": ["motion", "whiteboard"],
     "image_whiteboard": ["whiteboard"],
     "kinetic": ["motion"],
     "artistic": ["motion"],
