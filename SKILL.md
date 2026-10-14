@@ -85,12 +85,32 @@ Rules specific to V3:
 | `animate_piece` | cth9191/animate pieces (cut-paper, riso…) | [rendering](references/rendering.md) |
 | `archival` | labelled historical recreations: sepia, flicker, typewriter type | [documentary production](references/documentary-production.md) |
 | `html_seek` | seekable HTML pages: lemo-opuscar `render(t)`, dashi `seek(t)`, any `renderFrame(t)` page | [rendering](references/rendering.md) |
+| `sweety_draw` | an illustration drawn part by part with pen lifts, then brush-painted (vendored sweety-handdraw-video) | [visual-fidelity audit](references/visual-fidelity-audit.md) |
+
+### Premium documentary look (visual-fidelity upgrade)
+Set `"quality_profile": "documentary-premium"` and give scenes a `look` from `styles/design-system.json`:
+- `historical-illustrated`: an animate crosshatch piece
+- `kinetic-type`: huashu y5
+- `data-editorial`: huashu t3
+- `premium-whiteboard`: lemo wb.js
+- `technical-blueprint`: lemo blueprint
+- `military-map`: mg-style d3 map
+- `hand-drawn-illustration`: sweety_draw
+- `archival-press`
+
+Every look runs an upstream repository's own renderer, verified against its native output; see [the audit](references/visual-fidelity-audit.md).
+
+In premium projects:
+- **Engines.** Native Pillow engines are refused, and fallbacks never degrade to them. A missing dependency raises `EngineUnavailable`, which names it. A scene may opt out only with `allow_native` and a stated `native_reason`.
+- **Multi-scene pieces.** A piece such as a crosshatch film or a lemo page can draw several scenes. Mark those scenes `params.era: true`. The pipeline lays the eras out from the real narration timing (`piece_timing.py`). Morph bridges run only between adjacent scenes.
+- **Visual QA.** `visual_qa.run_visual_qa` checks each scene for blank composition, static scenes, edge clipping, balance, aspect, silent fallback, primitive engines, degraded dependencies, overflow, typography and continuity. In premium projects these are blockers.
+- **Fonts.** Run `python scripts/fetch_fonts.py` once to restore the OFL fonts that lemo pages request. Its `--check` flag verifies them.
 
 Cinematic transitions (from the video-shotcraft recipes): `crash_zoom`, `flash_cut`, `iris`, `blinds`, `glitch`, `light_leak`, plus cut, fade, crossfade, wipe, erase, push, whip, zoom_through and slide_up.
 
 A style counts as **operational** only after `studio.py styles --verify` has rendered and validated a sample on this machine. Check `references/style-registry.md` before promising any look.
 
-Each scene gets an explicit fallback chain. If an engine fails, the same elements are rendered by the fallback, so the facts on screen do not change.
+Each scene gets an explicit fallback chain. If an engine fails, the same elements are rendered by the fallback, so the facts on screen do not change. Premium projects are the exception: their chain contains only authentic engines.
 
 ## Hard rules
 - No fabricated quotes, statistics or allegations. Use the claims ledger, and on-screen "FICTIONAL / ILLUSTRATIVE" badges where they apply.
@@ -107,7 +127,8 @@ Each scene gets an explicit fallback chain. If an engine fails, the same element
 - `agents/`: sub-agent briefs (researcher, scriptwriter, storyboard artist, QA reviewer)
 - `examples/billion-dollar-collapse/`: complete demo
 - `references/source-audit.md`, `references/v2-source-audit.md` and `references/v3-source-audit.md`: what each upstream repo really does
-- `examples/ghost-army/`: V3 historical documentary demo (dossier with 60 sourced claims, 45 scenes, maps, Spanish dub sample)
+- `examples/ghost-army/`: V3 historical documentary demo (dossier with 60 sourced claims, 45 scenes, Spanish dub sample). Scenes g01–g19 are rebuilt with the premium looks; the pieces are in `examples/ghost-army/pieces/`.
+- `styles/design-system.json`: documentary design system (palettes, colour semantics, typography roles, motion and layout rules, looks)
 - `examples/niche-research/`: cited evidence ledger (159 items), 20 scored ideas, 30-episode roadmap
 - `styles/registry.json`: unified style registry; verification results live in `styles/verification.json`
 - `tests/`: unit and integration tests (`python -m unittest discover -s tests`)

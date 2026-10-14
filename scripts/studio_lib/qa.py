@@ -204,6 +204,15 @@ def run_qa(pdir: Path, quality: str = "preview") -> dict:
                 ims.append((f"{sh['id']} {d * frac:.1f}s", Image.open(f).convert("RGB")))
             sheets.append(str(contact_sheet(ims, pdir / "previews" / f"contact-sheet-{sh['id']}-{quality}.png", cols=6, thumb_w=220)))
     rep["contact_sheets"] = sheets
+    # scene-level visual regression checks (blank, static, clipping, fallbacks, typography, continuity)
+    vqa = None
+    if tl and long_v.exists():
+        from . import visual_qa
+
+        vqa = visual_qa.run_visual_qa(pdir, quality)
+        rep["checks"]["visual"] = {"status": vqa["summary"]["status"], "premium": vqa["premium"],
+                                   "issues": vqa["summary"]["issues"], "warnings": vqa["summary"]["warnings"],
+                                   "report": f"reports/visual-qa-{quality}.json"}
     rev_f = pdir / "reports" / "visual-review.json"
     rep["visual_review"] = json.loads(rev_f.read_text(encoding="utf-8")) if rev_f.exists() else {"status": "pending"}
     # deliverables
@@ -226,7 +235,11 @@ def run_qa(pdir: Path, quality: str = "preview") -> dict:
     blockers += [f"subtitles: {i}" for i in rep["checks"].get("subtitles", {}).get("issues", [])]
     if rep["checks"].get("narration", {}).get("deliverable") is False:
         blockers.append("narration is a placeholder (estimate provider) — not deliverable")
+    if vqa:
+        blockers += [f"visual: {i}" for i in vqa["summary"]["issues"]]
     warnings = list(rep["checks"]["long_video"].get("warnings", [])) + rep["checks"].get("narration_gaps", [])
+    if vqa:
+        warnings += [f"visual: {w}" for w in vqa["summary"]["warnings"]]
     rich = rep["checks"]["long_video"].get("richness") or {}
     if rich.get("mean") is not None and rich["mean"] < 6:
         warnings.append(f"low visual change (richness {rich['mean']} < 6): risk of a slideshow feel")
