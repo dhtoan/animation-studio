@@ -34,6 +34,34 @@ def engine_code_hash() -> str:
     return _ENGINE_SRC
 
 
+_SKIP_DIRS = {"node_modules", "renders", "dist", ".git", "__pycache__", "_work"}
+
+
+def asset_fingerprint(scene: dict) -> str | None:
+    """Content hash of the local files a scene's engine reads (piece dirs, pages, images), so editing
+    a film.js / scenes.js / illustration re-renders the scene instead of reusing a stale cache."""
+    prm = scene.get("params") or {}
+    base = Path(scene.get("_project_dir", "."))
+    h = hashlib.sha256()
+    found = False
+    for key in ("piece", "page", "src", "timeline"):
+        v = prm.get(key)
+        if not isinstance(v, str) or ":" in v.split("/")[0]:  # upstream:/lemo:/mg: pages are pinned checkouts
+            continue
+        p = Path(v) if Path(v).is_absolute() else base / v
+        if p.is_file() and key == "page":
+            p = p.parent  # a page loads its sibling modules (film.js, timing.js, ...)
+        files = [p] if p.is_file() else sorted(
+            x for x in p.rglob("*") if x.is_file() and not (_SKIP_DIRS & set(x.relative_to(p).parts))) if p.is_dir() else []
+        if p.is_file() and p.with_suffix(".parts.json").is_file():
+            files.append(p.with_suffix(".parts.json"))  # sweety_draw drawing order
+        for x in files:
+            found = True
+            h.update(str(x.relative_to(p) if p.is_dir() else x.name).encode())
+            h.update(x.read_bytes())
+    return h.hexdigest()[:12] if found else None
+
+
 def _clean(scene: dict) -> dict:
     return {k: v for k, v in scene.items() if not k.startswith("_") and k not in ("validation", "narration_notes")}
 
@@ -45,6 +73,7 @@ def scene_job(scene: dict, tl: dict, settings: RenderSettings, theme_name: str, 
         "v": VERSION, "code": engine_code_hash(), "scene": _clean(scene), "engine": engine,
         "dur": tl["duration"], "frames": tl["frames"], "words": tl["words"], "settings": settings.key(),
         "theme": [theme_name, theme_over], "badge": badge, "captions": captions,
+        "assets": asset_fingerprint(scene),
         "prev": prev["hash"] if (prev and scene.get("transition", "cut") not in ("cut", None)) else None,
     }
     h = hashlib.sha256(json.dumps(payload, sort_keys=True, default=str).encode()).hexdigest()[:12]

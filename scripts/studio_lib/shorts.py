@@ -116,8 +116,10 @@ def _segments(p: dict, short: dict) -> list[dict]:
         if "elements" in seg:
             base["elements"] = copy.deepcopy(seg["elements"])
         base["pad"] = seg.get("pad", {"lead": 0.15, "tail": 0.35})
+        from . import design_system as _ds
         from . import styles as _styles
 
+        _ds.apply_look(base)
         _styles.apply_style(base)  # art_style -> engine + default params, same as the long video
         base["id"] = f"{short['id']}-{k:02d}"
         base["_source"] = seg.get("from")

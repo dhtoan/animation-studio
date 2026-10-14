@@ -1,0 +1,116 @@
+{
+  "schema": "studio.design-system/v1",
+  "id": "documentary",
+  "note": "Reusable documentary design system. Each look maps to an AUTHENTIC upstream engine (verified pixel-identical or within the JPEG floor to the repo's own renderer; see references/visual-fidelity-report.md) plus shared tokens, so scenes from different engines read as one film. Scene field `look` applies the preset; scene values always win.",
+  "tokens": {
+    "palettes": {
+      "paper": {"bg": "#EDE4CF", "surface": "#F6F0E2", "ink": "#23241F", "sub": "#6E6857", "accent": "#A8782A", "accent2": "#55603F", "alert": "#B23A2A"},
+      "night": {"bg": "#1B1E19", "surface": "#262A23", "ink": "#EEE7D4", "sub": "#9C9786", "accent": "#D7A23F", "accent2": "#7F9A68", "alert": "#C8553D"}
+    },
+    "color_semantics": {
+      "alert": "deception, fake, contested or classified: never used for decoration",
+      "accent2": "real forces / established facts (olive)",
+      "accent": "numbers and emphasis (brass)",
+      "sub": "sources, labels, approximations"
+    },
+    "typography": {
+      "roles": {
+        "display": {"family": "League Gothic", "use": "map titles, chapter cards"},
+        "headline_serif": {"family": "Old Standard TT", "use": "archival headings, period documents"},
+        "body": {"family": "Inter", "use": "labels, chart text, lower thirds"},
+        "hand": {"family": "Caveat", "use": "handwritten titles and notes (sweety_draw default)"},
+        "typewriter": {"family": "IBM Plex Mono", "use": "orders, memos, source cards"}
+      },
+      "engine_internal": "Upstream engines keep their own bundled faces (huashu PuHui for kinetic type, lemo whiteboard EMS single-line hand, animate kit hand lettering). Those are part of the authentic look and are not replaced.",
+      "min_text_px_1080p": 28,
+      "max_families_per_scene": 2,
+      "fonts_source": "tools/fonts (OFL, fetched by scripts/fetch_fonts.py; manifest tools/fonts/manifest.json)"
+    },
+    "motion": {
+      "camera": "upstream engines run their own camera; the studio adds none (no breathing zoom) unless the scene sets camera",
+      "sync": "beats are anchored to narration words (cue:word), never to fixed seconds when a word exists",
+      "min_hold_s": 1.2,
+      "huashu_shot_max_s": 8,
+      "transitions": "hard cuts inside a look; morph bridges only inside animate pieces; dissolve or match-cut when the look changes"
+    },
+    "layout": {
+      "safe_margin": 0.05,
+      "min_occupancy": 0.18,
+      "no_empty_holds": "a scene never holds a frame that is mostly empty background for more than the first quarter of its time"
+    }
+  },
+  "looks": {
+    "historical-illustrated": {
+      "engine": "animate_piece",
+      "upstream": "cth9191/animate crosshatch kit (MIT)",
+      "params": {"piece": "pieces/crosshatch"},
+      "palette": "paper",
+      "use": ["establishing shots", "recreations", "characters", "events", "title cards"],
+      "status": "verified: adapter pixel-identical to native export"
+    },
+    "kinetic-type": {
+      "engine": "huashu_clip",
+      "upstream": "alchaincyf/huashu-art-motion y5_kinetic_type (MIT)",
+      "params": {"grammar": "y5_kinetic_type"},
+      "palette": "paper",
+      "use": ["numbers", "reveals", "quotes", "caveats"],
+      "status": "verified: adapter pixel-identical to native render.py"
+    },
+    "data-editorial": {
+      "engine": "huashu_clip",
+      "upstream": "alchaincyf/huashu-art-motion t3_finance_chart (MIT)",
+      "params": {"grammar": "t3_finance_chart"},
+      "palette": "paper",
+      "use": ["bar/line charts with sourced, approximate figures"],
+      "status": "verified: adapter pixel-identical to native render.py"
+    },
+    "premium-whiteboard": {
+      "engine": "html_seek",
+      "upstream": "lemomo-ai/lemo-opuscar styles/whiteboard wb.js (MIT)",
+      "params": {"page": "pieces/lemo-whiteboard/index.html"},
+      "palette": "board",
+      "use": ["organisation charts", "processes", "four-part explainers"],
+      "status": "verified: adapter within JPEG floor of native still.mjs"
+    },
+    "hand-drawn-illustration": {
+      "engine": "sweety_draw",
+      "upstream": "threerocks/sweety-handdraw-video stroke + paint pipeline (MIT, vendored)",
+      "params": {"pen": "pen"},
+      "palette": "paper",
+      "use": ["equipment", "vehicles", "people at work: drawn stroke by stroke, then painted"],
+      "status": "verified: vendored code, part order and nib-to-ink distance tested"
+    },
+    "technical-blueprint": {
+      "engine": "html_seek",
+      "upstream": "lemomo-ai/lemo-opuscar styles/blueprint (MIT)",
+      "params": {"page": "pieces/lemo-blueprint/index.html"},
+      "palette": "blueprint",
+      "use": ["orders and routing sheets", "technical drawings", "classified files"],
+      "status": "verified: adapter within JPEG floor of native still.mjs"
+    },
+    "archival-press": {
+      "engine": "html_seek",
+      "upstream": "lemo-opuscar halftone-dossier / silent-film; dashi-animationstyle retro newspaper (MIT)",
+      "params": {},
+      "palette": "paper",
+      "use": ["newspaper and dossier recreations, always labelled as recreations"],
+      "status": "lemo demos verified; Ghost Army pages pending"
+    },
+    "military-map": {
+      "engine": "html_seek",
+      "upstream": "pending mg-styles-15 22-hud (d3 + topojson) evaluation",
+      "params": {},
+      "palette": "paper",
+      "use": ["routes", "unit markers", "front lines", "regional context"],
+      "status": "pending"
+    },
+    "business": {
+      "engine": "huashu_clip",
+      "upstream": "huashu t2_keynote_ui / lemo swiss-motion, dark-keynote (MIT)",
+      "params": {"grammar": "t2_keynote_ui"},
+      "palette": "night",
+      "use": ["product and company explainers (non-documentary)"],
+      "status": "verified engines; t2 reads sparse with few cards: avoid for documentary"
+    }
+  }
+}

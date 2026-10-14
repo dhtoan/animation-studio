@@ -19,3 +19,7 @@ voice/provider-status.json
 voice/samples/[0-9a-f]*
 tools/bin/
 tools/node/node_modules/
+# OFL font binaries for upstream demos (22 MB): reproduced by `python scripts/fetch_fonts.py`
+# from the tracked tools/fonts/manifest.json (source URL + sha256 per file)
+tools/fonts/*/
+!tools/fonts/manifest.json

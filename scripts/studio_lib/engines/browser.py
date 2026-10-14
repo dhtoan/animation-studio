@@ -20,6 +20,7 @@ import shutil
 import socketserver
 import subprocess
 import threading
+import urllib.parse
 from pathlib import Path
 
 from PIL import Image
@@ -111,25 +112,47 @@ class _Server(socketserver.ThreadingTCPServer):
     request_queue_size = 128
 
 
+class _Files(_Quiet):
+    """Also serves explicitly allowed absolute files at /__file__/<quoted path> (huashu render.py convention)."""
+    allowed: frozenset = frozenset()
+
+    def translate_path(self, path):
+        if path.startswith("/__file__/"):
+            f = urllib.parse.unquote(path[len("/__file__/"):].split("?")[0])
+            return f if f in self.allowed else "/nonexistent"
+        return super().translate_path(path)
+
+
+# same flags as huashu scripts/engine/render.py, so canvas output matches the native renderer
+_LAUNCH_ARGS = ["--disable-web-security", "--enable-gpu-rasterization", "--ignore-gpu-blocklist"]
+
+
 class BrowserSession:
-    def __init__(self, root: Path, width: int, height: int):
+    def __init__(self, root: Path, width: int, height: int, allowed_files=None):
         from playwright.sync_api import sync_playwright
 
-        self.srv = _Server(("127.0.0.1", 0), functools.partial(_Quiet, directory=str(root)))
+        handler = type("_H", (_Files,), {"allowed": frozenset(allowed_files or ())})
+        self.srv = _Server(("127.0.0.1", 0), functools.partial(handler, directory=str(root)))
         self.port = self.srv.server_address[1]
         threading.Thread(target=self.srv.serve_forever, daemon=True).start()
         self.pw = sync_playwright().start()
-        kw = {}
         ch = chromium_path()
         try:
-            self.browser = self.pw.chromium.launch(args=["--disable-web-security"])
+            try:
+                self.browser = self.pw.chromium.launch(args=_LAUNCH_ARGS)
+            except Exception:
+                if not ch:
+                    raise
+                self.browser = self.pw.chromium.launch(executable_path=ch, args=_LAUNCH_ARGS)
         except Exception:
-            if not ch:
-                raise
-            self.browser = self.pw.chromium.launch(executable_path=ch, args=["--disable-web-security"])
+            self.pw.stop()  # leave no running event loop behind (next sync_playwright() would fail)
+            self.srv.shutdown()
+            raise
         self.page = self.browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
         self.errors: list[str] = []
+        self.console_errors: list[str] = []
         self.page.on("pageerror", lambda e: self.errors.append(str(e)))
+        self.page.on("console", lambda m: self.console_errors.append(m.text) if m.type == "error" else None)
 
     def close(self):
         try:
@@ -166,47 +189,104 @@ class _BrowserEngine(Engine):
 
 
 class HuashuClipEngine(_BrowserEngine):
-    """params: grammar, theme, data, cues[{at,kind,text,sub,data}], safe"""
+    """params: grammar, theme, data, cues[{at,kind,text,sub,data}], safe
+    or shots: [{start, grammar, theme, data, cues, safe}] - one scene cut into several huashu shots
+    (upstream guidance: one composition per 2-8 s shot). shot.start is scene time (seconds, "40%",
+    "cue:word"); the first shot starts at 0. Inside a shot, numeric/"%" cue times are shot-relative and
+    "cue:word" anchors are converted from scene time. Shots share the scene theme unless they set one."""
     name = "huashu_clip"
     description = "huashu-art-motion parameterised clip grammars (3b1b, Vox, finance chart, kinetic, whiteboard...)."
 
     def __init__(self, ctx):
         super().__init__(ctx)
+        # Fidelity: the clip grammars run their own camera (holds are deliberate: "no built-in uniform
+        # slow push or breathing"), so no drift is added unless the scene asks for a camera explicitly.
+        # The drift crop + bilinear upscale softened every frame (PSNR ~24 dB vs the native renderer).
+        self.camera = ctx.scene.get("camera") or {"move": "static"}
         root = external_dir("huashu", "scripts/engine/clip.html")
         if not root:
             raise RuntimeError("huashu-art-motion checkout not found (set STUDIO_HUASHU_DIR)")
         self.root = root / "scripts" / "engine"
         p = self.params
-        spec = {"grammar": p["grammar"], "duration": round(ctx.duration, 3), "fps": ctx.fps,
-                "width": ctx.width, "height": ctx.height, "theme": p.get("theme", "paper"),
-                "data": p.get("data", {}),
-                "cues": [{**c, "at": ctx.resolve_time(c.get("at"))} for c in p.get("cues", [])]}
-        if p.get("safe"):
-            spec["safe"] = p["safe"]
-        self.spec = spec
+        shots = p.get("shots") or [{k: p[k] for k in ("grammar", "theme", "data", "cues", "safe") if k in p}]
+        starts = [0.0] + [min(ctx.duration, max(0.0, ctx.resolve_time(sh.get("start")))) for sh in shots[1:]]
+        if any(b <= a for a, b in zip(starts, starts[1:])):
+            raise ValueError(f"huashu shots must start in increasing order, got {starts}")
+        self.bounds = list(zip(starts, starts[1:] + [ctx.duration]))
+        self.allowed: set[str] = set()
+        self.specs = []
+        for sh, (a, b) in zip(shots, self.bounds):
+            dur = b - a
 
-    def _open(self):
-        if self.session:
+            def rt(at, a=a, dur=dur):
+                if isinstance(at, str) and at.strip().startswith("cue:"):
+                    return max(0.0, ctx.resolve_time(at) - a)
+                if isinstance(at, str) and at.strip().endswith("%"):
+                    return float(at.strip()[:-1]) / 100.0 * dur
+                if isinstance(at, str) and at.strip().startswith("end"):
+                    return dur + float(at.strip()[3:] or 0)
+                return float(at or 0)
+
+            spec = {"grammar": sh["grammar"], "duration": round(dur, 3), "fps": ctx.fps,
+                    "width": ctx.width, "height": ctx.height,
+                    "data": json.loads(json.dumps(sh.get("data", {}))),
+                    "cues": [{**json.loads(json.dumps(c)), "at": round(rt(c.get("at")), 3)} for c in sh.get("cues", [])]}
+            # no theme -> each grammar's own default look (native behaviour); was forced to "paper"
+            theme = sh.get("theme", p.get("theme"))
+            if theme is not None:
+                spec["theme"] = theme
+            if sh.get("safe") or p.get("safe"):
+                spec["safe"] = sh.get("safe") or p.get("safe")
+            # local asset paths (cue.image, cue.frames, data.image, data.character) -> /__file__/ URLs,
+            # resolved against the project dir exactly like huashu render.py (spec_assets.localize, MIT)
+            self._localize(spec, Path(ctx.scene.get("_project_dir", ".")))
+            self.specs.append(spec)
+        self.spec = self.specs[0]
+        self.shot = None
+
+    def _localize(self, spec, base: Path):
+        import importlib.util
+
+        f = self.root / "spec_assets.py"
+        if not f.exists():
             return
-        self.session = BrowserSession(self.root, self.ctx.width, self.ctx.height)
-        pg = self.session.page
-        pg.add_init_script("window.CLIP_SPEC = " + json.dumps(self.spec, ensure_ascii=False) + ";")
-        pg.goto(f"http://127.0.0.1:{self.session.port}/clip.html?render=1")
-        pg.wait_for_function("window.__ready === true || !!window.__bootFailed", timeout=120000)
-        bf = pg.evaluate("window.__bootFailed || null")
-        if bf:
-            raise RuntimeError(f"huashu clip boot failed: {bf}")
+        sp = importlib.util.spec_from_file_location("_huashu_spec_assets", f)
+        mod = importlib.util.module_from_spec(sp)
+        sp.loader.exec_module(mod)
+        mod.localize(spec, base.resolve(), self.allowed)  # FileNotFoundError -> engine fails (no blank frames)
+
+    def _open(self, k: int = 0):
+        if self.session and self.shot == k:
+            return
+        try:
+            if not self.session:
+                self.session = BrowserSession(self.root, self.ctx.width, self.ctx.height, self.allowed)
+                self.session.page.add_init_script(
+                    "window.__STUDIO_SHOTS = " + json.dumps(self.specs, ensure_ascii=False) + ";"
+                    "window.CLIP_SPEC = window.__STUDIO_SHOTS[+(new URLSearchParams(location.search).get('shot') || 0)];")
+            pg = self.session.page
+            self.shot = k
+            pg.goto(f"http://127.0.0.1:{self.session.port}/clip.html?render=1&shot={k}")
+            pg.wait_for_function("window.__ready === true || !!window.__bootFailed", timeout=120000)
+            bf = pg.evaluate("window.__bootFailed || null")
+            if bf:
+                raise RuntimeError(f"huashu clip boot failed: {bf}")
+        except Exception:
+            self.close()  # do not leak a running Playwright loop into the next engine in this process
+            raise
 
     def grab(self, t):
-        self._open()
+        k = max(i for i, (a, _) in enumerate(self.bounds) if t >= a - 1e-9) if t > 0 else 0
+        self._open(k)
         b64 = self.session.page.evaluate(
             "async (t)=>{ await window.prepare(t); window.renderFrame(t); "
-            "return window.__canvas.toDataURL('image/png').split(',')[1]; }", float(t))
+            "return window.__canvas.toDataURL('image/png').split(',')[1]; }", float(t - self.bounds[k][0]))
         return Image.open(io.BytesIO(base64.b64decode(b64))).convert("RGB")
 
 
 class AnimatePieceEngine(_BrowserEngine):
-    """params: piece (dir; "upstream:examples/history-of-ai" or project-relative), offset (s), format"""
+    """params: piece (dir; "upstream:examples/history-of-ai" or project-relative), offset (s), format,
+    timing (dict written to the work copy's src/timing.js as window.<timing_var>, default GA_TIMING)"""
     name = "animate_piece"
     description = "cth9191/animate pieces (cut-paper, riso, crosshatch, isometric, math, pixel, sketchbook)."
 
@@ -218,26 +298,91 @@ class AnimatePieceEngine(_BrowserEngine):
         piece = self.params["piece"]
         src = root / piece.split(":", 1)[1] if piece.startswith("upstream:") else \
             Path(ctx.scene.get("_project_dir", ".")) / piece
-        work = Path(ctx.scene.get("_work_dir", ".")) / "_animate" / src.name
-        if not (work / "index.html").exists() or (src / "src").stat().st_mtime > (work / "index.html").stat().st_mtime:
-            if work.exists():
-                shutil.rmtree(work)
-            shutil.copytree(src, work, ignore=shutil.ignore_patterns("renders", "frames", "index.html"))
-            cp = subprocess.run(["node", str(root / "tools" / "build.mjs"), str(work)], capture_output=True, text=True,
+        # the piece paints its own camera (push/bump) and boils on 2s, so it never freezes: no added drift.
+        # A drift re-samples every frame (1.5-4% zoom, bilinear) and cost ~18 dB PSNR vs the native export.
+        self.camera = ctx.scene.get("camera") or {"move": "static"}
+        # params.timing (dict, e.g. {"fps": 30, "scenes": [{id, start, end, bridge_next}]}) is written as
+        # src/timing.js (`window.<timing_var> = ...;`) into the WORK copy; the source dir is never touched.
+        timing = self.params.get("timing")
+        timing_var = self.params.get("timing_var", "GA_TIMING")
+        # one work dir per build key (source path + newest source file + timing): every shipped style demo is a
+        # folder called "demo" (a name-only key served one build for all of them), and parallel scene workers
+        # with the same key share a finished build instead of rebuilding over each other
+        self.build_key = self.build_key_for(src, timing, timing_var)
+        base = Path(ctx.scene.get("_work_dir", ".")) / "_animate"
+        work = base / f"{src.parent.name}-{src.name}-{self.build_key}"
+        if not (work / "index.html").exists():
+            tmp = base / f".tmp-{self.build_key}-{os.getpid()}-{threading.get_ident()}"
+            if tmp.exists():
+                shutil.rmtree(tmp)
+            shutil.copytree(src, tmp, ignore=shutil.ignore_patterns("renders", "frames", "index.html"))
+            if timing is not None:
+                (tmp / "src").mkdir(exist_ok=True)
+                (tmp / "src" / "timing.js").write_text(
+                    f"window.{timing_var} = {json.dumps(timing, ensure_ascii=False)};\n", encoding="utf-8")
+            cp = subprocess.run(["node", str(root / "tools" / "build.mjs"), str(tmp)], capture_output=True, text=True,
                                 encoding="utf-8", errors="replace")
             if cp.returncode != 0:
+                shutil.rmtree(tmp, ignore_errors=True)
                 raise RuntimeError(f"animate build failed: {cp.stderr[-800:]}")
+            try:
+                os.rename(tmp, work)          # atomic publish; another worker may have won the race
+            except OSError:
+                shutil.rmtree(tmp, ignore_errors=True)
+                if not (work / "index.html").exists():
+                    raise
         self.work = work
         self.offset = float(self.params.get("offset", 0.0))
-        fmt = self.params.get("format") or ("9:16" if ctx.vertical else "16:9")
-        self.query = f"?export=1&format={fmt}"
+        # ?format= only means something to heads that read it (templates/piece); the shipped demos and
+        # history-of-ai are fixed 1080x1920. Ask for a relayout only from a head that supports it.
+        html = (work / "index.html").read_text(encoding="utf-8", errors="replace")
+        relayout = "get('format')" in html or 'get("format")' in html
+        fmt = self.params.get("format") or (("9:16" if ctx.vertical else "16:9") if relayout else None)
+        self.query = "?export=1" + (f"&format={fmt}" if fmt else "")
+        self.piece_fps = None
+
+    @staticmethod
+    def build_key_for(src: Path, timing=None, timing_var: str = "GA_TIMING") -> str:
+        """Hash of what the built page depends on: the source path, its newest file (an edit inside src/ does not
+        bump the folder's mtime on NTFS) and the injected timing."""
+        import hashlib
+        src = Path(src)
+        newest = max([p.stat().st_mtime_ns for p in src.rglob("*")
+                      if p.is_file() and not ({"renders", "frames"} & set(p.relative_to(src).parts))
+                      and p.name != "index.html"] or [0])
+        payload = json.dumps({"src": str(src.resolve()), "newest": newest, "timing": timing, "var": timing_var},
+                             sort_keys=True, default=str)
+        return hashlib.sha1(payload.encode("utf-8")).hexdigest()[:12]
 
     def _open(self):
         if self.session:
             return
         self.session = BrowserSession(self.work, self.ctx.width, self.ctx.height)
-        self.session.page.goto(f"http://127.0.0.1:{self.session.port}/index.html{self.query}")
-        self.session.page.wait_for_function("typeof window.renderFrame === 'function'", timeout=60000)
+        try:
+            self.session.page.goto(f"http://127.0.0.1:{self.session.port}/index.html{self.query}")
+            self.session.page.wait_for_function("typeof window.renderFrame === 'function' && !!window.TIMELINE",
+                                                timeout=60000)
+            # renderFrame(t) snaps t to the piece's own frame grid (Math.round(t * TIMELINE.fps)); a 24 fps piece
+            # in a 30 fps timeline repeats every 4th drawing. Author pieces at the timeline fps to avoid judder.
+            self.piece_fps = self.session.page.evaluate("window.TIMELINE.fps")
+        except Exception:
+            self.close()
+            raise
+
+    def compose(self, t):
+        img = self.grab(t)
+        W, H = self.ctx.W, self.ctx.H
+        if img.size != (W, H):
+            iw, ih = img.size
+            if abs(iw / ih - W / H) < 0.01:
+                img = img.resize((W, H), Image.LANCZOS)
+            else:  # never stretch a fixed-format piece: fit it, padded with its own edge colour
+                k = min(W / iw, H / ih)
+                fit = img.resize((max(1, round(iw * k)), max(1, round(ih * k))), Image.LANCZOS)
+                out = Image.new("RGB", (W, H), img.getpixel((0, 0)))
+                out.paste(fit, ((W - fit.width) // 2, (H - fit.height) // 2))
+                img = out
+        return img.convert("RGBA")
 
     def grab(self, t):
         self._open()

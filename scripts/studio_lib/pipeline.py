@@ -15,7 +15,7 @@ from pathlib import Path
 
 from . import audio as A
 from . import ffmpeg as FF
-from . import research, subtitles, timeline
+from . import design_system, research, subtitles, timeline
 from .config import RenderSettings
 from .engines import availability
 from .render import render_all, scene_job
@@ -87,6 +87,7 @@ def plan(pdir: Path, log=print, avail=None) -> dict:
     style_errs = []
     for s in p["scenes"]:
         try:
+            design_system.apply_look(s)
             styles.apply_style(s)
         except KeyError as e:
             style_errs.append(f"scene {s['id']}: {e}")

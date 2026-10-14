@@ -124,5 +124,46 @@ class PolicyTests(unittest.TestCase):
         self.assertTrue(t2["warnings"])
 
 
+class DesignSystemTests(unittest.TestCase):
+    def test_look_fills_engine_params_and_palette(self):
+        from studio_lib import design_system as DS
+        s = DS.apply_look({"id": "x", "look": "kinetic-type", "params": {"cues": []}})
+        self.assertEqual(s["engine"], "huashu_clip")
+        self.assertEqual(s["params"]["grammar"], "y5_kinetic_type")
+        self.assertEqual(s["params"]["theme"]["bg"], DS.palette("paper")["bg"])
+        self.assertNotIn("alert", s["params"]["theme"])
+
+    def test_scene_values_win_and_unknown_look_fails(self):
+        from studio_lib import design_system as DS
+        s = DS.apply_look({"id": "x", "look": "data-editorial", "params": {"grammar": "y5_kinetic_type", "theme": "ink"}})
+        self.assertEqual(s["params"], {"grammar": "y5_kinetic_type", "theme": "ink"})
+        with self.assertRaises(KeyError):
+            DS.apply_look({"id": "x", "look": "nope"})
+
+    def test_every_look_uses_an_authentic_engine(self):
+        from studio_lib import design_system as DS
+        for name, lk in DS.load()["looks"].items():
+            self.assertEqual(TIER[lk["engine"]], "authentic", name)
+
+
+class AssetFingerprintTests(unittest.TestCase):
+    def test_editing_a_page_module_changes_the_cache_key(self):
+        import tempfile
+
+        from studio_lib.render import asset_fingerprint
+        with tempfile.TemporaryDirectory() as td:
+            d = Path(td) / "pieces" / "film"
+            (d / "node_modules").mkdir(parents=True)
+            (d / "index.html").write_text("<script src=film.js></script>")
+            (d / "film.js").write_text("a")
+            sc = {"_project_dir": td, "params": {"page": "pieces/film/index.html"}}
+            k1 = asset_fingerprint(sc)
+            (d / "node_modules" / "x.js").write_text("ignored")
+            self.assertEqual(asset_fingerprint(sc), k1)
+            (d / "film.js").write_text("b")
+            self.assertNotEqual(asset_fingerprint(sc), k1)
+            self.assertIsNone(asset_fingerprint({"params": {"page": "lemo:styles/x/index.html"}}))
+
+
 if __name__ == "__main__":
     unittest.main()
