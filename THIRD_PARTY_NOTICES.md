@@ -23,6 +23,15 @@
   - Every change is listed in `adapters/vendor/sweety_handdraw/SOURCE.md`.
 - **Not shipped:** the hosted hand sprites. The pen is drawn by code.
 
+### examples/ghost-army/pieces/mg-map/ (Ghost Army g02 map page)
+- **Approach:** follows Vincentwei1021/mg-styles-15, demo 22-hud (MIT): d3-geo projection and topojson land drawn on canvas.
+- **Bundled libraries:** d3-array 3.2.4, d3-geo 3.1.1 and topojson-client 3.1.0, each under ISC. Their licence texts are in `lib/`.
+- **Map data:** `land-50m.json` and `countries-110m.json` come from world-atlas (ISC) and are derived from Natural Earth (public domain).
+- **Fonts:** Inter, League Gothic and IBM Plex Mono, all OFL. Their licence texts are in `fonts/`.
+
+### Ghost Army pieces that drive external engines
+`pieces/crosshatch` (cth9191/animate kit), `pieces/lemo-whiteboard` and `pieces/lemo-blueprint` (lemo-opuscar engines) are original scene code. They load the upstream engines from the external checkout at build or render time and do not copy them. Each piece has a README with attribution.
+
 ## External projects driven by adapters (not shipped; use your own checkout)
 
 | Project | License | Adapter |
