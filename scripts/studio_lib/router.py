@@ -18,7 +18,8 @@ class EngineUnavailable(RuntimeError):
 
 # measured on the dev machine (1080p, ms/frame, single core) — see references/rendering.md
 COST_MS = {"kinetic": 115, "motion": 115, "whiteboard": 120, "handdrawn": 135, "artistic": 145,
-           "image_whiteboard": 160, "archival": 140, "huashu_clip": 60, "animate_piece": 400, "html_seek": 400}
+           "image_whiteboard": 160, "archival": 140, "huashu_clip": 60, "animate_piece": 400, "html_seek": 400,
+           "sweety_draw": 220}
 # engines whose upstream pages are authored for one aspect only (unless the scene says otherwise)
 LANDSCAPE_ONLY = {"html_seek"}
 
@@ -96,6 +97,7 @@ def route(scene: dict, project: dict, avail: dict | None = None, aspect: str = "
             scores["kinetic"] = scores.get("kinetic", 0) + 3  # nothing to draw: let the words carry it
         if scene.get("params", {}).get("src"):
             scores["image_whiteboard"] = scores.get("image_whiteboard", 0) + 8
+            scores["sweety_draw"] = scores.get("sweety_draw", 0) + 9  # part-ordered strokes + brush paint
         # cost: mild penalty for expensive engines on long scenes
         dur_hint = max(4.0, len(str(scene.get("narration", "")).split()) / 2.6)
         for e in list(scores):

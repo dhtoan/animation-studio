@@ -12,6 +12,17 @@
 - **License:** MIT, Copyright (c) 2026 threerocks. The full text is in `adapters/vendor/sweety_stroke_paths/LICENSE`.
 - **Modification:** none, apart from a provenance header.
 
+### adapters/vendor/sweety_handdraw/ (engine `sweety_draw`)
+- **Origin:** `skills/sweety-handdraw-video/scripts/{stroke_paths, paint_motion, stroke_assets, video_renderer, drawing_contract, video_verifier}.py` from threerocks/sweety-handdraw-video @ 5206ec0.
+- **License:** MIT, Copyright (c) 2026 threerocks. The full text is in `adapters/vendor/sweety_handdraw/LICENSE`.
+- **Modification:**
+  - The job, narration, caption, audio and cover machinery has been removed.
+  - The builders return arrays instead of writing files.
+  - Pixels that fall outside every part go to a trailing "rest" part.
+  - The pen glides between groups and is clamped to the frame.
+  - Every change is listed in `adapters/vendor/sweety_handdraw/SOURCE.md`.
+- **Not shipped:** the hosted hand sprites. The pen is drawn by code.
+
 ## External projects driven by adapters (not shipped; use your own checkout)
 
 | Project | License | Adapter |

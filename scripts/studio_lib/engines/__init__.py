@@ -7,6 +7,7 @@ from .image_whiteboard import ImageWhiteboardEngine
 from .browser import AnimatePieceEngine, HuashuClipEngine, availability as browser_availability
 from .html_seek import HtmlSeekEngine
 from .archival import ArchivalEngine
+from .sweety_draw import SweetyDrawEngine
 
 ENGINES: dict[str, type[Engine]] = {
     "whiteboard": WhiteboardEngine,
@@ -19,16 +20,18 @@ ENGINES: dict[str, type[Engine]] = {
     "animate_piece": AnimatePieceEngine,
     "html_seek": HtmlSeekEngine,
     "archival": ArchivalEngine,
+    "sweety_draw": SweetyDrawEngine,
 }
 
-NATIVE = {"whiteboard", "handdrawn", "motion", "kinetic", "artistic", "image_whiteboard", "archival"}
+NATIVE = {"whiteboard", "handdrawn", "motion", "kinetic", "artistic", "image_whiteboard", "archival", "sweety_draw"}
 
 # Visual tier. "authentic" engines run the upstream repositories' own rendering code
-# (pages, kits, stroke physics); "native" engines are this studio's Pillow drawings
+# (pages, kits, stroke physics; sweety_draw runs sweety-handdraw-video's vendored stroke + paint code,
+# adapters/vendor/sweety_handdraw); "native" engines are this studio's Pillow drawings
 # (simple figures, icon clip-art, flat maps). Projects with
 # quality_profile = "documentary-premium" may only use authentic engines unless a scene
 # opts in with allow_native + native_reason; they never fall back to a native engine.
-AUTHENTIC = {"huashu_clip", "animate_piece", "html_seek"}
+AUTHENTIC = {"huashu_clip", "animate_piece", "html_seek", "sweety_draw"}
 TIER = {n: ("authentic" if n in AUTHENTIC else "native") for n in ENGINES}
 PREMIUM_PROFILES = {"documentary-premium"}
 
@@ -45,6 +48,7 @@ FALLBACKS = {
     "html_seek": ["motion", "whiteboard"],
     "archival": ["handdrawn", "whiteboard"],
     "image_whiteboard": ["whiteboard"],
+    "sweety_draw": ["image_whiteboard"],
     "kinetic": ["motion"],
     "artistic": ["motion"],
     "handdrawn": ["whiteboard"],
