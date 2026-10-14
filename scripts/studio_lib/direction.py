@@ -18,13 +18,15 @@ from . import styles as ST
 LIGHTING = {"tension": "low-key, cool shadows, single warm accent", "wonder": "high-key, warm, open sky",
             "dark": "night, pools of light, desaturated", "resolve": "dawn light, warm rising", "drive": "bright, crisp, high contrast"}
 
+# No purpose defaults to a fully static camera: a held frame with no new element trips the
+# frozen-frame QA check (>= 4 s). "drift" keeps a subtle, readable movement.
 SHOT_BY_PURPOSE = {
     "hook": ("insert", "push_in"), "title": ("wide", "drift"), "reveal": ("close", "push_in"),
     "explain": ("medium", "drift"), "process": ("wide", "pan_right"), "data": ("medium", "push_in"),
-    "comparison": ("medium", "static"), "timeline": ("wide", "pan_right"), "story": ("medium", "pan_right"),
+    "comparison": ("medium", "drift"), "timeline": ("wide", "pan_right"), "story": ("medium", "pan_right"),
     "character": ("medium", "push_in"), "metaphor": ("wide", "pull_out"), "atmosphere": ("establishing", "pull_out"),
-    "evidence": ("close", "push_in"), "quote": ("close", "static"), "recreation": ("wide", "drift"),
-    "tutorial": ("close", "static"), "cta": ("medium", "static"), "illustration": ("wide", "drift"),
+    "evidence": ("close", "push_in"), "quote": ("close", "drift"), "recreation": ("wide", "drift"),
+    "tutorial": ("close", "drift"), "cta": ("medium", "drift"), "illustration": ("wide", "drift"),
 }
 ENERGY = {"hook": 3, "reveal": 3, "data": 2, "story": 2, "explain": 1, "process": 1, "metaphor": 2, "atmosphere": 1,
           "evidence": 2, "timeline": 1, "quote": 2, "cta": 1, "character": 2, "comparison": 2, "tutorial": 1,

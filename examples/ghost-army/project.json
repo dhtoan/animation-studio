@@ -3159,7 +3159,7 @@
         },
         {
           "from": "g11",
-          "narration": "So did painter Ellsworth Kelly, wildlife artist Arthur Singer and photographer Art Kane, all in the 603rd Engineer Camouflage Battalion.",
+          "narration": "So did painter Ellsworth Kelly, wildlife artist Arthur Singer and photographer Art Kane, all in the 603rd Engineer Camouflage Battalion. Many of its soldiers came from art schools and advertising agencies, because the Army needed people who understood how the eye could be fooled.",
           "elements": [
             {
               "type": "card",
@@ -3214,6 +3214,7 @@
     {
       "id": "short-ga3",
       "funnel_type": "unanswered question",
+      "claims_note": "C52 (contested), C30",
       "title": "Did a rubber army save 30,000 lives?",
       "chapter": "myth",
       "duration_range": [
@@ -3234,7 +3235,7 @@
         },
         {
           "from": "g39",
-          "narration": "It's widely repeated, even at the medal ceremony. But we could not find a primary study behind that number.",
+          "narration": "It's widely repeated, even at the medal ceremony. But we could not find a primary study behind that number. What the record does show is where the unit worked, what it did, and what it cost. How many lives it saved is still an open question.",
           "elements": [
             {
               "type": "text",
