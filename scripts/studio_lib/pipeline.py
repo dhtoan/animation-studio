@@ -100,10 +100,37 @@ def plan(pdir: Path, log=print, avail=None) -> dict:
             "direction": {"bible": direction.style_bible(p), "continuity": cont, "shot_plan": shot_log}}
 
 
+def tts_config(p: dict, lang: str = "en-US") -> dict:
+    """Unified voice engine -> provider config (V3). Legacy `voice.provider` projects keep working."""
+    v = p.get("voice", {"provider": "sapi"})
+    if "mode" not in v:
+        return v
+    from .voice import resolve
+
+    r = resolve(v, lang)
+    return {"provider": {"edge-tts": "edge"}.get(r["mode"], r["mode"]), "mode": r["mode"], "voice": r["voice"],
+            "edge_rate": r["rate"], "edge_pitch": r["pitch"], "rate": v.get("rate", 0), "allow_network": True,
+            "model": r.get("model"), "reason": r["reason"]}
+
+
 def narrate(p: dict, pdir: Path, log=print) -> dict:
-    cfg = p.get("voice", {"provider": "sapi"})
-    return synthesize(narration_texts(p["scenes"]), cfg, pdir / "audio" / "narration",
-                      voice_dir=pdir / "audio" / "voice", log=log)
+    cfg = tts_config(p)
+    if cfg.get("provider") == "elevenlabs":
+        from .voice import elevenlabs_ready
+
+        raise RuntimeError("ElevenLabs narration: run `studio.py voice jobs` / `voice ingest` (MCP). "
+                           + elevenlabs_ready(p.get("voice", {}))[1])
+    texts = narration_texts(p["scenes"])
+    out = synthesize(texts, cfg, pdir / "audio" / "narration", voice_dir=pdir / "audio" / "voice", log=log)
+    try:
+        from .voice import log_usage
+
+        made = [(k, texts[k]) for k, v in out.items() if not v.get("cached")]
+        log_usage(pdir, {"mode": cfg.get("mode", cfg.get("provider")), "voice": cfg.get("voice"), "lang": "en-US"},
+                  made, cached=len(texts) - len(made))
+    except Exception:
+        pass
+    return out
 
 
 def storyboard_export(p: dict, tl: dict, routes: dict, results: dict | None, pdir: Path) -> None:

@@ -1,0 +1,3272 @@
+{
+  "schema_version": 2,
+  "slug": "ghost-army",
+  "title": "The Ghost Army: America's Secret Unit of Artists and Illusions",
+  "category": "history",
+  "language": "en-US",
+  "audience": "US 55+ (primary 55-64, secondary 65+)",
+  "target_duration": 960,
+  "tolerance": 0.1,
+  "fps": 30,
+  "theme": "history",
+  "fictional": false,
+  "badge": "ILLUSTRATIVE ANIMATION",
+  "voice": {
+    "mode": "edge-tts",
+    "provider": "edge",
+    "voice": "en-US-AndrewNeural",
+    "edge_rate": "-10%",
+    "allow_network": true,
+    "languages": {
+      "es": {
+        "voice": "es-MX-JorgeNeural",
+        "rate": "+4%"
+      }
+    }
+  },
+  "music": {
+    "enabled": true,
+    "volume": 0.12
+  },
+  "art_direction": {
+    "style_id": "history-doc",
+    "palette": "history",
+    "characters": {
+      "ingersoll": "officer, blue uniform role 'cool'"
+    },
+    "rules": [
+      "dates and names on screen",
+      "contested figures framed as contested",
+      "recreations labelled ILLUSTRATIVE RECREATION",
+      "no graphic violence"
+    ]
+  },
+  "chapters": [
+    {
+      "id": "open",
+      "title": "Rubber tanks on the Rhine",
+      "mood": "tension"
+    },
+    {
+      "id": "artists",
+      "title": "An army of artists",
+      "mood": "wonder"
+    },
+    {
+      "id": "toolkit",
+      "title": "Sight, sound, radio and theater",
+      "mood": "drive"
+    },
+    {
+      "id": "normandy",
+      "title": "Normandy to Brittany",
+      "mood": "tension"
+    },
+    {
+      "id": "lux",
+      "title": "Luxembourg and the Bulge",
+      "mood": "dark"
+    },
+    {
+      "id": "viersen",
+      "title": "The last show",
+      "mood": "tension"
+    },
+    {
+      "id": "silence",
+      "title": "Fifty years of silence",
+      "mood": "dark"
+    },
+    {
+      "id": "myth",
+      "title": "Myth versus record",
+      "mood": "drive"
+    },
+    {
+      "id": "medal",
+      "title": "A gold medal at last",
+      "mood": "resolve"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "g01",
+      "chapter": "open",
+      "engine": "artistic",
+      "purpose": "hook",
+      "narration": "March, nineteen forty-five. On the west bank of the Rhine River, American forces were preparing one of the great river crossings of the Second World War. On the other side, German commanders were watching and listening for any sign of where the blow would fall. This is not the story of a famous battle. It is the story of how, for most of a year, a small American unit made the enemy see and hear things that were not there.",
+      "visual": "Night river, distant lights, slow push.",
+      "elements": [
+        {
+          "type": "text",
+          "text": "March 1945 · The Rhine",
+          "pos": [
+            0.5,
+            0.18
+          ],
+          "style": "h2",
+          "at": 0.5,
+          "font": "serif_bold",
+          "color": "light"
+        }
+      ],
+      "claims": [
+        "C31"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "layers": [
+          "hills",
+          "city"
+        ],
+        "sky": [
+          "night",
+          "night2"
+        ],
+        "fog": true
+      },
+      "camera": {
+        "move": "push_in",
+        "amount": 0.07
+      },
+      "transition": "fade_black",
+      "emotion": "suspense"
+    },
+    {
+      "id": "g02",
+      "chapter": "open",
+      "engine": "motion",
+      "purpose": "hook",
+      "narration": "Not far from the front, they could see it: the trucks, the tanks and the artillery of two American infantry divisions moving into position. They could hear engines at night. They could pick up the radio traffic.",
+      "visual": "Map of the Rhine near Viersen; two division symbols appear.",
+      "elements": [
+        {
+          "type": "map",
+          "geojson": "assets/ne_110m_admin_0_countries.geojson",
+          "bounds": [
+            -1.0,
+            47.0,
+            14.0,
+            55.0
+          ],
+          "box": [
+            0.04,
+            0.12,
+            0.92,
+            0.8
+          ],
+          "at": 0.2,
+          "dur": 1.2,
+          "highlight": [
+            {
+              "name": "Germany",
+              "color": "muted"
+            }
+          ],
+          "markers": [
+            {
+              "lon": 6.39,
+              "lat": 51.26,
+              "label": "Viersen",
+              "at": "cue:two"
+            }
+          ],
+          "routes": [],
+          "labels": [
+            {
+              "lon": 6.2,
+              "lat": 51.9,
+              "text": "RHINE",
+              "at": 0.6
+            }
+          ]
+        }
+      ],
+      "claims": [
+        "C31"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "assets": [
+        {
+          "path": "assets/ne_110m_admin_0_countries.geojson",
+          "license": "Public domain (Natural Earth)",
+          "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
+        }
+      ]
+    },
+    {
+      "id": "g03",
+      "chapter": "open",
+      "engine": "kinetic",
+      "purpose": "reveal",
+      "narration": "But those divisions were not there. The tanks were made of rubber. The engine noise was recorded. And the radio operators were impersonating units that were somewhere else entirely.",
+      "visual": "Kinetic reveal.",
+      "elements": [],
+      "claims": [
+        "C31",
+        "C13",
+        "C10",
+        "C15"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "emphasis": [
+          "not",
+          "rubber.",
+          "recorded.",
+          "impersonating"
+        ]
+      },
+      "transition": "flash_cut"
+    },
+    {
+      "id": "g04",
+      "chapter": "open",
+      "engine": "motion",
+      "purpose": "explain",
+      "narration": "This is the story of the Ghost Army: about eleven hundred American soldiers, many of them artists, whose job was to deceive the enemy on the battlefields of Europe. Their work stayed classified for decades. In this documentary we'll follow them from Tennessee to the Rhine, separate the record from the legend, and look honestly at what we still don't know.",
+      "visual": "Title card with unit count and roadmap.",
+      "elements": [
+        {
+          "type": "text",
+          "text": "THE GHOST ARMY",
+          "pos": [
+            0.5,
+            0.3
+          ],
+          "style": "hero",
+          "at": 0.3,
+          "font": "serif_bold",
+          "color": "light"
+        },
+        {
+          "type": "text",
+          "text": "23rd Headquarters Special Troops · 3133rd Signal Service Company",
+          "pos": [
+            0.5,
+            0.45
+          ],
+          "style": "body",
+          "at": 1.2,
+          "color": "muted"
+        },
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 1100,
+          "prefix": "≈ ",
+          "pos": [
+            0.5,
+            0.66
+          ],
+          "at": "cue:eleven",
+          "dur": 1.6,
+          "style": "h1",
+          "label": "soldiers",
+          "color": "accent"
+        }
+      ],
+      "claims": [
+        "C1",
+        "C5",
+        "C37"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g05",
+      "chapter": "artists",
+      "engine": "handdrawn",
+      "purpose": "story",
+      "narration": "The idea came from Ralph Ingersoll, an American officer who had worked with the British on deception planning for Operation Fortitude, the effort to mislead Germany about the D-Day landings. Ingersoll proposed something the U.S. Army did not yet have: a unit devoted entirely to deception.",
+      "visual": "Sketch of an officer at a planning table with a map.",
+      "elements": [
+        {
+          "type": "character",
+          "pos": [
+            0.24,
+            0.9
+          ],
+          "height": 0.5,
+          "pose": "point",
+          "at": 0.3,
+          "talk": true,
+          "color": "cool"
+        },
+        {
+          "type": "card",
+          "box": [
+            0.5,
+            0.22,
+            0.4,
+            0.34
+          ],
+          "tag": "Proposal",
+          "title": "A U.S. unit for deception",
+          "body": "Ralph Ingersoll, after work on Operation Fortitude planning",
+          "at": "cue:proposed",
+          "tone": "light"
+        },
+        {
+          "type": "text",
+          "text": "Ralph Ingersoll",
+          "pos": [
+            0.24,
+            0.12
+          ],
+          "style": "h3",
+          "at": 0.6
+        }
+      ],
+      "claims": [
+        "C4"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "characters": [
+        "ingersoll"
+      ],
+      "transition": "fade_black"
+    },
+    {
+      "id": "g06",
+      "chapter": "artists",
+      "engine": "motion",
+      "purpose": "timeline",
+      "narration": "On January twentieth, nineteen forty-four, the 23rd Headquarters Special Troops was activated at Camp Forrest, Tennessee, under Colonel Harry Reeder, who would command it for the rest of the war. From there, its men would train, ship out, and eventually cross the Atlantic to England and the battlefields of France.",
+      "visual": "U.S. map with Camp Forrest marker and activation date.",
+      "elements": [
+        {
+          "type": "map",
+          "geojson": "assets/ne_110m_admin_0_countries.geojson",
+          "bounds": [
+            -92.0,
+            33.0,
+            -70.0,
+            46.0
+          ],
+          "box": [
+            0.04,
+            0.2,
+            0.55,
+            0.72
+          ],
+          "at": 0.2,
+          "dur": 1.2,
+          "highlight": [
+            {
+              "name": "United States of America",
+              "color": "light"
+            }
+          ],
+          "markers": [
+            {
+              "lon": -86.21,
+              "lat": 35.36,
+              "label": "Camp Forrest, Tennessee",
+              "at": "cue:camp"
+            }
+          ],
+          "routes": [],
+          "labels": []
+        },
+        {
+          "type": "text",
+          "text": "January 20, 1944",
+          "pos": [
+            0.78,
+            0.32
+          ],
+          "style": "h2",
+          "at": "cue:january",
+          "color": "accent"
+        },
+        {
+          "type": "text",
+          "text": "Activated: 23rd HQ Special Troops",
+          "pos": [
+            0.78,
+            0.44
+          ],
+          "style": "body",
+          "at": "cue:activated"
+        },
+        {
+          "type": "text",
+          "text": "Commander: Col. Harry L. Reeder",
+          "pos": [
+            0.78,
+            0.54
+          ],
+          "style": "body",
+          "at": "cue:colonel"
+        }
+      ],
+      "claims": [
+        "C2",
+        "C3"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "assets": [
+        {
+          "path": "assets/ne_110m_admin_0_countries.geojson",
+          "license": "Public domain (Natural Earth)",
+          "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
+        }
+      ]
+    },
+    {
+      "id": "g07",
+      "chapter": "artists",
+      "engine": "motion",
+      "purpose": "data",
+      "narration": "Its authorized strength was eighty-two officers and one thousand twenty-three enlisted men. About eleven hundred people, whose job was to look and sound like forces many times their size.",
+      "visual": "Two counters and a crowd grid.",
+      "elements": [
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 82,
+          "pos": [
+            0.3,
+            0.3
+          ],
+          "at": "cue:eighty-two",
+          "dur": 1.2,
+          "style": "h1",
+          "label": "officers"
+        },
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 1023,
+          "pos": [
+            0.7,
+            0.3
+          ],
+          "at": "cue:thousand",
+          "dur": 1.6,
+          "style": "h1",
+          "label": "enlisted men"
+        },
+        {
+          "type": "crowd",
+          "box": [
+            0.15,
+            0.52,
+            0.7,
+            0.36
+          ],
+          "count": 44,
+          "cols": 22,
+          "at": "cue:eleven",
+          "color": "cool"
+        }
+      ],
+      "claims": [
+        "C5"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g08",
+      "chapter": "artists",
+      "engine": "whiteboard",
+      "purpose": "process",
+      "narration": "The 23rd was built from specialized parts. A camouflage battalion handled visual deception. A special signal company handled radio. A sonic company, the 3132nd, handled sound. And an engineer combat company guarded the perimeter and helped stage the illusions.",
+      "visual": "Whiteboard org chart of four components.",
+      "elements": [
+        {
+          "type": "text",
+          "text": "23rd Headquarters Special Troops",
+          "pos": [
+            0.5,
+            0.12
+          ],
+          "style": "h2",
+          "at": 0.2,
+          "underline": true
+        },
+        {
+          "type": "icon",
+          "name": "star",
+          "pos": [
+            0.14,
+            0.45
+          ],
+          "size": 0.07,
+          "at": "cue:camouflage",
+          "label": "603rd Camouflage · visual"
+        },
+        {
+          "type": "icon",
+          "name": "server",
+          "pos": [
+            0.38,
+            0.45
+          ],
+          "size": 0.07,
+          "at": "cue:radio.",
+          "label": "Signal Co. Special · radio"
+        },
+        {
+          "type": "icon",
+          "name": "cloud",
+          "pos": [
+            0.62,
+            0.45
+          ],
+          "size": 0.07,
+          "at": "cue:sound.",
+          "label": "3132nd · sound"
+        },
+        {
+          "type": "icon",
+          "name": "truck",
+          "pos": [
+            0.86,
+            0.45
+          ],
+          "size": 0.07,
+          "at": "cue:engineer",
+          "label": "406th Engineers · security"
+        },
+        {
+          "type": "text",
+          "text": "small force → looks like a big one",
+          "pos": [
+            0.5,
+            0.82
+          ],
+          "style": "h3",
+          "at": "cue:illusions.",
+          "color": "accent"
+        }
+      ],
+      "claims": [
+        "C6"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "transition": "crossfade"
+    },
+    {
+      "id": "g09",
+      "chapter": "artists",
+      "engine": "huashu_clip",
+      "purpose": "data",
+      "narration": "The camouflage battalion, the 603rd Engineers, was the largest piece, with roughly three hundred eighty men. The radio company had about three hundred, the engineers about one hundred seventy, and the sound company about one hundred forty-five.",
+      "visual": "Editorial bar chart of approximate component strengths.",
+      "elements": [],
+      "claims": [
+        "C7"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "grammar": "t3_finance_chart",
+        "theme": "paper",
+        "data": {
+          "title": "Approximate strength of the 23rd's components",
+          "unit": "men (approximate)",
+          "source": "Source: National WWII Museum; Ghost Army Legacy Project (Fox history)",
+          "chart": "bar",
+          "decimals": 0,
+          "series": [
+            {
+              "label": "603rd camouflage",
+              "value": 379
+            },
+            {
+              "label": "Signal Co. Special",
+              "value": 296
+            },
+            {
+              "label": "406th engineers",
+              "value": 168
+            },
+            {
+              "label": "3132nd sonic",
+              "value": 145
+            }
+          ],
+          "highlight": {
+            "index": 0,
+            "text": "≈ 380",
+            "sub": "largest unit"
+          }
+        },
+        "cues": [
+          {
+            "at": "cue:three",
+            "kind": "bar",
+            "data": {
+              "index": 0
+            }
+          },
+          {
+            "at": "cue:radio",
+            "kind": "bar",
+            "data": {
+              "index": 1
+            }
+          },
+          {
+            "at": "cue:engineers",
+            "kind": "bar",
+            "data": {
+              "index": 2
+            }
+          },
+          {
+            "at": "cue:sound",
+            "kind": "bar",
+            "data": {
+              "index": 3
+            }
+          },
+          {
+            "at": "end-1.5",
+            "kind": "highlight"
+          }
+        ]
+      },
+      "camera": {
+        "move": "drift"
+      }
+    },
+    {
+      "id": "g10",
+      "chapter": "artists",
+      "engine": "handdrawn",
+      "purpose": "character",
+      "narration": "And here is the unusual part. Many of these soldiers, especially in the 603rd, came from art schools, advertising agencies and other creative or technical fields. The Army needed people who understood how the eye could be fooled.",
+      "visual": "Sketched crowd of artists with brushes and drafting tools.",
+      "elements": [
+        {
+          "type": "crowd",
+          "box": [
+            0.06,
+            0.25,
+            0.4,
+            0.5
+          ],
+          "count": 12,
+          "at": 0.3,
+          "color": "accent"
+        },
+        {
+          "type": "icon",
+          "name": "lightbulb",
+          "pos": [
+            0.62,
+            0.4
+          ],
+          "size": 0.08,
+          "at": "cue:art",
+          "label": "art schools"
+        },
+        {
+          "type": "icon",
+          "name": "document",
+          "pos": [
+            0.82,
+            0.4
+          ],
+          "size": 0.07,
+          "at": "cue:advertising",
+          "label": "ad agencies"
+        },
+        {
+          "type": "text",
+          "text": "How do you fool the eye?",
+          "pos": [
+            0.72,
+            0.75
+          ],
+          "style": "h3",
+          "at": "cue:eye",
+          "color": "negative"
+        }
+      ],
+      "claims": [
+        "C18"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "fill": "hatch"
+      }
+    },
+    {
+      "id": "g11",
+      "chapter": "artists",
+      "engine": "handdrawn",
+      "purpose": "character",
+      "narration": "Some of their names became famous after the war. The painter Ellsworth Kelly served in the 603rd. So did fashion designer Bill Blass, wildlife artist Arthur Singer, and photographer Art Kane. Arthur Singer's wartime watercolors still survive.",
+      "visual": "Four name cards pinned to a board.",
+      "elements": [
+        {
+          "type": "card",
+          "box": [
+            0.05,
+            0.22,
+            0.21,
+            0.28
+          ],
+          "title": "Ellsworth Kelly",
+          "body": "painter",
+          "at": "cue:ellsworth",
+          "tone": "light"
+        },
+        {
+          "type": "card",
+          "box": [
+            0.28,
+            0.22,
+            0.21,
+            0.28
+          ],
+          "title": "Bill Blass",
+          "body": "fashion designer",
+          "at": "cue:blass,",
+          "tone": "light"
+        },
+        {
+          "type": "card",
+          "box": [
+            0.51,
+            0.22,
+            0.21,
+            0.28
+          ],
+          "title": "Arthur Singer",
+          "body": "wildlife artist",
+          "at": "cue:arthur",
+          "tone": "light"
+        },
+        {
+          "type": "card",
+          "box": [
+            0.74,
+            0.22,
+            0.21,
+            0.28
+          ],
+          "title": "Art Kane",
+          "body": "photographer",
+          "at": "cue:kane.",
+          "tone": "light"
+        },
+        {
+          "type": "text",
+          "text": "All served in the 603rd Engineer Camouflage Battalion",
+          "pos": [
+            0.5,
+            0.68
+          ],
+          "style": "body",
+          "at": "cue:watercolors"
+        }
+      ],
+      "claims": [
+        "C41",
+        "C42",
+        "C43",
+        "C44"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g12",
+      "chapter": "toolkit",
+      "engine": "whiteboard",
+      "purpose": "explain",
+      "narration": "So far we have an unusual unit of about eleven hundred men, many of them artists. Now, how did they actually fool an enemy army? The Ghost Army worked with four tools: things you could see, things you could hear, radio traffic, and a kind of theater. Used together, they could make a small force look and sound like a large one.",
+      "visual": "Four tools drawn as icons.",
+      "elements": [
+        {
+          "type": "text",
+          "text": "Four tools of deception",
+          "pos": [
+            0.5,
+            0.12
+          ],
+          "style": "h1",
+          "at": 0.2,
+          "underline": true
+        },
+        {
+          "type": "icon",
+          "name": "magnifier",
+          "pos": [
+            0.16,
+            0.48
+          ],
+          "size": 0.08,
+          "at": "cue:see,",
+          "label": "sight"
+        },
+        {
+          "type": "icon",
+          "name": "cloud",
+          "pos": [
+            0.39,
+            0.48
+          ],
+          "size": 0.08,
+          "at": "cue:hear,",
+          "label": "sound"
+        },
+        {
+          "type": "icon",
+          "name": "server",
+          "pos": [
+            0.62,
+            0.48
+          ],
+          "size": 0.08,
+          "at": "cue:radio",
+          "label": "radio"
+        },
+        {
+          "type": "icon",
+          "name": "star",
+          "pos": [
+            0.85,
+            0.48
+          ],
+          "size": 0.08,
+          "at": "cue:theater.",
+          "label": "theater"
+        }
+      ],
+      "claims": [
+        "C13",
+        "C10",
+        "C15",
+        "C16",
+        "C53"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "transition": "fade_black"
+    },
+    {
+      "id": "g13",
+      "chapter": "toolkit",
+      "engine": "image_whiteboard",
+      "purpose": "illustration",
+      "narration": "Visual deception relied on inflatable rubber decoys: tanks, artillery, trucks and even aircraft. Some were manufactured by U.S. Rubber and Goodyear. From the air, or from a distance, a field of them could look like an armored force.",
+      "visual": "An inflatable tank illustration is drawn stroke by stroke.",
+      "elements": [
+        {
+          "type": "text",
+          "text": "inflatable decoys",
+          "pos": [
+            0.82,
+            0.16
+          ],
+          "style": "h2",
+          "at": "cue:inflatable",
+          "font": "hand_bold",
+          "color": "accent"
+        }
+      ],
+      "claims": [
+        "C13",
+        "C14"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "src": "assets/decoy-tank.png",
+        "order": "strokes",
+        "draw_time": 10.0,
+        "box": [
+          0.03,
+          0.12,
+          0.66,
+          0.8
+        ]
+      },
+      "assets": [
+        {
+          "path": "assets/decoy-tank.png",
+          "license": "Original (generated by make_assets.py)",
+          "source": "procedural illustration"
+        }
+      ]
+    },
+    {
+      "id": "g14",
+      "chapter": "toolkit",
+      "engine": "archival",
+      "purpose": "recreation",
+      "narration": "There's a well-known story, told by veterans, that two French civilians on bicycles once slipped past the perimeter and saw four American soldiers lifting what looked like a forty-ton Sherman tank. It comes from veterans' recollections, and one of them later painted the scene. We'll treat it as oral history, not documented fact.",
+      "visual": "Archival-style recreation: four soldiers lift a tank shape; two bicycles; label ORAL HISTORY.",
+      "elements": [
+        {
+          "type": "character",
+          "pos": [
+            0.18,
+            0.88
+          ],
+          "height": 0.34,
+          "pose": "shock",
+          "at": "cue:bicycles",
+          "color": "muted"
+        },
+        {
+          "type": "character",
+          "pos": [
+            0.27,
+            0.88
+          ],
+          "height": 0.34,
+          "pose": "shock",
+          "at": "cue:bicycles",
+          "color": "muted"
+        },
+        {
+          "type": "shape",
+          "kind": "rect",
+          "box": [
+            0.48,
+            0.42,
+            0.34,
+            0.2
+          ],
+          "fill": "muted",
+          "at": "cue:lifting",
+          "radius": 0.03
+        },
+        {
+          "type": "character",
+          "pos": [
+            0.5,
+            0.88
+          ],
+          "height": 0.32,
+          "pose": "celebrate",
+          "at": "cue:four"
+        },
+        {
+          "type": "character",
+          "pos": [
+            0.6,
+            0.88
+          ],
+          "height": 0.32,
+          "pose": "celebrate",
+          "at": "cue:four"
+        },
+        {
+          "type": "character",
+          "pos": [
+            0.7,
+            0.88
+          ],
+          "height": 0.32,
+          "pose": "celebrate",
+          "at": "cue:four"
+        },
+        {
+          "type": "character",
+          "pos": [
+            0.8,
+            0.88
+          ],
+          "height": 0.32,
+          "pose": "celebrate",
+          "at": "cue:four"
+        },
+        {
+          "type": "stamp",
+          "text": "Oral history",
+          "pos": [
+            0.5,
+            0.2
+          ],
+          "at": "cue:oral",
+          "color": "ink",
+          "angle": -6,
+          "scale": 0.06
+        }
+      ],
+      "claims": [
+        "C45"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "label_text": "ILLUSTRATIVE RECREATION · ORAL HISTORY"
+      }
+    },
+    {
+      "id": "g15",
+      "chapter": "toolkit",
+      "engine": "whiteboard",
+      "purpose": "explain",
+      "narration": "Sound was the second tool. The sonic companies trained at the Army Experimental Station at Pine Camp, New York, today's Fort Drum. Their equipment was developed with Bell Labs. Recorded soundtracks were played from wire recorders through powerful speakers mounted on vehicles. Congress later described the two sonic companies as the only American sonic deception ground units of the war.",
+      "visual": "Speaker vehicle with sound waves; Bell Labs + wire recorder labels.",
+      "elements": [
+        {
+          "type": "icon",
+          "name": "truck",
+          "pos": [
+            0.3,
+            0.55
+          ],
+          "size": 0.12,
+          "at": 0.3,
+          "label": "speaker vehicle"
+        },
+        {
+          "type": "arrow",
+          "from": [
+            0.42,
+            0.5
+          ],
+          "to": [
+            0.62,
+            0.42
+          ],
+          "at": "cue:speakers",
+          "curve": 0.1,
+          "label": "recorded sound"
+        },
+        {
+          "type": "arrow",
+          "from": [
+            0.42,
+            0.56
+          ],
+          "to": [
+            0.62,
+            0.56
+          ],
+          "at": "cue:speakers",
+          "curve": 0.0
+        },
+        {
+          "type": "list",
+          "box": [
+            0.62,
+            0.28,
+            0.36,
+            0.4
+          ],
+          "at": "cue:pine",
+          "dur": 6.0,
+          "marker": "dot",
+          "items": [
+            "Pine Camp, N.Y. (Fort Drum)",
+            "Developed with Bell Labs",
+            "Wire recorders",
+            "Vehicle-mounted speakers"
+          ]
+        }
+      ],
+      "claims": [
+        "C8",
+        "C10",
+        "C9"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "transition": "crossfade"
+    },
+    {
+      "id": "g16",
+      "chapter": "toolkit",
+      "engine": "motion",
+      "purpose": "evidence",
+      "narration": "One museum account says the sound could carry up to about fifteen miles. That is an account, not a measured test, so treat it as an estimate. To aim the sound, the team even used a mobile weather station mounted on a jeep.",
+      "visual": "Expanding sound rings labelled 'up to ~15 miles (estimate)'.",
+      "elements": [
+        {
+          "type": "shape",
+          "kind": "circle",
+          "box": [
+            0.35,
+            0.2,
+            0.3,
+            0.53
+          ],
+          "color": "accent",
+          "at": "cue:fifteen",
+          "dur": 1.2
+        },
+        {
+          "type": "shape",
+          "kind": "circle",
+          "box": [
+            0.27,
+            0.06,
+            0.46,
+            0.82
+          ],
+          "color": "muted",
+          "at": "cue:miles",
+          "dur": 1.2
+        },
+        {
+          "type": "icon",
+          "name": "truck",
+          "pos": [
+            0.5,
+            0.47
+          ],
+          "size": 0.05,
+          "at": 0.2
+        },
+        {
+          "type": "text",
+          "text": "up to ~15 miles (one source; estimate)",
+          "pos": [
+            0.5,
+            0.92
+          ],
+          "style": "body",
+          "at": "cue:estimate.",
+          "color": "accent"
+        },
+        {
+          "type": "icon",
+          "name": "cloud",
+          "pos": [
+            0.86,
+            0.3
+          ],
+          "size": 0.05,
+          "at": "cue:weather",
+          "label": "jeep weather station"
+        }
+      ],
+      "claims": [
+        "C11",
+        "C12"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g17",
+      "chapter": "toolkit",
+      "engine": "motion",
+      "purpose": "explain",
+      "narration": "The third tool was radio. Spoof radio operators created phony networks and imitated the operators of real units. Some could copy an individual operator's Morse code style, known as his fist, so listeners would believe a familiar unit was still on the air.",
+      "visual": "Network of fake radio stations.",
+      "elements": [
+        {
+          "type": "text",
+          "text": "Spoof radio",
+          "pos": [
+            0.5,
+            0.1
+          ],
+          "style": "h2",
+          "at": 0.2
+        },
+        {
+          "type": "network",
+          "at": "cue:phony",
+          "dur": 3.0,
+          "nodes": [
+            {
+              "id": "a",
+              "label": "real unit (gone)",
+              "pos": [
+                0.2,
+                0.3
+              ],
+              "color": "muted"
+            },
+            {
+              "id": "b",
+              "label": "spoof operator",
+              "pos": [
+                0.5,
+                0.55
+              ],
+              "icon": "server",
+              "size": 0.06,
+              "color": "accent"
+            },
+            {
+              "id": "c",
+              "label": "phony net",
+              "pos": [
+                0.8,
+                0.3
+              ]
+            },
+            {
+              "id": "d",
+              "label": "phony net",
+              "pos": [
+                0.8,
+                0.78
+              ]
+            },
+            {
+              "id": "e",
+              "label": "enemy listener",
+              "pos": [
+                0.2,
+                0.78
+              ],
+              "color": "negative"
+            }
+          ],
+          "edges": [
+            [
+              "b",
+              "c"
+            ],
+            [
+              "b",
+              "d"
+            ],
+            [
+              "b",
+              "e"
+            ],
+            [
+              "a",
+              "b"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "copying an operator's 'fist'",
+          "pos": [
+            0.5,
+            0.94
+          ],
+          "style": "body",
+          "at": "cue:fist,",
+          "color": "accent"
+        }
+      ],
+      "claims": [
+        "C15"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g18",
+      "chapter": "toolkit",
+      "engine": "handdrawn",
+      "purpose": "explain",
+      "narration": "The fourth tool was theater, which the unit called special effects: counterfeit shoulder patches, false vehicle markings, phony headquarters, and even officers posing as generals, all meant to feed false information to enemy agents who might be watching.",
+      "visual": "Sketched patches, painted truck markings, an officer with fake stars.",
+      "elements": [
+        {
+          "type": "icon",
+          "name": "star",
+          "pos": [
+            0.18,
+            0.45
+          ],
+          "size": 0.07,
+          "at": "cue:patches,",
+          "label": "fake patches"
+        },
+        {
+          "type": "icon",
+          "name": "truck",
+          "pos": [
+            0.4,
+            0.45
+          ],
+          "size": 0.07,
+          "at": "cue:markings,",
+          "label": "false markings"
+        },
+        {
+          "type": "icon",
+          "name": "building",
+          "pos": [
+            0.62,
+            0.45
+          ],
+          "size": 0.07,
+          "at": "cue:headquarters,",
+          "label": "phony HQ"
+        },
+        {
+          "type": "character",
+          "pos": [
+            0.84,
+            0.86
+          ],
+          "height": 0.42,
+          "pose": "stand",
+          "at": "cue:generals,",
+          "color": "accent"
+        },
+        {
+          "type": "text",
+          "text": "feed false information",
+          "pos": [
+            0.4,
+            0.82
+          ],
+          "style": "h3",
+          "at": "cue:false",
+          "color": "negative"
+        }
+      ],
+      "claims": [
+        "C16"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g19",
+      "chapter": "toolkit",
+      "engine": "whiteboard",
+      "purpose": "process",
+      "narration": "And the 406th Engineer Combat Company did the heavy work. Its men guarded the perimeter, used bulldozers to create fake tank tracks and gun positions, and sometimes played the part of military police.",
+      "visual": "Bulldozed fake tank tracks drawn across a field.",
+      "elements": [
+        {
+          "type": "shape",
+          "kind": "line",
+          "from": [
+            0.1,
+            0.7
+          ],
+          "to": [
+            0.9,
+            0.4
+          ],
+          "at": "cue:bulldozers",
+          "color": "ink",
+          "weight": 0.012
+        },
+        {
+          "type": "shape",
+          "kind": "line",
+          "from": [
+            0.1,
+            0.76
+          ],
+          "to": [
+            0.9,
+            0.46
+          ],
+          "at": "cue:tracks",
+          "color": "ink",
+          "weight": 0.012
+        },
+        {
+          "type": "icon",
+          "name": "box",
+          "pos": [
+            0.2,
+            0.35
+          ],
+          "size": 0.06,
+          "at": "cue:guarded",
+          "label": "perimeter"
+        },
+        {
+          "type": "icon",
+          "name": "warning",
+          "pos": [
+            0.75,
+            0.78
+          ],
+          "size": 0.05,
+          "at": "cue:police.",
+          "label": "'MPs'"
+        }
+      ],
+      "claims": [
+        "C17"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g20",
+      "chapter": "normandy",
+      "engine": "motion",
+      "purpose": "story",
+      "narration": "We've seen the tools. Now let's follow the unit across Europe, starting on the beaches of Normandy. The Ghost Army's war began there. Four of its members landed on D-Day itself, and two became casualties while building false beach landing sites. Seymour Nussenbaum, who had studied art at the Pratt Institute, landed on Omaha Beach about two weeks later.",
+      "visual": "Map of Normandy with Omaha Beach marker.",
+      "elements": [
+        {
+          "type": "map",
+          "geojson": "assets/ne_110m_admin_0_countries.geojson",
+          "bounds": [
+            -6.5,
+            45.5,
+            11.0,
+            54.5
+          ],
+          "box": [
+            0.04,
+            0.12,
+            0.92,
+            0.8
+          ],
+          "at": 0.2,
+          "dur": 1.2,
+          "highlight": [
+            {
+              "name": "France",
+              "color": "light"
+            }
+          ],
+          "markers": [
+            {
+              "lon": -0.87,
+              "lat": 49.37,
+              "label": "Omaha Beach",
+              "at": "cue:d-day"
+            }
+          ],
+          "routes": [],
+          "labels": [
+            {
+              "lon": -2.5,
+              "lat": 50.3,
+              "text": "ENGLISH CHANNEL",
+              "at": 0.6
+            }
+          ]
+        }
+      ],
+      "claims": [
+        "C19",
+        "C56"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "assets": [
+        {
+          "path": "assets/ne_110m_admin_0_countries.geojson",
+          "license": "Public domain (Natural Earth)",
+          "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
+        }
+      ],
+      "transition": "fade_black"
+    },
+    {
+      "id": "g21",
+      "chapter": "normandy",
+      "engine": "archival",
+      "purpose": "recreation",
+      "narration": "On June fourteenth, nineteen forty-four, a sixteen-man detachment called Task Force Mason set up dummy artillery to draw enemy fire away from a real American artillery battalion. It was the unit's first battlefield deception in France.",
+      "visual": "Archival-style sketch of dummy guns in a field.",
+      "elements": [
+        {
+          "type": "icon",
+          "name": "flame",
+          "pos": [
+            0.3,
+            0.45
+          ],
+          "size": 0.08,
+          "at": "cue:fire",
+          "label": "draws fire"
+        },
+        {
+          "type": "icon",
+          "name": "box",
+          "pos": [
+            0.55,
+            0.5
+          ],
+          "size": 0.07,
+          "at": "cue:dummy",
+          "label": "dummy artillery"
+        },
+        {
+          "type": "text",
+          "text": "June 14, 1944 · Task Force Mason",
+          "pos": [
+            0.5,
+            0.14
+          ],
+          "style": "h2",
+          "at": "cue:june",
+          "font": "serif_bold"
+        }
+      ],
+      "claims": [
+        "C21"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g22",
+      "chapter": "normandy",
+      "engine": "motion",
+      "purpose": "timeline",
+      "narration": "Not every assignment was deception. Lieutenant Fred Fox's radio operators, whose planned operation had been cancelled, were attached to the Eighty-Second Airborne Division, which had lost ninety-five percent of its radio equipment. Then, in early July, Operation Elephant covered the Second Armored Division as it moved into the line. Congress later called it the first of twenty-one full-scale tactical deceptions.",
+      "visual": "Timeline June–July 1944.",
+      "elements": [
+        {
+          "type": "timeline",
+          "box": [
+            0.06,
+            0.32,
+            0.88,
+            0.36
+          ],
+          "at": 0.3,
+          "dur": 8.0,
+          "horizontal": true,
+          "events": [
+            {
+              "label": "June 6",
+              "sub": "D-Day"
+            },
+            {
+              "label": "June 14",
+              "sub": "Task Force Mason"
+            },
+            {
+              "label": "June",
+              "sub": "radio help to 82nd Airborne"
+            },
+            {
+              "label": "July 1–4",
+              "sub": "Operation Elephant",
+              "color": "negative"
+            }
+          ]
+        },
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 95,
+          "suffix": "%",
+          "pos": [
+            0.5,
+            0.82
+          ],
+          "at": "cue:ninety-five",
+          "dur": 1.0,
+          "style": "h2",
+          "label": "of the 82nd's radio equipment lost"
+        }
+      ],
+      "claims": [
+        "C20",
+        "C22"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g23",
+      "chapter": "normandy",
+      "engine": "motion",
+      "purpose": "story",
+      "narration": "In August, the unit moved to Brittany, supporting the Allied advance and the siege of the port city of Brest. According to one detailed nonprofit account, it was at Brest that the unit first combined visual, sonic and radio deception in a single operation.",
+      "visual": "Map: route from Normandy to Brest.",
+      "elements": [
+        {
+          "type": "map",
+          "geojson": "assets/ne_110m_admin_0_countries.geojson",
+          "bounds": [
+            -6.5,
+            45.5,
+            11.0,
+            54.5
+          ],
+          "box": [
+            0.04,
+            0.12,
+            0.92,
+            0.8
+          ],
+          "at": 0.2,
+          "dur": 1.2,
+          "highlight": [
+            {
+              "name": "France",
+              "color": "light"
+            }
+          ],
+          "markers": [
+            {
+              "lon": -0.87,
+              "lat": 49.37,
+              "label": "Normandy",
+              "at": 0.4
+            },
+            {
+              "lon": -4.49,
+              "lat": 48.39,
+              "label": "Brest",
+              "at": "cue:brest."
+            }
+          ],
+          "routes": [
+            {
+              "path": [
+                [
+                  -1.09,
+                  49.12
+                ],
+                [
+                  -2.0,
+                  48.6
+                ],
+                [
+                  -4.49,
+                  48.39
+                ]
+              ],
+              "at": "cue:august",
+              "dur": 3.0,
+              "color": "accent"
+            }
+          ],
+          "labels": []
+        }
+      ],
+      "claims": [
+        "C24",
+        "C25"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "assets": [
+        {
+          "path": "assets/ne_110m_admin_0_countries.geojson",
+          "license": "Public domain (Natural Earth)",
+          "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
+        }
+      ]
+    },
+    {
+      "id": "g24",
+      "chapter": "lux",
+      "engine": "motion",
+      "purpose": "story",
+      "narration": "By the end of the summer of nineteen forty-four, the unit had worked in Normandy and in Brittany. Next came Luxembourg. In September came one of the boldest bluffs. Patton's Third Army had a thinly held stretch of line in Luxembourg. In Operation Bettembourg, about five hundred men impersonated the roughly eight thousand men of the Sixth Armored Division.",
+      "visual": "Map of Luxembourg; Bettembourg marker; 500 vs 8,000.",
+      "elements": [
+        {
+          "type": "map",
+          "geojson": "assets/ne_110m_admin_0_countries.geojson",
+          "bounds": [
+            -1.0,
+            46.5,
+            13.0,
+            54.0
+          ],
+          "box": [
+            0.03,
+            0.1,
+            0.55,
+            0.82
+          ],
+          "at": 0.2,
+          "dur": 1.2,
+          "highlight": [
+            {
+              "name": "Luxembourg",
+              "color": "accent"
+            }
+          ],
+          "markers": [
+            {
+              "lon": 6.1,
+              "lat": 49.52,
+              "label": "Bettembourg",
+              "at": "cue:bettembourg,"
+            }
+          ],
+          "routes": [],
+          "labels": []
+        },
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 500,
+          "pos": [
+            0.78,
+            0.32
+          ],
+          "at": "cue:five",
+          "dur": 1.0,
+          "style": "h1",
+          "label": "real men"
+        },
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 8000,
+          "pos": [
+            0.78,
+            0.66
+          ],
+          "at": "cue:eight",
+          "dur": 1.4,
+          "style": "h1",
+          "label": "men of the division they impersonated",
+          "color": "accent"
+        }
+      ],
+      "claims": [
+        "C26"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "assets": [
+        {
+          "path": "assets/ne_110m_admin_0_countries.geojson",
+          "license": "Public domain (Natural Earth)",
+          "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
+        }
+      ],
+      "transition": "fade_black"
+    },
+    {
+      "id": "g25",
+      "chapter": "lux",
+      "engine": "archival",
+      "purpose": "recreation",
+      "narration": "For three months, from late September to just before Christmas nineteen forty-four, most of the unit was housed in a building in the Limpertsberg district of Luxembourg City. Luxembourg's government says more than a third of the unit's missions took place in Luxembourg.",
+      "visual": "Archival-style sketch of a city building and calendar.",
+      "elements": [
+        {
+          "type": "icon",
+          "name": "building",
+          "pos": [
+            0.32,
+            0.5
+          ],
+          "size": 0.14,
+          "at": 0.3,
+          "label": "Limpertsberg, Luxembourg City"
+        },
+        {
+          "type": "text",
+          "text": "Sept 25 – Dec 22, 1944",
+          "pos": [
+            0.72,
+            0.36
+          ],
+          "style": "h2",
+          "at": "cue:three",
+          "font": "serif_bold"
+        },
+        {
+          "type": "text",
+          "text": "> 1/3 of missions in Luxembourg (per Luxembourg government)",
+          "pos": [
+            0.72,
+            0.6
+          ],
+          "style": "body",
+          "at": "cue:third",
+          "max_width": 0.4
+        }
+      ],
+      "claims": [
+        "C27"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g26",
+      "chapter": "lux",
+      "engine": "motion",
+      "purpose": "story",
+      "narration": "During the Battle of the Bulge, the 23rd broadcast fake radio traffic suggesting that parts of Patton's Third Army were moving toward the besieged town of Bastogne.",
+      "visual": "Map: radio waves pointing toward Bastogne.",
+      "elements": [
+        {
+          "type": "map",
+          "geojson": "assets/ne_110m_admin_0_countries.geojson",
+          "bounds": [
+            -1.0,
+            46.5,
+            13.0,
+            54.0
+          ],
+          "box": [
+            0.04,
+            0.12,
+            0.92,
+            0.8
+          ],
+          "at": 0.2,
+          "dur": 1.2,
+          "highlight": [
+            {
+              "name": "Belgium",
+              "color": "light"
+            }
+          ],
+          "markers": [
+            {
+              "lon": 5.72,
+              "lat": 50.0,
+              "label": "Bastogne (besieged)",
+              "at": "cue:bastogne."
+            }
+          ],
+          "routes": [
+            {
+              "path": [
+                [
+                  6.13,
+                  49.61
+                ],
+                [
+                  5.72,
+                  50.0
+                ]
+              ],
+              "at": "cue:fake",
+              "dur": 2.5,
+              "color": "accent",
+              "dashed": true
+            }
+          ],
+          "labels": []
+        }
+      ],
+      "claims": [
+        "C28"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "assets": [
+        {
+          "path": "assets/ne_110m_admin_0_countries.geojson",
+          "license": "Public domain (Natural Earth)",
+          "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
+        }
+      ]
+    },
+    {
+      "id": "g27",
+      "chapter": "viersen",
+      "engine": "artistic",
+      "purpose": "atmosphere",
+      "narration": "Deception was not safe work. In March nineteen forty-five, during Operation Bouzonville, the unit simulated the Eightieth Infantry Division. It became its costliest operation: two men killed and fifteen wounded. In all, three soldiers of the 23rd were killed in the war, and dozens were wounded.",
+      "visual": "Dark sky, silhouettes, a single line of text.",
+      "elements": [
+        {
+          "type": "text",
+          "text": "Operation Bouzonville · March 1945",
+          "pos": [
+            0.5,
+            0.22
+          ],
+          "style": "h3",
+          "at": 0.6,
+          "font": "serif_bold",
+          "color": "light"
+        },
+        {
+          "type": "text",
+          "text": "2 killed · 15 wounded",
+          "pos": [
+            0.5,
+            0.36
+          ],
+          "style": "h2",
+          "at": "cue:costliest",
+          "font": "serif_bold",
+          "color": "light"
+        }
+      ],
+      "claims": [
+        "C29",
+        "C30"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "layers": [
+          "hills",
+          "city"
+        ],
+        "sky": [
+          "night",
+          "night2"
+        ]
+      },
+      "transition": "fade_black",
+      "emotion": "melancholy"
+    },
+    {
+      "id": "g28",
+      "chapter": "viersen",
+      "engine": "motion",
+      "purpose": "reveal",
+      "narration": "Then came Viersen, the last and largest deception, from March eighteenth to twenty-fourth, nineteen forty-five. The Ghost Army impersonated two infantry divisions, the Thirtieth and the Seventy-Ninth, to draw German attention away from the Ninth Army's real crossing point on the Rhine.",
+      "visual": "Map: decoy position at Viersen vs. the real crossing to the north.",
+      "elements": [
+        {
+          "type": "map",
+          "geojson": "assets/ne_110m_admin_0_countries.geojson",
+          "bounds": [
+            -1.0,
+            47.0,
+            14.0,
+            55.0
+          ],
+          "box": [
+            0.04,
+            0.12,
+            0.92,
+            0.8
+          ],
+          "at": 0.2,
+          "dur": 1.2,
+          "highlight": [
+            {
+              "name": "Germany",
+              "color": "light"
+            }
+          ],
+          "markers": [
+            {
+              "lon": 6.39,
+              "lat": 51.26,
+              "label": "decoy: 30th & 79th Inf. Div. (simulated)",
+              "at": "cue:impersonated",
+              "color": "accent"
+            },
+            {
+              "lon": 6.6,
+              "lat": 51.55,
+              "label": "real crossing (approx.)",
+              "at": "cue:real",
+              "color": "negative"
+            }
+          ],
+          "routes": [],
+          "labels": [
+            {
+              "lon": 6.75,
+              "lat": 51.85,
+              "text": "RHINE",
+              "at": 0.5
+            }
+          ]
+        }
+      ],
+      "claims": [
+        "C31"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "assets": [
+        {
+          "path": "assets/ne_110m_admin_0_countries.geojson",
+          "license": "Public domain (Natural Earth)",
+          "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
+        }
+      ],
+      "transition": "crash_zoom"
+    },
+    {
+      "id": "g29",
+      "chapter": "viersen",
+      "engine": "motion",
+      "purpose": "evidence",
+      "narration": "Museum accounts say the operation simulated more than thirty thousand troops with about six hundred inflatable dummies. The law Congress passed in twenty twenty-two says only hundreds of vehicles, so the exact scale depends on the source. Afterward, Ninth Army commander Lieutenant General William Simpson commended the unit.",
+      "visual": "Contested figures shown side by side.",
+      "elements": [
+        {
+          "type": "card",
+          "box": [
+            0.06,
+            0.22,
+            0.42,
+            0.4
+          ],
+          "tag": "Museum accounts",
+          "title": "> 30,000 troops simulated",
+          "body": "≈ 600 inflatable dummies",
+          "at": "cue:museum",
+          "tone": "night2"
+        },
+        {
+          "type": "card",
+          "box": [
+            0.52,
+            0.22,
+            0.42,
+            0.4
+          ],
+          "tag": "Public Law 117-85",
+          "title": "\"hundreds\" of vehicles",
+          "body": "no troop figure given",
+          "at": "cue:law",
+          "tone": "night2"
+        },
+        {
+          "type": "text",
+          "text": "Commended by Lt. Gen. William H. Simpson, Ninth Army",
+          "pos": [
+            0.5,
+            0.8
+          ],
+          "style": "body",
+          "at": "cue:commended"
+        }
+      ],
+      "claims": [
+        "C32",
+        "C33"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g30",
+      "chapter": "viersen",
+      "engine": "handdrawn",
+      "purpose": "evidence",
+      "narration": "Congress later quoted a postwar Army assessment praising how much influence such a small group had on a major operation.",
+      "visual": "Sketched document with highlighted line.",
+      "elements": [
+        {
+          "type": "icon",
+          "name": "document",
+          "pos": [
+            0.5,
+            0.48
+          ],
+          "size": 0.16,
+          "at": 0.3,
+          "label": "Postwar Army assessment (quoted in PL 117-85)"
+        }
+      ],
+      "claims": [
+        "C34"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "min_duration": 6.5
+    },
+    {
+      "id": "g31",
+      "chapter": "viersen",
+      "engine": "motion",
+      "purpose": "story",
+      "narration": "Meanwhile, in Italy, the 3133rd Signal Service Company carried out its own deceptions. In April nineteen forty-five, in Operation Craftsman, it supported an offensive against the German Gothic Line north of Florence, working alongside British deception units. About two hundred soldiers served in the 3133rd. They spent nineteen days in combat and lost almost seventy percent of their thirty-five dummy tanks to German fire.",
+      "visual": "Map of Italy with Florence marker; counters.",
+      "elements": [
+        {
+          "type": "map",
+          "geojson": "assets/ne_110m_admin_0_countries.geojson",
+          "bounds": [
+            4.0,
+            39.0,
+            18.5,
+            48.5
+          ],
+          "box": [
+            0.03,
+            0.1,
+            0.55,
+            0.82
+          ],
+          "at": 0.2,
+          "dur": 1.2,
+          "highlight": [
+            {
+              "name": "Italy",
+              "color": "light"
+            }
+          ],
+          "markers": [
+            {
+              "lon": 11.25,
+              "lat": 43.77,
+              "label": "Florence · Gothic Line to the north",
+              "at": "cue:florence,"
+            }
+          ],
+          "routes": [],
+          "labels": []
+        },
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 19,
+          "suffix": " days",
+          "pos": [
+            0.78,
+            0.3
+          ],
+          "at": "cue:nineteen",
+          "dur": 1.0,
+          "style": "h2",
+          "label": "in combat"
+        },
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 70,
+          "prefix": "≈ ",
+          "suffix": "%",
+          "pos": [
+            0.78,
+            0.62
+          ],
+          "at": "cue:seventy",
+          "dur": 1.0,
+          "style": "h2",
+          "label": "of 35 dummy tanks lost",
+          "color": "negative"
+        }
+      ],
+      "claims": [
+        "C35",
+        "C36"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "assets": [
+        {
+          "path": "assets/ne_110m_admin_0_countries.geojson",
+          "license": "Public domain (Natural Earth)",
+          "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
+        }
+      ],
+      "transition": "fade_black"
+    },
+    {
+      "id": "g32",
+      "chapter": "silence",
+      "engine": "archival",
+      "purpose": "evidence",
+      "narration": "The war in Europe ended in May nineteen forty-five. For the Ghost Army, a different kind of silence was about to begin. In September nineteen forty-five, Captain Fred Fox wrote the unit's official history. It is held today at the National Archives in College Park, Maryland.",
+      "visual": "Typewritten report on a desk.",
+      "elements": [
+        {
+          "type": "icon",
+          "name": "document",
+          "pos": [
+            0.38,
+            0.5
+          ],
+          "size": 0.16,
+          "at": 0.3,
+          "label": "Official History, Sept. 1945"
+        },
+        {
+          "type": "text",
+          "text": "National Archives · Record Group 407",
+          "pos": [
+            0.72,
+            0.5
+          ],
+          "style": "h3",
+          "at": "cue:archives",
+          "font": "serif_bold"
+        }
+      ],
+      "claims": [
+        "C38"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "transition": "fade_black"
+    },
+    {
+      "id": "g33",
+      "chapter": "silence",
+      "engine": "artistic",
+      "purpose": "atmosphere",
+      "narration": "Then the story went quiet. The records were classified. A few newspaper articles appeared in August nineteen forty-five, and after that, very little, until a Smithsonian magazine article in April nineteen eighty-five.",
+      "visual": "Night city; lights go out one by one.",
+      "elements": [
+        {
+          "type": "text",
+          "text": "Classified",
+          "pos": [
+            0.5,
+            0.3
+          ],
+          "style": "h1",
+          "at": "cue:classified.",
+          "font": "serif_bold",
+          "color": "light"
+        }
+      ],
+      "claims": [
+        "C37"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "layers": [
+          "towers",
+          "city"
+        ],
+        "sky": [
+          "night",
+          "night2"
+        ],
+        "lights_out_at": "cue:classified."
+      }
+    },
+    {
+      "id": "g34",
+      "chapter": "silence",
+      "engine": "motion",
+      "purpose": "evidence",
+      "narration": "When were the records declassified? Most sources say nineteen ninety-six. An Army article says nineteen ninety-three. Others simply say the mid-nineteen-nineties. The sources disagree, and we could not locate the original declassification order.",
+      "visual": "Timeline with two conflicting dates.",
+      "elements": [
+        {
+          "type": "timeline",
+          "box": [
+            0.08,
+            0.34,
+            0.84,
+            0.34
+          ],
+          "at": 0.3,
+          "dur": 4.0,
+          "horizontal": true,
+          "events": [
+            {
+              "label": "1985",
+              "sub": "Smithsonian article"
+            },
+            {
+              "label": "1993?",
+              "sub": "army.mil",
+              "color": "accent"
+            },
+            {
+              "label": "1996?",
+              "sub": "most sources",
+              "color": "accent"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Sources disagree",
+          "pos": [
+            0.5,
+            0.84
+          ],
+          "style": "h2",
+          "at": "cue:disagree,",
+          "color": "negative"
+        }
+      ],
+      "claims": [
+        "C39"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g35",
+      "chapter": "silence",
+      "engine": "handdrawn",
+      "purpose": "story",
+      "narration": "Many veterans stayed quiet for decades. The Associated Press reported that the son of one officer, Captain Oscar Seale, learned only after his father's death in two thousand one that he had served in the Ghost Army. Some of their voices survive: the Library of Congress Veterans History Project holds an interview with veteran Elmer Mellebrand about the decoys and the sound deception.",
+      "visual": "Sketched family scene; a tape recorder icon for the oral history.",
+      "elements": [
+        {
+          "type": "character",
+          "pos": [
+            0.22,
+            0.9
+          ],
+          "height": 0.48,
+          "pose": "think",
+          "at": 0.3,
+          "color": "muted"
+        },
+        {
+          "type": "icon",
+          "name": "document",
+          "pos": [
+            0.5,
+            0.4
+          ],
+          "size": 0.07,
+          "at": "cue:learned",
+          "label": "a family discovers"
+        },
+        {
+          "type": "icon",
+          "name": "phone",
+          "pos": [
+            0.78,
+            0.4
+          ],
+          "size": 0.07,
+          "at": "cue:library",
+          "label": "Veterans History Project"
+        }
+      ],
+      "claims": [
+        "C40",
+        "C57"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g36",
+      "chapter": "silence",
+      "engine": "whiteboard",
+      "purpose": "explain",
+      "narration": "There was one more chapter. After Germany surrendered, the 23rd helped run camps for displaced persons. The unit's history cites up to about one hundred thousand people in thirteen camps.",
+      "visual": "Whiteboard: 13 camps, ~100,000 people.",
+      "elements": [
+        {
+          "type": "crowd",
+          "box": [
+            0.08,
+            0.25,
+            0.5,
+            0.55
+          ],
+          "count": 39,
+          "cols": 13,
+          "at": "cue:camps",
+          "color": "cool"
+        },
+        {
+          "type": "text",
+          "text": "13 camps",
+          "pos": [
+            0.78,
+            0.4
+          ],
+          "style": "h1",
+          "at": "cue:thirteen",
+          "color": "accent"
+        },
+        {
+          "type": "text",
+          "text": "up to ~100,000 people",
+          "pos": [
+            0.78,
+            0.58
+          ],
+          "style": "h3",
+          "at": "cue:hundred"
+        }
+      ],
+      "claims": [
+        "C55"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "transition": "erase"
+    },
+    {
+      "id": "g37",
+      "chapter": "myth",
+      "engine": "motion",
+      "purpose": "comparison",
+      "narration": "Because it stayed secret for so long, the Ghost Army's story has picked up some confusion. It's often mixed up with the fictional First U.S. Army Group created for Operation Fortitude before D-Day. They were different efforts. The Ghost Army's deceptions were tactical, staged near the front lines in France, Luxembourg and Germany.",
+      "visual": "Two cards: FUSAG (strategic, before D-Day) vs 23rd (tactical, at the front).",
+      "elements": [
+        {
+          "type": "card",
+          "box": [
+            0.06,
+            0.24,
+            0.42,
+            0.44
+          ],
+          "tag": "Operation Fortitude",
+          "title": "FUSAG (fictional army group)",
+          "body": "strategic deception before D-Day",
+          "at": "cue:fortitude",
+          "tone": "night2"
+        },
+        {
+          "type": "card",
+          "box": [
+            0.52,
+            0.24,
+            0.42,
+            0.44
+          ],
+          "tag": "23rd HQ Special Troops",
+          "title": "The Ghost Army",
+          "body": "tactical deceptions near the front, 1944–45",
+          "at": "cue:tactical,",
+          "tone": "night2"
+        },
+        {
+          "type": "text",
+          "text": "Different efforts",
+          "pos": [
+            0.5,
+            0.84
+          ],
+          "style": "h2",
+          "at": "cue:different",
+          "color": "accent"
+        }
+      ],
+      "claims": [
+        "C54"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "transition": "fade_black"
+    },
+    {
+      "id": "g38",
+      "chapter": "myth",
+      "engine": "huashu_clip",
+      "purpose": "evidence",
+      "narration": "Even the number of operations depends on who is counting. Different sources say about twenty, twenty-one, or twenty-two, depending on how rehearsals and cancelled missions are treated.",
+      "visual": "Bar chart: operation counts by source.",
+      "elements": [],
+      "claims": [
+        "C23"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "grammar": "t3_finance_chart",
+        "theme": "paper",
+        "data": {
+          "title": "How many deception operations?",
+          "unit": "count, by source",
+          "chart": "bar",
+          "decimals": 0,
+          "source": "AP; Public Law 117-85; National WWII Museum / Luxembourg government",
+          "series": [
+            {
+              "label": "AP",
+              "value": 20
+            },
+            {
+              "label": "PL 117-85",
+              "value": 21
+            },
+            {
+              "label": "Museum / Luxembourg",
+              "value": 22
+            }
+          ],
+          "highlight": {
+            "index": 1,
+            "text": "20–22",
+            "sub": "depends on counting"
+          }
+        },
+        "cues": [
+          {
+            "at": "cue:twenty,",
+            "kind": "bar",
+            "data": {
+              "index": 0
+            }
+          },
+          {
+            "at": "cue:twenty-one,",
+            "kind": "bar",
+            "data": {
+              "index": 1
+            }
+          },
+          {
+            "at": "cue:twenty-two,",
+            "kind": "bar",
+            "data": {
+              "index": 2
+            }
+          },
+          {
+            "at": "end-1.6",
+            "kind": "highlight"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g39",
+      "chapter": "myth",
+      "engine": "motion",
+      "purpose": "evidence",
+      "narration": "And then there's the most quoted number: that the Ghost Army saved fifteen thousand to thirty thousand American lives. It's repeated often, including at the medal ceremony, but we could not find a primary study behind it. The honest answer is that we don't know how that estimate was calculated.",
+      "visual": "A large number with a 'source unknown' marker.",
+      "elements": [
+        {
+          "type": "counter",
+          "from": 0,
+          "to": 30000,
+          "prefix": "15,000 – ",
+          "pos": [
+            0.5,
+            0.36
+          ],
+          "at": "cue:fifteen",
+          "dur": 1.6,
+          "style": "hero"
+        },
+        {
+          "type": "text",
+          "text": "estimate · no primary study found",
+          "pos": [
+            0.5,
+            0.58
+          ],
+          "style": "h3",
+          "at": "cue:study",
+          "color": "negative"
+        },
+        {
+          "type": "text",
+          "text": "lives saved (as quoted)",
+          "pos": [
+            0.5,
+            0.2
+          ],
+          "style": "body",
+          "at": "cue:saved",
+          "color": "muted"
+        }
+      ],
+      "claims": [
+        "C52"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g40",
+      "chapter": "medal",
+      "engine": "motion",
+      "purpose": "timeline",
+      "narration": "Recognition took a long time. Bills to award the Ghost Army a Congressional Gold Medal were introduced in Congress starting in twenty fifteen. The act became law on February first, twenty twenty-two. On March twenty-first, twenty twenty-four, the medal was presented in Emancipation Hall at the U.S. Capitol.",
+      "visual": "Timeline 2015 → 2022 → 2024.",
+      "elements": [
+        {
+          "type": "timeline",
+          "box": [
+            0.08,
+            0.34,
+            0.84,
+            0.34
+          ],
+          "at": 0.3,
+          "dur": 9.0,
+          "horizontal": true,
+          "events": [
+            {
+              "label": "2015",
+              "sub": "first bill (H.R. 2170)"
+            },
+            {
+              "label": "Feb 1, 2022",
+              "sub": "Public Law 117-85",
+              "color": "positive"
+            },
+            {
+              "label": "Mar 21, 2024",
+              "sub": "medal presented",
+              "color": "accent"
+            }
+          ]
+        }
+      ],
+      "claims": [
+        "C46",
+        "C47",
+        "C49"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "transition": "fade_black"
+    },
+    {
+      "id": "g41",
+      "chapter": "medal",
+      "engine": "handdrawn",
+      "purpose": "character",
+      "narration": "Three of the seven then-known surviving veterans attended: Bernard Bluestein, John Christman and Seymour Nussenbaum. They were ninety-nine and one hundred years old.",
+      "visual": "Three sketched veterans at the ceremony.",
+      "elements": [
+        {
+          "type": "character",
+          "pos": [
+            0.28,
+            0.9
+          ],
+          "height": 0.46,
+          "pose": "stand",
+          "at": "cue:bernard",
+          "color": "cool"
+        },
+        {
+          "type": "character",
+          "pos": [
+            0.5,
+            0.9
+          ],
+          "height": 0.46,
+          "pose": "stand",
+          "at": "cue:john",
+          "color": "cool"
+        },
+        {
+          "type": "character",
+          "pos": [
+            0.72,
+            0.9
+          ],
+          "height": 0.46,
+          "pose": "stand",
+          "at": "cue:seymour",
+          "color": "cool"
+        },
+        {
+          "type": "text",
+          "text": "Bluestein · Christman · Nussenbaum",
+          "pos": [
+            0.5,
+            0.14
+          ],
+          "style": "h3",
+          "at": "cue:attended:"
+        }
+      ],
+      "claims": [
+        "C50"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g42",
+      "chapter": "medal",
+      "engine": "whiteboard",
+      "purpose": "explain",
+      "narration": "The medal's design shows the four tools: a telegraph operator, a soldier applying a fake unit patch, a loudspeaker half-track, and soldiers carrying an inflatable tank. At the ceremony, the Secretary of the Army said many of the unit's techniques are still used today.",
+      "visual": "Medal outline with four quadrants.",
+      "elements": [
+        {
+          "type": "shape",
+          "kind": "circle",
+          "box": [
+            0.32,
+            0.12,
+            0.36,
+            0.64
+          ],
+          "color": "accent",
+          "at": 0.2,
+          "dur": 1.0
+        },
+        {
+          "type": "icon",
+          "name": "server",
+          "pos": [
+            0.42,
+            0.33
+          ],
+          "size": 0.05,
+          "at": "cue:telegraph"
+        },
+        {
+          "type": "icon",
+          "name": "star",
+          "pos": [
+            0.58,
+            0.33
+          ],
+          "size": 0.05,
+          "at": "cue:patch,"
+        },
+        {
+          "type": "icon",
+          "name": "truck",
+          "pos": [
+            0.42,
+            0.56
+          ],
+          "size": 0.05,
+          "at": "cue:loudspeaker"
+        },
+        {
+          "type": "icon",
+          "name": "box",
+          "pos": [
+            0.58,
+            0.56
+          ],
+          "size": 0.05,
+          "at": "cue:inflatable"
+        },
+        {
+          "type": "text",
+          "text": "\"still used today\"",
+          "pos": [
+            0.5,
+            0.88
+          ],
+          "style": "h3",
+          "at": "cue:still",
+          "color": "accent"
+        }
+      ],
+      "claims": [
+        "C53",
+        "C51"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g43",
+      "chapter": "medal",
+      "engine": "motion",
+      "purpose": "explain",
+      "narration": "The law directs that the gold medal go to the Smithsonian Institution for display and research. The National World War Two Museum opened an exhibition about the unit in twenty twenty, and filmmaker Rick Beyer's twenty thirteen documentary, which aired on PBS, brought the story to a wide audience. In Luxembourg, there is a Ghost Army marker at Bettembourg, and a monument was unveiled in Limpertsberg in twenty twenty-three, where the unit had once been based.",
+      "visual": "List of places the story lives on.",
+      "elements": [
+        {
+          "type": "list",
+          "box": [
+            0.14,
+            0.22,
+            0.72,
+            0.6
+          ],
+          "at": "cue:smithsonian",
+          "dur": 12.0,
+          "marker": "check",
+          "scale": 1.2,
+          "items": [
+            "Medal: Smithsonian Institution",
+            "Exhibition: National WWII Museum (2020)",
+            "Documentary: Rick Beyer (2013, PBS)",
+            "Monument: Limpertsberg, Luxembourg (2023)"
+          ]
+        }
+      ],
+      "claims": [
+        "C48",
+        "C60",
+        "C58",
+        "C59"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      }
+    },
+    {
+      "id": "g44",
+      "chapter": "medal",
+      "engine": "kinetic",
+      "purpose": "metaphor",
+      "narration": "So what did the Ghost Army really accomplish? We know what they did, where, and at what cost. What we can't measure precisely is how many lives their illusions saved, and historians are still filling in parts of the record. Their story is also a reminder that creativity can be a form of service: painters, designers and sound engineers used their skills to protect other soldiers.",
+      "visual": "Kinetic reflection with uncertainty stated.",
+      "elements": [],
+      "claims": [
+        "C52",
+        "C39"
+      ],
+      "illustrative": true,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "emphasis": [
+          "accomplish?",
+          "know",
+          "can't",
+          "still"
+        ]
+      },
+      "transition": "fade_black"
+    },
+    {
+      "id": "g45",
+      "chapter": "medal",
+      "engine": "kinetic",
+      "purpose": "cta",
+      "narration": "If you have a family story connected to the 23rd Headquarters Special Troops, we would be glad to hear it in the comments. In our next documentary, we'll look at another group of Americans whose wartime work stayed secret for decades. Thanks for watching.",
+      "visual": "End card.",
+      "elements": [],
+      "claims": [],
+      "illustrative": false,
+      "pad": {
+        "lead": 0.5,
+        "tail": 0.8
+      },
+      "params": {
+        "emphasis": [
+          "secret",
+          "decades."
+        ]
+      }
+    }
+  ],
+  "rights_issues": [
+    {
+      "item": "Natural Earth map data",
+      "status": "resolved",
+      "note": "public domain"
+    }
+  ],
+  "seo": {
+    "title_options": [
+      "The Ghost Army: America's Secret Unit of Artists and Illusions",
+      "Inflatable Tanks and Fake Radio: The True Story of the Ghost Army",
+      "The WWII Unit That Fought With Rubber Tanks (Full Documentary)"
+    ],
+    "description": "In March 1945, German commanders watched two American divisions near the Rhine. They weren't there. This animated documentary tells the documented story of the Ghost Army — the 23rd Headquarters Special Troops and the 3133rd Signal Service Company — using Public Law 117-85, the National WWII Museum, Army and Library of Congress sources. We separate the record from the legend: where the '15,000–30,000 lives saved' number comes from, why sources disagree on the declassification date, and what remains unknown.",
+    "sources_note": "Key sources: Public Law 117-85 (govinfo.gov); The National WWII Museum; army.mil; Library of Congress Veterans History Project; U.S. Mint; Government of Luxembourg; Capt. Fred Fox, Official History (1945), National Archives RG 407. Animated scenes are illustrative.",
+    "tags": [
+      "Ghost Army",
+      "World War II",
+      "WWII documentary",
+      "23rd Headquarters Special Troops",
+      "military deception",
+      "inflatable tanks",
+      "Congressional Gold Medal",
+      "history documentary",
+      "Ellsworth Kelly",
+      "Bill Blass"
+    ],
+    "hashtags": [
+      "#WWII",
+      "#History",
+      "#Documentary"
+    ],
+    "pinned_comment": "Every claim in this video is listed with its source in the description. Where sources disagree (number of operations, declassification year, lives saved) we say so. Did someone in your family serve in the 23rd?",
+    "thumbnail_brief": "An inflatable Sherman tank silhouette being carried by four soldiers, sepia palette; 3 words max: 'RUBBER TANKS'. No graphic war imagery.",
+    "synthetic_disclosure": false
+  },
+  "thumbnail": {
+    "engine": "archival",
+    "params": {
+      "label": false
+    },
+    "elements": [
+      {
+        "type": "text",
+        "text": "RUBBER",
+        "pos": [
+          0.5,
+          0.3
+        ],
+        "style": "hero",
+        "at": 0,
+        "font": "serif_bold",
+        "scale": 1.4
+      },
+      {
+        "type": "text",
+        "text": "TANKS",
+        "pos": [
+          0.5,
+          0.55
+        ],
+        "style": "hero",
+        "at": 0,
+        "font": "serif_bold",
+        "scale": 1.4,
+        "color": "negative"
+      }
+    ]
+  },
+  "shorts": [
+    {
+      "id": "short-ga1",
+      "funnel_type": "surprising fact",
+      "title": "These WWII tanks were made of rubber",
+      "chapter": "toolkit",
+      "duration_range": [
+        25,
+        50
+      ],
+      "publish_order": 1,
+      "segments": [
+        {
+          "engine": "kinetic",
+          "narration": "In World War Two, some American tanks were made of rubber. On purpose.",
+          "params": {
+            "emphasis": [
+              "rubber.",
+              "purpose."
+            ]
+          }
+        },
+        {
+          "from": "g13",
+          "narration": "Inflatable decoys of tanks, artillery and trucks, some made by U.S. Rubber and Goodyear, could look like an armored force from a distance.",
+          "params": {
+            "src": "assets/decoy-tank.png",
+            "order": "strokes",
+            "draw_time": 8.0,
+            "box_v": [
+              0.05,
+              0.18,
+              0.9,
+              0.5
+            ]
+          }
+        },
+        {
+          "from": "g12",
+          "narration": "It was one of four tools used by a secret unit called the Ghost Army.",
+          "elements": [
+            {
+              "type": "text",
+              "text": "The Ghost Army",
+              "style": "h1",
+              "pos_v": [
+                0.5,
+                0.2
+              ],
+              "at": 0.2,
+              "font": "hand_bold"
+            },
+            {
+              "type": "icon",
+              "name": "magnifier",
+              "pos_v": [
+                0.3,
+                0.42
+              ],
+              "size": 0.09,
+              "at": "cue:four",
+              "label": "sight"
+            },
+            {
+              "type": "icon",
+              "name": "cloud",
+              "pos_v": [
+                0.7,
+                0.42
+              ],
+              "size": 0.09,
+              "at": "cue:tools",
+              "label": "sound"
+            },
+            {
+              "type": "icon",
+              "name": "server",
+              "pos_v": [
+                0.3,
+                0.62
+              ],
+              "size": 0.09,
+              "at": "cue:secret",
+              "label": "radio"
+            },
+            {
+              "type": "icon",
+              "name": "star",
+              "pos_v": [
+                0.7,
+                0.62
+              ],
+              "size": 0.09,
+              "at": "cue:ghost",
+              "label": "theater"
+            }
+          ]
+        }
+      ],
+      "description": "Inflatable decoys of WWII's Ghost Army. Full documentary in the related video. #WWII #History",
+      "hashtags": [
+        "#WWII",
+        "#History",
+        "#GhostArmy"
+      ],
+      "pinned_comment": "The full story, with sources, is in the related video."
+    },
+    {
+      "id": "short-ga2",
+      "funnel_type": "overlooked person",
+      "title": "A famous fashion designer served in a secret WWII unit",
+      "chapter": "artists",
+      "duration_range": [
+        25,
+        50
+      ],
+      "publish_order": 2,
+      "segments": [
+        {
+          "engine": "kinetic",
+          "narration": "Bill Blass, the fashion designer, served in a secret World War Two unit.",
+          "params": {
+            "emphasis": [
+              "blass,",
+              "secret"
+            ]
+          }
+        },
+        {
+          "from": "g11",
+          "narration": "So did painter Ellsworth Kelly, wildlife artist Arthur Singer and photographer Art Kane, all in the 603rd Engineer Camouflage Battalion.",
+          "elements": [
+            {
+              "type": "card",
+              "box_v": [
+                0.08,
+                0.15,
+                0.84,
+                0.14
+              ],
+              "title": "Ellsworth Kelly",
+              "body": "painter",
+              "at": "cue:ellsworth",
+              "tone": "light"
+            },
+            {
+              "type": "card",
+              "box_v": [
+                0.08,
+                0.32,
+                0.84,
+                0.14
+              ],
+              "title": "Arthur Singer",
+              "body": "wildlife artist",
+              "at": "cue:arthur",
+              "tone": "light"
+            },
+            {
+              "type": "card",
+              "box_v": [
+                0.08,
+                0.49,
+                0.84,
+                0.14
+              ],
+              "title": "Art Kane",
+              "body": "photographer",
+              "at": "cue:kane,",
+              "tone": "light"
+            }
+          ]
+        }
+      ],
+      "description": "Artists of the Ghost Army. #WWII #Art",
+      "hashtags": [
+        "#WWII",
+        "#Art",
+        "#History"
+      ],
+      "pinned_comment": "Their full story is in the related documentary."
+    },
+    {
+      "id": "short-ga3",
+      "funnel_type": "unanswered question",
+      "title": "Did a rubber army save 30,000 lives?",
+      "chapter": "myth",
+      "duration_range": [
+        25,
+        50
+      ],
+      "publish_order": 3,
+      "segments": [
+        {
+          "engine": "kinetic",
+          "narration": "You may have heard the Ghost Army saved up to thirty thousand lives.",
+          "params": {
+            "emphasis": [
+              "thirty",
+              "thousand"
+            ]
+          }
+        },
+        {
+          "from": "g39",
+          "narration": "It's widely repeated, even at the medal ceremony. But we could not find a primary study behind that number.",
+          "elements": [
+            {
+              "type": "text",
+              "text": "15,000–30,000?",
+              "style": "hero",
+              "pos_v": [
+                0.5,
+                0.3
+              ],
+              "at": 0.3
+            },
+            {
+              "type": "text",
+              "text": "no primary study found",
+              "style": "h2",
+              "pos_v": [
+                0.5,
+                0.45
+              ],
+              "at": "cue:study",
+              "color": "negative"
+            }
+          ]
+        }
+      ],
+      "description": "Separating record from legend. #WWII #History",
+      "hashtags": [
+        "#WWII",
+        "#History",
+        "#Documentary"
+      ],
+      "pinned_comment": "We go through the sources in the full documentary (related video)."
+    }
+  ]
+}

@@ -6,6 +6,7 @@ from .native import ArtisticEngine, HandDrawnEngine, KineticEngine, MotionEngine
 from .image_whiteboard import ImageWhiteboardEngine
 from .browser import AnimatePieceEngine, HuashuClipEngine, availability as browser_availability
 from .html_seek import HtmlSeekEngine
+from .archival import ArchivalEngine
 
 ENGINES: dict[str, type[Engine]] = {
     "whiteboard": WhiteboardEngine,
@@ -17,9 +18,10 @@ ENGINES: dict[str, type[Engine]] = {
     "huashu_clip": HuashuClipEngine,
     "animate_piece": AnimatePieceEngine,
     "html_seek": HtmlSeekEngine,
+    "archival": ArchivalEngine,
 }
 
-NATIVE = {"whiteboard", "handdrawn", "motion", "kinetic", "artistic", "image_whiteboard"}
+NATIVE = {"whiteboard", "handdrawn", "motion", "kinetic", "artistic", "image_whiteboard", "archival"}
 
 # If an engine cannot initialise or fails during render, the scene is re-rendered
 # with the next engine whose output carries the same information (elements are
@@ -28,6 +30,7 @@ FALLBACKS = {
     "huashu_clip": ["motion"],
     "animate_piece": ["handdrawn", "artistic"],
     "html_seek": ["motion", "whiteboard"],
+    "archival": ["handdrawn", "whiteboard"],
     "image_whiteboard": ["whiteboard"],
     "kinetic": ["motion"],
     "artistic": ["motion"],

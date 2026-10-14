@@ -1,0 +1,381 @@
+{
+  "accessed": "2026-10-14",
+  "method_note": "YouTube figures were read on 2026-10-14 from public, logged-out YouTube pages (channel /videos tabs, search results, and watch pages) with hl=en&gl=US. Each video's exact view count and publish date come from the watch page's ytInitialData. Where only a rounded figure and relative age were visible, as on a channel grid or search listing, that is noted. Window is measured from 2026-10-14: last_7_days, last_30_days, last_90_days, last_12_months, older_than_12_months. View counts are point-in-time snapshots and keep changing.",
+  "cross_cutting": [
+    {
+      "claim": "Share of U.S. adults who say they ever use YouTube, by age",
+      "value": "Ages 50-64: 85%. Ages 65+: 64%. All adults: 84%. Ages 18-29: 95%. Ages 30-49: 92%. Survey of 5,022 U.S. adults fielded Feb 5 - Jun 18, 2025.",
+      "source_title": "Pew Research Center - Social Media and News / Social Media Fact Sheet",
+      "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/",
+      "published": "2025-11-20",
+      "category": "audience_reach_official_survey"
+    },
+    {
+      "claim": "Facebook use among older U.S. adults, for comparison with YouTube",
+      "value": "Ages 50-64: 74%. Ages 65+: 57%. Same Pew 2025 survey, so YouTube reach is higher than Facebook in both older age groups.",
+      "source_title": "Pew Research Center - Social Media Fact Sheet",
+      "url": "https://www.pewresearch.org/internet/fact-sheet/social-media/",
+      "published": "2025-11-20",
+      "category": "audience_reach_official_survey"
+    },
+    {
+      "claim": "Growth in YouTube viewing on TV sets by older adults (Nielsen, U.S.)",
+      "value": "February 2025 YouTube viewing on TV compared with February 2023: adults 65+ up 96% ('nearly doubled'), adults 50-64 up 62%, total up 53%. Share of YouTube's TV audience in Feb 2025: 50-64 = 20.4%, 65+ = 15.4%. YouTube had 11.6% of total U.S. TV viewing that month.",
+      "source_title": "Nielsen - YouTube Achieves Best Monthly Performance to Date and Pulls Ahead in Nielsen's February Media Distributor Gauge",
+      "url": "https://www.nielsen.com/news-center/2025/youtube-achieves-best-monthly-performance-to-date-and-pulls-ahead-in-nielsens-february-media-distributor-gauge/",
+      "published": "2025-03-25",
+      "category": "older_viewers_tv_screen"
+    },
+    {
+      "claim": "Latest YouTube share of total U.S. TV viewing (Nielsen Media Distributor Gauge)",
+      "value": "July 2026: YouTube reached a record 14.2% of TV viewing. This counts TV-set viewing only, not mobile or desktop. Nielsen notes upcoming methodology changes that may make later months not directly comparable.",
+      "source_title": "Nielsen - TV Usage Kicks Usual Summer Slowdown, Fueled by World Cup and Streaming in Nielsen's July Gauge Reports",
+      "url": "https://www.nielsen.com/news-center/2026/tv-usage-kicks-usual-summer-slowdown-fueled-by-world-cup-and-streaming-in-nielsens-july-gauge-reports/",
+      "published": "2026-09-10",
+      "category": "tv_screen_viewing"
+    },
+    {
+      "claim": "TV is the primary device for YouTube viewing in the U.S.",
+      "value": "\"TV is now the primary device for YouTube viewing in the U.S.\" (by watch time). Viewers watch \"on average, over 1B hours of YouTube content on TVs daily\". Footnoted as of December 2024.",
+      "source_title": "YouTube Official Blog - From the YouTube CEO: Our big bets for 2025 (Neal Mohan)",
+      "url": "https://blog.youtube/inside-youtube/our-big-bets-for-2025/",
+      "published": "2025-02-11",
+      "category": "tv_screen_viewing_official"
+    },
+    {
+      "claim": "Creator share of watch-page ad revenue",
+      "value": "YouTube pays partners 55% of net revenues from ads displayed or streamed on their public videos on the Watch Page.",
+      "source_title": "YouTube Help - YouTube partner earnings overview",
+      "url": "https://support.google.com/youtube/answer/72902",
+      "published": "unknown (no date on page)",
+      "category": "monetization_official"
+    },
+    {
+      "claim": "Monetization policy on mass-produced and templated content, which affects faceless or AI-assisted documentary channels",
+      "value": "On July 15, 2025 YouTube renamed 'repetitious content' to 'inauthentic content' (content that is 'repetitive or mass-produced'). Examples of content that cannot be monetized include 'Image slideshows, templated storylines, or scrolling text with minimal or no narrative, commentary, or educational value' and 'AI-generated content made with generic or unoriginal templates'. Reused content is allowed only if 'viewers can tell that there's a meaningful difference'.",
+      "source_title": "YouTube Help - YouTube channel monetization policies",
+      "url": "https://support.google.com/youtube/answer/1311392",
+      "published": "policy change dated 2025-07-15 on page",
+      "category": "monetization_policy_official"
+    },
+    {
+      "claim": "Older viewers' preference for long-form content",
+      "value": "unknown. I found no Pew, Nielsen, or YouTube primary source that directly measures long-form preference by age. The best available proxy is above: older adults' YouTube viewing is growing fastest on TV screens (Nielsen Feb 2025).",
+      "source_title": "n/a",
+      "url": "n/a",
+      "published": "n/a",
+      "category": "gap"
+    }
+  ],
+  "pillars": {
+    "1": {
+      "name": "Forgotten WWII stories",
+      "competitors": [
+        {"name": "Yarnhub (animated WWII/military films)", "url": "https://www.youtube.com/@Yarnhub", "subscribers_displayed": "3.35M subscribers", "seen": "2026-10-14"},
+        {"name": "Mark Felton Productions", "url": "https://www.youtube.com/@MarkFeltonProductions", "subscribers_displayed": "2.43M subscribers", "seen": "2026-10-14"},
+        {"name": "The Operations Room (animated battle breakdowns)", "url": "https://www.youtube.com/@TheOperationsRoom", "subscribers_displayed": "1.45M subscribers", "seen": "2026-10-14"},
+        {"name": "World War Two (TimeGhost)", "url": "https://www.youtube.com/@WorldWarTwo", "subscribers_displayed": "1.19M subscribers", "seen": "2026-10-14"},
+        {"name": "The Forgotten Footlines (small faceless WWII-stories channel)", "url": "https://www.youtube.com/watch?v=2ENXHYBIMBw", "subscribers_displayed": "10.6K subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "Wake Island: The Last Stand That Stunned Japan", "channel": "Yarnhub", "url": "https://www.youtube.com/watch?v=r1cE1Qsl5qc", "views_displayed": "14,060,393 views", "published_or_age": "2026-09-04", "window": "last_90_days"},
+        {"title": "When Ha-Go Tanks Ambushed M3 Stuarts", "channel": "Yarnhub", "url": "https://www.youtube.com/watch?v=DG3bCFMN7GQ", "views_displayed": "6,994,552 views", "published_or_age": "2026-09-28", "window": "last_30_days"},
+        {"title": "Eagle's Nest Bring Backs - Ultimate GI Souvenirs From Hitler's Alpine Lair", "channel": "Mark Felton Productions", "url": "https://www.youtube.com/watch?v=Th_h0m4mrC4", "views_displayed": "1,272,742 views", "published_or_age": "2026-09-10", "window": "last_90_days"},
+        {"title": "Who Murdered Joachim Peiper? THE COMPLETE SERIES", "channel": "Mark Felton Productions", "url": "https://www.youtube.com/watch?v=L5-FHxdroKE", "views_displayed": "788,624 views", "published_or_age": "2026-09-27", "window": "last_30_days"},
+        {"title": "Pearl Harbor (2/3) - Battleship Row - Animated", "channel": "The Operations Room", "url": "https://www.youtube.com/watch?v=25v3B2TUXFo", "views_displayed": "759,897 views", "published_or_age": "2026-09-13", "window": "last_90_days"},
+        {"title": "German Women POWs Were Too Thin to Work — Then Texas Cowboys Did the Unthinkable", "channel": "The Forgotten Footlines (10.6K subs)", "url": "https://www.youtube.com/watch?v=2ENXHYBIMBw", "views_displayed": "581,935 views", "published_or_age": "2026-07-07", "window": "last_12_months"}
+      ],
+      "evergreen_notes": [
+        {"note": "'The Soldier Who Didn't Know WW2 Ended' (BE AMAZED, published 2024-04-27) has 11,040,774 views about 2.5 years after upload.", "url": "https://www.youtube.com/watch?v=JgDUDDTfLN0"},
+        {"note": "Mark Felton's most popular upload, 'Nazi Princesses - The Fates of Top Nazis' Wives & Mistresses', showed 12M views at '5y ago' on the channel's Popular sort (rounded figures, seen in browser 2026-10-14).", "url": "https://www.youtube.com/watch?v=2YONpJzybto"},
+        {"note": "Anniversary hook (date arithmetic, not a cited source): Dec 7, 2026 is the 85th anniversary of Pearl Harbor. The Operations Room released a 3-part animated Pearl Harbor series in Sep-Oct 2026 (parts 1-2 about 1 month ago, part 3 '10d ago').", "url": "https://www.youtube.com/@TheOperationsRoom/videos"}
+      ],
+      "advertiser_notes": [
+        {"note": "'Non-graphic educational coverage or discussion of war and/or conflict' can earn full ads. 'Footage of war with graphic depictions of injury, death, or suffering in any context' earns no ads. Real non-graphic raw war footage without educational context gets limited ads.", "url": "https://support.google.com/youtube/answer/6162278"},
+        {"note": "Educational or documentary content containing focal hate imagery (relevant to Nazi-era visuals) can earn ads. 'Promoting hate groups, hate symbols' earns none. Thumbnails with graphic depictions of controversial issues get limited ads. Fully obscured or blurred dead bodies in educational content, including historical wars, are listed as eligible for full ads.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "Competitor audience age and geography are not public. The Forgotten Footlines' subscriber count was read from its watch page (owner block), not its channel page. Google Trends was not readable (HTTP 429)."
+    },
+    "2": {
+      "name": "Cold War secrets & declassified history",
+      "competitors": [
+        {"name": "The Cold War (TimeGhost)", "url": "https://www.youtube.com/@TheColdWarTV", "subscribers_displayed": "453K subscribers", "seen": "2026-10-14"},
+        {"name": "Timeline - World History Documentaries", "url": "https://www.youtube.com/@TimelineChannel", "subscribers_displayed": "5.9M subscribers", "seen": "2026-10-14"},
+        {"name": "All Out History - Premium History Documentaries", "url": "https://www.youtube.com/@AllOutHistory", "subscribers_displayed": "315K subscribers", "seen": "2026-10-14"},
+        {"name": "Pure Declassified", "url": "https://www.youtube.com/@Pure_Declassified", "subscribers_displayed": "121K subscribers", "seen": "2026-10-14"},
+        {"name": "Cold War Tales (small, story-format)", "url": "https://www.youtube.com/@TheColdWarTales", "subscribers_displayed": "11.4K subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "How Yuri Andropov Tried to Save the Soviet Union Part 1", "channel": "The Cold War", "url": "https://www.youtube.com/watch?v=yCw1i9Gw6pQ", "views_displayed": "302,621 views", "published_or_age": "2026-10-11", "window": "last_7_days"},
+        {"title": "1945 - 1961: The Complete Story Of The Early Cold War (2:32:19)", "channel": "Timeline - World History Documentaries", "url": "https://www.youtube.com/watch?v=57nbg7aXSAg", "views_displayed": "124,243 views", "published_or_age": "2026-10-10", "window": "last_7_days"},
+        {"title": "JFK's Assassination and the CIA's Psychic Cold War", "channel": "The Why Files", "url": "https://www.youtube.com/watch?v=Au3Sk48hYvA", "views_displayed": "2,252,605 views", "published_or_age": "2026-08-08", "window": "last_90_days"},
+        {"title": "Inside The KGB's Most Classified Cold War Operations (2:35:48)", "channel": "All Out History", "url": "https://www.youtube.com/watch?v=JCz73aLh99s", "views_displayed": "460,880 views", "published_or_age": "2026-07-25", "window": "last_90_days"},
+        {"title": "CIA Secret Wars: The Age of Undercover Operations | FULL DOC", "channel": "Pure Declassified", "url": "https://www.youtube.com/watch?v=d7nOnLtqtrI", "views_displayed": "902,720 views", "published_or_age": "2026-07-06", "window": "last_12_months"},
+        {"title": "Top 30 Declassified CIA Secrets", "channel": "WatchMojo.com", "url": "https://www.youtube.com/watch?v=vQPICiCJkjU", "views_displayed": "130,839 views (search listing)", "published_or_age": "8d ago (relative, as displayed)", "window": "last_30_days"}
+      ],
+      "evergreen_notes": [
+        {"note": "'How The CIA And KGB Fought Over Berlin | Battleground: Berlin' (Timeline, published 2018-10-14) has 2,775,257 views.", "url": "https://www.youtube.com/watch?v=q05rMyTzMrM"},
+        {"note": "'Former CIA Chief of Disguise Breaks Down Cold War Spy Gadgets' (WIRED, published 2020-11-25) has 10,236,615 views.", "url": "https://www.youtube.com/watch?v=DD841NmJbjM"},
+        {"note": "Very long uploads (2.5+ hours) from Timeline and All Out History reach six-figure views within days to months, which suggests demand for long-form sessions (inference, not a measured audience fact).", "url": "https://www.youtube.com/watch?v=JCz73aLh99s"}
+      ],
+      "advertiser_notes": [
+        {"note": "Discussion of war, terrorism, and sensitive events in educational or documentary framing can earn ads when it is non-graphic and not exploitative. 'Creators may not monetize content that profits from or exploits a sensitive event.'", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "This-month search results for 'declassified' also turned up many very small faceless uploads with 3-200 views (e.g., MagicScene Studio, The Blind Spot, American Vault). This suggests heavy low-quality supply, but I did not measure saturation systematically."
+    },
+    "3": {
+      "name": "Rise and fall of American companies",
+      "competitors": [
+        {"name": "Company Man", "url": "https://www.youtube.com/@companyman114", "subscribers_displayed": "1.8M subscribers", "seen": "2026-10-14"},
+        {"name": "MagnatesMedia", "url": "https://www.youtube.com/@MagnatesMedia", "subscribers_displayed": "1.86M subscribers", "seen": "2026-10-14"},
+        {"name": "Modern MBA", "url": "https://www.youtube.com/@ModernMBA", "subscribers_displayed": "833K subscribers", "seen": "2026-10-14"},
+        {"name": "Michael Girdley", "url": "https://www.youtube.com/@Michael-Girdley", "subscribers_displayed": "376K subscribers", "seen": "2026-10-14"},
+        {"name": "Bright Sun Films ('Bankrupt' series)", "url": "https://www.youtube.com/@BrightSunFilms", "subscribers_displayed": "1.66M subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "The Rise and Fall of Black Rifle Coffee", "channel": "Ryan Daniel Moran (189K subs)", "url": "https://www.youtube.com/watch?v=ysqING18SxA", "views_displayed": "1,488,773 views", "published_or_age": "2026-10-01", "window": "last_30_days"},
+        {"title": "Why Buffets Suddenly Disappeared", "channel": "Modern MBA", "url": "https://www.youtube.com/watch?v=PU1zr8ka-0s", "views_displayed": "808,146 views", "published_or_age": "2026-09-20", "window": "last_30_days"},
+        {"title": "Bankrupt - US Airways", "channel": "Bright Sun Films", "url": "https://www.youtube.com/watch?v=Cf_T_z_ALEM", "views_displayed": "639,019 views", "published_or_age": "2026-09-25", "window": "last_30_days"},
+        {"title": "Red Robin - The Rise and Fall?", "channel": "Company Man", "url": "https://www.youtube.com/watch?v=w4q6i-8fvHI", "views_displayed": "293,663 views", "published_or_age": "2026-09-16", "window": "last_30_days"},
+        {"title": "How Microsoft Wasted $113 Billion on Xbox", "channel": "Modern MBA", "url": "https://www.youtube.com/watch?v=BJ3PhlQ609w", "views_displayed": "647,452 views", "published_or_age": "2026-06-20", "window": "last_12_months"},
+        {"title": "The Rise and Fall of America's Most Lawless Corporation: Standard Oil", "channel": "Paul McAllister", "url": "https://www.youtube.com/watch?v=55D4w-ChkOE", "views_displayed": "237,427 views", "published_or_age": "2026-06-27", "window": "last_12_months"}
+      ],
+      "evergreen_notes": [
+        {"note": "'The Rise And Fall Of Subway' (Business Insider, published 2019-07-28) has 13,512,685 views.", "url": "https://www.youtube.com/watch?v=duQow41bTx0"},
+        {"note": "'Amazon Empire: The Rise and Reign of Jeff Bezos' (FRONTLINE PBS) showed 43,521,794 views, '6y ago', on the all-time view-sorted search listing.", "url": "https://www.youtube.com/watch?v=RVVfJVj5z8s"}
+      ],
+      "advertiser_notes": [
+        {"note": "Business history is generally outside the restricted categories. The usual rules still apply to titles and thumbnails as well as video content.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "MagnatesMedia's newest uploads all showed '1y ago' on 2026-10-14, so its current activity looks paused. Most top performers here cover modern consumer brands, not mid-century American companies specifically. The handle @companyman belongs to an unrelated 51-subscriber channel; the real Company Man is @companyman114."
+    },
+    "4": {
+      "name": "Lost American industries & forgotten towns",
+      "competitors": [
+        {"name": "Paul McAllister (55-60 min uploads, near-daily)", "url": "https://www.youtube.com/@Paul-McAllister1", "subscribers_displayed": "111K subscribers", "seen": "2026-10-14"},
+        {"name": "Bright Sun Films ('Abandoned' series)", "url": "https://www.youtube.com/@BrightSunFilms", "subscribers_displayed": "1.66M subscribers", "seen": "2026-10-14"},
+        {"name": "Chris Attrell", "url": "https://www.youtube.com/@attrell", "subscribers_displayed": "124K subscribers (from watch-page owner block)", "seen": "2026-10-14"},
+        {"name": "Ruairidh MacVeigh (transport/industrial history)", "url": "https://www.youtube.com/@rorymacve", "subscribers_displayed": "138K subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "Why Nobody Wants to Visit Laughlin", "channel": "Paul McAllister", "url": "https://www.youtube.com/watch?v=5O8Z5H-xN9A", "views_displayed": "206,144 views", "published_or_age": "2026-10-11", "window": "last_7_days"},
+        {"title": "Abandoned - Deauville Beach Resort Miami", "channel": "Bright Sun Films", "url": "https://www.youtube.com/watch?v=HWY4Qahz7E0", "views_displayed": "523K (channel grid, rounded)", "published_or_age": "4d ago (relative)", "window": "last_7_days"},
+        {"title": "How America's Most Powerful City Quietly Lost Everything: Philadelphia, Pennsylvania", "channel": "Paul McAllister", "url": "https://www.youtube.com/watch?v=P63E7Kg_4ek", "views_displayed": "209,525 views", "published_or_age": "2026-05-19", "window": "last_12_months"},
+        {"title": "13 New Jersey Towns That Were Slowly Abandoned", "channel": "Forgotten Towns", "url": "https://www.youtube.com/watch?v=wXksASHOAM4", "views_displayed": "139,494 views (search listing)", "published_or_age": "7mo ago (relative)", "window": "last_12_months"}
+      ],
+      "evergreen_notes": [
+        {"note": "'Route 66 - Forgotten Ghost Towns & Abandoned Places' (Chris Attrell, published 2023-12-28) has 6,190,571 views.", "url": "https://www.youtube.com/watch?v=o9MTF3S_-Uk"},
+        {"note": "'Why Did America Abandon Route 66? | Abandoned (Full Episode)' (VICE, published 2023-05-16) has 5,790,425 views.", "url": "https://www.youtube.com/watch?v=tedJdhb6QJI"}
+      ],
+      "advertiser_notes": [
+        {"note": "No specific restriction applies to this topic. General advertiser-friendly guidelines cover the content, title, and thumbnail.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "This-year searches for 'lost american industry' and 'forgotten american industry town' returned many new faceless channels with very low views (1, 27, 93, 133, 178, 776, 782), e.g., America's Lost Fortune, TIME AND INK, The Lost USA, Stamped in the U.S.A. This points to crowded low-performing supply in this exact keyword phrasing. It is a qualitative observation only, not a measured saturation index."
+    },
+    "5": {
+      "name": "Military technology & engineering history",
+      "competitors": [
+        {"name": "Mustard", "url": "https://www.youtube.com/@MustardChannel", "subscribers_displayed": "2.39M subscribers (60 videos)", "seen": "2026-10-14"},
+        {"name": "Military Aviation History", "url": "https://www.youtube.com/@MilitaryAviationHistory", "subscribers_displayed": "469K subscribers", "seen": "2026-10-14"},
+        {"name": "The History Guy: History Deserves to Be Remembered", "url": "https://www.youtube.com/@TheHistoryGuyChannel", "subscribers_displayed": "1.65M subscribers", "seen": "2026-10-14"},
+        {"name": "Animarchy History", "url": "https://www.youtube.com/watch?v=gAhTT2ZvF-U", "subscribers_displayed": "224K subscribers (from watch-page owner block)", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "This Jet Changed Everything", "channel": "Mustard", "url": "https://www.youtube.com/watch?v=YCD1j4L7j3s", "views_displayed": "2,565,102 views", "published_or_age": "2026-06-05", "window": "last_12_months"},
+        {"title": "Slavjanking Through the Sound Barrier: The Horrible History of Russian Fighter Jets", "channel": "Animarchy History", "url": "https://www.youtube.com/watch?v=gAhTT2ZvF-U", "views_displayed": "256,146 views", "published_or_age": "2026-09-05", "window": "last_90_days"},
+        {"title": "The BIGGEST and RAREST Old Military Aircraft Ever Built", "channel": "Extreme Machines", "url": "https://www.youtube.com/watch?v=_eIlLt4s3nE", "views_displayed": "201K (search listing, rounded)", "published_or_age": "4mo ago (relative)", "window": "last_12_months"},
+        {"title": "Last Days of the SR 71", "channel": "The History Guy", "url": "https://www.youtube.com/watch?v=Vf_lsop93K8", "views_displayed": "69,814 views", "published_or_age": "2026-10-09", "window": "last_7_days"}
+      ],
+      "evergreen_notes": [
+        {"note": "'What Happened To The Nautilus?' (Mustard, published 2024-04-12) has 20,516,156 views.", "url": "https://www.youtube.com/watch?v=8AbtCE-sePc"},
+        {"note": "'Why No One Could Touch the SR-71' (Mustard, published 2018-08-09) has 12,798,076 views about 8 years after upload.", "url": "https://www.youtube.com/watch?v=th-RoJBP0Vs"}
+      ],
+      "advertiser_notes": [
+        {"note": "Weapons topics: I did not open the separate firearms section of the guidelines, so it is unverified here. War and conflict discussion that is non-graphic and educational can earn full ads.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "The firearms and weapons ad-suitability section was not reviewed. Mustard's grid loaded only partially in the browser; its numbers come from server-rendered page data."
+    },
+    "6": {
+      "name": "Untold stories of American inventors",
+      "competitors": [
+        {"name": "Primal Space (engineering/invention explainers)", "url": "https://www.youtube.com/@primalspace", "subscribers_displayed": "1.95M subscribers", "seen": "2026-10-14"},
+        {"name": "Lost in Time", "url": "https://www.youtube.com/watch?v=UuVjMnXREks", "subscribers_displayed": "2.3M subscribers (from watch-page owner block)", "seen": "2026-10-14"},
+        {"name": "MagnatesMedia (occasional inventor biographies)", "url": "https://www.youtube.com/@MagnatesMedia", "subscribers_displayed": "1.86M subscribers", "seen": "2026-10-14"},
+        {"name": "Veritasium (science/invention history, broad channel)", "url": "https://www.youtube.com/watch?v=AF8d72mA41M", "subscribers_displayed": "21.4M subscribers (from watch-page owner block)", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "How Ford Built a Car Every 40 Seconds", "channel": "Primal Space", "url": "https://www.youtube.com/watch?v=rCGQRonkEHs", "views_displayed": "615,855 views", "published_or_age": "2026-04-30", "window": "last_12_months"},
+        {"title": "10 Erased Inventions That Could Have Changed the World", "channel": "The Lazy Detective (37.5K subs)", "url": "https://www.youtube.com/watch?v=lLLtkfET8qA", "views_displayed": "492,326 views", "published_or_age": "2025-12-25", "window": "last_12_months"},
+        {"title": "Nikola Tesla's GENIUS Inventions", "channel": "Lost in Time", "url": "https://www.youtube.com/watch?v=UuVjMnXREks", "views_displayed": "228,026 views", "published_or_age": "2026-09-04", "window": "last_90_days"},
+        {"title": "Thomas Edison: The IDIOT Who Changed The World", "channel": "MagnatesMedia", "url": "https://www.youtube.com/watch?v=AafeUIwSLvw", "views_displayed": "255,271 views", "published_or_age": "2025-08-08", "window": "older_than_12_months"}
+      ],
+      "evergreen_notes": [
+        {"note": "'Why It Was Almost Impossible to Make the Blue LED' (Veritasium, published 2024-02-08) has 56,363,298 views.", "url": "https://www.youtube.com/watch?v=AF8d72mA41M"}
+      ],
+      "advertiser_notes": [
+        {"note": "This topic carries low inherent ad-suitability risk under the general guidelines.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "I found no large channel dedicated to American inventors. This-year searches ('forgotten inventor who changed the world', 'american inventor untold story') returned mostly tiny channels with 1-131 views; the exceptions were The Lazy Detective (492K) and Lost in Time (228K). Demand evidence is indirect, from broad science and engineering channels."
+    },
+    "7": {
+      "name": "Historic business scandals & financial mysteries",
+      "competitors": [
+        {"name": "Coffeezilla (mostly contemporary scams)", "url": "https://www.youtube.com/@Coffeezilla", "subscribers_displayed": "4.73M subscribers", "seen": "2026-10-14"},
+        {"name": "ColdFusion", "url": "https://www.youtube.com/@ColdFusion", "subscribers_displayed": "5.25M subscribers", "seen": "2026-10-14"},
+        {"name": "FINAiUS", "url": "https://www.youtube.com/@Finaius", "subscribers_displayed": "799K subscribers", "seen": "2026-10-14"},
+        {"name": "Old Money Documentaries (family business dynasties)", "url": "https://www.youtube.com/@OldMoneyDocumentaries", "subscribers_displayed": "116K subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "Exposing a $300,000,000 Scam", "channel": "Coffeezilla", "url": "https://www.youtube.com/watch?v=04FRAsU0za0", "views_displayed": "4,660,548 views", "published_or_age": "2026-05-12", "window": "last_12_months"},
+        {"title": "Jane Street - The $40 Billion Ghost of Wall Street", "channel": "FINAiUS", "url": "https://www.youtube.com/watch?v=vQAD3JMx1_E", "views_displayed": "638K (channel grid, rounded)", "published_or_age": "2w ago (relative)", "window": "last_30_days"},
+        {"title": "The 24-Year-Old \"Genius\" Who Lost $35 Billion | Documentary", "channel": "FINAiUS", "url": "https://www.youtube.com/watch?v=PbgFJZ46bSM", "views_displayed": "488,891 views", "published_or_age": "2026-08-30", "window": "last_90_days"},
+        {"title": "$4.5 Billion Stolen | The Biggest Financial Scandal", "channel": "ALPHA DECODES", "url": "https://www.youtube.com/watch?v=SIgfV-qz06o", "views_displayed": "376,989 views", "published_or_age": "2026-08-11", "window": "last_90_days"}
+      ],
+      "evergreen_notes": [
+        {"note": "'The Madoff Affair (full documentary) | FRONTLINE' (published 2021-04-15) has 11,209,915 views.", "url": "https://www.youtube.com/watch?v=rH1Y66IwKvc"},
+        {"note": "'Enron - The Biggest Fraud in History' (ColdFusion) showed 8,720,373 views, '7y ago', on the all-time view-sorted search listing. I could not retrieve its exact publish date.", "url": "https://www.youtube.com/watch?v=e5qC1YGRMKI"}
+      ],
+      "advertiser_notes": [
+        {"note": "Topics about fraud and crime are generally not restricted when presented as educational or documentary content. Sensitive-event and violence rules apply only if the content goes there.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "Most high performers cover recent or modern scandals. I found no large channel focused on pre-1990 American business scandals, so demand for the 'historic' angle is inferred from evergreen documentaries such as Madoff and Enron."
+    },
+    "8": {
+      "name": "Espionage & intelligence history",
+      "competitors": [
+        {"name": "fern", "url": "https://www.youtube.com/@fern-tv", "subscribers_displayed": "5.59M subscribers", "seen": "2026-10-14"},
+        {"name": "Primal Space", "url": "https://www.youtube.com/@primalspace", "subscribers_displayed": "1.95M subscribers", "seen": "2026-10-14"},
+        {"name": "Cold War Tales", "url": "https://www.youtube.com/@TheColdWarTales", "subscribers_displayed": "11.4K subscribers", "seen": "2026-10-14"},
+        {"name": "Cold War Chronicles", "url": "https://www.youtube.com/@ColdWarChronicles-n1f", "subscribers_displayed": "7.24K subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "The FBI's Most Valuable Agent", "channel": "fern", "url": "https://www.youtube.com/watch?v=hK8kzWOBi-U", "views_displayed": "7,197,722 views", "published_or_age": "2026-09-09", "window": "last_90_days"},
+        {"title": "The CIA's Most Valuable Spy", "channel": "fern", "url": "https://www.youtube.com/watch?v=vcUGp_94uBk", "views_displayed": "5,990,025 views", "published_or_age": "2026-05-10", "window": "last_12_months"},
+        {"title": "How The CIA Hacked Russia", "channel": "Primal Space", "url": "https://www.youtube.com/watch?v=CsyQa8_9tlw", "views_displayed": "1,797,731 views", "published_or_age": "2026-06-30", "window": "last_12_months"},
+        {"title": "How a Husband Discovered His Wife Was a Soviet Spy (Cold War Story)", "channel": "Cold War Tales (11.4K subs)", "url": "https://www.youtube.com/watch?v=bKHDtNG0k1M", "views_displayed": "247,791 views", "published_or_age": "2025-11-02", "window": "last_12_months"},
+        {"title": "The Smallest Clue That Triggered a Massive Spy Hunt in America (Cold War Story)", "channel": "Cold War Chronicles (7.24K subs)", "url": "https://www.youtube.com/watch?v=xxdVGzcft44", "views_displayed": "98,953 views", "published_or_age": "2026-01-31", "window": "last_12_months"}
+      ],
+      "evergreen_notes": [
+        {"note": "'The Greatest Double Agent Ever' (Primal Space, published 2025-10-07) has 4,430,468 views.", "url": "https://www.youtube.com/watch?v=YyhzgNdSnbQ"},
+        {"note": "'United States of Secrets, Part One' (FRONTLINE PBS) showed 11,007,097 views, '5y ago', on the all-time view-sorted search listing.", "url": "https://www.youtube.com/watch?v=kaUemcqIQ-k"}
+      ],
+      "advertiser_notes": [
+        {"note": "Espionage history is not a restricted category in itself. Violence, terrorism, and sensitive-event rules apply depending on depiction, and educational context helps.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "Small channels (Cold War Tales, Cold War Chronicles) have individual outlier videos at 100K-250K, but most of their uploads get hundreds to low thousands of views (channel grids, 2026-10-14). The handle @SpyMuseum is not the International Spy Museum; its official channel was not identified."
+    },
+    "9": {
+      "name": "American history 1940–1990",
+      "competitors": [
+        {"name": "Vintage America (nostalgia, 1950s-70s)", "url": "https://www.youtube.com/@VintageAmerica1960", "subscribers_displayed": "36.8K subscribers", "seen": "2026-10-14"},
+        {"name": "RETRO REPORT", "url": "https://www.youtube.com/watch?v=YxDWEuLYXEY", "subscribers_displayed": "91.7K subscribers (from watch-page owner block)", "seen": "2026-10-14"},
+        {"name": "Weird History", "url": "https://www.youtube.com/@WeirdHistory", "subscribers_displayed": "4.73M subscribers", "seen": "2026-10-14"},
+        {"name": "Today I Found Out", "url": "https://www.youtube.com/@TodayIFoundOut", "subscribers_displayed": "3.25M subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "Growing Up in the 1950s... It will make you cry", "channel": "Vintage America (36.8K subs)", "url": "https://www.youtube.com/watch?v=vYxIRcuN6ig", "views_displayed": "800,841 views", "published_or_age": "2026-04-23", "window": "last_12_months"},
+        {"title": "When Americans Were Still Skinny: What 1970s America Ate", "channel": "Vintage States (12.4K subs)", "url": "https://www.youtube.com/watch?v=DBjhhPi1wKw", "views_displayed": "609,133 views", "published_or_age": "2026-03-02", "window": "last_12_months"},
+        {"title": "The Price of Oil: Lessons From a 1970s Energy Crisis | Retro Report", "channel": "RETRO REPORT", "url": "https://www.youtube.com/watch?v=YxDWEuLYXEY", "views_displayed": "157,401 views", "published_or_age": "2026-03-06", "window": "last_12_months"},
+        {"title": "The Blizzards That Buried America in the 1970s", "channel": "Vintage America", "url": "https://www.youtube.com/watch?v=lstBJod40pg", "views_displayed": "76,161 views (search listing)", "published_or_age": "1mo ago (relative)", "window": "last_90_days"}
+      ],
+      "evergreen_notes": [
+        {"note": "'What Everyday Life Really Looked Like in the 1950s' (King Rose Archives, published 2015-04-27) has 5,775,831 views.", "url": "https://www.youtube.com/watch?v=6WEzqw-1vTU"},
+        {"note": "'1955 vs 2025, who actually had it better?' (Johnny Harris, published 2025-06-18) has 4,116,416 views.", "url": "https://www.youtube.com/watch?v=J4qqIJ312zI"}
+      ],
+      "advertiser_notes": [
+        {"note": "Nostalgia and social-history content carries low inherent risk. Civil-rights-era or political subjects fall under the controversial-issues and hateful-content rules, where educational or documentary framing allows ads.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "Results here are very hit-driven. Vintage America's 800K video sits beside recent uploads with 660-2.2K views ('2w ago' on its channel grid, 2026-10-14). I did not separate nostalgia 'life in the 1950s' content from event history (Korea, Vietnam, space race, civil rights) for this pillar."
+    },
+    "10": {
+      "name": "Unsolved historical mysteries",
+      "competitors": [
+        {"name": "LEMMiNO", "url": "https://www.youtube.com/@LEMMiNO", "subscribers_displayed": "5.93M subscribers (171 videos)", "seen": "2026-10-14"},
+        {"name": "The Why Files", "url": "https://www.youtube.com/@TheWhyFiles", "subscribers_displayed": "6M subscribers", "seen": "2026-10-14"},
+        {"name": "Barely Sociable", "url": "https://www.youtube.com/@BarelySociable", "subscribers_displayed": "1.38M subscribers (36 videos)", "seen": "2026-10-14"},
+        {"name": "Brofessor Stein", "url": "https://www.youtube.com/watch?v=O6Ibt7nPKQI", "subscribers_displayed": "383K subscribers (from watch-page owner block)", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "The Ship at the Bottom of the Atlantic Isn't the Titanic", "channel": "The Why Files", "url": "https://www.youtube.com/watch?v=kxS5wS7dtlA", "views_displayed": "2,318,226 views", "published_or_age": "2026-10-09", "window": "last_7_days"},
+        {"title": "History's Biggest Unsolved Mysteries Science Still Can't Explain", "channel": "Brofessor Stein", "url": "https://www.youtube.com/watch?v=O6Ibt7nPKQI", "views_displayed": "905,612 views", "published_or_age": "2026-06-23", "window": "last_12_months"},
+        {"title": "Greatest Unsolved Mysteries Ever | Mysteries Unearthed with Danny Trejo", "channel": "HISTORY", "url": "https://www.youtube.com/watch?v=DgPEBq4Ke8g", "views_displayed": "7,786,445 views (search listing)", "published_or_age": "9mo ago (relative)", "window": "last_12_months"},
+        {"title": "The Informant's Gambit - A Darknet Mystery", "channel": "Barely Sociable", "url": "https://www.youtube.com/watch?v=YEEpwhTlPj8", "views_displayed": "929K (channel grid, rounded)", "published_or_age": "3mo ago (relative)", "window": "last_12_months"}
+      ],
+      "evergreen_notes": [
+        {"note": "'The Kennedy Assassination: Inside the Book Depository' (LEMMiNO, published 2023-07-24) has 15,347,028 views.", "url": "https://www.youtube.com/watch?v=5u7euN1HTuU"},
+        {"note": "'The Unbreakable Kryptos Code' (LEMMiNO, published 2024-05-04) has 9,303,672 views.", "url": "https://www.youtube.com/watch?v=jVpsLMCIB0Y"}
+      ],
+      "advertiser_notes": [
+        {"note": "Mystery content that touches deaths or crimes falls under the violence and sensitive-event rules. 'Discussions involving the loss of life or tragedy that are not exploitative or dismissive' can earn ads.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "In all-time search results, 'unsolved mystery history' is dominated by non-U.S. or non-history channels (e.g., Dhruv Rathee, BuzzFeed Unsolved), so the query is noisy. Leaders such as LEMMiNO and Barely Sociable upload rarely (36-171 total videos)."
+    },
+    "11": {
+      "name": "Forgotten engineering disasters",
+      "competitors": [
+        {"name": "Practical Engineering", "url": "https://www.youtube.com/@PracticalEngineeringChannel", "subscribers_displayed": "4.84M subscribers", "seen": "2026-10-14"},
+        {"name": "Fascinating Horror", "url": "https://www.youtube.com/@FascinatingHorror", "subscribers_displayed": "1.46M subscribers", "seen": "2026-10-14"},
+        {"name": "Plainly Difficult", "url": "https://www.youtube.com/@PlainlyDifficult", "subscribers_displayed": "1.1M subscribers", "seen": "2026-10-14"},
+        {"name": "Forgotten Disasters (small)", "url": "https://www.youtube.com/@ForgottenDisasters2", "subscribers_displayed": "7.23K subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "The Mind-Blowing Flaw That Flooded New Orleans", "channel": "Practical Engineering", "url": "https://www.youtube.com/watch?v=Ku_ockR2t44", "views_displayed": "2,006,995 views", "published_or_age": "2026-07-07", "window": "last_12_months"},
+        {"title": "This Led To The Sterile Cockpit Rule: Eastern Airlines 212", "channel": "Fascinating Horror", "url": "https://www.youtube.com/watch?v=_blF6L04Dfk", "views_displayed": "2.2M (channel grid, rounded)", "published_or_age": "1mo ago (relative)", "window": "last_90_days"},
+        {"title": "Every Corner Cut Led to 27 Lives Lost | Plainly Difficult", "channel": "Plainly Difficult", "url": "https://www.youtube.com/watch?v=plYQ-StbrOE", "views_displayed": "619,656 views", "published_or_age": "2026-09-05", "window": "last_90_days"},
+        {"title": "Caught on CCTV | The Clairton Coke Works Disaster", "channel": "Plainly Difficult", "url": "https://www.youtube.com/watch?v=w38by55TSM4", "views_displayed": "267K (channel grid, rounded)", "published_or_age": "4d ago (relative)", "window": "last_7_days"},
+        {"title": "(1974) The Flixborough Disaster: The Deadliest Engineering Mistake Ever", "channel": "Forgotten Disasters (7.23K subs)", "url": "https://www.youtube.com/watch?v=W6dhIXNctAc", "views_displayed": "69,761 views", "published_or_age": "2026-04-15", "window": "last_12_months"}
+      ],
+      "evergreen_notes": [
+        {"note": "'The Wild Story of the Taum Sauk Dam Failure' (Practical Engineering, published 2024-10-15) has 11,430,045 views.", "url": "https://www.youtube.com/watch?v=zRM2AnwNY20"},
+        {"note": "'Joints Stuffed With Newspaper: The Ronan Point Disaster' (Fascinating Horror, published 2024-07-30) has 2,803,387 views.", "url": "https://www.youtube.com/watch?v=BtJUbTa8q0M"}
+      ],
+      "advertiser_notes": [
+        {"note": "Disaster content involves loss of life. Per the sensitive-events rule, non-exploitative discussion can earn ads, while graphic injury or dead bodies limit or remove ads. Fully obscured or blurred bodies in educational content are listed as full-ad eligible.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "This-year search for 'forgotten engineering disaster' returned mostly tiny uploads with 3-1,342 views. Forgotten Disasters' recent uploads get 390-4.4K views on its channel grid. Established channels dominate the category."
+    },
+    "12": {
+      "name": "Forgotten people who changed history",
+      "competitors": [
+        {"name": "Dark Docs (lesser-known military figures)", "url": "https://www.youtube.com/@DarkDocs", "subscribers_displayed": "1.21M subscribers", "seen": "2026-10-14"},
+        {"name": "The History Guy: History Deserves to Be Remembered", "url": "https://www.youtube.com/@TheHistoryGuyChannel", "subscribers_displayed": "1.65M subscribers", "seen": "2026-10-14"},
+        {"name": "FORGOTTEN HISTORY", "url": "https://www.youtube.com/@FORGOTTENHISTORYCHANNEL", "subscribers_displayed": "1.11M subscribers", "seen": "2026-10-14"},
+        {"name": "Biographics", "url": "https://www.youtube.com/@Biographics", "subscribers_displayed": "2.44M subscribers", "seen": "2026-10-14"}
+      ],
+      "videos": [
+        {"title": "The Man Who Taught America True Violence", "channel": "Dark Docs", "url": "https://www.youtube.com/watch?v=k1kx7YWtRjw", "views_displayed": "1,184,287 views", "published_or_age": "2026-09-22", "window": "last_30_days"},
+        {"title": "The General Who Answered To Nobody", "channel": "Dark Docs", "url": "https://www.youtube.com/watch?v=CajxbRWGAlc", "views_displayed": "1,052,425 views", "published_or_age": "2026-09-01", "window": "last_90_days"},
+        {"title": "The Road to the First Aerial Victory", "channel": "The History Guy", "url": "https://www.youtube.com/watch?v=uPeb2YNVDaw", "views_displayed": "46,633 views", "published_or_age": "2026-10-05", "window": "last_30_days"},
+        {"title": "The Unsettling Truth About the VJ Day Kiss Photo and Who Were the Kissers?", "channel": "Today I Found Out", "url": "https://www.youtube.com/watch?v=TIg-5GKwCww", "views_displayed": "41,867 views", "published_or_age": "2026-10-07", "window": "last_7_days"}
+      ],
+      "evergreen_notes": [
+        {"note": "'The Forgotten Attack on the Twin Towers' (fern, published 2025-03-19) has 3,810,422 views.", "url": "https://www.youtube.com/watch?v=nJr8rFbXTy0"},
+        {"note": "'USS Liberty - When Israel attacked the U.S.A. - Forgotten History' (FORGOTTEN HISTORY) showed 1,465,114 views, '3y ago', on the all-time view-sorted search listing.", "url": "https://www.youtube.com/watch?v=V5WUIzrCxxo"}
+      ],
+      "advertiser_notes": [
+        {"note": "Biography content carries low inherent risk. Figures connected to violence or war fall under the war and violence rules, where non-graphic educational treatment can earn full ads.", "url": "https://support.google.com/youtube/answer/6162278"}
+      ],
+      "gaps": "Biographics' recent uploads show only 6.2K-17K views on its channel grid (5-7 months old), which suggests the generic biography format is weakening; this is inference. The literal query 'forgotten person who changed history' (this year) returned only tiny channels (43-67 views). This pillar overlaps heavily with pillars 1, 6, and 8."
+    }
+  },
+  "rpm_evidence": [
+    {"label": "RPM vs CPM definition", "category": "official definition", "value_or_text": "RPM: 'Revenue Per Mille (RPM) is a metric that represents how much money you've earned per 1,000 video views'. It is total revenue after YouTube's revenue share. CPM: 'Cost per 1,000 impressions (CPM) is a metric that represents how much advertisers are spending to show ads on YouTube'.", "url": "https://support.google.com/youtube/answer/9314357", "date": "page undated; accessed 2026-10-14"},
+    {"label": "Creator revenue share on watch-page ads", "category": "official definition", "value_or_text": "YouTube pays partners 55% of net revenues from ads displayed or streamed on their public videos on the Watch Page.", "url": "https://support.google.com/youtube/answer/72902", "date": "page undated; accessed 2026-10-14"},
+    {"label": "Flippa listing 12813083: faceless history/mansions documentary channel", "category": "creator-reported (single channel, seller claim on a marketplace listing, not independently audited)", "value_or_text": "The seller claims RPM exceeding $20. U.S. accounts for 77.2% of views. 83% of the audience is 45+ and 41.7% is 65+. Most viewing is on TV devices. The channel started in August 2025. Headline and description figures conflict (views 12M vs 9M; revenue $256K vs $180,049.90; subscribers 98,123 vs 81.2K). The listing shows a 'Verified Listing' badge but also states financials are seller-provided.", "url": "https://flippa.com/12813083", "date": "listing date not shown; accessed 2026-10-14"},
+    {"label": "Flippa listing 12979853: history/cultural-education channel", "category": "creator-reported (single channel, seller claim on a marketplace listing, not independently audited)", "value_or_text": "Claims a $13 average RPM, about 84K subscribers, and $33,677 gross revenue in the past year. 64% of the audience is in the U.S. Topic is African history / cultural education.", "url": "https://flippa.com/12979853-85k-sub-monetised-history-channel-making-32k-arr-high-13-rpm-with-premium-us-uk-audience-96-net-margin-priced-for-immediate-liquidation-at-1x-multiple", "date": "listing date not shown; accessed 2026-10-14"},
+    {"label": "LearningRevolution YouTube earnings calculator", "category": "industry estimate (LearningRevolution.net; methodology not disclosed beyond 'creator income reports, YouTube Studio benchmark data, and advertising industry research')", "value_or_text": "History & Documentary: $4-$6 RPM (average $5) for a Tier 1 audience. $1-$2.50 for South/Southeast Asian audiences.", "url": "https://www.learningrevolution.net/youtube-earnings-calculator/", "date": "last updated 2026-03-03"},
+    {"label": "FlowShorts history niche page", "category": "industry estimate (FlowShorts; no methodology or source cited)", "value_or_text": "History: RPM $5-$10.", "url": "https://flowshorts.app/youtube-money/history", "date": "undated ('2026 Data' in title)"}
+  ],
+  "limitations": [
+    "Do not average the RPM figures above into a niche RPM. They mix official definitions, unaudited seller claims from two single channels, and blog estimates with undisclosed methods.",
+    "Subscriber and view counts are YouTube's public rounded displays (channel grids, search listings) or exact watch-page counts captured on 2026-10-14. They change continuously.",
+    "Public YouTube pages do not show competitor audience age, geography, or RPM. No claim is made about the age profile of any listed channel's audience. The only age and geography data is the seller-reported Flippa listing.",
+    "Google Trends could not be read (HTTP 429 via fetch), so no search-trend data is included.",
+    "YouTube search results are personalized and region-dependent even when logged out. Queries used hl=en&gl=US. The 'this year' and all-time view-sorted searches are samples, not a complete census of each pillar.",
+    "WebFetch could not read YouTube pages because they are rendered by JavaScript. Data came from the in-app browser (early channels) and from server-rendered ytInitialData in public, logged-out page HTML (no API, no login).",
+    "The 'low-view saturation' observations (pillars 2, 4, 6, 11, 12) are qualitative and come from small samples of search results.",
+    "Exact data for ColdFusion's Enron video (e5qC1YGRMKI) could not be retrieved. Its listing figures are reported as displayed.",
+    "The Nielsen older-viewer growth figures (Feb 2025 vs Feb 2023) measure YouTube viewing on TV sets only, not total YouTube usage.",
+    "I did not find a primary source (Pew, Nielsen, Think with Google) that directly measures long-form preference among viewers 50+."
+  ]
+}

@@ -1,0 +1,8 @@
+{"terms": [
+ {"term": "Ghost Army", "es": "Ejército Fantasma", "note": "Spanish-language coverage commonly uses 'Ejército Fantasma'; keep 'Ghost Army' in parentheses on first mention"},
+ {"term": "23rd Headquarters Special Troops", "es": "23rd Headquarters Special Troops", "keep": true, "note": "official unit name, not translated"},
+ {"term": "Rhine", "es": "Rin"},
+ {"term": "Ralph Ingersoll", "keep": true},
+ {"term": "Operation Fortitude", "es": "Operación Fortitude"},
+ {"term": "D-Day", "es": "Día D"}
+]}

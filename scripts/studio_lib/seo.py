@@ -106,6 +106,7 @@ def write_seo(pdir: Path, quality: str = "preview") -> list[Path]:
                f"- Suggested publish order: {sh.get('publish_order', '—')}", ""]
     out.append(pdir / "seo" / "shorts-metadata.md")
     out[-1].write_text("\n".join(sm), encoding="utf-8")
+    out.append(publishing_checklist(p, pdir))
     thumb = render_thumbnail(p, pdir)
     if thumb:
         out.append(thumb)
@@ -127,3 +128,39 @@ def render_thumbnail(p: dict, pdir: Path) -> Path | None:
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out)
     return out
+
+
+def publishing_checklist(p: dict, pdir: Path) -> Path:
+    """Manual pre-publish checklist (nothing here is automated: the studio never uploads)."""
+    dubs = sorted(x.stem.replace("dub-", "") for x in (pdir / "reports").glob("dub-*.json"))
+    L = [f"# Publishing checklist — {p['title']}", "",
+         "Tick each item in YouTube Studio. The studio prepares files; it never uploads or publishes.", "",
+         "## Before upload",
+         "- [ ] `reports/quality-report.json` status is `pass` (visual review approved)",
+         "- [ ] `reports/fact-check-report.md` reviewed; contested claims are framed on screen and in narration",
+         "- [ ] Originality: script, visuals and voice choices are specific to this episode (YouTube's *inauthentic content* "
+         "policy, renamed from 'repetitious content' on 2025-07-15, demonetizes mass-produced/templated content)",
+         "- [ ] Advertiser-friendly: no graphic injury/death; nothing graphic in the thumbnail or first 7 seconds",
+         "- [ ] Altered/synthetic content disclosure decided (Studio → Attributes → AI use) — required for realistic "
+         "synthetic depictions of real people/events; stylised animation labelled 'illustrative' usually is not",
+         "", "## Upload (master video, once)",
+         "- [ ] Upload `renders/long-video.mp4` · title/description/tags from `seo/youtube-metadata.md`",
+         "- [ ] Chapters present in description (first at 0:00, ≥ 3, each ≥ 10 s)",
+         "- [ ] Captions: upload `subtitles/captions.srt` (Subtitles → Upload file → With timing)",
+         "- [ ] Thumbnail `thumbnails/thumbnail.png`; pinned comment from metadata",
+         "- [ ] Language of video = English (United States)", ""]
+    if dubs:
+        L += ["## Additional languages (same video URL)"] + [
+            f"- [ ] `{d}`: audio track `renders/audio-{d}.m4a` (Languages → Add language → Dub), captions "
+            f"`subtitles/captions-{d}.srt`, localized title/description (`seo/localizations.json`); "
+            f"check `reports/dub-{d}.json` status and native review" for d in dubs] + [
+            "- [ ] Feature access: multi-language audio requires Advanced features and may be limited to some creators", ""]
+    L += ["## Shorts", "- [ ] Upload each Short in `shorts/`; set **Related video** → this video (Content → Short → Related video)",
+          "- [ ] Follow the publish order in `seo/shorts-metadata.md`", "",
+          "## After publishing",
+          "- [ ] Add `youtube_id` to project.json and re-run `studio.py shorts` (deep links in shorts-map.json)",
+          "- [ ] After 7 and 28 days: export Studio CSVs to `analytics/exports/` and run `studio.py analytics`", ""]
+    f = pdir / "reports" / "publishing-checklist.md"
+    f.parent.mkdir(parents=True, exist_ok=True)
+    f.write_text(chr(10).join(L), encoding="utf-8")
+    return f

@@ -152,7 +152,9 @@ def build_shorts(pdir: Path, quality: str = "preview", workers: int = 3, only: l
             continue
         t0 = time.time()
         segs = _segments(p, short)
-        narr = synthesize({s["id"]: s["narration"] for s in segs if s.get("narration")}, p.get("voice", {}),
+        from .pipeline import tts_config
+
+        narr = synthesize({s["id"]: s["narration"] for s in segs if s.get("narration")}, tts_config(p),
                           pdir / "audio" / "narration", log=log)
         tl = timeline.build(segs, narr, p.get("fps", 30))
         out_dir = pdir / "scenes" / f"short-{quality}"

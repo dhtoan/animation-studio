@@ -14,7 +14,7 @@ from .engines import FALLBACKS, availability
 
 # measured on the dev machine (1080p, ms/frame, single core) — see references/rendering.md
 COST_MS = {"kinetic": 115, "motion": 115, "whiteboard": 120, "handdrawn": 135, "artistic": 145,
-           "image_whiteboard": 160, "huashu_clip": 60, "animate_piece": 400, "html_seek": 400}
+           "image_whiteboard": 160, "archival": 140, "huashu_clip": 60, "animate_piece": 400, "html_seek": 400}
 # engines whose upstream pages are authored for one aspect only (unless the scene says otherwise)
 LANDSCAPE_ONLY = {"html_seek"}
 
@@ -33,7 +33,7 @@ PURPOSE_PREF = {
     "reveal": ["artistic", "kinetic", "motion"],
     "evidence": ["motion", "whiteboard"],
     "quote": ["kinetic", "motion"],
-    "recreation": ["handdrawn", "artistic"],
+    "recreation": ["archival", "handdrawn", "artistic"],
     "tutorial": ["whiteboard", "motion"],
     "cta": ["kinetic", "motion"],
     "illustration": ["image_whiteboard", "handdrawn"],
@@ -42,7 +42,8 @@ PURPOSE_PREF = {
 CATEGORY_BIAS = {
     "business": {"motion": 2, "artistic": 1, "kinetic": 1},
     "technology": {"motion": 2, "kinetic": 1},
-    "history": {"handdrawn": 2, "artistic": 1},
+    "history": {"handdrawn": 2, "archival": 1, "artistic": 1},
+    "startups": {"motion": 2, "kinetic": 1},
     "science": {"whiteboard": 2, "motion": 1},
     "diy": {"whiteboard": 2, "motion": 1},
 }

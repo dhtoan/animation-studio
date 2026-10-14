@@ -16,11 +16,11 @@ from __future__ import annotations
 import math
 import random
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageChops, ImageDraw
 
 from .. import design as D
-from ..draw import (Shape, character_shapes, ellipse_pts, icon_shapes, rect_pts, seed_of, text_image,
-                    wipe, wrap_text)
+from ..draw import (Shape, character_shapes, ellipse_pts, icon_shapes, rect_pts, resample, seed_of, sub_path,
+                    text_image, wipe, wrap_text)
 
 
 # ------------------------------------------------------------ layout helpers
@@ -183,12 +183,21 @@ def _text_font(eng, spec, role_default="h2"):
     return D.font(fam, size), role
 
 
+def _readable(eng, col):
+    """Accessibility: keep on-screen text at WCAG AA contrast against the engine background."""
+    bg = D.ENGINE_BG.get(eng.name)
+    if bg is None or eng.ctx.scene.get("params", {}).get("allow_low_contrast"):
+        return col
+    bgc = bg if isinstance(bg, tuple) else eng.theme.c(bg)
+    return D.ensure_contrast(col, bgc, 4.5)
+
+
 class TextEl(Element):
     default_dur = 1.0
 
     def texts(self):
         fnt, role = _text_font(self.eng, self.spec)
-        col = self.eng.theme.c(self.spec.get("color"), self.eng.style.text_color)
+        col = _readable(self.eng, self.eng.theme.c(self.spec.get("color"), self.eng.style.text_color))
         maxw = float(self.spec.get("max_width", 0.8 if not self.ctx.vertical else 0.86)) * self.ctx.W
         align = self.spec.get("align", "center")
         txt = self.spec.get("text", "")
@@ -255,7 +264,7 @@ class CounterEl(Element):
 
     def render(self, p, t):
         fnt, _ = _text_font(self.eng, {**self.spec, "style": self.spec.get("style", "hero")})
-        col = self.eng.theme.c(self.spec.get("color"), self.eng.style.text_color)
+        col = _readable(self.eng, self.eng.theme.c(self.spec.get("color"), self.eng.style.text_color))
         im = text_image(self.value_text(max(p, 0.0)), fnt, col)
         x, y = self.pos()
         lab = self.spec.get("label")
@@ -1027,7 +1036,129 @@ class ParticlesEl(Element):
         return im, (0, 0), None
 
 
-ELEMENT_TYPES = {
+class MapEl(Element):
+    default_dur = 1.6
+    _geo_cache: dict = {}
+
+    def is_dynamic(self, t):
+        last = max([self.ctx.resolve_time(r.get("at"), 0) + float(r.get("dur", 2.0)) for r in self.spec.get("routes", [])]
+                   + [self.ctx.resolve_time(m.get("at"), 0) + 0.6 for m in self.spec.get("markers", [])]
+                   + [self.start + self.dur])
+        return t < last + 0.05
+
+    def _features(self):
+        import json
+        from pathlib import Path
+
+        src = Path(self.ctx.scene.get("_project_dir", ".")) / self.spec["geojson"]
+        key = str(src)
+        if key not in self._geo_cache:
+            self._geo_cache[key] = json.loads(src.read_text(encoding="utf-8"))["features"]
+        return self._geo_cache[key]
+
+    def render(self, p, t):
+        th = self.eng.theme
+        x, y, w, h = self.box((0.05, 0.08, 0.9, 0.84))
+        lon0, lat0, lon1, lat1 = self.spec.get("bounds", [-12, 35, 20, 60])
+        kx = math.cos(math.radians((lat0 + lat1) / 2))
+        sx = w / ((lon1 - lon0) * kx)
+        sy = h / (lat1 - lat0)
+        s = min(sx, sy)
+        ox = x + (w - (lon1 - lon0) * kx * s) / 2
+        oy = y + (h - (lat1 - lat0) * s) / 2
+
+        def P(lon, lat):
+            return ox + (lon - lon0) * kx * s, oy + (lat1 - lat) * s
+
+        W, H = self.ctx.W, self.ctx.H
+        im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        d = ImageDraw.Draw(im)
+        lw = max(1, int(self.eng.line_w(0.0018)))
+        land = th.c(self.spec.get("land", "light"))
+        sea = th.c(self.spec.get("sea", "#6f8796"))
+        d.rectangle((x, y, x + w, y + h), fill=sea + (int(255 * D.clamp(p * 2)),))
+        border = th.c(self.spec.get("border", "muted"))
+        hl = {h_["name"].lower(): th.c(h_.get("color", "accent")) for h_ in self.spec.get("highlight", [])}
+        a_land = int(255 * D.clamp(p * 2))
+        for f in self._features():
+            props = f.get("properties", {})
+            name = str(props.get("NAME") or props.get("ADMIN") or props.get("name") or "").lower()
+            geom = f.get("geometry") or {}
+            polys = geom.get("coordinates", [])
+            if geom.get("type") == "Polygon":
+                polys = [polys]
+            elif geom.get("type") != "MultiPolygon":
+                continue
+            for poly in polys:
+                ring = poly[0]
+                if not any(lon0 - 5 <= lon <= lon1 + 5 and lat0 - 5 <= lat <= lat1 + 5 for lon, lat in ring[:: max(1, len(ring) // 20)]):
+                    continue
+                pts = [P(lon, lat) for lon, lat in ring]
+                col = hl.get(name, land)
+                hp = D.clamp((p - 0.4) / 0.6) if name in hl else 1.0
+                fill = D.mix_rgb(land, col, hp) if name in hl else land
+                d.polygon(pts, fill=fill + (a_land,), outline=border + (a_land,))
+                if lw > 1:
+                    d.line(pts + [pts[0]], fill=border + (a_land,), width=lw)
+        ink = th.c(self.eng.style.text_color)
+        f_lab = D.font(self.eng.style.body_font, D.TYPE_SCALE["label"] * self.ctx.U * 1.15)
+        for lab in self.spec.get("labels", []):
+            la = D.clamp((t - self.ctx.resolve_time(lab.get("at"), self.start + 0.6)) / 0.5)
+            if la > 0:
+                px, py = P(lab["lon"], lab["lat"])
+                txt = lab["text"]
+                d.text((px - f_lab.getlength(txt) / 2, py), txt, font=f_lab, fill=th.c(lab.get("color"), "muted") + (int(200 * la),))
+        tip = None
+        for r in self.spec.get("routes", []):
+            r0 = self.ctx.resolve_time(r.get("at"), self.start + 0.8)
+            q = D.clamp((t - r0) / float(r.get("dur", 2.0)))
+            if q <= 0:
+                continue
+            pts = [P(lon, lat) for lon, lat in r["path"]]
+            part, tp = sub_path(resample(pts, 4.0), D.ease_in_out(q))
+            col = th.c(r.get("color"), "negative")
+            if len(part) >= 2:
+                if r.get("dashed"):
+                    for i in range(0, len(part) - 1, 4):
+                        d.line(part[i:i + 3], fill=col + (255,), width=lw * 3)
+                else:
+                    d.line(part, fill=col + (255,), width=lw * 3, joint="curve")
+                if q < 1 and tp:
+                    rr = lw * 4
+                    d.ellipse((tp[0] - rr, tp[1] - rr, tp[0] + rr, tp[1] + rr), fill=col + (255,))
+                elif q >= 1 and len(part) >= 3:
+                    (ax, ay), (bx, by) = part[-3], part[-1]
+                    ang = math.atan2(by - ay, bx - ax)
+                    hl_ = self.ctx.U * 0.025
+                    d.polygon([(bx, by), (bx - hl_ * math.cos(ang - 0.5), by - hl_ * math.sin(ang - 0.5)),
+                               (bx - hl_ * math.cos(ang + 0.5), by - hl_ * math.sin(ang + 0.5))], fill=col + (255,))
+        f_mk = D.font(self.eng.style.text_font, D.TYPE_SCALE["h3"] * self.ctx.U * 0.85)
+        for m in self.spec.get("markers", []):
+            q = D.clamp((t - self.ctx.resolve_time(m.get("at"), self.start + 0.5)) / 0.5)
+            if q <= 0:
+                continue
+            px, py = P(m["lon"], m["lat"])
+            r = self.ctx.U * 0.011 * D.ease_out_back(q)
+            col = th.c(m.get("color"), "negative")
+            d.ellipse((px - r, py - r, px + r, py + r), fill=col + (255,), outline=ink + (255,), width=max(1, lw))
+            if m.get("label"):
+                lbl = m["label"]
+                d.text((px + r * 1.6, py - f_mk.size * 0.6), lbl, font=f_mk, fill=ink + (int(255 * q),),
+                       stroke_width=max(1, lw), stroke_fill=land + (int(220 * q),))
+        # clip everything to the map panel, then frame it
+        clip = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(clip).rectangle((x, y, x + w, y + h), fill=255)
+        im.putalpha(ImageChops.multiply(im.getchannel("A"), clip))
+        ImageDraw.Draw(im).rectangle((x, y, x + w, y + h), outline=th.c("ink") + (int(200 * D.clamp(p * 2)),),
+                                     width=max(2, lw * 2))
+        bb = im.getbbox()
+        if not bb:
+            return None, (0, 0), None
+        return im.crop(bb), (bb[0], bb[1]), None
+
+
+ELEMENT_TYPES = {"map": MapEl,
+    
     "text": TextEl, "counter": CounterEl, "icon": IconEl, "arrow": ArrowEl, "shape": ShapeEl,
     "stamp": StampEl, "card": CardEl, "image": ImageEl, "bar_chart": BarChartEl, "line_chart": LineChartEl,
     "donut": DonutEl, "network": NetworkEl, "timeline": TimelineEl, "process": ProcessEl, "list": ListEl,

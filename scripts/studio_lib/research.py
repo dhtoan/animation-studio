@@ -47,8 +47,8 @@ def gate(p: dict, pdir: Path) -> dict:
                 srcs = [x for x in f.get("sources", []) if x.get("url") and (x.get("published") or x.get("accessed"))]
                 if not srcs:
                     blockers.append(f"claim '{cid}': marked verified but has no dated source URL")
-            elif st == "hypothesis" and not f.get("framing"):
-                blockers.append(f"claim '{cid}': hypothesis without on-screen framing")
+            elif st in ("hypothesis", "contested", "allegation") and not f.get("framing"):
+                blockers.append(f"claim '{cid}': {st} claim without framing (how it is attributed/qualified on screen)")
             elif st == "fictional" and not p.get("fictional"):
                 blockers.append(f"claim '{cid}': fictional claim in a non-fictional project")
             if p.get("category") in HIGH_RISK_CATEGORIES and f.get("risk") == "high" and st != "verified" \

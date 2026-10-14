@@ -273,6 +273,10 @@ def main(argv=None):
     sp.add_argument("--approve", action="store_true")
     sp.add_argument("--notes")
     add("status", cmd_status)
+    import cli_v3
+
+    cli_v3.PDIR = _pdir
+    cli_v3.add_parsers(add)
     sp = add("styles", cmd_styles, slug=False)
     sp.add_argument("--verify", action="store_true", help="render a 3 s sample per style and record results")
     sp.add_argument("--only")

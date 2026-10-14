@@ -15,3 +15,5 @@ styles/samples/*.mp4
 styles/samples/_work/
 # machine-local provider verification (may contain account details)
 voice/provider-status.json
+# voice sample cache (keep only the named sample-*.wav files)
+voice/samples/[0-9a-f]*

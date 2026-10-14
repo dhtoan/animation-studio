@@ -102,11 +102,57 @@ python scripts/studio.py direction my-video     # style bible, shot plan, contin
 - `reports/production-report.json` records stage timings, cache hits, worker render seconds, engines used, and paid services used (none).
 - `examples/v2-style-showcase/` is a ~45 s demo that mixes 5 verified styles and includes a vertical Short.
 
+## V3: documentary intelligence, research, dubbing, analytics
+```bash
+python scripts/studio.py niche score --dir examples/niche-research        # rank 20 cited ideas + 30-episode roadmap
+python scripts/studio.py history ghost-army import --dossier examples/ghost-army/research/dossier.json
+python scripts/studio.py history ghost-army report                         # fact-check report before rendering
+python scripts/studio.py story plan --minutes 18                           # section budgets
+python scripts/studio.py story check ghost-army
+python scripts/studio.py audience ghost-army                               # 50+ presentation audit (pace, contrast, text)
+python scripts/studio.py dub ghost-army --lang es                          # audio-es.wav/.m4a + captions-es.srt + QA
+python scripts/studio.py analytics --exports analytics/exports             # Studio CSV exports -> progress + recommendations
+```
+- **Niche research works without paid services.**
+  - Evidence comes from public pages (with URL and date), from the Data API (`YT_API_KEY`, opt-in, quota-budgeted), or from CSV.
+  - Scores are transparent and weight-configurable. Missing evidence lowers confidence.
+  - RPM is never estimated for other channels.
+- **Historical research:**
+  - Source tiers: National Archives, Library of Congress, Smithsonian, museums, then academic, then press.
+  - Claims are classed as established, contested, allegation or reconstruction, and contested claims are framed on screen.
+- **New visual tools:** a `map` element (GeoJSON, e.g. public-domain Natural Earth) and an `archival` engine for labelled recreations.
+- **Accessibility:** text colours are auto-corrected to WCAG AA contrast against each engine's background.
+- **Multilingual output:**
+  - One master video; per-language audio fitted into each scene slot with no overlap.
+  - The master's music and SFX bed is reused.
+  - Exports: exact-length WAV/AAC, localized SRT and metadata, plus Studio upload steps.
+  - The YouTube API cannot upload audio tracks, so upload is manual.
+
+## Voice engine (Edge-TTS + ElevenLabs MCP)
+```bash
+pip install edge-tts                                   # free; needs internet (Microsoft's speech service)
+python scripts/studio.py voice status
+python scripts/studio.py voice list --lang es
+python scripts/studio.py voice sample --lang en-US     # writes + validates voice/samples/sample-edge-tts-en-US.wav
+```
+Project config:
+```json
+"voice": {"mode": "auto", "edge_rate": "-10%",
+          "languages": {"es": {"voice": "es-MX-JorgeNeural", "rate": "+4%"}},
+          "elevenlabs": {"approved": false, "voice_id": "", "model_id": ""}}
+```
+- **Modes:** `auto` picks ElevenLabs only when it is verified *and* approved; otherwise it uses `edge-tts`, then `sapi`. You can also set the mode explicitly.
+- **Caching:** clips are cached by `sha256(provider, voice, rate, pitch, model, text)`.
+- **Usage tracking:** usage is appended to `reports/voice-usage.json`.
+- **ElevenLabs** works through its MCP server once that server is connected to Claude Code. See `references/voice-engine.md` for discovery, verification, jobs, ingest and the quota guard.
+  - No API keys are stored in this repository.
+  - It stays disabled until `voice verify-elevenlabs` records a successful sample.
+
 ## Narration
 | Provider | Notes |
 |---|---|
 | `sapi` | Local Windows voices, with word timings aligned to the audio's pauses |
-| `edge` | Opt-in online neural voices; set `voice.allow_network: true` |
+| `edge` / `edge-tts` | Free online neural voices (Microsoft). Opt in with `voice.mode: "edge-tts"` or `voice.allow_network: true` |
 | `file` | Your own recordings |
 | `estimate` | Silent placeholder; QA blocks it from delivery |
 
@@ -125,6 +171,9 @@ python -m unittest discover -s tests -v
 | `STUDIO_CHROMIUM` | Chromium path |
 | `STUDIO_HUASHU_DIR` | huashu-art-motion checkout |
 | `STUDIO_ANIMATE_DIR` | cth9191/animate checkout |
+| `STUDIO_LEMO_DIR`, `STUDIO_DASHI_DIR`, `STUDIO_MG_DIR` | html_seek upstream checkouts |
+| `YT_API_KEY` | optional Data API key for live niche collection |
+| `YT_ANALYTICS_TOKEN` | optional OAuth access token for owned-channel analytics (read-only) |
 | `STUDIO_FONT_DIR` | Extra fonts |
 
 For licensed, distributable typography, drop OFL fonts into `assets/fonts/`.

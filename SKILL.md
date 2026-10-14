@@ -1,6 +1,6 @@
 ---
 name: animation-studio
-description: End-to-end animated YouTube production — research and fact ledger, retention-first script, storyboard, art direction, scene-level animation (whiteboard, hand-drawn, motion graphics, kinetic type, artistic, image-to-whiteboard, plus huashu/animate/lemo/dashi canvas adapters), narration with word-synced cues, captions, music/SFX mix, 16:9 long-form assembly, 9:16 Shorts recomposed (not cropped) and linked to the parent video, YouTube SEO package, and automated QA. Use when the user wants to plan, script, animate, render or package a YouTube video or Shorts, convert a long video into Shorts, or audit a video project's quality, timing, captions or rights.
+description: End-to-end animated YouTube production, including evidence-based niche research for U.S. 50+ documentary channels, historical fact-checking, documentary story architecture, multilingual dubbing (one video, several audio tracks) and an analytics learning loop — research and fact ledger, retention-first script, storyboard, art direction, scene-level animation (whiteboard, hand-drawn, motion graphics, kinetic type, artistic, image-to-whiteboard, plus huashu/animate/lemo/dashi canvas adapters), narration with word-synced cues, captions, music/SFX mix, 16:9 long-form assembly, 9:16 Shorts recomposed (not cropped) and linked to the parent video, YouTube SEO package, and automated QA. Use when the user wants to plan, script, animate, render or package a YouTube video or Shorts, convert a long video into Shorts, or audit a video project's quality, timing, captions or rights.
 ---
 
 # Animation Studio
@@ -8,6 +8,10 @@ description: End-to-end animated YouTube production — research and fact ledger
 A working pipeline, not a prompt pack. Everything below runs from `scripts/studio.py` (Python 3.10+, Pillow, numpy, ffmpeg).
 
 ## When this skill applies
+- Find and rank documentary niches and topics for a channel, especially one serving U.S. viewers 50+. Every signal must be cited, and RPM is never invented.
+- Research and fact-check a historical documentary. Write a 12–45 minute script with chapters, sources and stated uncertainty.
+- Produce dubbed audio tracks, localized subtitles and metadata for one master video.
+- Analyse channel performance from YouTube Analytics (when authorised) or Studio CSV exports.
 - Make or plan a YouTube explainer, documentary or deep dive (8–30 min) or a custom length.
 - Turn a topic or script into a storyboard and rendered animation.
 - Produce Shorts from a long video, with a mapping to the parent video.
@@ -47,6 +51,26 @@ A working pipeline, not a prompt pack. Everything below runs from `scripts/studi
     - Only call a deliverable done when `reports/quality-report.json` marks it OK.
 12. **Report honestly**: what rendered, what is placeholder (for example the `estimate` voice), what is blocked.
 
+## Documentary workflow (V3)
+Niche research → opportunity scoring → topic → historical research → fact-check → script → storyboard → art direction → render → English narration → master → dubbing → Shorts → SEO → publishing checklist → analytics.
+
+| step | command | reference |
+|---|---|---|
+| niche evidence + ranking + 30-episode roadmap | `studio.py niche score --dir research/niche` (`niche collect --query …` with `YT_API_KEY`) | [niche intelligence](references/niche-intelligence.md) |
+| dossier → claims ledger, fact-check report | `studio.py history <slug> import --dossier …` / `history <slug> report` | [documentary production](references/documentary-production.md) |
+| structure and word budgets / script check | `studio.py story plan --minutes 18` / `story check <slug>` | same |
+| 50+ presentation audit (pace, contrast, text size) | `studio.py audience <slug>` | same |
+| dubbing (one video, many audio tracks) | `studio.py dub <slug> --lang es,de` | [multilingual dubbing](references/multilingual-dubbing.md) |
+| voice providers | `studio.py voice status|list|sample|jobs|ingest|verify-elevenlabs` | [voice engine](references/voice-engine.md) |
+| performance loop | `studio.py analytics --exports analytics/exports` | [YouTube API notes](references/youtube-api-notes.md) |
+
+Rules specific to V3:
+- **RPM.** RPM is creator revenue per 1,000 views; CPM is advertiser cost. Never infer another channel's RPM. Revenue appears only as an evidence *category*, unless it was measured in your own Analytics.
+- **Audience scope.** The audience goal is a target, never a promise. Analytics has no 50+ age bucket, so measure age55-64 plus age65-.
+- **Historical claims** are classed as established, contested, allegation, reconstruction or fictional. Contested claims are framed on screen. Recreations carry an "ILLUSTRATIVE RECREATION" label (the `archival` engine).
+- **ElevenLabs** goes through the agent-delegated MCP flow. It is used only after `voice verify-elevenlabs` succeeds **and** the project sets `voice.elevenlabs.approved`. Never claim it is connected otherwise.
+- **Uploads.** The Data API cannot upload audio tracks, so we prepare Studio-ready files plus `reports/publishing-checklist.md` and never upload.
+
 ## Engines (details: [rendering](references/rendering.md))
 
 | Engine | Best for | Reference |
@@ -59,6 +83,7 @@ A working pipeline, not a prompt pack. Everything below runs from `scripts/studi
 | `image_whiteboard` | draw a supplied illustration stroke by stroke | [whiteboard](references/whiteboard-animation.md) |
 | `huashu_clip` | huashu-art-motion grammars (finance chart, 3b1b, Vox…) | [rendering](references/rendering.md) |
 | `animate_piece` | cth9191/animate pieces (cut-paper, riso…) | [rendering](references/rendering.md) |
+| `archival` | labelled historical recreations: sepia, flicker, typewriter type | [documentary production](references/documentary-production.md) |
 | `html_seek` | seekable HTML pages: lemo-opuscar `render(t)`, dashi `seek(t)`, any `renderFrame(t)` page | [rendering](references/rendering.md) |
 
 Cinematic transitions (from the video-shotcraft recipes): `crash_zoom`, `flash_cut`, `iris`, `blinds`, `glitch`, `light_leak`, plus cut, fade, crossfade, wipe, erase, push, whip, zoom_through and slide_up.
@@ -81,6 +106,8 @@ Each scene gets an explicit fallback chain. If an engine fails, the same element
 - `templates/`: project and research templates
 - `agents/`: sub-agent briefs (researcher, scriptwriter, storyboard artist, QA reviewer)
 - `examples/billion-dollar-collapse/`: complete demo
-- `references/source-audit.md` and `references/v2-source-audit.md`: what each upstream repo really does
+- `references/source-audit.md`, `references/v2-source-audit.md` and `references/v3-source-audit.md`: what each upstream repo really does
+- `examples/ghost-army/`: V3 historical documentary demo (dossier with 60 sourced claims, 45 scenes, maps, Spanish dub sample)
+- `examples/niche-research/`: cited evidence ledger (159 items), 20 scored ideas, 30-episode roadmap
 - `styles/registry.json`: unified style registry; verification results live in `styles/verification.json`
 - `tests/`: unit and integration tests (`python -m unittest discover -s tests`)

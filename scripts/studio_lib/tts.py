@@ -183,7 +183,8 @@ class Provider:
         self.cfg = cfg
 
     def key(self, text: str) -> str:
-        h = hashlib.sha256(json.dumps([self.name, self.cfg.get("voice"), self.cfg.get("rate", 0), text,
+        h = hashlib.sha256(json.dumps([self.name, self.cfg.get("voice"), self.cfg.get("rate", 0),
+                                       self.cfg.get("edge_rate"), self.cfg.get("edge_pitch"), text,
                                        ALIGN_VERSION]).encode())
         return h.hexdigest()[:16]
 
@@ -265,17 +266,20 @@ class EdgeProvider(Provider):
         return True, "network: sends narration text to Microsoft's online TTS service"
 
     def synth_many(self, items):
-        if not self.cfg.get("allow_network"):
-            raise RuntimeError("edge TTS sends text to an online service; set voice.allow_network=true to opt in")
+        if not (self.cfg.get("allow_network") or self.cfg.get("mode") == "edge-tts"):
+            raise RuntimeError("edge TTS sends text to Microsoft's online speech service; choose voice.mode='edge-tts' "
+                               "or set voice.allow_network=true to opt in")
         import asyncio
 
         import edge_tts
         from . import ffmpeg as FF
 
         async def one(text, wav, words):
-            comm = edge_tts.Communicate(text, self.cfg.get("voice", "en-US-AndrewNeural"),
-                                        rate=self.cfg.get("edge_rate", "+0%"), boundary="WordBoundary")
+            comm = edge_tts.Communicate(text, self.cfg.get("voice") or "en-US-AndrewNeural",
+                                        rate=self.cfg.get("edge_rate") or "+0%", pitch=self.cfg.get("edge_pitch") or "+0Hz",
+                                        boundary="WordBoundary")
             mp3 = wav.with_suffix(".mp3")
+            mp3.parent.mkdir(parents=True, exist_ok=True)
             out = []
             with open(mp3, "wb") as f:
                 async for ch in comm.stream():
@@ -285,7 +289,16 @@ class EdgeProvider(Provider):
                         out.append((ch["offset"] / 1e7, ch["text"]))
             FF.run(["-y", "-i", str(mp3), "-ac", "1", "-ar", "24000", str(wav)])
             mp3.unlink()
-            words.write_text(json.dumps({"provider": self.name, "words": out}), encoding="utf-8")
+            # re-attach punctuation from the source text so captions read naturally
+            toks = _tokens(text)
+            merged, ti = [], 0
+            for t, w in out:
+                while ti < len(toks) and not toks[ti][1].lower().lstrip("\"'(“‘").startswith(w.lower()[:1]):
+                    ti += 1
+                merged.append((t, toks[ti][1]) if ti < len(toks) else (t, w))
+                ti += 1
+            words.write_text(json.dumps({"provider": self.name, "words": merged, "alignment": {"method": "service word boundaries"}}),
+                             encoding="utf-8")
 
         async def main():
             for it in items:
@@ -314,7 +327,8 @@ class EstimateProvider(Provider):
                              encoding="utf-8")
 
 
-PROVIDERS = {"sapi": SapiProvider, "edge": EdgeProvider, "file": FileProvider, "estimate": EstimateProvider}
+PROVIDERS = {"sapi": SapiProvider, "edge": EdgeProvider, "edge-tts": EdgeProvider, "file": FileProvider,
+             "estimate": EstimateProvider}
 
 
 def provider_report() -> dict:
@@ -325,6 +339,8 @@ def synthesize(texts: dict[str, str], cfg: dict, cache_dir: Path, voice_dir: Pat
                log=print) -> dict[str, dict]:
     """texts: {key_id: text}. Returns {key_id: {wav, words, duration, provider, deliverable, cached}}."""
     pname = cfg.get("provider", "sapi")
+    if pname == "elevenlabs":
+        raise RuntimeError("ElevenLabs runs through the agent-delegated MCP flow: studio.py voice jobs / voice ingest")
     prov = PROVIDERS[pname](cfg)
     ok, note = prov.available()
     if not ok:

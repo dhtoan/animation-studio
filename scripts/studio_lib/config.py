@@ -38,6 +38,7 @@ CATEGORIES = {
     "history": "History and Educational Explainers",
     "science": "Science and Engineering",
     "diy": "DIY and How-to Education",
+    "startups": "Startup Stories",
 }
 
 # Categories that trigger extra accuracy / reputational-risk gates.

@@ -1,0 +1,455 @@
+{
+  "episodes": [
+    {
+      "n": 1,
+      "title": "The Ghost Army: America's secret unit of artists and illusions",
+      "niche": "pillar 1",
+      "series": "Forgotten Battles of WWII",
+      "score": 74.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 2,
+      "title": "The Navajo Code Talkers: how the code was built",
+      "niche": "pillar 1",
+      "series": "Forgotten Battles of WWII",
+      "score": 73.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 3,
+      "title": "Operation Pastorius: the Nazi saboteurs who landed on American beaches (1942)",
+      "niche": "pillar 8",
+      "series": "Hidden Chapters of WWII America",
+      "score": 72.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 4,
+      "title": "The Berlin Airlift: feeding a city from the air",
+      "niche": "pillar 1",
+      "series": "Decisions That Changed America",
+      "score": 72.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 5,
+      "title": "Project Azorian: how the CIA tried to raise a Soviet submarine",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "score": 70.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 6,
+      "title": "The rise and fall of Studebaker",
+      "niche": "pillar 3",
+      "series": "America's Lost Industrial Giants",
+      "score": 70.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 7,
+      "title": "The Pan Am story: rise and fall of America's airline",
+      "niche": "pillar 3",
+      "series": "America's Lost Industrial Giants",
+      "score": 70.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 8,
+      "title": "Camp Century: the city under the Greenland ice",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "score": 69.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 9,
+      "title": "The Walker spy ring: a Navy family that sold secrets for 17 years",
+      "niche": "pillar 8",
+      "series": "Cold War Files",
+      "score": 69.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 10,
+      "title": "Operation Paperclip: the scientists America brought home",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "score": 69.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 11,
+      "title": "Montgomery Ward: how a catalog giant disappeared",
+      "niche": "pillar 3",
+      "series": "America's Lost Industrial Giants",
+      "score": 69.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 12,
+      "title": "The Greenbrier bunker: Congress's secret Cold War shelter",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "score": 68.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 13,
+      "title": "Polaroid: the instant camera empire that missed the digital turn",
+      "niche": "pillar 3",
+      "series": "America's Lost Industrial Giants",
+      "score": 68.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 14,
+      "title": "Project Mogul and the Roswell balloon files",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "score": 68.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 15,
+      "title": "Building the Interstate Highway System (1956)",
+      "niche": "pillar 9",
+      "series": "Decisions That Changed America",
+      "score": 67.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 16,
+      "title": "The SR-71 Blackbird: building a plane faster than missiles",
+      "niche": "pillar 5",
+      "series": "The Men Behind the Machines",
+      "score": 66.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 17,
+      "title": "The Liberty Ships: building a freighter in days",
+      "niche": "pillar 5",
+      "series": "The Men Behind the Machines",
+      "score": 66.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 18,
+      "title": "The Great Salad Oil Swindle of 1963",
+      "niche": "pillar 7",
+      "series": "Hidden Chapters of American Business",
+      "score": 66.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 19,
+      "title": "Tucker 48: the car and the trial",
+      "niche": "pillar 7",
+      "series": "Hidden Chapters of American Business",
+      "score": 66.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 20,
+      "title": "D.B. Cooper: what the FBI file actually says",
+      "niche": "pillar 10",
+      "series": "Unsolved Files",
+      "score": 65.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 21,
+      "title": "The Battle of Los Angeles (1942): the air raid that wasn't",
+      "niche": "pillar 10",
+      "series": "Unsolved Files",
+      "score": 64.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 22,
+      "title": "Bethlehem Steel and the towns it built",
+      "niche": "pillar 4",
+      "series": "America's Forgotten Towns",
+      "score": 63.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 23,
+      "title": "Hedy Lamarr: the actress who co-invented frequency hopping",
+      "niche": "pillar 12",
+      "series": "The Men and Women Behind the Machines",
+      "score": 63.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 24,
+      "title": "The women 'computers' of NACA",
+      "niche": "pillar 12",
+      "series": "The Men and Women Behind the Machines",
+      "score": 63.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 25,
+      "title": "Sears Catalog Homes: houses delivered by train",
+      "niche": "pillar 4",
+      "series": "America's Forgotten Towns",
+      "score": 62.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 26,
+      "title": "The 1977 New York blackout",
+      "niche": "pillar 9",
+      "series": "Decisions That Changed America",
+      "score": 62.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 27,
+      "title": "Philo Farnsworth: the farm boy who invented electronic television",
+      "niche": "pillar 6",
+      "series": "The Men Behind the Machines",
+      "score": 61.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 28,
+      "title": "Ivar Kreuger, the Match King, and the crash of 1932",
+      "niche": "pillar 7",
+      "series": "Hidden Chapters of American Business",
+      "score": 61.0,
+      "confidence": "medium"
+    },
+    {
+      "n": 29,
+      "title": "The Hyatt Regency walkway collapse (1981): an engineering lesson",
+      "niche": "pillar 11",
+      "series": "Engineering Lessons",
+      "score": 56.5,
+      "confidence": "medium"
+    },
+    {
+      "n": 30,
+      "title": "The Johnstown Flood of 1889: a dam, a club and a disaster",
+      "niche": "pillar 11",
+      "series": "Engineering Lessons",
+      "score": 55.0,
+      "confidence": "medium"
+    }
+  ],
+  "series": {
+    "Forgotten Battles of WWII": [
+      "The Ghost Army: America's secret unit of artists and illusions",
+      "The Navajo Code Talkers: how the code was built"
+    ],
+    "Hidden Chapters of WWII America": [
+      "Operation Pastorius: the Nazi saboteurs who landed on American beaches (1942)"
+    ],
+    "Decisions That Changed America": [
+      "The Berlin Airlift: feeding a city from the air",
+      "Building the Interstate Highway System (1956)",
+      "The 1977 New York blackout"
+    ],
+    "Cold War Files": [
+      "Project Azorian: how the CIA tried to raise a Soviet submarine",
+      "Camp Century: the city under the Greenland ice",
+      "The Walker spy ring: a Navy family that sold secrets for 17 years",
+      "Operation Paperclip: the scientists America brought home",
+      "The Greenbrier bunker: Congress's secret Cold War shelter",
+      "Project Mogul and the Roswell balloon files"
+    ],
+    "America's Lost Industrial Giants": [
+      "The rise and fall of Studebaker",
+      "The Pan Am story: rise and fall of America's airline",
+      "Montgomery Ward: how a catalog giant disappeared",
+      "Polaroid: the instant camera empire that missed the digital turn"
+    ],
+    "The Men Behind the Machines": [
+      "The SR-71 Blackbird: building a plane faster than missiles",
+      "The Liberty Ships: building a freighter in days",
+      "Philo Farnsworth: the farm boy who invented electronic television"
+    ],
+    "Hidden Chapters of American Business": [
+      "The Great Salad Oil Swindle of 1963",
+      "Tucker 48: the car and the trial",
+      "Ivar Kreuger, the Match King, and the crash of 1932"
+    ],
+    "Unsolved Files": [
+      "D.B. Cooper: what the FBI file actually says",
+      "The Battle of Los Angeles (1942): the air raid that wasn't"
+    ],
+    "America's Forgotten Towns": [
+      "Bethlehem Steel and the towns it built",
+      "Sears Catalog Homes: houses delivered by train"
+    ],
+    "The Men and Women Behind the Machines": [
+      "Hedy Lamarr: the actress who co-invented frequency hopping",
+      "The women 'computers' of NACA"
+    ],
+    "Engineering Lessons": [
+      "The Hyatt Regency walkway collapse (1981): an engineering lesson",
+      "The Johnstown Flood of 1889: a dam, a club and a disaster"
+    ]
+  },
+  "calendar_90d": [
+    {
+      "episode": 1,
+      "title": "The Ghost Army: America's secret unit of artists and illusions",
+      "research_start": "2026-10-14",
+      "render_by": "2026-10-25",
+      "publish_long": "2026-10-28",
+      "shorts": [
+        "2026-10-26",
+        "2026-10-29",
+        "2026-10-31",
+        "2026-11-02",
+        "2026-11-04"
+      ]
+    },
+    {
+      "episode": 2,
+      "title": "The Navajo Code Talkers: how the code was built",
+      "research_start": "2026-10-21",
+      "render_by": "2026-11-01",
+      "publish_long": "2026-11-04",
+      "shorts": [
+        "2026-11-02",
+        "2026-11-05",
+        "2026-11-07",
+        "2026-11-09",
+        "2026-11-11"
+      ]
+    },
+    {
+      "episode": 3,
+      "title": "Operation Pastorius: the Nazi saboteurs who landed on American beaches (1942)",
+      "research_start": "2026-10-28",
+      "render_by": "2026-11-08",
+      "publish_long": "2026-11-11",
+      "shorts": [
+        "2026-11-09",
+        "2026-11-12",
+        "2026-11-14",
+        "2026-11-16",
+        "2026-11-18"
+      ]
+    },
+    {
+      "episode": 4,
+      "title": "The Berlin Airlift: feeding a city from the air",
+      "research_start": "2026-11-04",
+      "render_by": "2026-11-15",
+      "publish_long": "2026-11-18",
+      "shorts": [
+        "2026-11-16",
+        "2026-11-19",
+        "2026-11-21",
+        "2026-11-23",
+        "2026-11-25"
+      ]
+    },
+    {
+      "episode": 5,
+      "title": "Project Azorian: how the CIA tried to raise a Soviet submarine",
+      "research_start": "2026-11-11",
+      "render_by": "2026-11-22",
+      "publish_long": "2026-11-25",
+      "shorts": [
+        "2026-11-23",
+        "2026-11-26",
+        "2026-11-28",
+        "2026-11-30",
+        "2026-12-02"
+      ]
+    },
+    {
+      "episode": 6,
+      "title": "The rise and fall of Studebaker",
+      "research_start": "2026-11-18",
+      "render_by": "2026-11-29",
+      "publish_long": "2026-12-02",
+      "shorts": [
+        "2026-11-30",
+        "2026-12-03",
+        "2026-12-05",
+        "2026-12-07",
+        "2026-12-09"
+      ]
+    },
+    {
+      "episode": 7,
+      "title": "The Pan Am story: rise and fall of America's airline",
+      "research_start": "2026-11-25",
+      "render_by": "2026-12-06",
+      "publish_long": "2026-12-09",
+      "shorts": [
+        "2026-12-07",
+        "2026-12-10",
+        "2026-12-12",
+        "2026-12-14",
+        "2026-12-16"
+      ]
+    },
+    {
+      "episode": 8,
+      "title": "Camp Century: the city under the Greenland ice",
+      "research_start": "2026-12-02",
+      "render_by": "2026-12-13",
+      "publish_long": "2026-12-16",
+      "shorts": [
+        "2026-12-14",
+        "2026-12-17",
+        "2026-12-19",
+        "2026-12-21",
+        "2026-12-23"
+      ]
+    },
+    {
+      "episode": 9,
+      "title": "The Walker spy ring: a Navy family that sold secrets for 17 years",
+      "research_start": "2026-12-09",
+      "render_by": "2026-12-20",
+      "publish_long": "2026-12-23",
+      "shorts": [
+        "2026-12-21",
+        "2026-12-24",
+        "2026-12-26",
+        "2026-12-28",
+        "2026-12-30"
+      ]
+    },
+    {
+      "episode": 10,
+      "title": "Operation Paperclip: the scientists America brought home",
+      "research_start": "2026-12-16",
+      "render_by": "2026-12-27",
+      "publish_long": "2026-12-30",
+      "shorts": [
+        "2026-12-28",
+        "2026-12-31",
+        "2027-01-02",
+        "2027-01-04",
+        "2027-01-06"
+      ]
+    },
+    {
+      "episode": 11,
+      "title": "Montgomery Ward: how a catalog giant disappeared",
+      "research_start": "2026-12-23",
+      "render_by": "2027-01-03",
+      "publish_long": "2027-01-06",
+      "shorts": [
+        "2027-01-04",
+        "2027-01-07",
+        "2027-01-09",
+        "2027-01-11",
+        "2027-01-13"
+      ]
+    }
+  ],
+  "near_duplicates": []
+}

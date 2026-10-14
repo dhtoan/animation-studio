@@ -125,7 +125,7 @@ def continuity(p: dict) -> dict:
     for s in scenes:
         for e in s.get("elements", []):
             if e.get("type") == "character":
-                for c in s.get("characters", []) or ["_unnamed"]:
+                for c in s.get("characters", []):  # unnamed figures are different people by design
                     colours.setdefault(c, set()).add(e.get("color", "cool"))
     for c, cs in colours.items():
         if len(cs) > 1:

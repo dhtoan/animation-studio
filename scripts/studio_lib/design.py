@@ -182,6 +182,35 @@ def spring_ease(t: float, preset: str = "card") -> float:
     return 1 - math.exp(-w * t) * (1 + w * t)
 
 
+def _lum(c):
+    def ch(v):
+        v /= 255
+        return v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
+    return 0.2126 * ch(c[0]) + 0.7152 * ch(c[1]) + 0.0722 * ch(c[2])
+
+
+def contrast_ratio(a, b) -> float:
+    la, lb = sorted((_lum(a), _lum(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+
+def ensure_contrast(fg, bg, minimum: float = 4.5):
+    """Darken (on light bg) or lighten (on dark bg) `fg` until it meets `minimum` (WCAG)."""
+    fg = tuple(int(x) for x in fg[:3])
+    if contrast_ratio(fg, bg) >= minimum:
+        return fg
+    target = (0, 0, 0) if _lum(bg) > 0.18 else (255, 255, 255)
+    for k in range(1, 21):
+        c = tuple(int(round(fg[i] + (target[i] - fg[i]) * k / 20)) for i in range(3))
+        if contrast_ratio(c, bg) >= minimum:
+            return c
+    return target
+
+
+ENGINE_BG = {"whiteboard": "board", "handdrawn": "paper", "motion": "night2", "kinetic": "night",
+             "artistic": "night", "image_whiteboard": "board", "archival": (226, 211, 178)}
+
+
 def lerp(a, b, t):
     return a + (b - a) * t
 

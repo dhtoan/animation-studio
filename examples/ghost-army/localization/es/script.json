@@ -1,0 +1,15 @@
+{
+ "lang": "es",
+ "partial": true,
+ "reviewed_by": "pending",
+ "translator": "Claude (machine translation, context-aware); requires native review before publication",
+ "title": "El Ejército Fantasma: la unidad secreta de artistas e ilusiones de Estados Unidos",
+ "description": "En marzo de 1945, los comandantes alemanes observaban dos divisiones estadounidenses cerca del Rin. No estaban allí. Este documental animado cuenta la historia documentada del Ejército Fantasma (Ghost Army): la 23rd Headquarters Special Troops y la 3133rd Signal Service Company. Fuentes: Ley Pública 117-85, National WWII Museum, Ejército de EE. UU. y Biblioteca del Congreso. Las escenas animadas son ilustrativas.",
+ "scenes": {
+  "g01": "Marzo de mil novecientos cuarenta y cinco. En la orilla oeste del Rin, las tropas estadounidenses preparaban uno de los grandes cruces de la Segunda Guerra Mundial. Enfrente, los mandos alemanes vigilaban cada señal de dónde caería el golpe. No es la historia de una batalla famosa. Es la historia de una pequeña unidad que, durante casi un año, hizo que el enemigo viera y oyera cosas que no existían.",
+  "g02": "Cerca del frente se veían camiones, tanques y artillería de dos divisiones de infantería. De noche se oían motores. Y se captaba su tráfico de radio.",
+  "g03": "Pero esas divisiones no estaban allí. Los tanques eran de goma. Los motores, grabaciones. Y los radioperadores imitaban a unidades que estaban en otra parte.",
+  "g04": "Esta es la historia del Ejército Fantasma: unos mil cien soldados estadounidenses, muchos de ellos artistas, cuya misión era engañar al enemigo en Europa. Su trabajo fue secreto durante décadas. Los seguiremos desde Tennessee hasta el Rin, separando los hechos de la leyenda y lo que aún no sabemos.",
+  "g05": "La idea fue de Ralph Ingersoll, un oficial estadounidense que había trabajado con los británicos en el engaño de la Operación Fortitude, para confundir a Alemania sobre el Día D. Ingersoll propuso algo que el Ejército aún no tenía: una unidad dedicada por completo al engaño."
+ }
+}

@@ -35,8 +35,17 @@
 - **Directing process** (treatment → shot list → cue map): lemomo-ai/lemo-opuscar `DIRECTOR.md`, MIT. Paraphrased.
 - **Image art-direction rules:** threerocks/sweety-image-art-direction, MIT. Paraphrased in `references/image-art-direction.md`.
 
+## V3 ports and data
+- **Analytics query catalogue, date-lag window, batching and quota accounting:** nikhilbhansali/youtube-data-skills, MIT © 2025 Nikhil Bhansali. Re-implemented with fixes in `studio_lib/youtube_api.py`.
+- **Median-baseline outlier method and comment-demand counting:** ravsau/youtuber-skills, MIT © 2026 CloudYeti. Paraphrased.
+- **Natural Earth admin-0 countries (1:110m), v5.1.2:** public domain. Shipped in `examples/ghost-army/assets/`.
+- **Research evidence in `examples/niche-research/`:**
+  - Facts and figures observed on public web pages on 2026-10-14, with URLs.
+  - Public YouTube page data was read by an automated script, not the API. Review YouTube's Terms of Service before automating this yourself; the Data API is the supported route.
+
 ## Not used (licence or rights reasons)
 - cth9191/motion-design: no licence; prompts are third-party.
+- Samin12/youtube-research-skill, joyjiangyi/youtube-research-pipeline: no LICENSE file.
 - WaterDJiang/Wattter_openSkills: CC BY-NC-SA 4.0 (non-commercial). Its `.claude/settings.json` auto-allows arbitrary Python, so never open it as a project.
 - Upstream hand sprites and demo media: the whiteboard-animation-vi hand PNGs are unlicensed, and the sweety-handdraw-video hosted sprites are AI-generated with uncertain rights.
 
@@ -45,4 +54,4 @@
 - numpy (BSD-3)
 - imageio-ffmpeg (BSD-2; bundles an FFmpeg build whose licence depends on the build)
 - playwright (Apache-2.0)
-- edge-tts (LGPL-3.0, optional)
+- edge-tts (LGPL-3.0, optional): uses Microsoft's online speech service. Check Microsoft's terms for your use.

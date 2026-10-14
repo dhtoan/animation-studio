@@ -1,0 +1,4100 @@
+{
+  "ranked": [
+    {
+      "title": "The Ghost Army: America's secret unit of artists and illusions",
+      "niche": "pillar 1",
+      "series": "Forgotten Battles of WWII",
+      "angle": "artists + deception, documented by PL 117-85",
+      "sources": [
+        "PL 117-85; National WWII Museum; Army"
+      ],
+      "visual_style": "archival + maps + handdrawn",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "14M/7M-view recent WWII uploads (Yarnhub) show strong demand; large established channels make it crowded.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 9,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e029",
+            "e030"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 9,
+          "evidence": [
+            "e020",
+            "e021",
+            "e024",
+            "e026"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "14M/7M-view recent WWII uploads (Yarnhub) show strong demand; large established channels make it crowded."
+        },
+        "competition_gap": {
+          "score": 4,
+          "evidence": [
+            "e015",
+            "e016",
+            "e025"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 9,
+          "evidence": [
+            "e026"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 9,
+          "assessed_by": "agent",
+          "rationale": "artists + deception, documented by PL 117-85"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: PL 117-85; National WWII Museum; Army"
+        }
+      },
+      "result": {
+        "score": 74.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 9.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 9.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 9.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 9.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 1
+    },
+    {
+      "title": "The Navajo Code Talkers: how the code was built",
+      "niche": "pillar 1",
+      "series": "Forgotten Battles of WWII",
+      "angle": "well documented; tell it with community-approved sources",
+      "sources": [
+        "National WWII Museum; Navajo Nation"
+      ],
+      "visual_style": "handdrawn + maps",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "14M/7M-view recent WWII uploads (Yarnhub) show strong demand; large established channels make it crowded.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 9,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e029",
+            "e030"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 9,
+          "evidence": [
+            "e020",
+            "e021",
+            "e024",
+            "e026"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "14M/7M-view recent WWII uploads (Yarnhub) show strong demand; large established channels make it crowded."
+        },
+        "competition_gap": {
+          "score": 4,
+          "evidence": [
+            "e015",
+            "e016",
+            "e025"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 9,
+          "evidence": [
+            "e026"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "well documented; tell it with community-approved sources"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: National WWII Museum; Navajo Nation"
+        }
+      },
+      "result": {
+        "score": 73.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 9.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 9.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 9.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 2
+    },
+    {
+      "title": "Operation Pastorius: the Nazi saboteurs who landed on American beaches (1942)",
+      "niche": "pillar 8",
+      "series": "Hidden Chapters of WWII America",
+      "angle": "home-front espionage on U.S. soil",
+      "sources": [
+        "FBI history; court records"
+      ],
+      "visual_style": "maps + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "7.2M / 6.0M-view espionage stories (fern): very strong demand, strong competition.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 9,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e114"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 9,
+          "evidence": [
+            "e107",
+            "e108",
+            "e109",
+            "e112"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "7.2M / 6.0M-view espionage stories (fern): very strong demand, strong competition."
+        },
+        "competition_gap": {
+          "score": 4,
+          "evidence": [
+            "e103",
+            "e104",
+            "e110"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e112"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "home-front espionage on U.S. soil"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: FBI history; court records"
+        }
+      },
+      "result": {
+        "score": 72.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 9.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 9.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 3
+    },
+    {
+      "title": "The Berlin Airlift: feeding a city from the air",
+      "niche": "pillar 1",
+      "series": "Decisions That Changed America",
+      "angle": "logistics triumph; many viewers' parents remember",
+      "sources": [
+        "Air Force history"
+      ],
+      "visual_style": "maps + motion",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "14M/7M-view recent WWII uploads (Yarnhub) show strong demand; large established channels make it crowded.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 9,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e029",
+            "e030"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 9,
+          "evidence": [
+            "e020",
+            "e021",
+            "e024",
+            "e026"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "14M/7M-view recent WWII uploads (Yarnhub) show strong demand; large established channels make it crowded."
+        },
+        "competition_gap": {
+          "score": 4,
+          "evidence": [
+            "e015",
+            "e016",
+            "e025"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 9,
+          "evidence": [
+            "e026"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "logistics triumph; many viewers' parents remember"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Air Force history"
+        }
+      },
+      "result": {
+        "score": 72.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 9.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 9.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 9.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 4
+    },
+    {
+      "title": "Project Azorian: how the CIA tried to raise a Soviet submarine",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "angle": "engineering + secrecy; declassified records",
+      "sources": [
+        "CIA FOIA reading room"
+      ],
+      "visual_style": "motion + maps",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e045"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 7,
+          "evidence": [
+            "e036",
+            "e038",
+            "e040",
+            "e042"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e031",
+            "e032",
+            "e041"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e042"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 9,
+          "assessed_by": "agent",
+          "rationale": "engineering + secrecy; declassified records"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: CIA FOIA reading room"
+        }
+      },
+      "result": {
+        "score": 70.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 7.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 9.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 5
+    },
+    {
+      "title": "The rise and fall of Studebaker",
+      "niche": "pillar 3",
+      "series": "America's Lost Industrial Giants",
+      "angle": "a car many viewers' families owned; factory-town story",
+      "sources": [
+        "corporate history; museum"
+      ],
+      "visual_style": "motion + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Rise-and-fall brand stories drew 0.3-1.5M views in the last 30 days; competitors focus on modern brands.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 9,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e059"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 8,
+          "evidence": [
+            "e051",
+            "e052",
+            "e053",
+            "e057"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Rise-and-fall brand stories drew 0.3-1.5M views in the last 30 days; competitors focus on modern brands."
+        },
+        "competition_gap": {
+          "score": 5,
+          "evidence": [
+            "e046",
+            "e047"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e057"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "a car many viewers' families owned; factory-town story"
+        },
+        "feasibility": {
+          "score": 6,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: corporate history; museum"
+        }
+      },
+      "result": {
+        "score": 70.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 9.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 8.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 6.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 6
+    },
+    {
+      "title": "The Pan Am story: rise and fall of America's airline",
+      "niche": "pillar 3",
+      "series": "America's Lost Industrial Giants",
+      "angle": "glamour era of flying",
+      "sources": [
+        "corporate archives; museum"
+      ],
+      "visual_style": "motion + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Rise-and-fall brand stories drew 0.3-1.5M views in the last 30 days; competitors focus on modern brands.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 9,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e059"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 8,
+          "evidence": [
+            "e051",
+            "e052",
+            "e053",
+            "e057"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Rise-and-fall brand stories drew 0.3-1.5M views in the last 30 days; competitors focus on modern brands."
+        },
+        "competition_gap": {
+          "score": 5,
+          "evidence": [
+            "e046",
+            "e047"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e057"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "glamour era of flying"
+        },
+        "feasibility": {
+          "score": 6,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: corporate archives; museum"
+        }
+      },
+      "result": {
+        "score": 70.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 9.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 8.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 6.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 7
+    },
+    {
+      "title": "Camp Century: the city under the Greenland ice",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "angle": "engineering + Cold War secret",
+      "sources": [
+        "Army technical reports"
+      ],
+      "visual_style": "whiteboard + maps",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e045"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 7,
+          "evidence": [
+            "e036",
+            "e038",
+            "e040",
+            "e042"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e031",
+            "e032",
+            "e041"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e042"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "engineering + Cold War secret"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Army technical reports"
+        }
+      },
+      "result": {
+        "score": 69.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 7.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 8
+    },
+    {
+      "title": "The Walker spy ring: a Navy family that sold secrets for 17 years",
+      "niche": "pillar 8",
+      "series": "Cold War Files",
+      "angle": "family espionage drama with court records",
+      "sources": [
+        "FBI; court records"
+      ],
+      "visual_style": "handdrawn + motion",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "7.2M / 6.0M-view espionage stories (fern): very strong demand, strong competition.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e114"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 9,
+          "evidence": [
+            "e107",
+            "e108",
+            "e109",
+            "e112"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "7.2M / 6.0M-view espionage stories (fern): very strong demand, strong competition."
+        },
+        "competition_gap": {
+          "score": 4,
+          "evidence": [
+            "e103",
+            "e104",
+            "e110"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e112"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "family espionage drama with court records"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: FBI; court records"
+        }
+      },
+      "result": {
+        "score": 69.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 9.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 9
+    },
+    {
+      "title": "Operation Paperclip: the scientists America brought home",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "angle": "moral complexity; declassified files",
+      "sources": [
+        "National Archives"
+      ],
+      "visual_style": "archival + motion",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e045"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 7,
+          "evidence": [
+            "e036",
+            "e038",
+            "e040",
+            "e042"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e031",
+            "e032",
+            "e041"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e042"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "moral complexity; declassified files"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: National Archives"
+        }
+      },
+      "result": {
+        "score": 69.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 7.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 10
+    },
+    {
+      "title": "Montgomery Ward: how a catalog giant disappeared",
+      "niche": "pillar 3",
+      "series": "America's Lost Industrial Giants",
+      "angle": "catalog shopping memories",
+      "sources": [
+        "corporate archives"
+      ],
+      "visual_style": "motion + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Rise-and-fall brand stories drew 0.3-1.5M views in the last 30 days; competitors focus on modern brands.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 9,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e059"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 8,
+          "evidence": [
+            "e051",
+            "e052",
+            "e053",
+            "e057"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Rise-and-fall brand stories drew 0.3-1.5M views in the last 30 days; competitors focus on modern brands."
+        },
+        "competition_gap": {
+          "score": 5,
+          "evidence": [
+            "e046",
+            "e047"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e057"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "catalog shopping memories"
+        },
+        "feasibility": {
+          "score": 6,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: corporate archives"
+        }
+      },
+      "result": {
+        "score": 69.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 9.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 8.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 6.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 11
+    },
+    {
+      "title": "The Greenbrier bunker: Congress's secret Cold War shelter",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "angle": "a U.S. landmark many 50+ viewers remember from 1992 reporting",
+      "sources": [
+        "Senate and House history pages"
+      ],
+      "visual_style": "archival + motion",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e045"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 7,
+          "evidence": [
+            "e036",
+            "e038",
+            "e040",
+            "e042"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e031",
+            "e032",
+            "e041"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e042"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "a U.S. landmark many 50+ viewers remember from 1992 reporting"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Senate and House history pages"
+        }
+      },
+      "result": {
+        "score": 68.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 7.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 12
+    },
+    {
+      "title": "Polaroid: the instant camera empire that missed the digital turn",
+      "niche": "pillar 3",
+      "series": "America's Lost Industrial Giants",
+      "angle": "nostalgic product + strategic lesson",
+      "sources": [
+        "SEC filings; museum"
+      ],
+      "visual_style": "motion + kinetic",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Rise-and-fall brand stories drew 0.3-1.5M views in the last 30 days; competitors focus on modern brands.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e059"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 8,
+          "evidence": [
+            "e051",
+            "e052",
+            "e053",
+            "e057"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Rise-and-fall brand stories drew 0.3-1.5M views in the last 30 days; competitors focus on modern brands."
+        },
+        "competition_gap": {
+          "score": 5,
+          "evidence": [
+            "e046",
+            "e047"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e057"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "nostalgic product + strategic lesson"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: SEC filings; museum"
+        }
+      },
+      "result": {
+        "score": 68.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 8.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 13
+    },
+    {
+      "title": "Project Mogul and the Roswell balloon files",
+      "niche": "pillar 2",
+      "series": "Cold War Files",
+      "angle": "separates record from legend; Air Force reports",
+      "sources": [
+        "Air Force reports (1994-97)"
+      ],
+      "visual_style": "archival + whiteboard",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e045"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 7,
+          "evidence": [
+            "e036",
+            "e038",
+            "e040",
+            "e042"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Cold War documentaries drew 0.3-2.3M views recently; many tiny faceless uploads compete but rarely break out."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e031",
+            "e032",
+            "e041"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e042"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "separates record from legend; Air Force reports"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Air Force reports (1994-97)"
+        }
+      },
+      "result": {
+        "score": 68.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 7.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 14
+    },
+    {
+      "title": "Building the Interstate Highway System (1956)",
+      "niche": "pillar 9",
+      "series": "Decisions That Changed America",
+      "angle": "every viewer has used these roads",
+      "sources": [
+        "FHWA history"
+      ],
+      "visual_style": "maps + motion",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Hit-driven: one 800K video beside uploads with 1-2K views.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 9,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e125"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 5,
+          "evidence": [
+            "e119",
+            "e123"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Hit-driven: one 800K video beside uploads with 1-2K views."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e115",
+            "e116"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e123"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "every viewer has used these roads"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: FHWA history"
+        }
+      },
+      "result": {
+        "score": 67.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 9.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 15
+    },
+    {
+      "title": "The SR-71 Blackbird: building a plane faster than missiles",
+      "niche": "pillar 5",
+      "series": "The Men Behind the Machines",
+      "angle": "engineering icon",
+      "sources": [
+        "Air Force museum; CIA documents"
+      ],
+      "visual_style": "whiteboard + motion",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Steady evergreen interest; established competitors.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e081"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 6,
+          "evidence": [
+            "e075",
+            "e076",
+            "e079"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Steady evergreen interest; established competitors."
+        },
+        "competition_gap": {
+          "score": 5,
+          "evidence": [
+            "e071",
+            "e072"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e079"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "engineering icon"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Air Force museum; CIA documents"
+        }
+      },
+      "result": {
+        "score": 66.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 16
+    },
+    {
+      "title": "The Liberty Ships: building a freighter in days",
+      "niche": "pillar 5",
+      "series": "The Men Behind the Machines",
+      "angle": "home-front production record",
+      "sources": [
+        "Maritime Administration; NPS"
+      ],
+      "visual_style": "whiteboard + motion",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Steady evergreen interest; established competitors.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e081"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 6,
+          "evidence": [
+            "e075",
+            "e076",
+            "e079"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Steady evergreen interest; established competitors."
+        },
+        "competition_gap": {
+          "score": 5,
+          "evidence": [
+            "e071",
+            "e072"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e079"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "home-front production record"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Maritime Administration; NPS"
+        }
+      },
+      "result": {
+        "score": 66.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 17
+    },
+    {
+      "title": "The Great Salad Oil Swindle of 1963",
+      "niche": "pillar 7",
+      "series": "Hidden Chapters of American Business",
+      "angle": "pre-1990 scandal with a documented court record",
+      "sources": [
+        "court records; newspapers"
+      ],
+      "visual_style": "motion + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "High demand for modern scandals (4.7M); no large channel focused on pre-1990 scandals (gap; historic demand unproven).",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e102"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 6,
+          "evidence": [
+            "e096",
+            "e098",
+            "e100"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "High demand for modern scandals (4.7M); no large channel focused on pre-1990 scandals (gap; historic demand unproven)."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e092",
+            "e093"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 6,
+          "evidence": [
+            "e100"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "pre-1990 scandal with a documented court record"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: court records; newspapers"
+        }
+      },
+      "result": {
+        "score": 66.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 6.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 18
+    },
+    {
+      "title": "Tucker 48: the car and the trial",
+      "niche": "pillar 7",
+      "series": "Hidden Chapters of American Business",
+      "angle": "innovation vs. fraud trial; court record",
+      "sources": [
+        "court records; museum"
+      ],
+      "visual_style": "motion + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "High demand for modern scandals (4.7M); no large channel focused on pre-1990 scandals (gap; historic demand unproven).",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e102"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 6,
+          "evidence": [
+            "e096",
+            "e098",
+            "e100"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "High demand for modern scandals (4.7M); no large channel focused on pre-1990 scandals (gap; historic demand unproven)."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e092",
+            "e093"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 6,
+          "evidence": [
+            "e100"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "innovation vs. fraud trial; court record"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: court records; museum"
+        }
+      },
+      "result": {
+        "score": 66.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 6.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 19
+    },
+    {
+      "title": "D.B. Cooper: what the FBI file actually says",
+      "niche": "pillar 10",
+      "series": "Unsolved Files",
+      "angle": "enduring mystery; FBI Vault records",
+      "sources": [
+        "FBI Vault"
+      ],
+      "visual_style": "archival + maps",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Query dominated by non-history channels; mixed signal.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e136"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 5,
+          "evidence": [
+            "e130",
+            "e134"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Query dominated by non-history channels; mixed signal."
+        },
+        "competition_gap": {
+          "score": 5,
+          "evidence": [
+            "e126",
+            "e127"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e134"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "enduring mystery; FBI Vault records"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: FBI Vault"
+        }
+      },
+      "result": {
+        "score": 65.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 20
+    },
+    {
+      "title": "The Battle of Los Angeles (1942): the air raid that wasn't",
+      "niche": "pillar 10",
+      "series": "Unsolved Files",
+      "angle": "wartime nerves, no enemy aircraft confirmed",
+      "sources": [
+        "Army records; newspapers"
+      ],
+      "visual_style": "archival + motion",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Query dominated by non-history channels; mixed signal.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e136"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 5,
+          "evidence": [
+            "e130",
+            "e134"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Query dominated by non-history channels; mixed signal."
+        },
+        "competition_gap": {
+          "score": 5,
+          "evidence": [
+            "e126",
+            "e127"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 8,
+          "evidence": [
+            "e134"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "wartime nerves, no enemy aircraft confirmed"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Army records; newspapers"
+        }
+      },
+      "result": {
+        "score": 64.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 21
+    },
+    {
+      "title": "Bethlehem Steel and the towns it built",
+      "niche": "pillar 4",
+      "series": "America's Forgotten Towns",
+      "angle": "industrial town decline",
+      "sources": [
+        "Library of Congress; NPS"
+      ],
+      "visual_style": "maps + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "New faceless channels on lost industries got 1-800 views in the sample: weak demand signal, low competition.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e070"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 3,
+          "evidence": [
+            "e064",
+            "e068"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "New faceless channels on lost industries got 1-800 views in the sample: weak demand signal, low competition."
+        },
+        "competition_gap": {
+          "score": 7,
+          "evidence": [
+            "e060",
+            "e061"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 6,
+          "evidence": [
+            "e068"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "industrial town decline"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Library of Congress; NPS"
+        }
+      },
+      "result": {
+        "score": 63.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 3.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 7.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 6.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 22
+    },
+    {
+      "title": "Hedy Lamarr: the actress who co-invented frequency hopping",
+      "niche": "pillar 12",
+      "series": "The Men and Women Behind the Machines",
+      "angle": "surprising inventor story",
+      "sources": [
+        "patent records; Smithsonian"
+      ],
+      "visual_style": "handdrawn + whiteboard",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Generic biography format appears to be weakening (inferred from one channel grid).",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e159"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 4,
+          "evidence": [
+            "e153",
+            "e157"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Generic biography format appears to be weakening (inferred from one channel grid)."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e149",
+            "e150"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 6,
+          "evidence": [
+            "e157"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "surprising inventor story"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: patent records; Smithsonian"
+        }
+      },
+      "result": {
+        "score": 63.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 6.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 23
+    },
+    {
+      "title": "The women 'computers' of NACA",
+      "niche": "pillar 12",
+      "series": "The Men and Women Behind the Machines",
+      "angle": "overlooked people; NASA history",
+      "sources": [
+        "NASA history office"
+      ],
+      "visual_style": "handdrawn + whiteboard",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Generic biography format appears to be weakening (inferred from one channel grid).",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e159"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 4,
+          "evidence": [
+            "e153",
+            "e157"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Generic biography format appears to be weakening (inferred from one channel grid)."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e149",
+            "e150"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 6,
+          "evidence": [
+            "e157"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "overlooked people; NASA history"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: NASA history office"
+        }
+      },
+      "result": {
+        "score": 63.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 6.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 24
+    },
+    {
+      "title": "Sears Catalog Homes: houses delivered by train",
+      "niche": "pillar 4",
+      "series": "America's Forgotten Towns",
+      "angle": "nostalgia + DIY curiosity",
+      "sources": [
+        "Smithsonian; NPS"
+      ],
+      "visual_style": "whiteboard + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "New faceless channels on lost industries got 1-800 views in the sample: weak demand signal, low competition.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 8,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e070"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 3,
+          "evidence": [
+            "e064",
+            "e068"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "New faceless channels on lost industries got 1-800 views in the sample: weak demand signal, low competition."
+        },
+        "competition_gap": {
+          "score": 7,
+          "evidence": [
+            "e060",
+            "e061"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 6,
+          "evidence": [
+            "e068"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "nostalgia + DIY curiosity"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Smithsonian; NPS"
+        }
+      },
+      "result": {
+        "score": 62.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 8.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 3.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 7.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 6.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 25
+    },
+    {
+      "title": "The 1977 New York blackout",
+      "niche": "pillar 9",
+      "series": "Decisions That Changed America",
+      "angle": "infrastructure failure with documented reports",
+      "sources": [
+        "federal reports"
+      ],
+      "visual_style": "motion + maps",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Hit-driven: one 800K video beside uploads with 1-2K views.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 7,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e125"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 5,
+          "evidence": [
+            "e119",
+            "e123"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Hit-driven: one 800K video beside uploads with 1-2K views."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e115",
+            "e116"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e123"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "infrastructure failure with documented reports"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: federal reports"
+        }
+      },
+      "result": {
+        "score": 62.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 7.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 5.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 26
+    },
+    {
+      "title": "Philo Farnsworth: the farm boy who invented electronic television",
+      "niche": "pillar 6",
+      "series": "The Men Behind the Machines",
+      "angle": "forgotten inventor vs corporate giant",
+      "sources": [
+        "Library of Congress; Smithsonian"
+      ],
+      "visual_style": "handdrawn + whiteboard",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "No large dedicated channel found; this-year searches show low views.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 7,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e091"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 3,
+          "evidence": [
+            "e086",
+            "e090"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "No large dedicated channel found; this-year searches show low views."
+        },
+        "competition_gap": {
+          "score": 7,
+          "evidence": [
+            "e082",
+            "e083"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e090"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "forgotten inventor vs corporate giant"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: Library of Congress; Smithsonian"
+        }
+      },
+      "result": {
+        "score": 61.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 7.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 3.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 7.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 27
+    },
+    {
+      "title": "Ivar Kreuger, the Match King, and the crash of 1932",
+      "niche": "pillar 7",
+      "series": "Hidden Chapters of American Business",
+      "angle": "global fraud with U.S. investors",
+      "sources": [
+        "SEC and historical reports"
+      ],
+      "visual_style": "motion + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "High demand for modern scandals (4.7M); no large channel focused on pre-1990 scandals (gap; historic demand unproven).",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 6,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 5,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e102"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 6,
+          "evidence": [
+            "e096",
+            "e098",
+            "e100"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "High demand for modern scandals (4.7M); no large channel focused on pre-1990 scandals (gap; historic demand unproven)."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e092",
+            "e093"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 6,
+          "evidence": [
+            "e100"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "global fraud with U.S. investors"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: SEC and historical reports"
+        }
+      },
+      "result": {
+        "score": 61.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 6.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 5.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 6.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 28
+    },
+    {
+      "title": "The Hyatt Regency walkway collapse (1981): an engineering lesson",
+      "niche": "pillar 11",
+      "series": "Engineering Lessons",
+      "angle": "engineering ethics; treat victims respectfully",
+      "sources": [
+        "NIST/NBS report"
+      ],
+      "visual_style": "whiteboard",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Tiny uploads with 3-1.3K views this year; advertiser sensitivity around casualties.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 7,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 3,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e148"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 4,
+          "evidence": [
+            "e141",
+            "e146"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Tiny uploads with 3-1.3K views this year; advertiser sensitivity around casualties."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e137",
+            "e138"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e146"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 7,
+          "assessed_by": "agent",
+          "rationale": "engineering ethics; treat victims respectfully"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: NIST/NBS report"
+        }
+      },
+      "result": {
+        "score": 56.5,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 7.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 3.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 29
+    },
+    {
+      "title": "The Johnstown Flood of 1889: a dam, a club and a disaster",
+      "niche": "pillar 11",
+      "series": "Engineering Lessons",
+      "angle": "evergreen; NPS memorial",
+      "sources": [
+        "NPS"
+      ],
+      "visual_style": "maps + archival",
+      "runtime": "15-20 min",
+      "audience_fit": "1940-1990 U.S. subject; YouTube reach and TV viewing among ages 50-64 / 65+ (e001, e003)",
+      "competition": "Tiny uploads with 3-1.3K views this year; advertiser sensitivity around casualties.",
+      "shorts": [
+        "surprising fact",
+        "unanswered question",
+        "overlooked person"
+      ],
+      "factors": {
+        "audience_fit_us50": {
+          "score": 6,
+          "evidence": [
+            "e001",
+            "e003",
+            "e005"
+          ],
+          "evidence_scope": "pillar",
+          "assessed_by": "agent",
+          "rationale": "platform reach is evidenced; topic-level age fit is an editorial judgement (no public per-video age data)"
+        },
+        "revenue_evidence": {
+          "score": 3,
+          "category": "ad-demand-proxy",
+          "evidence": [
+            "e148"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "non-graphic educational long-form history is advertiser-eligible; no niche RPM claimed"
+        },
+        "demand": {
+          "score": 4,
+          "evidence": [
+            "e141",
+            "e146"
+          ],
+          "evidence_scope": "pillar",
+          "rationale": "Tiny uploads with 3-1.3K views this year; advertiser sensitivity around casualties."
+        },
+        "competition_gap": {
+          "score": 6,
+          "evidence": [
+            "e137",
+            "e138"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "evergreen": {
+          "score": 7,
+          "evidence": [
+            "e146"
+          ],
+          "evidence_scope": "pillar"
+        },
+        "storytelling": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "evergreen; NPS memorial"
+        },
+        "feasibility": {
+          "score": 8,
+          "assessed_by": "agent",
+          "rationale": "primary or public sources available: NPS"
+        }
+      },
+      "result": {
+        "score": 55.0,
+        "confidence": 0.71,
+        "confidence_label": "medium",
+        "missing": [],
+        "problems": [],
+        "weights": {
+          "audience_fit_us50": 0.25,
+          "revenue_evidence": 0.2,
+          "demand": 0.15,
+          "competition_gap": 0.15,
+          "evergreen": 0.1,
+          "storytelling": 0.1,
+          "feasibility": 0.05
+        },
+        "breakdown": {
+          "audience_fit_us50": {
+            "score": 6.0,
+            "weight": 0.25,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "revenue_evidence": {
+            "score": 3.0,
+            "weight": 0.2,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "demand": {
+            "score": 4.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "competition_gap": {
+            "score": 6.0,
+            "weight": 0.15,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "evergreen": {
+            "score": 7.0,
+            "weight": 0.1,
+            "evidenced": true,
+            "evidence_strength": 0.5
+          },
+          "storytelling": {
+            "score": 8.0,
+            "weight": 0.1,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          },
+          "feasibility": {
+            "score": 8.0,
+            "weight": 0.05,
+            "evidenced": false,
+            "evidence_strength": 0.0
+          }
+        }
+      },
+      "rank": 30
+    }
+  ]
+}

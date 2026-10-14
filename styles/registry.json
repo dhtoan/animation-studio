@@ -188,6 +188,26 @@
    ]
   },
   {
+   "id": "native.archival",
+   "name": "Archival recreation",
+   "engine": "archival",
+   "source": "native",
+   "license": "project",
+   "description": "Sepia period-document look with projector flicker, dust and an ILLUSTRATIVE RECREATION label; for labelled historical recreations.",
+   "aspects": [
+    "16:9",
+    "9:16"
+   ],
+   "deps": [],
+   "perf_ms": 140,
+   "params": {},
+   "best_for": [
+    "recreation",
+    "history",
+    "evidence"
+   ]
+  },
+  {
    "id": "huashu.finance-chart",
    "name": "Editorial finance chart",
    "engine": "huashu_clip",
