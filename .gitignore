@@ -17,3 +17,5 @@ styles/samples/_work/
 voice/provider-status.json
 # voice sample cache (keep only the named sample-*.wav files)
 voice/samples/[0-9a-f]*
+tools/bin/
+tools/node/node_modules/
