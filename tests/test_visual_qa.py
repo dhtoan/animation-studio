@@ -165,5 +165,30 @@ class AssetFingerprintTests(unittest.TestCase):
             self.assertIsNone(asset_fingerprint({"params": {"page": "lemo:styles/x/index.html"}}))
 
 
+class PieceTimingTests(unittest.TestCase):
+    def test_eras_follow_timeline_and_bridges_only_between_adjacent(self):
+        from studio_lib import piece_timing
+        P = {"piece": "pieces/crosshatch", "era": True}
+        sc = [{"id": "a", "engine": "animate_piece", "params": dict(P)},
+              {"id": "b", "engine": "huashu_clip", "params": {}},
+              {"id": "c", "engine": "animate_piece", "params": dict(P)},
+              {"id": "d", "engine": "animate_piece", "params": dict(P)}]
+        tl = [{"id": "a", "frames": 300}, {"id": "b", "frames": 90}, {"id": "c", "frames": 150}, {"id": "d", "frames": 60}]
+        out = piece_timing.assign(sc, tl, 30)
+        self.assertEqual(len(out), 1)
+        eras = sc[0]["params"]["timing"]["scenes"]
+        self.assertEqual([(e["id"], e["start"], e["end"]) for e in eras], [("a", 0, 10), ("c", 10, 15), ("d", 15, 17)])
+        self.assertEqual([e["bridge_next"] for e in eras], [False, True, False])
+        self.assertEqual(sc[2]["params"]["offset"], 10)
+        self.assertNotIn("timing", sc[1]["params"])
+
+    def test_short_segments_keep_source_era(self):
+        from studio_lib import piece_timing
+        sc = [{"id": "short-1-01", "_source": "g13", "engine": "animate_piece", "params": {"piece": "p", "era": True}}]
+        piece_timing.assign(sc, [{"id": "short-1-01", "frames": 60}], 30)
+        self.assertEqual(sc[0]["params"]["era"], "g13")
+        self.assertEqual(sc[0]["params"]["timing"]["scenes"][0]["id"], "g13")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -503,10 +503,97 @@ sc("g45", "medal", "kinetic", "cta",
    "In our next documentary, we'll look at another group of Americans whose wartime work stayed secret for decades. Thanks for watching.",
    "End card.", params={"emphasis": ["secret", "decades."]}, claims=[], illustrative=False)
 
+# ---------------------------------------------------------------- visual-fidelity rebuild (g01-g19)
+# The first 19 scenes are redrawn with authentic upstream engines (styles/design-system.json):
+# narration, claims, chapters and order are unchanged; only the visual layer is replaced.
+PAPER = {"bg": "#EDE4CF", "surface": "#F6F0E2", "ink": "#23241F", "sub": "#6E6857", "accent": "#A8782A", "accent2": "#55603F"}
+NIGHT = {"bg": "#1B1E19", "surface": "#262A23", "ink": "#EEE7D4", "sub": "#9C9786", "accent": "#D7A23F", "accent2": "#7F9A68"}
+XH = {"engine": "animate_piece", "look": "historical-illustrated", "params": {"piece": "pieces/crosshatch", "era": True}}
+WB = {"engine": "html_seek", "look": "premium-whiteboard", "params": {"page": "pieces/lemo-whiteboard/index.html", "era": True}}
+MAP = {"engine": "html_seek", "look": "military-map", "params": {"page": "pieces/mg-map/index.html", "era": True}}
+BP = {"engine": "html_seek", "look": "technical-blueprint", "params": {"page": "pieces/lemo-blueprint/index.html", "era": True}}
+
+
+def SW(art, title):
+    return {"engine": "sweety_draw", "look": "hand-drawn-illustration",
+            "params": {"src": f"assets/art/{art}.png", "title": title, "pen": "pen", "draw_window": [0.4, "78%"]}}
+
+
+def HU(params):
+    return {"engine": "huashu_clip", "look": "data-editorial" if params.get("grammar") == "t3_finance_chart" else "kinetic-type",
+            "params": params}
+
+
+REBUILD = {
+    "g01": XH, "g03": XH, "g04": XH, "g05": XH, "g10": XH, "g11": XH, "g13": XH, "g14": XH, "g18": XH, "g19": XH,
+    "g02": MAP, "g06": BP, "g08": WB, "g12": WB,
+    "g15": SW("g15", "Sonic deception"), "g17": SW("g17", "Spoof radio"),
+    "g07": HU({"grammar": "y5_kinetic_type", "theme": PAPER, "cues": [
+        {"at": 0.25, "kind": "point", "text": "Authorized strength", "sub": "23rd Headquarters Special Troops", "data": {"label": "JANUARY 1944"}},
+        {"at": "cue:officers", "kind": "number", "sub": "officers", "data": {"value": 82, "label": "AUTHORIZED STRENGTH"}},
+        {"at": "cue:enlisted", "kind": "number", "sub": "enlisted men", "data": {"value": 1023, "label": "AUTHORIZED STRENGTH"}},
+        {"at": "cue:hundred", "kind": "number", "sub": "people, all told", "data": {"value": 1100, "prefix": "~", "label": "23RD HQ SPECIAL TROOPS"}},
+        {"at": "cue:look", "kind": "point", "text": "Look and sound bigger", "sub": "like forces many times their size", "data": {"key": "many times"}},
+        {"at": "cue:times", "kind": "highlight", "data": {"word": "bigger"}}]}),
+    "g09": HU({"grammar": "t3_finance_chart", "theme": {**PAPER, "accent": "#B23A2A"},
+               "data": {"title": "The four parts of the 23rd", "unit": "Approximate strength of each component, men",
+                        "source": "Sources: unit histories; figures approximate", "badge": "Approximate", "chart": "bar",
+                        "decimals": 0, "prefix": "~",
+                        "series": [{"label": "603rd Camouflage", "value": 380, "color": "#55603F"},
+                                   {"label": "Signal Co. Special", "value": 300, "color": "#55603F"},
+                                   {"label": "406th Engineers", "value": 170, "color": "#55603F"},
+                                   {"label": "3132nd Sound", "value": 145, "color": "#55603F"}],
+                        "highlight": {"index": 0, "text": "Largest piece", "sub": "the camouflage battalion"}},
+               "cues": [{"at": 0.2, "kind": "title"},
+                        {"at": "cue:camouflage", "kind": "bar", "data": {"index": 0}},
+                        {"at": "cue:radio", "kind": "bar", "data": {"index": 1}},
+                        {"at": "cue:engineers#2", "kind": "bar", "data": {"index": 2}},
+                        {"at": "cue:sound", "kind": "bar", "data": {"index": 3}},
+                        {"at": "end-1.4", "kind": "highlight", "data": {"index": 0}}]}),
+    "g16": HU({"theme": NIGHT, "shots": [
+        {"grammar": "y5_kinetic_type", "cues": [
+            {"at": 0.25, "kind": "point", "text": "How far?", "sub": "the sound of a phantom army", "data": {"key": "phantom", "label": "SONIC DECEPTION"}},
+            {"at": "cue:fifteen", "kind": "number", "sub": "how far the sound could carry", "data": {"value": 15, "prefix": "~", "suffix": " miles", "label": "ONE MUSEUM ACCOUNT"}},
+            {"at": "cue:not", "kind": "point", "text": "An account", "sub": "not a measured test - treat it as an estimate", "data": {"key": "estimate", "label": "CAUTION"}}]},
+        {"start": "cue:To#2", "grammar": "y3_whiteboard", "theme": PAPER, "cues": [
+            {"at": 0.0, "kind": "title", "text": "Aiming the sound"},
+            {"at": "cue:aim", "kind": "draw", "text": "aim the sound", "data": {"icon": "target"}},
+            {"at": "cue:weather", "kind": "draw", "text": "mobile weather station", "data": {"icon": "gear"}},
+            {"at": "cue:jeep", "kind": "point", "text": "mounted on a jeep"},
+            {"at": "end-1.0", "kind": "highlight", "data": {"index": 0, "style": "underline"}}]}]}),
+}
+LOOK_TRANSITIONS = {"g01": "fade_black", "g04": {"type": "fade_black", "dur": 0.8},
+                    "g06": {"type": "crossfade", "dur": 0.5}, "g07": {"type": "crossfade", "dur": 0.5},
+                    "g16": {"type": "crossfade", "dur": 0.5}, "g18": {"type": "crossfade", "dur": 0.5}}
+for _s in S:
+    if _s["id"] in REBUILD:
+        r = json.loads(json.dumps(REBUILD[_s["id"]]))
+        _s.update(r)
+        _s["elements"] = []  # the native overlay drawings are replaced by the engine's own drawing
+        for k in ("camera", "art_style"):
+            _s.pop(k, None)
+        # the crosshatch piece morphs g10->g11, g13->g14, g18->g19 inside the piece: hard cuts here
+        # look changes dissolve; the in-piece hop from the night river to the title desk dips to black
+        _s["transition"] = LOOK_TRANSITIONS.get(_s["id"], "cut")
+    else:
+        # g20-g45 are outside the g01-g19 rebuild: native visuals kept, reported by visual QA
+        _s["allow_native"] = True
+        _s["native_reason"] = "outside the g01-g19 visual-fidelity rebuild (pending)"
+
+def Y5(narration, cues, src=None):
+    """A vertical-friendly kinetic-type segment (huashu y5) for Shorts: no burned captions (the words are the picture)."""
+    seg = {"engine": "huashu_clip", "narration": narration, "captions": False,
+           "params": {"grammar": "y5_kinetic_type", "theme": PAPER, "cues": cues, "vertical_ok": True}}
+    if src:
+        seg["from"] = src
+    return seg
+
+
 project = {
     "schema_version": 2, "slug": "ghost-army", "title": "The Ghost Army: America's Secret Unit of Artists and Illusions",
     "category": "history", "language": "en-US", "audience": "US 55+ (primary 55-64, secondary 65+)",
     "target_duration": 960, "tolerance": 0.10, "fps": 30, "theme": "history",
+    "quality_profile": "documentary-premium", "design_system": {"id": "documentary"},
     "fictional": False, "badge": "ILLUSTRATIVE ANIMATION",
     "voice": {"mode": "edge-tts", "provider": "edge", "voice": "en-US-AndrewNeural", "edge_rate": "-10%", "allow_network": True,
               "languages": {"es": {"voice": "es-MX-JorgeNeural", "rate": "+4%"}}},
@@ -542,35 +629,46 @@ project = {
         {"id": "short-ga1", "funnel_type": "surprising fact", "title": "These WWII tanks were made of rubber", "chapter": "toolkit",
          "duration_range": [25, 50], "publish_order": 1,
          "segments": [
-             {"engine": "kinetic", "narration": "In World War Two, some American tanks were made of rubber. On purpose.",
-              "params": {"emphasis": ["rubber.", "purpose."]}},
-             {"from": "g13", "narration": "Inflatable decoys of tanks, artillery and trucks, some made by U.S. Rubber and Goodyear, could look like an armored force from a distance.",
-              "params": {"src": "assets/decoy-tank.png", "order": "strokes", "draw_time": 8.0, "box_v": [0.05, 0.18, 0.9, 0.5]}},
-             {"from": "g12", "narration": "It was one of four tools used by a secret unit called the Ghost Army.",
-              "elements": [{"type": "text", "text": "The Ghost Army", "style": "h1", "pos_v": [0.5, 0.2], "at": 0.2, "font": "hand_bold"},
-                           {"type": "icon", "name": "magnifier", "pos_v": [0.3, 0.42], "size": 0.09, "at": "cue:four", "label": "sight"},
-                           {"type": "icon", "name": "cloud", "pos_v": [0.7, 0.42], "size": 0.09, "at": "cue:tools", "label": "sound"},
-                           {"type": "icon", "name": "server", "pos_v": [0.3, 0.62], "size": 0.09, "at": "cue:secret", "label": "radio"},
-                           {"type": "icon", "name": "star", "pos_v": [0.7, 0.62], "size": 0.09, "at": "cue:ghost", "label": "theater"}]}],
+             Y5("In World War Two, some American tanks were made of rubber. On purpose.",
+                [{"at": 0.15, "kind": "point", "text": "Made of rubber", "sub": "American tanks in World War Two", "data": {"key": "World War Two", "label": "1944-1945"}},
+                 {"at": "cue:purpose", "kind": "point", "text": "On purpose."}]),
+             {"from": "g13", "engine": "sweety_draw", "captions": True,
+              "narration": "Inflatable decoys of tanks, artillery and trucks, some made by U.S. Rubber and Goodyear, could look like an armored force from a distance.",
+              "params": {"src": "assets/art/g13.png", "title": "Inflatable decoys", "pen": "pen", "draw_window": [0.3, "85%"],
+                         "box_v": [0.04, 0.2, 0.92, 0.5], "title_pos": [0.08, 0.1]}},
+             Y5("It was one of four tools used by a secret unit called the Ghost Army.",
+                [{"at": 0.1, "kind": "point", "text": "Sight", "data": {"label": "FOUR TOOLS"}},
+                 {"at": "cue:four", "kind": "point", "text": "Sound", "data": {"label": "FOUR TOOLS"}},
+                 {"at": "cue:used", "kind": "point", "text": "Radio", "data": {"label": "FOUR TOOLS"}},
+                 {"at": "cue:secret", "kind": "point", "text": "Theater", "data": {"label": "FOUR TOOLS"}},
+                 {"at": "cue:ghost", "kind": "title", "text": "The Ghost Army"}], src="g12")],
          "description": "Inflatable decoys of WWII's Ghost Army. Full documentary in the related video. #WWII #History",
          "hashtags": ["#WWII", "#History", "#GhostArmy"], "pinned_comment": "The full story, with sources, is in the related video."},
         {"id": "short-ga2", "funnel_type": "overlooked person", "title": "A famous fashion designer served in a secret WWII unit",
          "chapter": "artists", "duration_range": [25, 50], "publish_order": 2,
-         "segments": [{"engine": "kinetic", "narration": "Bill Blass, the fashion designer, served in a secret World War Two unit.", "params": {"emphasis": ["blass,", "secret"]}},
-                      {"from": "g11", "narration": "So did painter Ellsworth Kelly, wildlife artist Arthur Singer and photographer Art Kane, all in the 603rd Engineer Camouflage Battalion. "
-                                    "Many of its soldiers came from art schools and advertising agencies, because the Army needed people who understood how the eye could be fooled.",
-                       "elements": [{"type": "card", "box_v": [0.08, 0.15, 0.84, 0.14], "title": "Ellsworth Kelly", "body": "painter", "at": "cue:ellsworth", "tone": "light"},
-                                    {"type": "card", "box_v": [0.08, 0.32, 0.84, 0.14], "title": "Arthur Singer", "body": "wildlife artist", "at": "cue:arthur", "tone": "light"},
-                                    {"type": "card", "box_v": [0.08, 0.49, 0.84, 0.14], "title": "Art Kane", "body": "photographer", "at": "cue:kane,", "tone": "light"}]}],
+         "segments": [Y5("Bill Blass, the fashion designer, served in a secret World War Two unit.",
+                         [{"at": 0.15, "kind": "point", "text": "Bill Blass", "sub": "fashion designer", "data": {"label": "WORLD WAR TWO"}},
+                          {"at": "cue:secret", "kind": "point", "text": "A secret unit", "sub": "23rd Headquarters Special Troops", "data": {"label": "WORLD WAR TWO"}}]),
+                      Y5("So did painter Ellsworth Kelly, wildlife artist Arthur Singer and photographer Art Kane, all in the 603rd Engineer Camouflage Battalion. "
+                         "Many of its soldiers came from art schools and advertising agencies, because the Army needed people who understood how the eye could be fooled.",
+                         [{"at": "cue:ellsworth", "kind": "point", "text": "Ellsworth Kelly", "sub": "painter", "data": {"label": "603RD CAMOUFLAGE"}},
+                          {"at": "cue:arthur", "kind": "point", "text": "Arthur Singer", "sub": "wildlife artist", "data": {"label": "603RD CAMOUFLAGE"}},
+                          {"at": "cue:kane", "kind": "point", "text": "Art Kane", "sub": "photographer", "data": {"label": "603RD CAMOUFLAGE"}},
+                          {"at": "cue:art#4", "kind": "point", "text": "Art schools", "sub": "and advertising agencies"},
+                          {"at": "cue:fooled", "kind": "point", "text": "Fool the eye"}], src="g11")],
          "description": "Artists of the Ghost Army. #WWII #Art", "hashtags": ["#WWII", "#Art", "#History"],
          "pinned_comment": "Their full story is in the related documentary."},
         {"id": "short-ga3", "funnel_type": "unanswered question", "claims_note": "C52 (contested), C30", "title": "Did a rubber army save 30,000 lives?", "chapter": "myth",
          "duration_range": [25, 50], "publish_order": 3,
-         "segments": [{"engine": "kinetic", "narration": "You may have heard the Ghost Army saved up to thirty thousand lives.", "params": {"emphasis": ["thirty", "thousand"]}},
-                      {"from": "g39", "narration": "It's widely repeated, even at the medal ceremony. But we could not find a primary study behind that number. "
-                                     "What the record does show is where the unit worked, what it did, and what it cost. How many lives it saved is still an open question.",
-                       "elements": [{"type": "text", "text": "15,000–30,000?", "style": "hero", "pos_v": [0.5, 0.3], "at": 0.3},
-                                    {"type": "text", "text": "no primary study found", "style": "h2", "pos_v": [0.5, 0.45], "at": "cue:study", "color": "negative"}]}],
+         "segments": [Y5("You may have heard the Ghost Army saved up to thirty thousand lives.",
+                         [{"at": 0.15, "kind": "point", "text": "You may have heard", "data": {"label": "THE CLAIM"}},
+                          {"at": "cue:thousand", "kind": "number", "sub": "lives saved?", "data": {"value": 30000, "prefix": "up to ", "label": "THE CLAIM"}}]),
+                      Y5("It's widely repeated, even at the medal ceremony. But we could not find a primary study behind that number. "
+                         "What the record does show is where the unit worked, what it did, and what it cost. How many lives it saved is still an open question.",
+                         [{"at": 0.1, "kind": "point", "text": "Widely repeated", "sub": "even at the medal ceremony"},
+                          {"at": "cue:could", "kind": "point", "text": "No primary study", "sub": "we could not find one behind that number", "data": {"label": "WHAT WE FOUND"}},
+                          {"at": "cue:record", "kind": "point", "text": "The record shows", "sub": "where they worked, what they did, what it cost"},
+                          {"at": "cue:how", "kind": "point", "text": "An open question", "data": {"label": "STILL UNKNOWN"}}], src="g39")],
          "description": "Separating record from legend. #WWII #History", "hashtags": ["#WWII", "#History", "#Documentary"],
          "pinned_comment": "We go through the sources in the full documentary (related video)."},
     ],

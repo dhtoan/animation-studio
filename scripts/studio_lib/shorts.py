@@ -108,7 +108,12 @@ def _segments(p: dict, short: dict) -> list[dict]:
         base = copy.deepcopy(byid[seg["from"]]) if seg.get("from") else {
             "engine": "kinetic", "elements": [], "params": {}, "camera": {"move": "drift"}, "transition": "cut",
             "pad": {"lead": 0.2, "tail": 0.4}, "illustrative": True, "_project_dir": p["_dir"]}
-        for key in ("narration", "engine", "camera", "transition", "min_duration", "audio", "purpose", "pad"):
+        if seg.get("engine") and seg["engine"] != base.get("engine"):
+            base["params"] = {}  # a different engine never inherits the source scene's engine params
+            base["elements"] = []
+            base.pop("look", None)
+        for key in ("narration", "engine", "camera", "transition", "min_duration", "audio", "purpose", "pad",
+                    "look", "allow_native", "native_reason"):
             if key in seg:
                 base[key] = copy.deepcopy(seg[key])
         if "params" in seg:  # merge, so a segment can override cues without losing the scene's data
@@ -126,7 +131,22 @@ def _segments(p: dict, short: dict) -> list[dict]:
         base["_captions"] = seg.get("captions", base.get("engine") != "kinetic")
         segs.append(base)
     cta = short.get("cta", DEFAULT_CTA)
-    if cta:
+    from .engines import is_premium
+
+    if cta and is_premium(p):  # premium: the call to action is kinetic type from huashu, not the native engine
+        from . import design_system as _ds
+
+        label = short.get("cta_label", "FULL STORY: TAP THE RELATED VIDEO")
+        segs.append({"id": f"{short['id']}-cta", "engine": "huashu_clip", "narration": cta,
+                     "params": {"grammar": "y5_kinetic_type", "vertical_ok": True,
+                                "theme": {k: v for k, v in _ds.palette("paper").items() if k != "alert"},
+                                "cues": [{"at": 0.1, "kind": "point", "text": "Full story",
+                                          "sub": "in the related video", "data": {"label": "WATCH NEXT"}},
+                                         {"at": "cue:tap", "kind": "point", "text": "Tap to watch",
+                                          "data": {"label": label.split(":")[0].strip() or "WATCH NEXT"}}]},
+                     "elements": [], "transition": "crossfade", "pad": {"lead": 0.15, "tail": 0.6},
+                     "illustrative": False, "_project_dir": p["_dir"], "_captions": False})
+    elif cta:
         segs.append({"id": f"{short['id']}-cta", "engine": "kinetic", "narration": cta,
                      "params": {"emphasis": ["full", "story", "related", "video."], "max_words": 3},
                      "elements": [{"type": "text", "text": short.get("cta_label", "FULL STORY: TAP THE RELATED VIDEO"),
@@ -159,6 +179,9 @@ def build_shorts(pdir: Path, quality: str = "preview", workers: int = 3, only: l
         narr = synthesize({s["id"]: s["narration"] for s in segs if s.get("narration")}, tts_config(p),
                           pdir / "audio" / "narration", log=log)
         tl = timeline.build(segs, narr, p.get("fps", 30))
+        from . import piece_timing
+
+        piece_timing.assign(segs, tl["scenes"], p.get("fps", 30))  # a Short is its own piece clock
         out_dir = pdir / "scenes" / f"short-{quality}"
         out_dir.mkdir(parents=True, exist_ok=True)
         jobs, prev = [], None

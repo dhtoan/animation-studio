@@ -9,6 +9,10 @@
   "tolerance": 0.1,
   "fps": 30,
   "theme": "history",
+  "quality_profile": "documentary-premium",
+  "design_system": {
+    "id": "documentary"
+  },
   "fictional": false,
   "badge": "ILLUSTRATIVE ANIMATION",
   "voice": {
@@ -92,24 +96,11 @@
     {
       "id": "g01",
       "chapter": "open",
-      "engine": "artistic",
+      "engine": "animate_piece",
       "purpose": "hook",
       "narration": "March, nineteen forty-five. On the west bank of the Rhine River, American forces were preparing one of the great river crossings of the Second World War. On the other side, German commanders were watching and listening for any sign of where the blow would fall. This is not the story of a famous battle. It is the story of how, for most of a year, a small American unit made the enemy see and hear things that were not there.",
       "visual": "Night river, distant lights, slow push.",
-      "elements": [
-        {
-          "type": "text",
-          "text": "March 1945 · The Rhine",
-          "pos": [
-            0.5,
-            0.18
-          ],
-          "style": "h2",
-          "at": 0.5,
-          "font": "serif_bold",
-          "color": "light"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C31"
       ],
@@ -119,73 +110,21 @@
         "tail": 0.8
       },
       "params": {
-        "layers": [
-          "hills",
-          "city"
-        ],
-        "sky": [
-          "night",
-          "night2"
-        ],
-        "fog": true
-      },
-      "camera": {
-        "move": "push_in",
-        "amount": 0.07
+        "piece": "pieces/crosshatch",
+        "era": true
       },
       "transition": "fade_black",
-      "emotion": "suspense"
+      "emotion": "suspense",
+      "look": "historical-illustrated"
     },
     {
       "id": "g02",
       "chapter": "open",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "hook",
       "narration": "Not far from the front, they could see it: the trucks, the tanks and the artillery of two American infantry divisions moving into position. They could hear engines at night. They could pick up the radio traffic.",
       "visual": "Map of the Rhine near Viersen; two division symbols appear.",
-      "elements": [
-        {
-          "type": "map",
-          "geojson": "assets/ne_110m_admin_0_countries.geojson",
-          "bounds": [
-            -1.0,
-            47.0,
-            14.0,
-            55.0
-          ],
-          "box": [
-            0.04,
-            0.12,
-            0.92,
-            0.8
-          ],
-          "at": 0.2,
-          "dur": 1.2,
-          "highlight": [
-            {
-              "name": "Germany",
-              "color": "muted"
-            }
-          ],
-          "markers": [
-            {
-              "lon": 6.39,
-              "lat": 51.26,
-              "label": "Viersen",
-              "at": "cue:two"
-            }
-          ],
-          "routes": [],
-          "labels": [
-            {
-              "lon": 6.2,
-              "lat": 51.9,
-              "text": "RHINE",
-              "at": 0.6
-            }
-          ]
-        }
-      ],
+      "elements": [],
       "claims": [
         "C31"
       ],
@@ -200,12 +139,18 @@
           "license": "Public domain (Natural Earth)",
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
-      ]
+      ],
+      "look": "military-map",
+      "params": {
+        "page": "pieces/mg-map/index.html",
+        "era": true
+      },
+      "transition": "cut"
     },
     {
       "id": "g03",
       "chapter": "open",
-      "engine": "kinetic",
+      "engine": "animate_piece",
       "purpose": "reveal",
       "narration": "But those divisions were not there. The tanks were made of rubber. The engine noise was recorded. And the radio operators were impersonating units that were somewhere else entirely.",
       "visual": "Kinetic reveal.",
@@ -222,62 +167,20 @@
         "tail": 0.8
       },
       "params": {
-        "emphasis": [
-          "not",
-          "rubber.",
-          "recorded.",
-          "impersonating"
-        ]
+        "piece": "pieces/crosshatch",
+        "era": true
       },
-      "transition": "flash_cut"
+      "transition": "cut",
+      "look": "historical-illustrated"
     },
     {
       "id": "g04",
       "chapter": "open",
-      "engine": "motion",
+      "engine": "animate_piece",
       "purpose": "explain",
       "narration": "This is the story of the Ghost Army: about eleven hundred American soldiers, many of them artists, whose job was to deceive the enemy on the battlefields of Europe. Their work stayed classified for decades. In this documentary we'll follow them from Tennessee to the Rhine, separate the record from the legend, and look honestly at what we still don't know.",
       "visual": "Title card with unit count and roadmap.",
-      "elements": [
-        {
-          "type": "text",
-          "text": "THE GHOST ARMY",
-          "pos": [
-            0.5,
-            0.3
-          ],
-          "style": "hero",
-          "at": 0.3,
-          "font": "serif_bold",
-          "color": "light"
-        },
-        {
-          "type": "text",
-          "text": "23rd Headquarters Special Troops · 3133rd Signal Service Company",
-          "pos": [
-            0.5,
-            0.45
-          ],
-          "style": "body",
-          "at": 1.2,
-          "color": "muted"
-        },
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 1100,
-          "prefix": "≈ ",
-          "pos": [
-            0.5,
-            0.66
-          ],
-          "at": "cue:eleven",
-          "dur": 1.6,
-          "style": "h1",
-          "label": "soldiers",
-          "color": "accent"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C1",
         "C5",
@@ -287,53 +190,25 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
+      },
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "transition": {
+        "type": "fade_black",
+        "dur": 0.8
       }
     },
     {
       "id": "g05",
       "chapter": "artists",
-      "engine": "handdrawn",
+      "engine": "animate_piece",
       "purpose": "story",
       "narration": "The idea came from Ralph Ingersoll, an American officer who had worked with the British on deception planning for Operation Fortitude, the effort to mislead Germany about the D-Day landings. Ingersoll proposed something the U.S. Army did not yet have: a unit devoted entirely to deception.",
       "visual": "Sketch of an officer at a planning table with a map.",
-      "elements": [
-        {
-          "type": "character",
-          "pos": [
-            0.24,
-            0.9
-          ],
-          "height": 0.5,
-          "pose": "point",
-          "at": 0.3,
-          "talk": true,
-          "color": "cool"
-        },
-        {
-          "type": "card",
-          "box": [
-            0.5,
-            0.22,
-            0.4,
-            0.34
-          ],
-          "tag": "Proposal",
-          "title": "A U.S. unit for deception",
-          "body": "Ralph Ingersoll, after work on Operation Fortitude planning",
-          "at": "cue:proposed",
-          "tone": "light"
-        },
-        {
-          "type": "text",
-          "text": "Ralph Ingersoll",
-          "pos": [
-            0.24,
-            0.12
-          ],
-          "style": "h3",
-          "at": 0.6
-        }
-      ],
+      "elements": [],
       "claims": [
         "C4"
       ],
@@ -345,82 +220,21 @@
       "characters": [
         "ingersoll"
       ],
-      "transition": "fade_black"
+      "transition": "cut",
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      }
     },
     {
       "id": "g06",
       "chapter": "artists",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "timeline",
       "narration": "On January twentieth, nineteen forty-four, the 23rd Headquarters Special Troops was activated at Camp Forrest, Tennessee, under Colonel Harry Reeder, who would command it for the rest of the war. From there, its men would train, ship out, and eventually cross the Atlantic to England and the battlefields of France.",
       "visual": "U.S. map with Camp Forrest marker and activation date.",
-      "elements": [
-        {
-          "type": "map",
-          "geojson": "assets/ne_110m_admin_0_countries.geojson",
-          "bounds": [
-            -92.0,
-            33.0,
-            -70.0,
-            46.0
-          ],
-          "box": [
-            0.04,
-            0.2,
-            0.55,
-            0.72
-          ],
-          "at": 0.2,
-          "dur": 1.2,
-          "highlight": [
-            {
-              "name": "United States of America",
-              "color": "light"
-            }
-          ],
-          "markers": [
-            {
-              "lon": -86.21,
-              "lat": 35.36,
-              "label": "Camp Forrest, Tennessee",
-              "at": "cue:camp"
-            }
-          ],
-          "routes": [],
-          "labels": []
-        },
-        {
-          "type": "text",
-          "text": "January 20, 1944",
-          "pos": [
-            0.78,
-            0.32
-          ],
-          "style": "h2",
-          "at": "cue:january",
-          "color": "accent"
-        },
-        {
-          "type": "text",
-          "text": "Activated: 23rd HQ Special Troops",
-          "pos": [
-            0.78,
-            0.44
-          ],
-          "style": "body",
-          "at": "cue:activated"
-        },
-        {
-          "type": "text",
-          "text": "Commander: Col. Harry L. Reeder",
-          "pos": [
-            0.78,
-            0.54
-          ],
-          "style": "body",
-          "at": "cue:colonel"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C2",
         "C3"
@@ -436,56 +250,25 @@
           "license": "Public domain (Natural Earth)",
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
-      ]
+      ],
+      "look": "technical-blueprint",
+      "params": {
+        "page": "pieces/lemo-blueprint/index.html",
+        "era": true
+      },
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g07",
       "chapter": "artists",
-      "engine": "motion",
+      "engine": "huashu_clip",
       "purpose": "data",
       "narration": "Its authorized strength was eighty-two officers and one thousand twenty-three enlisted men. About eleven hundred people, whose job was to look and sound like forces many times their size.",
       "visual": "Two counters and a crowd grid.",
-      "elements": [
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 82,
-          "pos": [
-            0.3,
-            0.3
-          ],
-          "at": "cue:eighty-two",
-          "dur": 1.2,
-          "style": "h1",
-          "label": "officers"
-        },
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 1023,
-          "pos": [
-            0.7,
-            0.3
-          ],
-          "at": "cue:thousand",
-          "dur": 1.6,
-          "style": "h1",
-          "label": "enlisted men"
-        },
-        {
-          "type": "crowd",
-          "box": [
-            0.15,
-            0.52,
-            0.7,
-            0.36
-          ],
-          "count": 44,
-          "cols": 22,
-          "at": "cue:eleven",
-          "color": "cool"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C5"
       ],
@@ -493,83 +276,87 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
+      },
+      "look": "kinetic-type",
+      "params": {
+        "grammar": "y5_kinetic_type",
+        "theme": {
+          "bg": "#EDE4CF",
+          "surface": "#F6F0E2",
+          "ink": "#23241F",
+          "sub": "#6E6857",
+          "accent": "#A8782A",
+          "accent2": "#55603F"
+        },
+        "cues": [
+          {
+            "at": 0.25,
+            "kind": "point",
+            "text": "Authorized strength",
+            "sub": "23rd Headquarters Special Troops",
+            "data": {
+              "label": "JANUARY 1944"
+            }
+          },
+          {
+            "at": "cue:officers",
+            "kind": "number",
+            "sub": "officers",
+            "data": {
+              "value": 82,
+              "label": "AUTHORIZED STRENGTH"
+            }
+          },
+          {
+            "at": "cue:enlisted",
+            "kind": "number",
+            "sub": "enlisted men",
+            "data": {
+              "value": 1023,
+              "label": "AUTHORIZED STRENGTH"
+            }
+          },
+          {
+            "at": "cue:hundred",
+            "kind": "number",
+            "sub": "people, all told",
+            "data": {
+              "value": 1100,
+              "prefix": "~",
+              "label": "23RD HQ SPECIAL TROOPS"
+            }
+          },
+          {
+            "at": "cue:look",
+            "kind": "point",
+            "text": "Look and sound bigger",
+            "sub": "like forces many times their size",
+            "data": {
+              "key": "many times"
+            }
+          },
+          {
+            "at": "cue:times",
+            "kind": "highlight",
+            "data": {
+              "word": "bigger"
+            }
+          }
+        ]
+      },
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
       }
     },
     {
       "id": "g08",
       "chapter": "artists",
-      "engine": "whiteboard",
+      "engine": "html_seek",
       "purpose": "process",
       "narration": "The 23rd was built from specialized parts. A camouflage battalion handled visual deception. A special signal company handled radio. A sonic company, the 3132nd, handled sound. And an engineer combat company guarded the perimeter and helped stage the illusions.",
       "visual": "Whiteboard org chart of four components.",
-      "elements": [
-        {
-          "type": "text",
-          "text": "23rd Headquarters Special Troops",
-          "pos": [
-            0.5,
-            0.12
-          ],
-          "style": "h2",
-          "at": 0.2,
-          "underline": true
-        },
-        {
-          "type": "icon",
-          "name": "star",
-          "pos": [
-            0.14,
-            0.45
-          ],
-          "size": 0.07,
-          "at": "cue:camouflage",
-          "label": "603rd Camouflage · visual"
-        },
-        {
-          "type": "icon",
-          "name": "server",
-          "pos": [
-            0.38,
-            0.45
-          ],
-          "size": 0.07,
-          "at": "cue:radio.",
-          "label": "Signal Co. Special · radio"
-        },
-        {
-          "type": "icon",
-          "name": "cloud",
-          "pos": [
-            0.62,
-            0.45
-          ],
-          "size": 0.07,
-          "at": "cue:sound.",
-          "label": "3132nd · sound"
-        },
-        {
-          "type": "icon",
-          "name": "truck",
-          "pos": [
-            0.86,
-            0.45
-          ],
-          "size": 0.07,
-          "at": "cue:engineer",
-          "label": "406th Engineers · security"
-        },
-        {
-          "type": "text",
-          "text": "small force → looks like a big one",
-          "pos": [
-            0.5,
-            0.82
-          ],
-          "style": "h3",
-          "at": "cue:illusions.",
-          "color": "accent"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C6"
       ],
@@ -578,7 +365,12 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "crossfade"
+      "transition": "cut",
+      "look": "premium-whiteboard",
+      "params": {
+        "page": "pieces/lemo-whiteboard/index.html",
+        "era": true
+      }
     },
     {
       "id": "g09",
@@ -598,40 +390,57 @@
       },
       "params": {
         "grammar": "t3_finance_chart",
-        "theme": "paper",
+        "theme": {
+          "bg": "#EDE4CF",
+          "surface": "#F6F0E2",
+          "ink": "#23241F",
+          "sub": "#6E6857",
+          "accent": "#B23A2A",
+          "accent2": "#55603F"
+        },
         "data": {
-          "title": "Approximate strength of the 23rd's components",
-          "unit": "men (approximate)",
-          "source": "Source: National WWII Museum; Ghost Army Legacy Project (Fox history)",
+          "title": "The four parts of the 23rd",
+          "unit": "Approximate strength of each component, men",
+          "source": "Sources: unit histories; figures approximate",
+          "badge": "Approximate",
           "chart": "bar",
           "decimals": 0,
+          "prefix": "~",
           "series": [
             {
-              "label": "603rd camouflage",
-              "value": 379
+              "label": "603rd Camouflage",
+              "value": 380,
+              "color": "#55603F"
             },
             {
               "label": "Signal Co. Special",
-              "value": 296
+              "value": 300,
+              "color": "#55603F"
             },
             {
-              "label": "406th engineers",
-              "value": 168
+              "label": "406th Engineers",
+              "value": 170,
+              "color": "#55603F"
             },
             {
-              "label": "3132nd sonic",
-              "value": 145
+              "label": "3132nd Sound",
+              "value": 145,
+              "color": "#55603F"
             }
           ],
           "highlight": {
             "index": 0,
-            "text": "≈ 380",
-            "sub": "largest unit"
+            "text": "Largest piece",
+            "sub": "the camouflage battalion"
           }
         },
         "cues": [
           {
-            "at": "cue:three",
+            "at": 0.2,
+            "kind": "title"
+          },
+          {
+            "at": "cue:camouflage",
             "kind": "bar",
             "data": {
               "index": 0
@@ -645,7 +454,7 @@
             }
           },
           {
-            "at": "cue:engineers",
+            "at": "cue:engineers#2",
             "kind": "bar",
             "data": {
               "index": 2
@@ -659,69 +468,25 @@
             }
           },
           {
-            "at": "end-1.5",
-            "kind": "highlight"
+            "at": "end-1.4",
+            "kind": "highlight",
+            "data": {
+              "index": 0
+            }
           }
         ]
       },
-      "camera": {
-        "move": "drift"
-      }
+      "look": "data-editorial",
+      "transition": "cut"
     },
     {
       "id": "g10",
       "chapter": "artists",
-      "engine": "handdrawn",
+      "engine": "animate_piece",
       "purpose": "character",
       "narration": "And here is the unusual part. Many of these soldiers, especially in the 603rd, came from art schools, advertising agencies and other creative or technical fields. The Army needed people who understood how the eye could be fooled.",
       "visual": "Sketched crowd of artists with brushes and drafting tools.",
-      "elements": [
-        {
-          "type": "crowd",
-          "box": [
-            0.06,
-            0.25,
-            0.4,
-            0.5
-          ],
-          "count": 12,
-          "at": 0.3,
-          "color": "accent"
-        },
-        {
-          "type": "icon",
-          "name": "lightbulb",
-          "pos": [
-            0.62,
-            0.4
-          ],
-          "size": 0.08,
-          "at": "cue:art",
-          "label": "art schools"
-        },
-        {
-          "type": "icon",
-          "name": "document",
-          "pos": [
-            0.82,
-            0.4
-          ],
-          "size": 0.07,
-          "at": "cue:advertising",
-          "label": "ad agencies"
-        },
-        {
-          "type": "text",
-          "text": "How do you fool the eye?",
-          "pos": [
-            0.72,
-            0.75
-          ],
-          "style": "h3",
-          "at": "cue:eye",
-          "color": "negative"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C18"
       ],
@@ -731,80 +496,20 @@
         "tail": 0.8
       },
       "params": {
-        "fill": "hatch"
-      }
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "look": "historical-illustrated",
+      "transition": "cut"
     },
     {
       "id": "g11",
       "chapter": "artists",
-      "engine": "handdrawn",
+      "engine": "animate_piece",
       "purpose": "character",
       "narration": "Some of their names became famous after the war. The painter Ellsworth Kelly served in the 603rd. So did fashion designer Bill Blass, wildlife artist Arthur Singer, and photographer Art Kane. Arthur Singer's wartime watercolors still survive.",
       "visual": "Four name cards pinned to a board.",
-      "elements": [
-        {
-          "type": "card",
-          "box": [
-            0.05,
-            0.22,
-            0.21,
-            0.28
-          ],
-          "title": "Ellsworth Kelly",
-          "body": "painter",
-          "at": "cue:ellsworth",
-          "tone": "light"
-        },
-        {
-          "type": "card",
-          "box": [
-            0.28,
-            0.22,
-            0.21,
-            0.28
-          ],
-          "title": "Bill Blass",
-          "body": "fashion designer",
-          "at": "cue:blass,",
-          "tone": "light"
-        },
-        {
-          "type": "card",
-          "box": [
-            0.51,
-            0.22,
-            0.21,
-            0.28
-          ],
-          "title": "Arthur Singer",
-          "body": "wildlife artist",
-          "at": "cue:arthur",
-          "tone": "light"
-        },
-        {
-          "type": "card",
-          "box": [
-            0.74,
-            0.22,
-            0.21,
-            0.28
-          ],
-          "title": "Art Kane",
-          "body": "photographer",
-          "at": "cue:kane.",
-          "tone": "light"
-        },
-        {
-          "type": "text",
-          "text": "All served in the 603rd Engineer Camouflage Battalion",
-          "pos": [
-            0.5,
-            0.68
-          ],
-          "style": "body",
-          "at": "cue:watercolors"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C41",
         "C42",
@@ -815,72 +520,22 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "transition": "cut"
     },
     {
       "id": "g12",
       "chapter": "toolkit",
-      "engine": "whiteboard",
+      "engine": "html_seek",
       "purpose": "explain",
       "narration": "So far we have an unusual unit of about eleven hundred men, many of them artists. Now, how did they actually fool an enemy army? The Ghost Army worked with four tools: things you could see, things you could hear, radio traffic, and a kind of theater. Used together, they could make a small force look and sound like a large one.",
       "visual": "Four tools drawn as icons.",
-      "elements": [
-        {
-          "type": "text",
-          "text": "Four tools of deception",
-          "pos": [
-            0.5,
-            0.12
-          ],
-          "style": "h1",
-          "at": 0.2,
-          "underline": true
-        },
-        {
-          "type": "icon",
-          "name": "magnifier",
-          "pos": [
-            0.16,
-            0.48
-          ],
-          "size": 0.08,
-          "at": "cue:see,",
-          "label": "sight"
-        },
-        {
-          "type": "icon",
-          "name": "cloud",
-          "pos": [
-            0.39,
-            0.48
-          ],
-          "size": 0.08,
-          "at": "cue:hear,",
-          "label": "sound"
-        },
-        {
-          "type": "icon",
-          "name": "server",
-          "pos": [
-            0.62,
-            0.48
-          ],
-          "size": 0.08,
-          "at": "cue:radio",
-          "label": "radio"
-        },
-        {
-          "type": "icon",
-          "name": "star",
-          "pos": [
-            0.85,
-            0.48
-          ],
-          "size": 0.08,
-          "at": "cue:theater.",
-          "label": "theater"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C13",
         "C10",
@@ -893,29 +548,21 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "fade_black"
+      "transition": "cut",
+      "look": "premium-whiteboard",
+      "params": {
+        "page": "pieces/lemo-whiteboard/index.html",
+        "era": true
+      }
     },
     {
       "id": "g13",
       "chapter": "toolkit",
-      "engine": "image_whiteboard",
+      "engine": "animate_piece",
       "purpose": "illustration",
       "narration": "Visual deception relied on inflatable rubber decoys: tanks, artillery, trucks and even aircraft. Some were manufactured by U.S. Rubber and Goodyear. From the air, or from a distance, a field of them could look like an armored force.",
       "visual": "An inflatable tank illustration is drawn stroke by stroke.",
-      "elements": [
-        {
-          "type": "text",
-          "text": "inflatable decoys",
-          "pos": [
-            0.82,
-            0.16
-          ],
-          "style": "h2",
-          "at": "cue:inflatable",
-          "font": "hand_bold",
-          "color": "accent"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C13",
         "C14"
@@ -926,15 +573,8 @@
         "tail": 0.8
       },
       "params": {
-        "src": "assets/decoy-tank.png",
-        "order": "strokes",
-        "draw_time": 10.0,
-        "box": [
-          0.03,
-          0.12,
-          0.66,
-          0.8
-        ]
+        "piece": "pieces/crosshatch",
+        "era": true
       },
       "assets": [
         {
@@ -942,104 +582,18 @@
           "license": "Original (generated by make_assets.py)",
           "source": "procedural illustration"
         }
-      ]
+      ],
+      "look": "historical-illustrated",
+      "transition": "cut"
     },
     {
       "id": "g14",
       "chapter": "toolkit",
-      "engine": "archival",
+      "engine": "animate_piece",
       "purpose": "recreation",
       "narration": "There's a well-known story, told by veterans, that two French civilians on bicycles once slipped past the perimeter and saw four American soldiers lifting what looked like a forty-ton Sherman tank. It comes from veterans' recollections, and one of them later painted the scene. We'll treat it as oral history, not documented fact.",
       "visual": "Archival-style recreation: four soldiers lift a tank shape; two bicycles; label ORAL HISTORY.",
-      "elements": [
-        {
-          "type": "character",
-          "pos": [
-            0.18,
-            0.88
-          ],
-          "height": 0.34,
-          "pose": "shock",
-          "at": "cue:bicycles",
-          "color": "muted"
-        },
-        {
-          "type": "character",
-          "pos": [
-            0.27,
-            0.88
-          ],
-          "height": 0.34,
-          "pose": "shock",
-          "at": "cue:bicycles",
-          "color": "muted"
-        },
-        {
-          "type": "shape",
-          "kind": "rect",
-          "box": [
-            0.48,
-            0.42,
-            0.34,
-            0.2
-          ],
-          "fill": "muted",
-          "at": "cue:lifting",
-          "radius": 0.03
-        },
-        {
-          "type": "character",
-          "pos": [
-            0.5,
-            0.88
-          ],
-          "height": 0.32,
-          "pose": "celebrate",
-          "at": "cue:four"
-        },
-        {
-          "type": "character",
-          "pos": [
-            0.6,
-            0.88
-          ],
-          "height": 0.32,
-          "pose": "celebrate",
-          "at": "cue:four"
-        },
-        {
-          "type": "character",
-          "pos": [
-            0.7,
-            0.88
-          ],
-          "height": 0.32,
-          "pose": "celebrate",
-          "at": "cue:four"
-        },
-        {
-          "type": "character",
-          "pos": [
-            0.8,
-            0.88
-          ],
-          "height": 0.32,
-          "pose": "celebrate",
-          "at": "cue:four"
-        },
-        {
-          "type": "stamp",
-          "text": "Oral history",
-          "pos": [
-            0.5,
-            0.2
-          ],
-          "at": "cue:oral",
-          "color": "ink",
-          "angle": -6,
-          "scale": 0.06
-        }
-      ],
+      "elements": [],
       "claims": [
         "C45"
       ],
@@ -1049,74 +603,20 @@
         "tail": 0.8
       },
       "params": {
-        "label_text": "ILLUSTRATIVE RECREATION · ORAL HISTORY"
-      }
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "look": "historical-illustrated",
+      "transition": "cut"
     },
     {
       "id": "g15",
       "chapter": "toolkit",
-      "engine": "whiteboard",
+      "engine": "sweety_draw",
       "purpose": "explain",
       "narration": "Sound was the second tool. The sonic companies trained at the Army Experimental Station at Pine Camp, New York, today's Fort Drum. Their equipment was developed with Bell Labs. Recorded soundtracks were played from wire recorders through powerful speakers mounted on vehicles. Congress later described the two sonic companies as the only American sonic deception ground units of the war.",
       "visual": "Speaker vehicle with sound waves; Bell Labs + wire recorder labels.",
-      "elements": [
-        {
-          "type": "icon",
-          "name": "truck",
-          "pos": [
-            0.3,
-            0.55
-          ],
-          "size": 0.12,
-          "at": 0.3,
-          "label": "speaker vehicle"
-        },
-        {
-          "type": "arrow",
-          "from": [
-            0.42,
-            0.5
-          ],
-          "to": [
-            0.62,
-            0.42
-          ],
-          "at": "cue:speakers",
-          "curve": 0.1,
-          "label": "recorded sound"
-        },
-        {
-          "type": "arrow",
-          "from": [
-            0.42,
-            0.56
-          ],
-          "to": [
-            0.62,
-            0.56
-          ],
-          "at": "cue:speakers",
-          "curve": 0.0
-        },
-        {
-          "type": "list",
-          "box": [
-            0.62,
-            0.28,
-            0.36,
-            0.4
-          ],
-          "at": "cue:pine",
-          "dur": 6.0,
-          "marker": "dot",
-          "items": [
-            "Pine Camp, N.Y. (Fort Drum)",
-            "Developed with Bell Labs",
-            "Wire recorders",
-            "Vehicle-mounted speakers"
-          ]
-        }
-      ],
+      "elements": [],
       "claims": [
         "C8",
         "C10",
@@ -1127,75 +627,26 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "crossfade"
+      "transition": "cut",
+      "look": "hand-drawn-illustration",
+      "params": {
+        "src": "assets/art/g15.png",
+        "title": "Sonic deception",
+        "pen": "pen",
+        "draw_window": [
+          0.4,
+          "78%"
+        ]
+      }
     },
     {
       "id": "g16",
       "chapter": "toolkit",
-      "engine": "motion",
+      "engine": "huashu_clip",
       "purpose": "evidence",
       "narration": "One museum account says the sound could carry up to about fifteen miles. That is an account, not a measured test, so treat it as an estimate. To aim the sound, the team even used a mobile weather station mounted on a jeep.",
       "visual": "Expanding sound rings labelled 'up to ~15 miles (estimate)'.",
-      "elements": [
-        {
-          "type": "shape",
-          "kind": "circle",
-          "box": [
-            0.35,
-            0.2,
-            0.3,
-            0.53
-          ],
-          "color": "accent",
-          "at": "cue:fifteen",
-          "dur": 1.2
-        },
-        {
-          "type": "shape",
-          "kind": "circle",
-          "box": [
-            0.27,
-            0.06,
-            0.46,
-            0.82
-          ],
-          "color": "muted",
-          "at": "cue:miles",
-          "dur": 1.2
-        },
-        {
-          "type": "icon",
-          "name": "truck",
-          "pos": [
-            0.5,
-            0.47
-          ],
-          "size": 0.05,
-          "at": 0.2
-        },
-        {
-          "type": "text",
-          "text": "up to ~15 miles (one source; estimate)",
-          "pos": [
-            0.5,
-            0.92
-          ],
-          "style": "body",
-          "at": "cue:estimate.",
-          "color": "accent"
-        },
-        {
-          "type": "icon",
-          "name": "cloud",
-          "pos": [
-            0.86,
-            0.3
-          ],
-          "size": 0.05,
-          "at": "cue:weather",
-          "label": "jeep weather station"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C11",
         "C12"
@@ -1204,108 +655,117 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
+      },
+      "look": "kinetic-type",
+      "params": {
+        "theme": {
+          "bg": "#1B1E19",
+          "surface": "#262A23",
+          "ink": "#EEE7D4",
+          "sub": "#9C9786",
+          "accent": "#D7A23F",
+          "accent2": "#7F9A68"
+        },
+        "shots": [
+          {
+            "grammar": "y5_kinetic_type",
+            "cues": [
+              {
+                "at": 0.25,
+                "kind": "point",
+                "text": "How far?",
+                "sub": "the sound of a phantom army",
+                "data": {
+                  "key": "phantom",
+                  "label": "SONIC DECEPTION"
+                }
+              },
+              {
+                "at": "cue:fifteen",
+                "kind": "number",
+                "sub": "how far the sound could carry",
+                "data": {
+                  "value": 15,
+                  "prefix": "~",
+                  "suffix": " miles",
+                  "label": "ONE MUSEUM ACCOUNT"
+                }
+              },
+              {
+                "at": "cue:not",
+                "kind": "point",
+                "text": "An account",
+                "sub": "not a measured test - treat it as an estimate",
+                "data": {
+                  "key": "estimate",
+                  "label": "CAUTION"
+                }
+              }
+            ]
+          },
+          {
+            "start": "cue:To#2",
+            "grammar": "y3_whiteboard",
+            "theme": {
+              "bg": "#EDE4CF",
+              "surface": "#F6F0E2",
+              "ink": "#23241F",
+              "sub": "#6E6857",
+              "accent": "#A8782A",
+              "accent2": "#55603F"
+            },
+            "cues": [
+              {
+                "at": 0.0,
+                "kind": "title",
+                "text": "Aiming the sound"
+              },
+              {
+                "at": "cue:aim",
+                "kind": "draw",
+                "text": "aim the sound",
+                "data": {
+                  "icon": "target"
+                }
+              },
+              {
+                "at": "cue:weather",
+                "kind": "draw",
+                "text": "mobile weather station",
+                "data": {
+                  "icon": "gear"
+                }
+              },
+              {
+                "at": "cue:jeep",
+                "kind": "point",
+                "text": "mounted on a jeep"
+              },
+              {
+                "at": "end-1.0",
+                "kind": "highlight",
+                "data": {
+                  "index": 0,
+                  "style": "underline"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
       }
     },
     {
       "id": "g17",
       "chapter": "toolkit",
-      "engine": "motion",
+      "engine": "sweety_draw",
       "purpose": "explain",
       "narration": "The third tool was radio. Spoof radio operators created phony networks and imitated the operators of real units. Some could copy an individual operator's Morse code style, known as his fist, so listeners would believe a familiar unit was still on the air.",
       "visual": "Network of fake radio stations.",
-      "elements": [
-        {
-          "type": "text",
-          "text": "Spoof radio",
-          "pos": [
-            0.5,
-            0.1
-          ],
-          "style": "h2",
-          "at": 0.2
-        },
-        {
-          "type": "network",
-          "at": "cue:phony",
-          "dur": 3.0,
-          "nodes": [
-            {
-              "id": "a",
-              "label": "real unit (gone)",
-              "pos": [
-                0.2,
-                0.3
-              ],
-              "color": "muted"
-            },
-            {
-              "id": "b",
-              "label": "spoof operator",
-              "pos": [
-                0.5,
-                0.55
-              ],
-              "icon": "server",
-              "size": 0.06,
-              "color": "accent"
-            },
-            {
-              "id": "c",
-              "label": "phony net",
-              "pos": [
-                0.8,
-                0.3
-              ]
-            },
-            {
-              "id": "d",
-              "label": "phony net",
-              "pos": [
-                0.8,
-                0.78
-              ]
-            },
-            {
-              "id": "e",
-              "label": "enemy listener",
-              "pos": [
-                0.2,
-                0.78
-              ],
-              "color": "negative"
-            }
-          ],
-          "edges": [
-            [
-              "b",
-              "c"
-            ],
-            [
-              "b",
-              "d"
-            ],
-            [
-              "b",
-              "e"
-            ],
-            [
-              "a",
-              "b"
-            ]
-          ]
-        },
-        {
-          "type": "text",
-          "text": "copying an operator's 'fist'",
-          "pos": [
-            0.5,
-            0.94
-          ],
-          "style": "body",
-          "at": "cue:fist,",
-          "color": "accent"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C15"
       ],
@@ -1313,72 +773,27 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "look": "hand-drawn-illustration",
+      "params": {
+        "src": "assets/art/g17.png",
+        "title": "Spoof radio",
+        "pen": "pen",
+        "draw_window": [
+          0.4,
+          "78%"
+        ]
+      },
+      "transition": "cut"
     },
     {
       "id": "g18",
       "chapter": "toolkit",
-      "engine": "handdrawn",
+      "engine": "animate_piece",
       "purpose": "explain",
       "narration": "The fourth tool was theater, which the unit called special effects: counterfeit shoulder patches, false vehicle markings, phony headquarters, and even officers posing as generals, all meant to feed false information to enemy agents who might be watching.",
       "visual": "Sketched patches, painted truck markings, an officer with fake stars.",
-      "elements": [
-        {
-          "type": "icon",
-          "name": "star",
-          "pos": [
-            0.18,
-            0.45
-          ],
-          "size": 0.07,
-          "at": "cue:patches,",
-          "label": "fake patches"
-        },
-        {
-          "type": "icon",
-          "name": "truck",
-          "pos": [
-            0.4,
-            0.45
-          ],
-          "size": 0.07,
-          "at": "cue:markings,",
-          "label": "false markings"
-        },
-        {
-          "type": "icon",
-          "name": "building",
-          "pos": [
-            0.62,
-            0.45
-          ],
-          "size": 0.07,
-          "at": "cue:headquarters,",
-          "label": "phony HQ"
-        },
-        {
-          "type": "character",
-          "pos": [
-            0.84,
-            0.86
-          ],
-          "height": 0.42,
-          "pose": "stand",
-          "at": "cue:generals,",
-          "color": "accent"
-        },
-        {
-          "type": "text",
-          "text": "feed false information",
-          "pos": [
-            0.4,
-            0.82
-          ],
-          "style": "h3",
-          "at": "cue:false",
-          "color": "negative"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C16"
       ],
@@ -1386,69 +801,25 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
+      },
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
       }
     },
     {
       "id": "g19",
       "chapter": "toolkit",
-      "engine": "whiteboard",
+      "engine": "animate_piece",
       "purpose": "process",
       "narration": "And the 406th Engineer Combat Company did the heavy work. Its men guarded the perimeter, used bulldozers to create fake tank tracks and gun positions, and sometimes played the part of military police.",
       "visual": "Bulldozed fake tank tracks drawn across a field.",
-      "elements": [
-        {
-          "type": "shape",
-          "kind": "line",
-          "from": [
-            0.1,
-            0.7
-          ],
-          "to": [
-            0.9,
-            0.4
-          ],
-          "at": "cue:bulldozers",
-          "color": "ink",
-          "weight": 0.012
-        },
-        {
-          "type": "shape",
-          "kind": "line",
-          "from": [
-            0.1,
-            0.76
-          ],
-          "to": [
-            0.9,
-            0.46
-          ],
-          "at": "cue:tracks",
-          "color": "ink",
-          "weight": 0.012
-        },
-        {
-          "type": "icon",
-          "name": "box",
-          "pos": [
-            0.2,
-            0.35
-          ],
-          "size": 0.06,
-          "at": "cue:guarded",
-          "label": "perimeter"
-        },
-        {
-          "type": "icon",
-          "name": "warning",
-          "pos": [
-            0.75,
-            0.78
-          ],
-          "size": 0.05,
-          "at": "cue:police.",
-          "label": "'MPs'"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C17"
       ],
@@ -1456,7 +827,13 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "transition": "cut"
     },
     {
       "id": "g20",
@@ -1524,7 +901,9 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "fade_black"
+      "transition": "fade_black",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g21",
@@ -1575,7 +954,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g22",
@@ -1639,7 +1020,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g23",
@@ -1725,7 +1108,9 @@
           "license": "Public domain (Natural Earth)",
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
-      ]
+      ],
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g24",
@@ -1812,7 +1197,9 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "fade_black"
+      "transition": "fade_black",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g25",
@@ -1863,7 +1250,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g26",
@@ -1939,7 +1328,9 @@
           "license": "Public domain (Natural Earth)",
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
-      ]
+      ],
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g27",
@@ -1994,7 +1385,9 @@
         ]
       },
       "transition": "fade_black",
-      "emotion": "melancholy"
+      "emotion": "melancholy",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g28",
@@ -2069,7 +1462,9 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "crash_zoom"
+      "transition": "crash_zoom",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g29",
@@ -2126,7 +1521,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g30",
@@ -2156,7 +1553,9 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "min_duration": 6.5
+      "min_duration": 6.5,
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g31",
@@ -2247,7 +1646,9 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "fade_black"
+      "transition": "fade_black",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g32",
@@ -2288,7 +1689,9 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "fade_black"
+      "transition": "fade_black",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g33",
@@ -2329,7 +1732,9 @@
           "night2"
         ],
         "lights_out_at": "cue:classified."
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g34",
@@ -2386,7 +1791,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g35",
@@ -2438,7 +1845,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g36",
@@ -2491,7 +1900,9 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "erase"
+      "transition": "erase",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g37",
@@ -2549,7 +1960,9 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "fade_black"
+      "transition": "fade_black",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g38",
@@ -2623,7 +2036,9 @@
             "kind": "highlight"
           }
         ]
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g39",
@@ -2676,7 +2091,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g40",
@@ -2725,7 +2142,9 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "fade_black"
+      "transition": "fade_black",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g41",
@@ -2786,7 +2205,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g42",
@@ -2869,7 +2290,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g43",
@@ -2909,7 +2332,9 @@
       "pad": {
         "lead": 0.5,
         "tail": 0.8
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g44",
@@ -2936,7 +2361,9 @@
           "still"
         ]
       },
-      "transition": "fade_black"
+      "transition": "fade_black",
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     },
     {
       "id": "g45",
@@ -2957,7 +2384,9 @@
           "secret",
           "decades."
         ]
-      }
+      },
+      "allow_native": true,
+      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
     }
   ],
   "rights_issues": [
@@ -3042,90 +2471,120 @@
       "publish_order": 1,
       "segments": [
         {
-          "engine": "kinetic",
+          "engine": "huashu_clip",
           "narration": "In World War Two, some American tanks were made of rubber. On purpose.",
+          "captions": false,
           "params": {
-            "emphasis": [
-              "rubber.",
-              "purpose."
-            ]
+            "grammar": "y5_kinetic_type",
+            "theme": {
+              "bg": "#EDE4CF",
+              "surface": "#F6F0E2",
+              "ink": "#23241F",
+              "sub": "#6E6857",
+              "accent": "#A8782A",
+              "accent2": "#55603F"
+            },
+            "cues": [
+              {
+                "at": 0.15,
+                "kind": "point",
+                "text": "Made of rubber",
+                "sub": "American tanks in World War Two",
+                "data": {
+                  "key": "World War Two",
+                  "label": "1944-1945"
+                }
+              },
+              {
+                "at": "cue:purpose",
+                "kind": "point",
+                "text": "On purpose."
+              }
+            ],
+            "vertical_ok": true
           }
         },
         {
           "from": "g13",
+          "engine": "sweety_draw",
+          "captions": true,
           "narration": "Inflatable decoys of tanks, artillery and trucks, some made by U.S. Rubber and Goodyear, could look like an armored force from a distance.",
           "params": {
-            "src": "assets/decoy-tank.png",
-            "order": "strokes",
-            "draw_time": 8.0,
+            "src": "assets/art/g13.png",
+            "title": "Inflatable decoys",
+            "pen": "pen",
+            "draw_window": [
+              0.3,
+              "85%"
+            ],
             "box_v": [
-              0.05,
-              0.18,
-              0.9,
+              0.04,
+              0.2,
+              0.92,
               0.5
+            ],
+            "title_pos": [
+              0.08,
+              0.1
             ]
           }
         },
         {
-          "from": "g12",
+          "engine": "huashu_clip",
           "narration": "It was one of four tools used by a secret unit called the Ghost Army.",
-          "elements": [
-            {
-              "type": "text",
-              "text": "The Ghost Army",
-              "style": "h1",
-              "pos_v": [
-                0.5,
-                0.2
-              ],
-              "at": 0.2,
-              "font": "hand_bold"
+          "captions": false,
+          "params": {
+            "grammar": "y5_kinetic_type",
+            "theme": {
+              "bg": "#EDE4CF",
+              "surface": "#F6F0E2",
+              "ink": "#23241F",
+              "sub": "#6E6857",
+              "accent": "#A8782A",
+              "accent2": "#55603F"
             },
-            {
-              "type": "icon",
-              "name": "magnifier",
-              "pos_v": [
-                0.3,
-                0.42
-              ],
-              "size": 0.09,
-              "at": "cue:four",
-              "label": "sight"
-            },
-            {
-              "type": "icon",
-              "name": "cloud",
-              "pos_v": [
-                0.7,
-                0.42
-              ],
-              "size": 0.09,
-              "at": "cue:tools",
-              "label": "sound"
-            },
-            {
-              "type": "icon",
-              "name": "server",
-              "pos_v": [
-                0.3,
-                0.62
-              ],
-              "size": 0.09,
-              "at": "cue:secret",
-              "label": "radio"
-            },
-            {
-              "type": "icon",
-              "name": "star",
-              "pos_v": [
-                0.7,
-                0.62
-              ],
-              "size": 0.09,
-              "at": "cue:ghost",
-              "label": "theater"
-            }
-          ]
+            "cues": [
+              {
+                "at": 0.1,
+                "kind": "point",
+                "text": "Sight",
+                "data": {
+                  "label": "FOUR TOOLS"
+                }
+              },
+              {
+                "at": "cue:four",
+                "kind": "point",
+                "text": "Sound",
+                "data": {
+                  "label": "FOUR TOOLS"
+                }
+              },
+              {
+                "at": "cue:used",
+                "kind": "point",
+                "text": "Radio",
+                "data": {
+                  "label": "FOUR TOOLS"
+                }
+              },
+              {
+                "at": "cue:secret",
+                "kind": "point",
+                "text": "Theater",
+                "data": {
+                  "label": "FOUR TOOLS"
+                }
+              },
+              {
+                "at": "cue:ghost",
+                "kind": "title",
+                "text": "The Ghost Army"
+              }
+            ],
+            "vertical_ok": true
+          },
+          "from": "g12"
         }
       ],
       "description": "Inflatable decoys of WWII's Ghost Army. Full documentary in the related video. #WWII #History",
@@ -3148,59 +2607,99 @@
       "publish_order": 2,
       "segments": [
         {
-          "engine": "kinetic",
+          "engine": "huashu_clip",
           "narration": "Bill Blass, the fashion designer, served in a secret World War Two unit.",
+          "captions": false,
           "params": {
-            "emphasis": [
-              "blass,",
-              "secret"
-            ]
+            "grammar": "y5_kinetic_type",
+            "theme": {
+              "bg": "#EDE4CF",
+              "surface": "#F6F0E2",
+              "ink": "#23241F",
+              "sub": "#6E6857",
+              "accent": "#A8782A",
+              "accent2": "#55603F"
+            },
+            "cues": [
+              {
+                "at": 0.15,
+                "kind": "point",
+                "text": "Bill Blass",
+                "sub": "fashion designer",
+                "data": {
+                  "label": "WORLD WAR TWO"
+                }
+              },
+              {
+                "at": "cue:secret",
+                "kind": "point",
+                "text": "A secret unit",
+                "sub": "23rd Headquarters Special Troops",
+                "data": {
+                  "label": "WORLD WAR TWO"
+                }
+              }
+            ],
+            "vertical_ok": true
           }
         },
         {
-          "from": "g11",
+          "engine": "huashu_clip",
           "narration": "So did painter Ellsworth Kelly, wildlife artist Arthur Singer and photographer Art Kane, all in the 603rd Engineer Camouflage Battalion. Many of its soldiers came from art schools and advertising agencies, because the Army needed people who understood how the eye could be fooled.",
-          "elements": [
-            {
-              "type": "card",
-              "box_v": [
-                0.08,
-                0.15,
-                0.84,
-                0.14
-              ],
-              "title": "Ellsworth Kelly",
-              "body": "painter",
-              "at": "cue:ellsworth",
-              "tone": "light"
+          "captions": false,
+          "params": {
+            "grammar": "y5_kinetic_type",
+            "theme": {
+              "bg": "#EDE4CF",
+              "surface": "#F6F0E2",
+              "ink": "#23241F",
+              "sub": "#6E6857",
+              "accent": "#A8782A",
+              "accent2": "#55603F"
             },
-            {
-              "type": "card",
-              "box_v": [
-                0.08,
-                0.32,
-                0.84,
-                0.14
-              ],
-              "title": "Arthur Singer",
-              "body": "wildlife artist",
-              "at": "cue:arthur",
-              "tone": "light"
-            },
-            {
-              "type": "card",
-              "box_v": [
-                0.08,
-                0.49,
-                0.84,
-                0.14
-              ],
-              "title": "Art Kane",
-              "body": "photographer",
-              "at": "cue:kane,",
-              "tone": "light"
-            }
-          ]
+            "cues": [
+              {
+                "at": "cue:ellsworth",
+                "kind": "point",
+                "text": "Ellsworth Kelly",
+                "sub": "painter",
+                "data": {
+                  "label": "603RD CAMOUFLAGE"
+                }
+              },
+              {
+                "at": "cue:arthur",
+                "kind": "point",
+                "text": "Arthur Singer",
+                "sub": "wildlife artist",
+                "data": {
+                  "label": "603RD CAMOUFLAGE"
+                }
+              },
+              {
+                "at": "cue:kane",
+                "kind": "point",
+                "text": "Art Kane",
+                "sub": "photographer",
+                "data": {
+                  "label": "603RD CAMOUFLAGE"
+                }
+              },
+              {
+                "at": "cue:art#4",
+                "kind": "point",
+                "text": "Art schools",
+                "sub": "and advertising agencies"
+              },
+              {
+                "at": "cue:fooled",
+                "kind": "point",
+                "text": "Fool the eye"
+              }
+            ],
+            "vertical_ok": true
+          },
+          "from": "g11"
         }
       ],
       "description": "Artists of the Ghost Army. #WWII #Art",
@@ -3224,41 +2723,90 @@
       "publish_order": 3,
       "segments": [
         {
-          "engine": "kinetic",
+          "engine": "huashu_clip",
           "narration": "You may have heard the Ghost Army saved up to thirty thousand lives.",
+          "captions": false,
           "params": {
-            "emphasis": [
-              "thirty",
-              "thousand"
-            ]
+            "grammar": "y5_kinetic_type",
+            "theme": {
+              "bg": "#EDE4CF",
+              "surface": "#F6F0E2",
+              "ink": "#23241F",
+              "sub": "#6E6857",
+              "accent": "#A8782A",
+              "accent2": "#55603F"
+            },
+            "cues": [
+              {
+                "at": 0.15,
+                "kind": "point",
+                "text": "You may have heard",
+                "data": {
+                  "label": "THE CLAIM"
+                }
+              },
+              {
+                "at": "cue:thousand",
+                "kind": "number",
+                "sub": "lives saved?",
+                "data": {
+                  "value": 30000,
+                  "prefix": "up to ",
+                  "label": "THE CLAIM"
+                }
+              }
+            ],
+            "vertical_ok": true
           }
         },
         {
-          "from": "g39",
+          "engine": "huashu_clip",
           "narration": "It's widely repeated, even at the medal ceremony. But we could not find a primary study behind that number. What the record does show is where the unit worked, what it did, and what it cost. How many lives it saved is still an open question.",
-          "elements": [
-            {
-              "type": "text",
-              "text": "15,000–30,000?",
-              "style": "hero",
-              "pos_v": [
-                0.5,
-                0.3
-              ],
-              "at": 0.3
+          "captions": false,
+          "params": {
+            "grammar": "y5_kinetic_type",
+            "theme": {
+              "bg": "#EDE4CF",
+              "surface": "#F6F0E2",
+              "ink": "#23241F",
+              "sub": "#6E6857",
+              "accent": "#A8782A",
+              "accent2": "#55603F"
             },
-            {
-              "type": "text",
-              "text": "no primary study found",
-              "style": "h2",
-              "pos_v": [
-                0.5,
-                0.45
-              ],
-              "at": "cue:study",
-              "color": "negative"
-            }
-          ]
+            "cues": [
+              {
+                "at": 0.1,
+                "kind": "point",
+                "text": "Widely repeated",
+                "sub": "even at the medal ceremony"
+              },
+              {
+                "at": "cue:could",
+                "kind": "point",
+                "text": "No primary study",
+                "sub": "we could not find one behind that number",
+                "data": {
+                  "label": "WHAT WE FOUND"
+                }
+              },
+              {
+                "at": "cue:record",
+                "kind": "point",
+                "text": "The record shows",
+                "sub": "where they worked, what they did, what it cost"
+              },
+              {
+                "at": "cue:how",
+                "kind": "point",
+                "text": "An open question",
+                "data": {
+                  "label": "STILL UNKNOWN"
+                }
+              }
+            ],
+            "vertical_ok": true
+          },
+          "from": "g39"
         }
       ],
       "description": "Separating record from legend. #WWII #History",

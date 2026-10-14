@@ -117,8 +117,13 @@ def validate(p: dict, *, engines_available: dict | None = None) -> tuple[list[st
             errs.append(f"scene {sid}: chapter '{s.get('chapter')}' not declared")
         if eng in ("image_whiteboard",) and not s.get("params", {}).get("src"):
             errs.append(f"scene {sid}: image_whiteboard needs params.src")
-        if eng == "huashu_clip" and not s.get("params", {}).get("grammar"):
-            errs.append(f"scene {sid}: huashu_clip needs params.grammar")
+        if eng == "huashu_clip":
+            prm = s.get("params", {})
+            shots = prm.get("shots")
+            if shots is not None and (not shots or any(not sh.get("grammar") for sh in shots)):
+                errs.append(f"scene {sid}: every huashu_clip shot needs a grammar")
+            elif shots is None and not prm.get("grammar"):
+                errs.append(f"scene {sid}: huashu_clip needs params.grammar (or params.shots)")
         norm = lambda w: re.sub(r"[^a-z0-9$%.]", "", w.lower())  # noqa: E731  (same rule as SceneContext.resolve_time)
         narr_words = [norm(w) for w in str(s.get("narration", "")).split()]
         for j, el in enumerate(s.get("elements", [])):

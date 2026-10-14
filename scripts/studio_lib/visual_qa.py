@@ -109,7 +109,9 @@ def scene_checks(frames: list, expect_size: tuple[int, int] | None = None, exclu
         out["issues"].append(f"static_scene: mean change {np.mean(diffs):.2f} < {STATIC_DIFF} between samples")
     # edge clipping: detail on the same edge in most settled frames
     for side in ("left", "right", "top", "bottom"):
-        hits = sum(s["edge_contact"][side] > 0.06 for s in settled)
+        # detail at the edge only counts when it is much denser than the frame overall: full-bleed
+        # textures (paper, hatching, water) are uniform and legitimately touch every edge
+        hits = sum(s["edge_contact"][side] > max(0.06, 2.5 * s["detail"]) for s in settled)
         if hits >= max(2, int(0.7 * len(settled))):
             out["warnings"].append(f"edge_clipping: detail runs into the {side} edge in {hits}/{len(settled)} samples")
     cxs = [abs(s["centroid"][0]) for s in settled]
@@ -199,7 +201,7 @@ def sample_scene_frames(video: Path, start: float, duration: float, n: int = 6, 
     return out
 
 
-def run_visual_qa(pdir: Path, quality: str = "preview", n: int = 6) -> dict:
+def run_visual_qa(pdir: Path, quality: str = "preview", n: int = 6, only: list[str] | None = None) -> dict:
     """Scene-by-scene checks over the rendered long video + render manifests."""
     from .config import FORMATS, QUALITY
     from .engines import is_premium
@@ -210,6 +212,7 @@ def run_visual_qa(pdir: Path, quality: str = "preview", n: int = 6) -> dict:
     tl = json.loads((pdir / "storyboard" / "timeline.json").read_text(encoding="utf-8"))
     name = "long-video.mp4" if quality == "final" else f"long-video-{quality}.mp4"
     video = pdir / "renders" / name
+    per_scene = not video.exists() or (only is not None)  # sample each scene's own MP4 (partial builds)
     rr = pdir / "reports" / f"render-{quality}.json"
     manifests = {s["id"]: s for s in json.loads(rr.read_text(encoding="utf-8")).get("scenes", [])} if rr.exists() else {}
     W = int(round(FORMATS["long"]["width"] * QUALITY[quality]["scale"] / 2) * 2)
@@ -218,9 +221,15 @@ def run_visual_qa(pdir: Path, quality: str = "preview", n: int = 6) -> dict:
     scenes, chain, fonts = [], [], {}
     for r in tl["scenes"]:
         sid = r["id"]
+        if only is not None and sid not in only:
+            continue
         res = {"id": sid, "issues": [], "warnings": []}
-        if video.exists():
-            fr = sample_scene_frames(video, r["start"], r["duration"], n, pdir / "previews" / "_vqa")
+        src, start = video, r["start"]
+        if per_scene:
+            out = (manifests.get(sid) or {}).get("out")
+            src, start = (Path(out), 0.0) if out else (None, 0.0)
+        if src is not None and src.exists():
+            fr = sample_scene_frames(src, start, r["duration"], n, pdir / "previews" / "_vqa")
             sc = scene_checks(fr, (W, H), exclude_bottom=0.12 if p.get("burn_captions") else 0.0)
             res.update({k: v for k, v in sc.items() if k not in ("first_hist", "last_hist", "stats")})
             chain.append((sid, specs.get(sid, {}), sc))
@@ -244,5 +253,6 @@ def run_visual_qa(pdir: Path, quality: str = "preview", n: int = 6) -> dict:
            "scenes": scenes, "typography": typo, "continuity": cont,
            "summary": {"status": "fail" if issues else ("pass_with_warnings" if warnings else "pass"),
                        "issues": issues, "warnings": warnings}}
+    rep["scope"] = "scene files" if per_scene else "long video"
     save_json(pdir / "reports" / f"visual-qa-{quality}.json", rep)
     return rep

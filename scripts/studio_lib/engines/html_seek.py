@@ -17,8 +17,8 @@ params:
   timing    {fps, scenes: [{id, start, end}]}: injected as window.STUDIO_TIMING before any page
             script runs (add_init_script; nothing is written into the source dir). It is part of
             the scene params, so it is part of the scene cache key.
-  era       a scene id in `timing`: offset defaults to its start, and the scene's word timings
-            (era-local seconds) are injected as scenes[i].words
+  era       a scene id in `timing` (true = this scene's id): offset defaults to its start, and the
+            scene's word timings (era-local seconds) are injected as scenes[i].words
   workers   pages rendering in parallel for sequential frames (default 3 for lemo pages, else 1)
   capture   jpeg (q95, as lemo's own video.mjs; default) | png (lossless)
 
@@ -310,6 +310,8 @@ class HtmlSeekEngine(Engine):
             root, url = self._stage_dashi(root, url)
         self.root, self.url, self.film = root, url, film
         self.timing, self.era = prm.get("timing"), prm.get("era")
+        if self.era is True:   # `era: true` before piece_timing.assign rewrote it: the era is this scene
+            self.era = ctx.scene.get("_source") or ctx.scene.get("id")
         eo = era_offset(self.timing, self.era)
         self.offset = float(prm["offset"]) if "offset" in prm else (eo if eo is not None else 0.0)
         self.speed = float(prm.get("speed", 1.0))

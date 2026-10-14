@@ -218,6 +218,13 @@ def build_long(pdir: Path, quality: str = "preview", workers: int = 3, retries: 
     save_json(pdir / "storyboard" / "timeline.json", tl)
     log(f"[timeline] total {tl['total']:.1f}s target {tl['target']} -> {tl['status']} "
         f"(dev {100 * (tl['deviation'] or 0):+.1f}%) {tl['fit'] or ''}")
+    from . import piece_timing
+
+    pieces = piece_timing.assign(p["scenes"], tl["scenes"], p.get("fps", 30))
+    if pieces:
+        save_json(pdir / "storyboard" / "piece-timing.json", pieces)
+        log(f"[timeline] {len(pieces)} narration-timed piece(s): "
+            + ", ".join(f"{k} ({len(v['scenes'])} eras)" for k, v in pieces.items()))
     # render
     st = RenderSettings("long", quality)
     out_dir = pdir / "scenes" / f"long-{quality}"
@@ -245,6 +252,10 @@ def build_long(pdir: Path, quality: str = "preview", workers: int = 3, retries: 
               "scenes": res, "research_gate": gate, "routes": pl["routes"]}
     if failed or only:
         report["assembled"] = False
+        if only and not failed:
+            part = _assemble_partial(pdir, p, quality, tl, narr, results, [j["id"] for j in sel], log)
+            if part:
+                report["partial_preview"] = str(part)
         save_json(pdir / "reports" / f"render-{quality}.json", report)
         if failed:
             for r in failed:
@@ -285,6 +296,33 @@ def build_long(pdir: Path, quality: str = "preview", workers: int = 3, retries: 
     save_json(pdir / "reports" / f"render-{quality}.json", report)
     write_production_report(pdir, p, quality, tl, res, stages, narr, report)
     return report
+
+
+def _assemble_partial(pdir, p, quality, tl, narr, results, ids, log=print):
+    """Preview of a contiguous run of scenes (e.g. a rebuilt chapter) with its narration, music and SFX:
+    renders/partial-<first>-<last>-<quality>.mp4. Non-contiguous selections are skipped (reported)."""
+    order = [r["id"] for r in tl["scenes"]]
+    idx = sorted(order.index(i) for i in ids if i in order)
+    if not idx or idx != list(range(idx[0], idx[-1] + 1)):
+        log(f"[partial] selection {ids} is not a contiguous run of the timeline; no partial preview")
+        return None
+    rows = tl["scenes"][idx[0]: idx[-1] + 1]
+    t0, t1 = rows[0]["start"], rows[-1]["start"] + rows[-1]["duration"]
+    voice = [(r["start"] + r["lead"], narr[r["id"]]["wav"]) for r in tl["scenes"] if r["id"] in narr]
+    full_mix = pdir / "audio" / "mix.wav"
+    A.mix(tl["total"], voice, _music_plan(p, tl), _sfx_events(p["scenes"], tl), full_mix,
+          p.get("music", {}).get("volume", 0.16), p.get("music", {}).get("enabled", True))
+    lst = pdir / "renders" / f"concat-partial-{quality}.txt"
+    lst.write_text("".join(f"file '{Path(results[r['id']]['out']).as_posix()}'\n" for r in rows), encoding="utf-8")
+    silent = pdir / "renders" / f"partial-{quality}.silent.mp4"
+    FF.run(["-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(silent)])
+    out = pdir / "renders" / f"partial-{rows[0]['id']}-{rows[-1]['id']}-{quality}.mp4"
+    FF.run(["-y", "-i", str(silent), "-ss", f"{t0:.3f}", "-t", f"{t1 - t0:.3f}", "-i", str(full_mix),
+            "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "48000",
+            "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)])
+    silent.unlink(missing_ok=True)
+    log(f"[partial] {out.name} ({t1 - t0:.1f}s, {len(rows)} scenes)")
+    return out
 
 
 def write_production_report(pdir, p, quality, tl, res, stages, narr, report):

@@ -4,8 +4,24 @@
   "note": "Reusable documentary design system. Each look maps to an AUTHENTIC upstream engine (verified pixel-identical or within the JPEG floor to the repo's own renderer; see references/visual-fidelity-report.md) plus shared tokens, so scenes from different engines read as one film. Scene field `look` applies the preset; scene values always win.",
   "tokens": {
     "palettes": {
-      "paper": {"bg": "#EDE4CF", "surface": "#F6F0E2", "ink": "#23241F", "sub": "#6E6857", "accent": "#A8782A", "accent2": "#55603F", "alert": "#B23A2A"},
-      "night": {"bg": "#1B1E19", "surface": "#262A23", "ink": "#EEE7D4", "sub": "#9C9786", "accent": "#D7A23F", "accent2": "#7F9A68", "alert": "#C8553D"}
+      "paper": {
+        "bg": "#EDE4CF",
+        "surface": "#F6F0E2",
+        "ink": "#23241F",
+        "sub": "#6E6857",
+        "accent": "#A8782A",
+        "accent2": "#55603F",
+        "alert": "#B23A2A"
+      },
+      "night": {
+        "bg": "#1B1E19",
+        "surface": "#262A23",
+        "ink": "#EEE7D4",
+        "sub": "#9C9786",
+        "accent": "#D7A23F",
+        "accent2": "#7F9A68",
+        "alert": "#C8553D"
+      }
     },
     "color_semantics": {
       "alert": "deception, fake, contested or classified: never used for decoration",
@@ -15,11 +31,26 @@
     },
     "typography": {
       "roles": {
-        "display": {"family": "League Gothic", "use": "map titles, chapter cards"},
-        "headline_serif": {"family": "Old Standard TT", "use": "archival headings, period documents"},
-        "body": {"family": "Inter", "use": "labels, chart text, lower thirds"},
-        "hand": {"family": "Caveat", "use": "handwritten titles and notes (sweety_draw default)"},
-        "typewriter": {"family": "IBM Plex Mono", "use": "orders, memos, source cards"}
+        "display": {
+          "family": "League Gothic",
+          "use": "map titles, chapter cards"
+        },
+        "headline_serif": {
+          "family": "Old Standard TT",
+          "use": "archival headings, period documents"
+        },
+        "body": {
+          "family": "Inter",
+          "use": "labels, chart text, lower thirds"
+        },
+        "hand": {
+          "family": "Caveat",
+          "use": "handwritten titles and notes (sweety_draw default)"
+        },
+        "typewriter": {
+          "family": "IBM Plex Mono",
+          "use": "orders, memos, source cards"
+        }
       },
       "engine_internal": "Upstream engines keep their own bundled faces (huashu PuHui for kinetic type, lemo whiteboard EMS single-line hand, animate kit hand lettering). Those are part of the authentic look and are not replaced.",
       "min_text_px_1080p": 28,
@@ -43,49 +74,86 @@
     "historical-illustrated": {
       "engine": "animate_piece",
       "upstream": "cth9191/animate crosshatch kit (MIT)",
-      "params": {"piece": "pieces/crosshatch"},
+      "params": {
+        "piece": "pieces/crosshatch"
+      },
       "palette": "paper",
-      "use": ["establishing shots", "recreations", "characters", "events", "title cards"],
+      "use": [
+        "establishing shots",
+        "recreations",
+        "characters",
+        "events",
+        "title cards"
+      ],
       "status": "verified: adapter pixel-identical to native export"
     },
     "kinetic-type": {
       "engine": "huashu_clip",
       "upstream": "alchaincyf/huashu-art-motion y5_kinetic_type (MIT)",
-      "params": {"grammar": "y5_kinetic_type"},
+      "params": {
+        "grammar": "y5_kinetic_type"
+      },
       "palette": "paper",
-      "use": ["numbers", "reveals", "quotes", "caveats"],
+      "use": [
+        "numbers",
+        "reveals",
+        "quotes",
+        "caveats"
+      ],
       "status": "verified: adapter pixel-identical to native render.py"
     },
     "data-editorial": {
       "engine": "huashu_clip",
       "upstream": "alchaincyf/huashu-art-motion t3_finance_chart (MIT)",
-      "params": {"grammar": "t3_finance_chart"},
+      "params": {
+        "grammar": "t3_finance_chart"
+      },
       "palette": "paper",
-      "use": ["bar/line charts with sourced, approximate figures"],
+      "use": [
+        "bar/line charts with sourced, approximate figures"
+      ],
       "status": "verified: adapter pixel-identical to native render.py"
     },
     "premium-whiteboard": {
       "engine": "html_seek",
       "upstream": "lemomo-ai/lemo-opuscar styles/whiteboard wb.js (MIT)",
-      "params": {"page": "pieces/lemo-whiteboard/index.html"},
+      "params": {
+        "page": "pieces/lemo-whiteboard/index.html"
+      },
       "palette": "board",
-      "use": ["organisation charts", "processes", "four-part explainers"],
+      "use": [
+        "organisation charts",
+        "processes",
+        "four-part explainers"
+      ],
       "status": "verified: adapter within JPEG floor of native still.mjs"
     },
     "hand-drawn-illustration": {
       "engine": "sweety_draw",
       "upstream": "threerocks/sweety-handdraw-video stroke + paint pipeline (MIT, vendored)",
-      "params": {"pen": "pen"},
+      "params": {
+        "pen": "pen"
+      },
       "palette": "paper",
-      "use": ["equipment", "vehicles", "people at work: drawn stroke by stroke, then painted"],
+      "use": [
+        "equipment",
+        "vehicles",
+        "people at work: drawn stroke by stroke, then painted"
+      ],
       "status": "verified: vendored code, part order and nib-to-ink distance tested"
     },
     "technical-blueprint": {
       "engine": "html_seek",
       "upstream": "lemomo-ai/lemo-opuscar styles/blueprint (MIT)",
-      "params": {"page": "pieces/lemo-blueprint/index.html"},
+      "params": {
+        "page": "pieces/lemo-blueprint/index.html"
+      },
       "palette": "blueprint",
-      "use": ["orders and routing sheets", "technical drawings", "classified files"],
+      "use": [
+        "orders and routing sheets",
+        "technical drawings",
+        "classified files"
+      ],
       "status": "verified: adapter within JPEG floor of native still.mjs"
     },
     "archival-press": {
@@ -93,23 +161,36 @@
       "upstream": "lemo-opuscar halftone-dossier / silent-film; dashi-animationstyle retro newspaper (MIT)",
       "params": {},
       "palette": "paper",
-      "use": ["newspaper and dossier recreations, always labelled as recreations"],
-      "status": "lemo demos verified; Ghost Army pages pending"
+      "use": [
+        "newspaper and dossier recreations, always labelled as recreations"
+      ],
+      "status": "lemo demos verified; dashi retro-newspaper renders identical when the page carries its own OFL fonts (Mac-font templates differ on Windows)"
     },
     "military-map": {
       "engine": "html_seek",
-      "upstream": "pending mg-styles-15 22-hud (d3 + topojson) evaluation",
-      "params": {},
-      "palette": "paper",
-      "use": ["routes", "unit markers", "front lines", "regional context"],
-      "status": "pending"
+      "upstream": "Vincentwei1021/mg-styles-15 22-hud approach (MIT): d3-geo + topojson land (world-atlas, Natural Earth)",
+      "params": {
+        "page": "pieces/mg-map/index.html"
+      },
+      "palette": "night",
+      "use": [
+        "routes",
+        "unit markers",
+        "front lines",
+        "regional context"
+      ],
+      "status": "verified: mg demos within WebGL rasteriser noise of native harness; Ghost Army page is canvas 2D"
     },
     "business": {
       "engine": "huashu_clip",
       "upstream": "huashu t2_keynote_ui / lemo swiss-motion, dark-keynote (MIT)",
-      "params": {"grammar": "t2_keynote_ui"},
+      "params": {
+        "grammar": "t2_keynote_ui"
+      },
       "palette": "night",
-      "use": ["product and company explainers (non-documentary)"],
+      "use": [
+        "product and company explainers (non-documentary)"
+      ],
       "status": "verified engines; t2 reads sparse with few cards: avoid for documentary"
     }
   }
