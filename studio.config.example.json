@@ -1,0 +1,6 @@
+{
+  "external": {
+    "huashu": "_upstream/huashu-art-motion",
+    "animate": "_upstream/animate/plugins/animate/skills/animate"
+  }
+}

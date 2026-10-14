@@ -1,0 +1,217 @@
+{
+  "schema_version": 2,
+  "slug": "mini",
+  "title": "Mini Pipeline Test",
+  "category": "business",
+  "target_duration": 20,
+  "tolerance": 0.5,
+  "fictional": true,
+  "disclaimer": "Fictional company used for a pipeline test.",
+  "voice": {
+    "provider": "sapi",
+    "voice": "Microsoft Zira Desktop"
+  },
+  "chapters": [
+    {
+      "id": "c1",
+      "title": "Open",
+      "mood": "tension"
+    },
+    {
+      "id": "c2",
+      "title": "Numbers",
+      "mood": "drive"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "m01",
+      "chapter": "c1",
+      "purpose": "hook",
+      "engine": "kinetic",
+      "narration": "This company was worth one billion dollars. By Friday, it was gone.",
+      "params": {
+        "emphasis": [
+          "billion",
+          "gone."
+        ]
+      },
+      "transition": "fade",
+      "claims": [
+        "f1"
+      ]
+    },
+    {
+      "id": "m02",
+      "chapter": "c2",
+      "purpose": "data",
+      "engine": "motion",
+      "transition": "whip",
+      "narration": "Revenue tripled in two years, and investors poured in money.",
+      "elements": [
+        {
+          "type": "bar_chart",
+          "box": [
+            0.15,
+            0.2,
+            0.7,
+            0.65
+          ],
+          "bars": [
+            {
+              "label": "2022",
+              "value": 140
+            },
+            {
+              "label": "2023",
+              "value": 290,
+              "color": "accent"
+            },
+            {
+              "label": "2024",
+              "value": 430,
+              "color": "positive"
+            }
+          ],
+          "prefix": "$",
+          "suffix": "M",
+          "at": 0.3,
+          "dur": 2.4
+        },
+        {
+          "type": "text",
+          "text": "Revenue",
+          "style": "h2",
+          "pos": [
+            0.5,
+            0.12
+          ],
+          "at": 0.1
+        }
+      ]
+    },
+    {
+      "id": "m03",
+      "chapter": "c2",
+      "purpose": "explain",
+      "engine": "whiteboard",
+      "transition": "erase",
+      "narration": "But every dollar depended on a single warehouse.",
+      "elements": [
+        {
+          "type": "icon",
+          "name": "warehouse",
+          "pos": [
+            0.5,
+            0.45
+          ],
+          "size": 0.14,
+          "at": 0.2,
+          "label": "One warehouse"
+        },
+        {
+          "type": "shape",
+          "kind": "circle",
+          "box": [
+            0.36,
+            0.2,
+            0.28,
+            0.55
+          ],
+          "color": "negative",
+          "at": "cue:single",
+          "dur": 0.8
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "id": "short-01",
+      "title": "It tripled. Then it vanished.",
+      "chapter": "c2",
+      "duration_range": [
+        10,
+        60
+      ],
+      "segments": [
+        {
+          "engine": "kinetic",
+          "narration": "Revenue tripled in two years.",
+          "params": {
+            "emphasis": [
+              "tripled"
+            ]
+          }
+        },
+        {
+          "from": "m02",
+          "narration": "From one hundred forty million to four hundred thirty million dollars.",
+          "elements": [
+            {
+              "type": "bar_chart",
+              "box_v": [
+                0.08,
+                0.22,
+                0.84,
+                0.4
+              ],
+              "bars": [
+                {
+                  "label": "2022",
+                  "value": 140
+                },
+                {
+                  "label": "2023",
+                  "value": 290,
+                  "color": "accent"
+                },
+                {
+                  "label": "2024",
+                  "value": 430,
+                  "color": "positive"
+                }
+              ],
+              "prefix": "$",
+              "suffix": "M",
+              "at": 0.2,
+              "dur": 2.2
+            }
+          ]
+        }
+      ],
+      "description": "A fictional company's numbers.",
+      "hashtags": [
+        "#business",
+        "#shorts"
+      ],
+      "pinned_comment": "Full story in the related video."
+    }
+  ],
+  "seo": {
+    "title_options": [
+      "The Billion-Dollar Test"
+    ],
+    "tags": [
+      "test"
+    ],
+    "hashtags": [
+      "#test"
+    ],
+    "description": "Pipeline test."
+  },
+  "thumbnail": {
+    "engine": "motion",
+    "elements": [
+      {
+        "type": "text",
+        "text": "GONE",
+        "style": "hero",
+        "pos": [
+          0.5,
+          0.5
+        ]
+      }
+    ]
+  }
+}

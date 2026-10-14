@@ -1,0 +1,6 @@
+{
+  "facts": [
+    {"id": "fic-story", "claim": "Corvane Logistics, Elliot Marsh, Halden Home and all figures (valuation, revenue, prices, dates, driver counts) are invented for this case study.", "status": "fictional", "risk": "low", "framing": "On-screen badge 'FICTIONAL STORY · ILLUSTRATIVE' + spoken disclaimer in s04 + description note."},
+    {"id": "gen-traps", "claim": "Real companies have failed through the same mechanisms: negative unit economics, customer concentration, dependence on supplier-financed float, and loss of a credit facility after covenant breaches.", "status": "hypothesis", "risk": "low", "framing": "Stated as a general pattern without naming any company; viewers are pointed to the three questions rather than to specific firms.", "notes": "Kept generic on purpose. Naming a real company would require dated primary sources (court filings, 10-Ks) and status 'verified'."}
+  ]
+}

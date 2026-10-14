@@ -1,0 +1,12 @@
+# upstream source checkouts (audited read-only; never vendored wholesale)
+_upstream/
+# generated project outputs (renders, audio, caches)
+projects/
+# local config / secrets
+studio.config.json
+.env
+*.token.json
+client_secret*.json
+__pycache__/
+*.pyc
+.DS_Store

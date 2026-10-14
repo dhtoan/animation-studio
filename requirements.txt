@@ -1,0 +1,7 @@
+# core (required)
+Pillow>=10.1
+numpy>=1.26
+imageio-ffmpeg>=0.5     # bundled ffmpeg; or put ffmpeg on PATH / set STUDIO_FFMPEG
+# optional
+playwright>=1.40        # huashu_clip / animate_piece / html_seek adapters (needs a Chromium)
+edge-tts>=6.1           # opt-in online neural TTS (voice.allow_network = true)

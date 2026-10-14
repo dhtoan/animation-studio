@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "studio.project/v2",
+  "title": "Animation Studio project",
+  "type": "object",
+  "required": ["slug", "title", "category", "target_duration", "scenes"],
+  "properties": {
+    "schema_version": {"type": "integer", "minimum": 1},
+    "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "title": {"type": "string", "minLength": 1},
+    "category": {"enum": ["business", "technology", "history", "science", "diy"]},
+    "language": {"type": "string"},
+    "audience": {"type": "string"},
+    "target_duration": {"type": "number", "exclusiveMinimum": 0},
+    "tolerance": {"type": "number", "minimum": 0, "maximum": 1},
+    "fps": {"type": "integer", "enum": [24, 25, 30, 50, 60]},
+    "theme": {"enum": ["documentary", "tech", "history"]},
+    "theme_overrides": {"type": "object"},
+    "fictional": {"type": "boolean"},
+    "disclaimer": {"type": "string"},
+    "badge": {"type": ["string", "null"]},
+    "voice": {
+      "type": "object",
+      "properties": {
+        "provider": {"enum": ["sapi", "edge", "file", "estimate"]},
+        "voice": {"type": "string"},
+        "rate": {"type": "integer", "minimum": -10, "maximum": 10},
+        "allow_network": {"type": "boolean"}
+      }
+    },
+    "music": {"type": "object", "properties": {"enabled": {"type": "boolean"}, "volume": {"type": "number"}, "mood": {"type": "string"}}},
+    "art_direction": {"type": "object"},
+    "chapters": {
+      "type": "array",
+      "items": {"type": "object", "required": ["id", "title"],
+                "properties": {"id": {"type": "string"}, "title": {"type": "string"},
+                               "mood": {"enum": ["tension", "wonder", "dark", "resolve", "drive"]}}}
+    },
+    "scenes": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/scene"}},
+    "shorts": {"type": "array", "items": {"$ref": "#/$defs/short"}},
+    "seo": {"type": "object"},
+    "thumbnail": {"type": "object"},
+    "rights_issues": {"type": "array", "items": {"type": "object", "required": ["item", "status"],
+                      "properties": {"item": {"type": "string"}, "status": {"enum": ["resolved", "unresolved"]}, "note": {"type": "string"}}}},
+    "youtube_id": {"type": "string"}
+  },
+  "$defs": {
+    "time": {"type": ["number", "string"]},
+    "scene": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+        "chapter": {"type": "string"},
+        "narration": {"type": "string"},
+        "purpose": {"type": "string"},
+        "attention": {"type": "string"},
+        "emotion": {"type": "string"},
+        "visual": {"type": "string"},
+        "art_style": {"type": ["string", "null"]},
+        "engine": {"type": "string"},
+        "shot": {"type": "object"},
+        "camera": {"type": "object", "properties": {
+          "move": {"enum": ["drift", "push_in", "pull_out", "pan_left", "pan_right", "pan_up", "static"]},
+          "amount": {"type": "number"}, "focus": {"type": "array"}, "keys": {"type": "array"}}},
+        "transition": {"type": ["string", "object"]},
+        "elements": {"type": "array", "items": {"type": "object", "required": ["type"]}},
+        "params": {"type": "object"},
+        "audio": {"type": "object"},
+        "assets": {"type": "array", "items": {"type": "object", "required": ["path", "license"]}},
+        "claims": {"type": "array", "items": {"type": "string"}},
+        "illustrative": {"type": "boolean"},
+        "min_duration": {"type": "number"},
+        "max_duration": {"type": "number"},
+        "pad": {"type": "object", "properties": {"lead": {"type": "number"}, "tail": {"type": "number"}}},
+        "image_prompt": {"type": "string"},
+        "motion_prompt": {"type": "string"},
+        "characters": {"type": "array"},
+        "validation": {"type": "object"}
+      }
+    },
+    "short": {
+      "type": "object",
+      "required": ["id", "segments"],
+      "properties": {
+        "id": {"type": "string"},
+        "title": {"type": "string"},
+        "chapter": {"type": "string"},
+        "duration_range": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+        "segments": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+        "cta": {"type": "string"},
+        "description": {"type": "string"},
+        "hashtags": {"type": "array", "items": {"type": "string"}},
+        "pinned_comment": {"type": "string"},
+        "publish_order": {"type": "integer"}
+      }
+    }
+  }
+}

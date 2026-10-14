@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "slug": "my-video",
+  "title": "My Video",
+  "category": "business",
+  "language": "en-US",
+  "audience": "US",
+  "target_duration": 600,
+  "tolerance": 0.05,
+  "fps": 30,
+  "theme": "documentary",
+  "fictional": false,
+  "disclaimer": "",
+  "voice": {"provider": "sapi", "voice": "Microsoft David Desktop", "rate": 0},
+  "music": {"enabled": true, "volume": 0.16},
+  "art_direction": {"style_id": "doc-motion-ink", "palette": "documentary", "characters": {}},
+  "chapters": [
+    {"id": "hook", "title": "Cold open", "mood": "tension"},
+    {"id": "context", "title": "How it started", "mood": "wonder"}
+  ],
+  "scenes": [
+    {
+      "id": "s01",
+      "chapter": "hook",
+      "purpose": "hook",
+      "attention": "Open on the stakes in the first 5 seconds",
+      "emotion": "suspense",
+      "engine": "auto",
+      "narration": "Replace this with the first line of your script.",
+      "visual": "What the viewer sees",
+      "shot": {"type": "wide", "angle": "eye-level"},
+      "camera": {"move": "push_in", "amount": 0.06},
+      "transition": "fade",
+      "elements": [
+        {"type": "text", "text": "Your hook", "style": "hero", "pos": [0.5, 0.45], "at": 0.3}
+      ],
+      "claims": [],
+      "illustrative": true
+    }
+  ],
+  "shorts": [],
+  "seo": {"title_options": [], "tags": [], "hashtags": []},
+  "rights_issues": []
+}
