@@ -964,57 +964,11 @@
     {
       "id": "g22",
       "chapter": "normandy",
-      "engine": "motion",
+      "engine": "huashu_clip",
       "purpose": "timeline",
       "narration": "Not every assignment was deception. Lieutenant Fred Fox's radio operators, whose planned operation had been cancelled, were attached to the Eighty-Second Airborne Division, which had lost ninety-five percent of its radio equipment. Then, in early July, Operation Elephant covered the Second Armored Division as it moved into the line. Congress later called it the first of twenty-one full-scale tactical deceptions.",
       "visual": "Timeline June–July 1944.",
-      "elements": [
-        {
-          "type": "timeline",
-          "box": [
-            0.06,
-            0.32,
-            0.88,
-            0.36
-          ],
-          "at": 0.3,
-          "dur": 8.0,
-          "horizontal": true,
-          "events": [
-            {
-              "label": "June 6",
-              "sub": "D-Day"
-            },
-            {
-              "label": "June 14",
-              "sub": "Task Force Mason"
-            },
-            {
-              "label": "June",
-              "sub": "radio help to 82nd Airborne"
-            },
-            {
-              "label": "July 1–4",
-              "sub": "Operation Elephant",
-              "color": "negative"
-            }
-          ]
-        },
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 95,
-          "suffix": "%",
-          "pos": [
-            0.5,
-            0.82
-          ],
-          "at": "cue:ninety-five",
-          "dur": 1.0,
-          "style": "h2",
-          "label": "of the 82nd's radio equipment lost"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C20",
         "C22"
@@ -1024,8 +978,90 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "kinetic-type",
+      "params": {
+        "theme": {
+          "bg": "#EDE4CF",
+          "surface": "#F6F0E2",
+          "ink": "#23241F",
+          "sub": "#6E6857",
+          "accent": "#A8782A",
+          "accent2": "#55603F"
+        },
+        "shots": [
+          {
+            "grammar": "y5_kinetic_type",
+            "cues": [
+              {
+                "at": 0.25,
+                "kind": "point",
+                "text": "Not every job was deception",
+                "data": {
+                  "label": "NORMANDY"
+                },
+                "sub": "June 1944"
+              },
+              {
+                "at": "cue:radio",
+                "kind": "point",
+                "text": "Radio operators",
+                "data": {
+                  "label": "SIGNAL CO. SPECIAL",
+                  "key": "82nd Airborne"
+                },
+                "sub": "Lt. Fred Fox's men - attached to the 82nd Airborne"
+              },
+              {
+                "at": "cue:ninety-five",
+                "kind": "number",
+                "sub": "of the 82nd Airborne's radio equipment, lost",
+                "data": {
+                  "value": 95,
+                  "prefix": "",
+                  "suffix": "%",
+                  "label": "82ND AIRBORNE"
+                }
+              }
+            ]
+          },
+          {
+            "start": "cue:then",
+            "grammar": "y5_kinetic_type",
+            "theme": {
+              "bg": "#1B1E19",
+              "surface": "#262A23",
+              "ink": "#EEE7D4",
+              "sub": "#9C9786",
+              "accent": "#D7A23F",
+              "accent2": "#7F9A68"
+            },
+            "cues": [
+              {
+                "at": 0.2,
+                "kind": "point",
+                "text": "Elephant",
+                "data": {
+                  "label": "JULY 1944",
+                  "key": "2nd Armored"
+                },
+                "sub": "Operation Elephant, July 1-4, 1944 - covering the 2nd Armored Division"
+              },
+              {
+                "at": "cue:twenty-one",
+                "kind": "number",
+                "sub": "full-scale tactical deceptions - this was the first",
+                "data": {
+                  "value": 21,
+                  "prefix": "",
+                  "suffix": "",
+                  "label": "PUBLIC LAW 117-85"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "transition": "cut"
     },
     {
       "id": "g23",
@@ -1472,50 +1508,11 @@
     {
       "id": "g29",
       "chapter": "viersen",
-      "engine": "motion",
+      "engine": "huashu_clip",
       "purpose": "evidence",
       "narration": "Museum accounts say the operation simulated more than thirty thousand troops with about six hundred inflatable dummies. The law Congress passed in twenty twenty-two says only hundreds of vehicles, so the exact scale depends on the source. Afterward, Ninth Army commander Lieutenant General William Simpson commended the unit.",
       "visual": "Contested figures shown side by side.",
-      "elements": [
-        {
-          "type": "card",
-          "box": [
-            0.06,
-            0.22,
-            0.42,
-            0.4
-          ],
-          "tag": "Museum accounts",
-          "title": "> 30,000 troops simulated",
-          "body": "≈ 600 inflatable dummies",
-          "at": "cue:museum",
-          "tone": "night2"
-        },
-        {
-          "type": "card",
-          "box": [
-            0.52,
-            0.22,
-            0.42,
-            0.4
-          ],
-          "tag": "Public Law 117-85",
-          "title": "\"hundreds\" of vehicles",
-          "body": "no troop figure given",
-          "at": "cue:law",
-          "tone": "night2"
-        },
-        {
-          "type": "text",
-          "text": "Commended by Lt. Gen. William H. Simpson, Ninth Army",
-          "pos": [
-            0.5,
-            0.8
-          ],
-          "style": "body",
-          "at": "cue:commended"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C32",
         "C33"
@@ -1525,8 +1522,71 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "kinetic-type",
+      "params": {
+        "grammar": "y5_kinetic_type",
+        "theme": {
+          "bg": "#1B1E19",
+          "surface": "#262A23",
+          "ink": "#EEE7D4",
+          "sub": "#9C9786",
+          "accent": "#D7A23F",
+          "accent2": "#7F9A68"
+        },
+        "cues": [
+          {
+            "at": 0.25,
+            "kind": "point",
+            "text": "How big?",
+            "data": {
+              "label": "BY THE NUMBERS"
+            },
+            "sub": "Viersen, March 1945"
+          },
+          {
+            "at": "cue:thousand",
+            "kind": "number",
+            "sub": "simulated troops - museum accounts",
+            "data": {
+              "value": 30000,
+              "prefix": "> ",
+              "suffix": "",
+              "label": "CONTESTED"
+            }
+          },
+          {
+            "at": "cue:six",
+            "kind": "number",
+            "sub": "inflatable dummies - museum accounts",
+            "data": {
+              "value": 600,
+              "prefix": "~ ",
+              "suffix": "",
+              "label": "CONTESTED"
+            }
+          },
+          {
+            "at": "cue:hundreds",
+            "kind": "point",
+            "text": "\"Hundreds\"",
+            "data": {
+              "label": "PUBLIC LAW 117-85",
+              "key": "depends on the source"
+            },
+            "sub": "of vehicles, says the 2022 law - the scale depends on the source"
+          },
+          {
+            "at": "cue:commended",
+            "kind": "point",
+            "text": "Commended",
+            "data": {
+              "label": "NINTH ARMY COMMANDER"
+            },
+            "sub": "by Lt. Gen. William H. Simpson"
+          }
+        ]
+      },
+      "transition": "cut"
     },
     {
       "id": "g30",
@@ -1742,51 +1802,11 @@
     {
       "id": "g34",
       "chapter": "silence",
-      "engine": "motion",
+      "engine": "huashu_clip",
       "purpose": "evidence",
       "narration": "When were the records declassified? Most sources say nineteen ninety-six. An Army article says nineteen ninety-three. Others simply say the mid-nineteen-nineties. The sources disagree, and we could not locate the original declassification order.",
       "visual": "Timeline with two conflicting dates.",
-      "elements": [
-        {
-          "type": "timeline",
-          "box": [
-            0.08,
-            0.34,
-            0.84,
-            0.34
-          ],
-          "at": 0.3,
-          "dur": 4.0,
-          "horizontal": true,
-          "events": [
-            {
-              "label": "1985",
-              "sub": "Smithsonian article"
-            },
-            {
-              "label": "1993?",
-              "sub": "army.mil",
-              "color": "accent"
-            },
-            {
-              "label": "1996?",
-              "sub": "most sources",
-              "color": "accent"
-            }
-          ]
-        },
-        {
-          "type": "text",
-          "text": "Sources disagree",
-          "pos": [
-            0.5,
-            0.84
-          ],
-          "style": "h2",
-          "at": "cue:disagree,",
-          "color": "negative"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C39"
       ],
@@ -1795,8 +1815,67 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "kinetic-type",
+      "params": {
+        "grammar": "y5_kinetic_type",
+        "theme": {
+          "bg": "#EDE4CF",
+          "surface": "#F6F0E2",
+          "ink": "#23241F",
+          "sub": "#6E6857",
+          "accent": "#A8782A",
+          "accent2": "#55603F"
+        },
+        "cues": [
+          {
+            "at": 0.25,
+            "kind": "point",
+            "text": "Declassified when?",
+            "data": {
+              "label": "SOURCES DISAGREE"
+            },
+            "sub": "the records of the 23rd"
+          },
+          {
+            "at": "cue:ninety-six",
+            "kind": "point",
+            "text": "1996",
+            "data": {
+              "label": "SOURCES DISAGREE"
+            },
+            "sub": "most sources"
+          },
+          {
+            "at": "cue:ninety-three",
+            "kind": "point",
+            "text": "1993",
+            "data": {
+              "label": "SOURCES DISAGREE"
+            },
+            "sub": "an Army article"
+          },
+          {
+            "at": "cue:mid-nineteen-nineties",
+            "kind": "point",
+            "text": "Mid-1990s",
+            "data": {
+              "label": "SOURCES DISAGREE"
+            },
+            "sub": "other sources"
+          },
+          {
+            "at": "cue:could",
+            "kind": "point",
+            "text": "Order not found",
+            "data": {
+              "label": "STILL UNKNOWN",
+              "key": "could not locate"
+            },
+            "sub": "we could not locate the original declassification order"
+          }
+        ]
+      },
+      "transition": "cut"
     },
     {
       "id": "g35",
@@ -1910,51 +1989,11 @@
     {
       "id": "g37",
       "chapter": "myth",
-      "engine": "motion",
+      "engine": "huashu_clip",
       "purpose": "comparison",
       "narration": "Because it stayed secret for so long, the Ghost Army's story has picked up some confusion. It's often mixed up with the fictional First U.S. Army Group created for Operation Fortitude before D-Day. They were different efforts. The Ghost Army's deceptions were tactical, staged near the front lines in France, Luxembourg and Germany.",
       "visual": "Two cards: FUSAG (strategic, before D-Day) vs 23rd (tactical, at the front).",
-      "elements": [
-        {
-          "type": "card",
-          "box": [
-            0.06,
-            0.24,
-            0.42,
-            0.44
-          ],
-          "tag": "Operation Fortitude",
-          "title": "FUSAG (fictional army group)",
-          "body": "strategic deception before D-Day",
-          "at": "cue:fortitude",
-          "tone": "night2"
-        },
-        {
-          "type": "card",
-          "box": [
-            0.52,
-            0.24,
-            0.42,
-            0.44
-          ],
-          "tag": "23rd HQ Special Troops",
-          "title": "The Ghost Army",
-          "body": "tactical deceptions near the front, 1944–45",
-          "at": "cue:tactical,",
-          "tone": "night2"
-        },
-        {
-          "type": "text",
-          "text": "Different efforts",
-          "pos": [
-            0.5,
-            0.84
-          ],
-          "style": "h2",
-          "at": "cue:different",
-          "color": "accent"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C54"
       ],
@@ -1963,9 +2002,59 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "fade_black",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": "cut",
+      "look": "kinetic-type",
+      "params": {
+        "grammar": "y5_kinetic_type",
+        "theme": {
+          "bg": "#EDE4CF",
+          "surface": "#F6F0E2",
+          "ink": "#23241F",
+          "sub": "#6E6857",
+          "accent": "#A8782A",
+          "accent2": "#55603F"
+        },
+        "cues": [
+          {
+            "at": 0.25,
+            "kind": "point",
+            "text": "Two different efforts",
+            "data": {
+              "label": "MYTH VS RECORD"
+            },
+            "sub": "often mixed up"
+          },
+          {
+            "at": "cue:fictional",
+            "kind": "point",
+            "text": "FUSAG",
+            "data": {
+              "label": "STRATEGIC",
+              "key": "before D-Day"
+            },
+            "sub": "a fictional army group - Operation Fortitude, before D-Day"
+          },
+          {
+            "at": "cue:ghost#2",
+            "kind": "point",
+            "text": "The 23rd",
+            "data": {
+              "label": "TACTICAL",
+              "key": "near the front lines"
+            },
+            "sub": "tactical deception near the front lines"
+          },
+          {
+            "at": "cue:france",
+            "kind": "point",
+            "text": "At the front",
+            "data": {
+              "label": "TACTICAL"
+            },
+            "sub": "France, Luxembourg and Germany"
+          }
+        ]
+      }
     },
     {
       "id": "g38",
@@ -1984,109 +2073,107 @@
         "tail": 0.8
       },
       "params": {
-        "grammar": "t3_finance_chart",
-        "theme": "paper",
-        "data": {
-          "title": "How many deception operations?",
-          "unit": "count, by source",
-          "chart": "bar",
-          "decimals": 0,
-          "source": "AP; Public Law 117-85; National WWII Museum / Luxembourg government",
-          "series": [
-            {
-              "label": "AP",
-              "value": 20
-            },
-            {
-              "label": "PL 117-85",
-              "value": 21
-            },
-            {
-              "label": "Museum / Luxembourg",
-              "value": 22
-            }
-          ],
-          "highlight": {
-            "index": 1,
-            "text": "20–22",
-            "sub": "depends on counting"
-          }
+        "theme": {
+          "bg": "#EDE4CF",
+          "surface": "#F6F0E2",
+          "ink": "#23241F",
+          "sub": "#6E6857",
+          "accent": "#B23A2A",
+          "accent2": "#55603F"
         },
-        "cues": [
+        "shots": [
           {
-            "at": "cue:twenty,",
-            "kind": "bar",
-            "data": {
-              "index": 0
-            }
+            "grammar": "y5_kinetic_type",
+            "theme": {
+              "bg": "#EDE4CF",
+              "surface": "#F6F0E2",
+              "ink": "#23241F",
+              "sub": "#6E6857",
+              "accent": "#A8782A",
+              "accent2": "#55603F"
+            },
+            "cues": [
+              {
+                "at": 0.25,
+                "kind": "point",
+                "text": "Who's counting?",
+                "data": {
+                  "label": "HOW MANY OPERATIONS?"
+                },
+                "sub": "the number of operations depends on it"
+              }
+            ]
           },
           {
-            "at": "cue:twenty-one,",
-            "kind": "bar",
+            "start": "cue:different",
+            "grammar": "t3_finance_chart",
             "data": {
-              "index": 1
-            }
-          },
-          {
-            "at": "cue:twenty-two,",
-            "kind": "bar",
-            "data": {
-              "index": 2
-            }
-          },
-          {
-            "at": "end-1.6",
-            "kind": "highlight"
+              "title": "How many operations?",
+              "unit": "Deception operations of the 23rd, by source",
+              "source": "Sources: AP; Public Law 117-85; National WWII Museum (2020); Luxembourg government",
+              "badge": "Depends on who counts",
+              "chart": "bar",
+              "decimals": 0,
+              "prefix": "",
+              "series": [
+                {
+                  "label": "AP (about)",
+                  "value": 20,
+                  "color": "#55603F"
+                },
+                {
+                  "label": "PL 117-85 (full-scale)",
+                  "value": 21,
+                  "color": "#55603F"
+                },
+                {
+                  "label": "WWII Museum / Luxembourg",
+                  "value": 22,
+                  "color": "#55603F"
+                }
+              ]
+            },
+            "cues": [
+              {
+                "at": 0.2,
+                "kind": "title"
+              },
+              {
+                "at": "cue:twenty,",
+                "kind": "bar",
+                "data": {
+                  "index": 0
+                }
+              },
+              {
+                "at": "cue:twenty-one,",
+                "kind": "bar",
+                "data": {
+                  "index": 1
+                }
+              },
+              {
+                "at": "cue:twenty-two,",
+                "kind": "bar",
+                "data": {
+                  "index": 2
+                }
+              }
+            ]
           }
         ]
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "kinetic-type",
+      "transition": "cut"
     },
     {
       "id": "g39",
       "chapter": "myth",
-      "engine": "motion",
+      "engine": "huashu_clip",
       "purpose": "evidence",
       "narration": "And then there's the most quoted number: that the Ghost Army saved fifteen thousand to thirty thousand American lives. It's repeated often, including at the medal ceremony, but we could not find a primary study behind it. The honest answer is that we don't know how that estimate was calculated.",
       "visual": "A large number with a 'source unknown' marker.",
-      "elements": [
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 30000,
-          "prefix": "15,000 – ",
-          "pos": [
-            0.5,
-            0.36
-          ],
-          "at": "cue:fifteen",
-          "dur": 1.6,
-          "style": "hero"
-        },
-        {
-          "type": "text",
-          "text": "estimate · no primary study found",
-          "pos": [
-            0.5,
-            0.58
-          ],
-          "style": "h3",
-          "at": "cue:study",
-          "color": "negative"
-        },
-        {
-          "type": "text",
-          "text": "lives saved (as quoted)",
-          "pos": [
-            0.5,
-            0.2
-          ],
-          "style": "body",
-          "at": "cue:saved",
-          "color": "muted"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C52"
       ],
@@ -2095,46 +2182,66 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "kinetic-type",
+      "params": {
+        "grammar": "y5_kinetic_type",
+        "theme": {
+          "bg": "#1B1E19",
+          "surface": "#262A23",
+          "ink": "#EEE7D4",
+          "sub": "#9C9786",
+          "accent": "#D7A23F",
+          "accent2": "#7F9A68"
+        },
+        "cues": [
+          {
+            "at": 0.25,
+            "kind": "point",
+            "text": "The most quoted number",
+            "data": {
+              "label": "LIVES SAVED?"
+            }
+          },
+          {
+            "at": "cue:fifteen",
+            "kind": "point",
+            "text": "15,000-30,000",
+            "data": {
+              "label": "LIVES SAVED?",
+              "key": "saved?"
+            },
+            "sub": "American lives saved?"
+          },
+          {
+            "at": "cue:could",
+            "kind": "point",
+            "text": "No primary study",
+            "data": {
+              "label": "WHAT WE FOUND"
+            },
+            "sub": "repeated often, even at the medal ceremony"
+          },
+          {
+            "at": "cue:honest",
+            "kind": "point",
+            "text": "We don't know",
+            "data": {
+              "label": "THE HONEST ANSWER"
+            },
+            "sub": "how that estimate was calculated"
+          }
+        ]
+      },
+      "transition": "cut"
     },
     {
       "id": "g40",
       "chapter": "medal",
-      "engine": "motion",
+      "engine": "huashu_clip",
       "purpose": "timeline",
       "narration": "Recognition took a long time. Bills to award the Ghost Army a Congressional Gold Medal were introduced in Congress starting in twenty fifteen. The act became law on February first, twenty twenty-two. On March twenty-first, twenty twenty-four, the medal was presented in Emancipation Hall at the U.S. Capitol.",
       "visual": "Timeline 2015 → 2022 → 2024.",
-      "elements": [
-        {
-          "type": "timeline",
-          "box": [
-            0.08,
-            0.34,
-            0.84,
-            0.34
-          ],
-          "at": 0.3,
-          "dur": 9.0,
-          "horizontal": true,
-          "events": [
-            {
-              "label": "2015",
-              "sub": "first bill (H.R. 2170)"
-            },
-            {
-              "label": "Feb 1, 2022",
-              "sub": "Public Law 117-85",
-              "color": "positive"
-            },
-            {
-              "label": "Mar 21, 2024",
-              "sub": "medal presented",
-              "color": "accent"
-            }
-          ]
-        }
-      ],
+      "elements": [],
       "claims": [
         "C46",
         "C47",
@@ -2145,9 +2252,57 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "fade_black",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": "cut",
+      "look": "kinetic-type",
+      "params": {
+        "grammar": "y5_kinetic_type",
+        "theme": {
+          "bg": "#EDE4CF",
+          "surface": "#F6F0E2",
+          "ink": "#23241F",
+          "sub": "#6E6857",
+          "accent": "#A8782A",
+          "accent2": "#55603F"
+        },
+        "cues": [
+          {
+            "at": 0.25,
+            "kind": "point",
+            "text": "Recognition took a long time",
+            "data": {
+              "label": "CONGRESSIONAL GOLD MEDAL"
+            }
+          },
+          {
+            "at": "cue:fifteen",
+            "kind": "point",
+            "text": "2015",
+            "data": {
+              "label": "CONGRESSIONAL GOLD MEDAL"
+            },
+            "sub": "first bills introduced in Congress"
+          },
+          {
+            "at": "cue:february",
+            "kind": "point",
+            "text": "Feb. 1, 2022",
+            "data": {
+              "label": "CONGRESSIONAL GOLD MEDAL"
+            },
+            "sub": "the act becomes law - Public Law 117-85"
+          },
+          {
+            "at": "cue:march",
+            "kind": "point",
+            "text": "March 21, 2024",
+            "data": {
+              "label": "CONGRESSIONAL GOLD MEDAL",
+              "key": "Emancipation Hall"
+            },
+            "sub": "presented in Emancipation Hall, U.S. Capitol"
+          }
+        ]
+      }
     },
     {
       "id": "g41",
@@ -2342,7 +2497,7 @@
     {
       "id": "g44",
       "chapter": "medal",
-      "engine": "kinetic",
+      "engine": "huashu_clip",
       "purpose": "metaphor",
       "narration": "So what did the Ghost Army really accomplish? We know what they did, where, and at what cost. What we can't measure precisely is how many lives their illusions saved, and historians are still filling in parts of the record. Their story is also a reminder that creativity can be a form of service: painters, designers and sound engineers used their skills to protect other soldiers.",
       "visual": "Kinetic reflection with uncertainty stated.",
@@ -2357,16 +2512,57 @@
         "tail": 0.8
       },
       "params": {
-        "emphasis": [
-          "accomplish?",
-          "know",
-          "can't",
-          "still"
+        "grammar": "y5_kinetic_type",
+        "theme": {
+          "bg": "#1B1E19",
+          "surface": "#262A23",
+          "ink": "#EEE7D4",
+          "sub": "#9C9786",
+          "accent": "#D7A23F",
+          "accent2": "#7F9A68"
+        },
+        "cues": [
+          {
+            "at": 0.25,
+            "kind": "point",
+            "text": "What did they accomplish?",
+            "data": {
+              "label": "THE GHOST ARMY"
+            }
+          },
+          {
+            "at": "cue:know",
+            "kind": "point",
+            "text": "What, where, what it cost",
+            "data": {
+              "label": "WHAT WE KNOW"
+            },
+            "sub": "the documented record"
+          },
+          {
+            "at": "cue:measure",
+            "kind": "point",
+            "text": "Lives saved?",
+            "data": {
+              "label": "WHAT WE DON'T KNOW",
+              "key": "still"
+            },
+            "sub": "not precisely measured - the record is still being filled in"
+          },
+          {
+            "at": "cue:creativity",
+            "kind": "point",
+            "text": "Creativity",
+            "data": {
+              "label": "THE GHOST ARMY",
+              "key": "protecting"
+            },
+            "sub": "as a form of service - painters, designers and sound engineers protecting other soldiers"
+          }
         ]
       },
-      "transition": "fade_black",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": "cut",
+      "look": "kinetic-type"
     },
     {
       "id": "g45",
@@ -2429,35 +2625,25 @@
     "synthetic_disclosure": false
   },
   "thumbnail": {
-    "engine": "archival",
-    "params": {
-      "label": false
+    "from_scene": {
+      "id": "g14",
+      "at": 0.55,
+      "zoom": 1.4,
+      "focus": [
+        0.64,
+        0.42
+      ]
     },
-    "elements": [
+    "text_side": "right",
+    "text": [
       {
-        "type": "text",
         "text": "RUBBER",
-        "pos": [
-          0.5,
-          0.3
-        ],
-        "style": "hero",
-        "at": 0,
-        "font": "serif_bold",
-        "scale": 1.4
+        "size": 0.27
       },
       {
-        "type": "text",
         "text": "TANKS",
-        "pos": [
-          0.5,
-          0.55
-        ],
-        "style": "hero",
-        "at": 0,
-        "font": "serif_bold",
-        "scale": 1.4,
-        "color": "negative"
+        "size": 0.27,
+        "color": "#D7A23F"
       }
     ]
   },

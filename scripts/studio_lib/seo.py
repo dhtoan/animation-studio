@@ -113,10 +113,87 @@ def write_seo(pdir: Path, quality: str = "preview") -> list[Path]:
     return out
 
 
+def _scene_still(pdir: Path, scene_id: str, at: float) -> "Image.Image | None":
+    """A frame of an already rendered scene (final, else preview) at fraction `at` of its duration."""
+    import json
+
+    from PIL import Image
+
+    from . import ffmpeg as FF
+
+    for q in ("final", "preview", "draft"):
+        rr = pdir / "reports" / f"render-{q}.json"
+        if not rr.exists():
+            continue
+        rows = {r["id"]: r for r in json.loads(rr.read_text(encoding="utf-8")).get("scenes", [])}
+        r = rows.get(scene_id)
+        if r and r.get("status") == "done" and Path(r["out"]).exists():
+            f = pdir / "thumbnails" / f"_{scene_id}.png"
+            f.parent.mkdir(parents=True, exist_ok=True)
+            FF.extract_frame(Path(r["out"]), r["duration"] * at, f)
+            return Image.open(f).convert("RGB")
+    return None
+
+
+def _thumb_font(size: int):
+    from PIL import ImageFont
+
+    from .config import SKILL_ROOT
+    from .design import font
+
+    for pat in ("leaguegothic/*.ttf", "oswald/*.ttf"):
+        for ff in sorted((SKILL_ROOT / "tools" / "fonts").glob(pat)):
+            return ImageFont.truetype(str(ff), size)
+    return font("sans_bold", size)  # fetch OFL fonts with scripts/fetch_fonts.py for the design-system face
+
+
+def render_thumbnail_from_scene(spec: dict, pdir: Path) -> Path | None:
+    """Thumbnail = a frame of an authentic-engine scene + 1-3 words of display type with a legibility band."""
+    from PIL import Image, ImageDraw
+
+    src = spec["from_scene"]
+    img = _scene_still(pdir, src["id"], float(src.get("at", 0.6)))
+    if img is None:
+        return None
+    W, H = 1280, 720
+    img = img.resize((W, H), Image.LANCZOS)
+    if src.get("zoom"):  # crop towards a focus point, e.g. {"zoom": 1.25, "focus": [0.55, 0.55]}
+        z = float(src["zoom"])
+        fx, fy = src.get("focus", [0.5, 0.5])
+        cw, ch = W / z, H / z
+        x0 = min(max(0, fx * W - cw / 2), W - cw)
+        y0 = min(max(0, fy * H - ch / 2), H - ch)
+        img = img.crop((int(x0), int(y0), int(x0 + cw), int(y0 + ch))).resize((W, H), Image.LANCZOS)
+    band = Image.new("L", (W, H), 0)
+    bd = ImageDraw.Draw(band)
+    side = spec.get("text_side", "left")
+    for x in range(W):
+        u = (1 - x / (W * 0.62)) if side == "left" else ((x - W * 0.38) / (W * 0.62))
+        bd.line([(x, 0), (x, H)], fill=int(205 * max(0.0, min(1.0, u))))
+    img = Image.composite(Image.new("RGB", (W, H), (20, 18, 14)), img, band)
+    d = ImageDraw.Draw(img)
+    lines = spec.get("text", [])
+    total = sum(int(H * ln.get("size", 0.26)) for ln in lines)
+    y = (H - total) / 2
+    for ln in lines:
+        fs = int(H * ln.get("size", 0.26))
+        f = _thumb_font(fs)
+        tw = f.getlength(ln["text"])
+        x = W * 0.06 if side == "left" else W * 0.94 - tw
+        d.text((x, y), ln["text"], font=f, fill=ln.get("color", "#F3EAD6"), stroke_width=max(2, fs // 40),
+               stroke_fill="#14120E")
+        y += fs * 0.98
+    out = pdir / "thumbnails" / "thumbnail.png"
+    img.save(out)
+    return out
+
+
 def render_thumbnail(p: dict, pdir: Path) -> Path | None:
     spec = p.get("thumbnail")
     if not spec:
         return None
+    if spec.get("from_scene"):
+        return render_thumbnail_from_scene(spec, pdir)
     from .design import Theme
     from .engines import ENGINES, SceneContext
 

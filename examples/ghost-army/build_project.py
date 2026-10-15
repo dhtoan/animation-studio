@@ -562,6 +562,78 @@ REBUILD = {
             {"at": "cue:jeep", "kind": "point", "text": "mounted on a jeep"},
             {"at": "end-1.0", "kind": "highlight", "data": {"index": 0, "style": "underline"}}]}]}),
 }
+# ---------------------------------------------------------------- g20-g45 rebuild (huashu scenes)
+def P5(text, at, sub=None, label=None, key=None):
+    c = {"at": at, "kind": "point", "text": text, "data": {}}
+    if sub:
+        c["sub"] = sub
+    if label:
+        c["data"]["label"] = label
+    if key:
+        c["data"]["key"] = key
+    return c
+
+
+def N5(value, at, sub, label=None, prefix="", suffix=""):
+    return {"at": at, "kind": "number", "sub": sub, "data": {"value": value, "prefix": prefix, "suffix": suffix, **({"label": label} if label else {})}}
+
+
+REBUILD.update({
+    "g22": HU({"theme": PAPER, "shots": [
+        {"grammar": "y5_kinetic_type", "cues": [
+            P5("Not every job was deception", 0.25, "June 1944", "NORMANDY"),
+            P5("Radio operators", "cue:radio", "Lt. Fred Fox's men - attached to the 82nd Airborne", "SIGNAL CO. SPECIAL", "82nd Airborne"),
+            N5(95, "cue:ninety-five", "of the 82nd Airborne's radio equipment, lost", "82ND AIRBORNE", suffix="%")]},
+        {"start": "cue:then", "grammar": "y5_kinetic_type", "theme": NIGHT, "cues": [
+            P5("Elephant", 0.2, "Operation Elephant, July 1-4, 1944 - covering the 2nd Armored Division", "JULY 1944", "2nd Armored"),
+            N5(21, "cue:twenty-one", "full-scale tactical deceptions - this was the first", "PUBLIC LAW 117-85")]}]}),
+    "g29": HU({"grammar": "y5_kinetic_type", "theme": NIGHT, "cues": [
+        P5("How big?", 0.25, "Viersen, March 1945", "BY THE NUMBERS"),
+        N5(30000, "cue:thousand", "simulated troops - museum accounts", "CONTESTED", prefix="> "),
+        N5(600, "cue:six", "inflatable dummies - museum accounts", "CONTESTED", prefix="~ "),
+        P5("\"Hundreds\"", "cue:hundreds", "of vehicles, says the 2022 law - the scale depends on the source", "PUBLIC LAW 117-85", "depends on the source"),
+        P5("Commended", "cue:commended", "by Lt. Gen. William H. Simpson", "NINTH ARMY COMMANDER")]}),
+    "g34": HU({"grammar": "y5_kinetic_type", "theme": PAPER, "cues": [
+        P5("Declassified when?", 0.25, "the records of the 23rd", "SOURCES DISAGREE"),
+        P5("1996", "cue:ninety-six", "most sources", "SOURCES DISAGREE"),
+        P5("1993", "cue:ninety-three", "an Army article", "SOURCES DISAGREE"),
+        P5("Mid-1990s", "cue:mid-nineteen-nineties", "other sources", "SOURCES DISAGREE"),
+        P5("Order not found", "cue:could", "we could not locate the original declassification order", "STILL UNKNOWN", "could not locate")]}),
+    "g37": HU({"grammar": "y5_kinetic_type", "theme": PAPER, "cues": [
+        P5("Two different efforts", 0.25, "often mixed up", "MYTH VS RECORD"),
+        P5("FUSAG", "cue:fictional", "a fictional army group - Operation Fortitude, before D-Day", "STRATEGIC", "before D-Day"),
+        P5("The 23rd", "cue:ghost#2", "tactical deception near the front lines", "TACTICAL", "near the front lines"),
+        P5("At the front", "cue:france", "France, Luxembourg and Germany", "TACTICAL")]}),
+    "g38": HU({"theme": {**PAPER, "accent": "#B23A2A"}, "shots": [
+        {"grammar": "y5_kinetic_type", "theme": PAPER, "cues": [P5("Who's counting?", 0.25, "the number of operations depends on it", "HOW MANY OPERATIONS?")]},
+        {"start": "cue:different", "grammar": "t3_finance_chart",
+               "data": {"title": "How many operations?", "unit": "Deception operations of the 23rd, by source",
+                        "source": "Sources: AP; Public Law 117-85; National WWII Museum (2020); Luxembourg government",
+                        "badge": "Depends on who counts", "chart": "bar", "decimals": 0, "prefix": "",
+                        "series": [{"label": "AP (about)", "value": 20, "color": "#55603F"},
+                                   {"label": "PL 117-85 (full-scale)", "value": 21, "color": "#55603F"},
+                                   {"label": "WWII Museum / Luxembourg", "value": 22, "color": "#55603F"}]},
+               "cues": [{"at": 0.2, "kind": "title"},
+                        {"at": "cue:twenty,", "kind": "bar", "data": {"index": 0}},
+                        {"at": "cue:twenty-one,", "kind": "bar", "data": {"index": 1}},
+                        {"at": "cue:twenty-two,", "kind": "bar", "data": {"index": 2}}]}]}),
+    "g39": HU({"grammar": "y5_kinetic_type", "theme": NIGHT, "cues": [
+        P5("The most quoted number", 0.25, None, "LIVES SAVED?"),
+        P5("15,000-30,000", "cue:fifteen", "American lives saved?", "LIVES SAVED?", "saved?"),
+        P5("No primary study", "cue:could", "repeated often, even at the medal ceremony", "WHAT WE FOUND"),
+        P5("We don't know", "cue:honest", "how that estimate was calculated", "THE HONEST ANSWER")]}),
+    "g40": HU({"grammar": "y5_kinetic_type", "theme": PAPER, "cues": [
+        P5("Recognition took a long time", 0.25, None, "CONGRESSIONAL GOLD MEDAL"),
+        P5("2015", "cue:fifteen", "first bills introduced in Congress", "CONGRESSIONAL GOLD MEDAL"),
+        P5("Feb. 1, 2022", "cue:february", "the act becomes law - Public Law 117-85", "CONGRESSIONAL GOLD MEDAL"),
+        P5("March 21, 2024", "cue:march", "presented in Emancipation Hall, U.S. Capitol", "CONGRESSIONAL GOLD MEDAL", "Emancipation Hall")]}),
+    "g44": HU({"grammar": "y5_kinetic_type", "theme": NIGHT, "cues": [
+        P5("What did they accomplish?", 0.25, None, "THE GHOST ARMY"),
+        P5("What, where, what it cost", "cue:know", "the documented record", "WHAT WE KNOW"),
+        P5("Lives saved?", "cue:measure", "not precisely measured - the record is still being filled in", "WHAT WE DON'T KNOW", "still"),
+        P5("Creativity", "cue:creativity", "as a form of service - painters, designers and sound engineers protecting other soldiers", "THE GHOST ARMY", "protecting")]}),
+})
+
 LOOK_TRANSITIONS = {"g01": "fade_black", "g04": {"type": "fade_black", "dur": 0.8},
                     "g06": {"type": "crossfade", "dur": 0.5}, "g07": {"type": "crossfade", "dur": 0.5},
                     "g16": {"type": "crossfade", "dur": 0.5}, "g18": {"type": "crossfade", "dur": 0.5}}
@@ -632,8 +704,8 @@ project = {
                           "operations, declassification year, lives saved) we say so. Did someone in your family serve in the 23rd?",
         "thumbnail_brief": "An inflatable Sherman tank silhouette being carried by four soldiers, sepia palette; 3 words max: 'RUBBER TANKS'. "
                            "No graphic war imagery.", "synthetic_disclosure": False},
-    "thumbnail": {"engine": "archival", "params": {"label": False}, "elements": [
-        T("RUBBER", [0.5, 0.3], "hero", 0, font="serif_bold", scale=1.4), T("TANKS", [0.5, 0.55], "hero", 0, font="serif_bold", scale=1.4, color="negative")]},
+    "thumbnail": {"from_scene": {"id": "g14", "at": 0.55, "zoom": 1.4, "focus": [0.64, 0.42]}, "text_side": "right",
+                  "text": [{"text": "RUBBER", "size": 0.27}, {"text": "TANKS", "size": 0.27, "color": "#D7A23F"}]},
     "shorts": [
         {"id": "short-ga1", "cta": FOLLOW_CTA, "cta_cues": FOLLOW_CUES, "funnel_type": "surprising fact", "title": "These WWII tanks were made of rubber", "chapter": "toolkit",
          "duration_range": [25, 50], "publish_order": 1,
