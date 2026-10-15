@@ -2464,6 +2464,27 @@
   "shorts": [
     {
       "id": "short-ga1",
+      "cta": "The full documentary is coming to this channel. Follow so you don't miss it.",
+      "cta_cues": [
+        {
+          "at": 0.1,
+          "kind": "point",
+          "text": "Full documentary",
+          "sub": "coming to this channel",
+          "data": {
+            "label": "THE GHOST ARMY"
+          }
+        },
+        {
+          "at": "cue:follow",
+          "kind": "point",
+          "text": "Follow",
+          "sub": "so you don't miss it",
+          "data": {
+            "label": "THE GHOST ARMY"
+          }
+        }
+      ],
       "funnel_type": "surprising fact",
       "title": "These WWII tanks were made of rubber",
       "chapter": "toolkit",
@@ -2600,6 +2621,27 @@
     },
     {
       "id": "short-ga2",
+      "cta": "The full documentary is coming to this channel. Follow so you don't miss it.",
+      "cta_cues": [
+        {
+          "at": 0.1,
+          "kind": "point",
+          "text": "Full documentary",
+          "sub": "coming to this channel",
+          "data": {
+            "label": "THE GHOST ARMY"
+          }
+        },
+        {
+          "at": "cue:follow",
+          "kind": "point",
+          "text": "Follow",
+          "sub": "so you don't miss it",
+          "data": {
+            "label": "THE GHOST ARMY"
+          }
+        }
+      ],
       "funnel_type": "overlooked person",
       "title": "A famous fashion designer served in a secret WWII unit",
       "chapter": "artists",
@@ -2715,6 +2757,27 @@
     },
     {
       "id": "short-ga3",
+      "cta": "The full documentary is coming to this channel. Follow so you don't miss it.",
+      "cta_cues": [
+        {
+          "at": 0.1,
+          "kind": "point",
+          "text": "Full documentary",
+          "sub": "coming to this channel",
+          "data": {
+            "label": "THE GHOST ARMY"
+          }
+        },
+        {
+          "at": "cue:follow",
+          "kind": "point",
+          "text": "Follow",
+          "sub": "so you don't miss it",
+          "data": {
+            "label": "THE GHOST ARMY"
+          }
+        }
+      ],
       "funnel_type": "unanswered question",
       "claims_note": "C52 (contested), C30",
       "title": "Did a rubber army save 30,000 lives?",

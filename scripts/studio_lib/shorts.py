@@ -140,10 +140,12 @@ def _segments(p: dict, short: dict) -> list[dict]:
         segs.append({"id": f"{short['id']}-cta", "engine": "huashu_clip", "narration": cta,
                      "params": {"grammar": "y5_kinetic_type", "vertical_ok": True,
                                 "theme": {k: v for k, v in _ds.palette("paper").items() if k != "alert"},
-                                "cues": [{"at": 0.1, "kind": "point", "text": "Full story",
-                                          "sub": "in the related video", "data": {"label": "WATCH NEXT"}},
-                                         {"at": "cue:tap", "kind": "point", "text": "Tap to watch",
-                                          "data": {"label": label.split(":")[0].strip() or "WATCH NEXT"}}]},
+                                # short.cta_cues overrides the pages (e.g. a follow CTA before the long video exists)
+                                "cues": short.get("cta_cues") or [
+                                    {"at": 0.1, "kind": "point", "text": "Full story",
+                                     "sub": "in the related video", "data": {"label": "WATCH NEXT"}},
+                                    {"at": "cue:tap", "kind": "point", "text": "Tap to watch",
+                                     "data": {"label": label.split(":")[0].strip() or "WATCH NEXT"}}]},
                      "elements": [], "transition": "crossfade", "pad": {"lead": 0.15, "tail": 0.6},
                      "illustrative": False, "_project_dir": p["_dir"], "_captions": False})
     elif cta:

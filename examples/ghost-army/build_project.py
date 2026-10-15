@@ -582,6 +582,13 @@ for _s in S:
         _s["allow_native"] = True
         _s["native_reason"] = "outside the g01-g19 visual-fidelity rebuild (pending)"
 
+# Shorts are published before the long documentary (market test), so their call to action asks viewers to
+# follow the channel instead of pointing to a related video that does not exist yet.
+FOLLOW_CTA = "The full documentary is coming to this channel. Follow so you don't miss it."
+FOLLOW_CUES = [{"at": 0.1, "kind": "point", "text": "Full documentary", "sub": "coming to this channel", "data": {"label": "THE GHOST ARMY"}},
+               {"at": "cue:follow", "kind": "point", "text": "Follow", "sub": "so you don't miss it", "data": {"label": "THE GHOST ARMY"}}]
+
+
 def Y5(narration, cues, src=None):
     """A vertical-friendly kinetic-type segment (huashu y5) for Shorts: no burned captions (the words are the picture)."""
     seg = {"engine": "huashu_clip", "narration": narration, "captions": False,
@@ -628,7 +635,7 @@ project = {
     "thumbnail": {"engine": "archival", "params": {"label": False}, "elements": [
         T("RUBBER", [0.5, 0.3], "hero", 0, font="serif_bold", scale=1.4), T("TANKS", [0.5, 0.55], "hero", 0, font="serif_bold", scale=1.4, color="negative")]},
     "shorts": [
-        {"id": "short-ga1", "funnel_type": "surprising fact", "title": "These WWII tanks were made of rubber", "chapter": "toolkit",
+        {"id": "short-ga1", "cta": FOLLOW_CTA, "cta_cues": FOLLOW_CUES, "funnel_type": "surprising fact", "title": "These WWII tanks were made of rubber", "chapter": "toolkit",
          "duration_range": [25, 50], "publish_order": 1,
          "segments": [
              Y5("In World War Two, some American tanks were made of rubber. On purpose.",
@@ -646,7 +653,7 @@ project = {
                  {"at": "cue:ghost", "kind": "title", "text": "The Ghost Army"}], src="g12")],
          "description": "Inflatable decoys of WWII's Ghost Army. Full documentary in the related video. #WWII #History",
          "hashtags": ["#WWII", "#History", "#GhostArmy"], "pinned_comment": "The full story, with sources, is in the related video."},
-        {"id": "short-ga2", "funnel_type": "overlooked person", "title": "A famous fashion designer served in a secret WWII unit",
+        {"id": "short-ga2", "cta": FOLLOW_CTA, "cta_cues": FOLLOW_CUES, "funnel_type": "overlooked person", "title": "A famous fashion designer served in a secret WWII unit",
          "chapter": "artists", "duration_range": [25, 50], "publish_order": 2,
          "segments": [Y5("Bill Blass, the fashion designer, served in a secret World War Two unit.",
                          [{"at": 0.15, "kind": "point", "text": "Bill Blass", "sub": "fashion designer", "data": {"label": "WORLD WAR TWO"}},
@@ -660,7 +667,7 @@ project = {
                           {"at": "cue:fooled", "kind": "point", "text": "Fool the eye"}], src="g11")],
          "description": "Artists of the Ghost Army. #WWII #Art", "hashtags": ["#WWII", "#Art", "#History"],
          "pinned_comment": "Their full story is in the related documentary."},
-        {"id": "short-ga3", "funnel_type": "unanswered question", "claims_note": "C52 (contested), C30", "title": "Did a rubber army save 30,000 lives?", "chapter": "myth",
+        {"id": "short-ga3", "cta": FOLLOW_CTA, "cta_cues": FOLLOW_CUES, "funnel_type": "unanswered question", "claims_note": "C52 (contested), C30", "title": "Did a rubber army save 30,000 lives?", "chapter": "myth",
          "duration_range": [25, 50], "publish_order": 3,
          "segments": [Y5("You may have heard the Ghost Army saved up to thirty thousand lives.",
                          [{"at": 0.15, "kind": "point", "text": "You may have heard", "data": {"label": "THE CLAIM"}},
