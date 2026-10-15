@@ -1341,23 +1341,11 @@
     {
       "id": "g30",
       "chapter": "viersen",
-      "engine": "handdrawn",
+      "engine": "html_seek",
       "purpose": "evidence",
       "narration": "Congress later quoted a postwar Army assessment praising how much influence such a small group had on a major operation.",
       "visual": "Sketched document with highlighted line.",
-      "elements": [
-        {
-          "type": "icon",
-          "name": "document",
-          "pos": [
-            0.5,
-            0.48
-          ],
-          "size": 0.16,
-          "at": 0.3,
-          "label": "Postwar Army assessment (quoted in PL 117-85)"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C34"
       ],
@@ -1367,8 +1355,12 @@
         "tail": 0.8
       },
       "min_duration": 6.5,
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "premium-whiteboard",
+      "params": {
+        "page": "pieces/lemo-whiteboard/index.html",
+        "era": true
+      },
+      "transition": "cut"
     },
     {
       "id": "g31",
@@ -1622,46 +1614,11 @@
     {
       "id": "g36",
       "chapter": "silence",
-      "engine": "whiteboard",
+      "engine": "html_seek",
       "purpose": "explain",
       "narration": "There was one more chapter. After Germany surrendered, the 23rd helped run camps for displaced persons. The unit's history cites up to about one hundred thousand people in thirteen camps.",
       "visual": "Whiteboard: 13 camps, ~100,000 people.",
-      "elements": [
-        {
-          "type": "crowd",
-          "box": [
-            0.08,
-            0.25,
-            0.5,
-            0.55
-          ],
-          "count": 39,
-          "cols": 13,
-          "at": "cue:camps",
-          "color": "cool"
-        },
-        {
-          "type": "text",
-          "text": "13 camps",
-          "pos": [
-            0.78,
-            0.4
-          ],
-          "style": "h1",
-          "at": "cue:thirteen",
-          "color": "accent"
-        },
-        {
-          "type": "text",
-          "text": "up to ~100,000 people",
-          "pos": [
-            0.78,
-            0.58
-          ],
-          "style": "h3",
-          "at": "cue:hundred"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C55"
       ],
@@ -1670,9 +1627,12 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "erase",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": "cut",
+      "look": "premium-whiteboard",
+      "params": {
+        "page": "pieces/lemo-whiteboard/index.html",
+        "era": true
+      }
     },
     {
       "id": "g37",
@@ -2058,76 +2018,11 @@
     {
       "id": "g42",
       "chapter": "medal",
-      "engine": "whiteboard",
+      "engine": "html_seek",
       "purpose": "explain",
       "narration": "The medal's design shows the four tools: a telegraph operator, a soldier applying a fake unit patch, a loudspeaker half-track, and soldiers carrying an inflatable tank. At the ceremony, the Secretary of the Army said many of the unit's techniques are still used today.",
       "visual": "Medal outline with four quadrants.",
-      "elements": [
-        {
-          "type": "shape",
-          "kind": "circle",
-          "box": [
-            0.32,
-            0.12,
-            0.36,
-            0.64
-          ],
-          "color": "accent",
-          "at": 0.2,
-          "dur": 1.0
-        },
-        {
-          "type": "icon",
-          "name": "server",
-          "pos": [
-            0.42,
-            0.33
-          ],
-          "size": 0.05,
-          "at": "cue:telegraph"
-        },
-        {
-          "type": "icon",
-          "name": "star",
-          "pos": [
-            0.58,
-            0.33
-          ],
-          "size": 0.05,
-          "at": "cue:patch,"
-        },
-        {
-          "type": "icon",
-          "name": "truck",
-          "pos": [
-            0.42,
-            0.56
-          ],
-          "size": 0.05,
-          "at": "cue:loudspeaker"
-        },
-        {
-          "type": "icon",
-          "name": "box",
-          "pos": [
-            0.58,
-            0.56
-          ],
-          "size": 0.05,
-          "at": "cue:inflatable"
-        },
-        {
-          "type": "text",
-          "text": "\"still used today\"",
-          "pos": [
-            0.5,
-            0.88
-          ],
-          "style": "h3",
-          "at": "cue:still",
-          "color": "accent"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C53",
         "C51"
@@ -2137,37 +2032,21 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "premium-whiteboard",
+      "params": {
+        "page": "pieces/lemo-whiteboard/index.html",
+        "era": true
+      },
+      "transition": "cut"
     },
     {
       "id": "g43",
       "chapter": "medal",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "explain",
       "narration": "The law directs that the gold medal go to the Smithsonian Institution for display and research. The National World War Two Museum opened an exhibition about the unit in twenty twenty, and filmmaker Rick Beyer's twenty thirteen documentary, which aired on PBS, brought the story to a wide audience. In Luxembourg, there is a Ghost Army marker at Bettembourg, and a monument was unveiled in Limpertsberg in twenty twenty-three, where the unit had once been based.",
       "visual": "List of places the story lives on.",
-      "elements": [
-        {
-          "type": "list",
-          "box": [
-            0.14,
-            0.22,
-            0.72,
-            0.6
-          ],
-          "at": "cue:smithsonian",
-          "dur": 12.0,
-          "marker": "check",
-          "scale": 1.2,
-          "items": [
-            "Medal: Smithsonian Institution",
-            "Exhibition: National WWII Museum (2020)",
-            "Documentary: Rick Beyer (2013, PBS)",
-            "Monument: Limpertsberg, Luxembourg (2023)"
-          ]
-        }
-      ],
+      "elements": [],
       "claims": [
         "C48",
         "C60",
@@ -2179,8 +2058,12 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "premium-whiteboard",
+      "params": {
+        "page": "pieces/lemo-whiteboard/index.html",
+        "era": true
+      },
+      "transition": "cut"
     },
     {
       "id": "g44",

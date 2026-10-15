@@ -122,6 +122,24 @@ class BrowserTests(unittest.TestCase):
         for a, b in zip(seq, par):   # same frames from the page pool (JPEG q95 on both paths)
             self.assertLess(float(np.abs(a - b).mean()), 2.0)
 
+    def test_second_half_eras_build_and_stay_legible(self):
+        tm = {"fps": 30, "scenes": [{"id": "g30", "start": 0, "end": 9.37}, {"id": "g36", "start": 9.37, "end": 23.4},
+                                    {"id": "g42", "start": 23.4, "end": 42.97}, {"id": "g43", "start": 42.97, "end": 75.14}]}
+        e = HS.HtmlSeekEngine(_ctx({"page": PAGE, "era": "g42", "timing": tm, "workers": 1}))
+        try:
+            e.grab(1.0)
+            self.assertEqual(e.offset, 23.4)
+            for s in tm["scenes"]:   # each era answers for its own span, labels >= 28 px at 1080p
+                mid = (s["start"] + s["end"]) / 2
+                r = e._page.evaluate("t => window.MIN_TEXT(t)", mid)
+                self.assertEqual(r["scene"], s["id"])
+                end = e._page.evaluate("t => window.MIN_TEXT(t)", s["end"] - .05)
+                self.assertGreaterEqual(end["px"], 28)
+                self.assertFalse(e._page.evaluate("t => window.CLIPPED(t).clipped", s["end"] - .05))
+        finally:
+            e.close()
+        self.assertFalse([x for x in e.errors if not x.startswith("blocked")])
+
 
 if __name__ == "__main__":
     unittest.main()

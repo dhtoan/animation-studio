@@ -579,6 +579,7 @@ def N5(value, at, sub, label=None, prefix="", suffix=""):
 
 
 REBUILD.update({k: MAP for k in ("g20", "g23", "g24", "g26", "g28", "g31")})
+REBUILD.update({k: WB for k in ("g30", "g36", "g42", "g43")})
 REBUILD.update({
     "g22": HU({"theme": PAPER, "shots": [
         {"grammar": "y5_kinetic_type", "cues": [

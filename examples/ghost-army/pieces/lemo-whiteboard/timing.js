@@ -2,7 +2,10 @@
 // window.STUDIO_TIMING = {fps, scenes: [{id, start, end, words?: [[t_local, word], ...]}]} before any
 // page script runs; without it the production defaults below apply. Each scene is an era of the film:
 // the pipeline renders scene X with {page, offset: start_X} for end_X - start_X seconds.
-export const DEFAULT = { fps: 30, scenes: [{ id: 'g08', start: 0, end: 15 }, { id: 'g12', start: 15, end: 37 }] };
+// g30..g43 use the real narration-timed durations from the Ghost Army timeline
+export const DEFAULT = { fps: 30, scenes: [{ id: 'g08', start: 0, end: 15 }, { id: 'g12', start: 15, end: 37 },
+  { id: 'g30', start: 37, end: 46.37 }, { id: 'g36', start: 46.37, end: 60.4 }, { id: 'g42', start: 60.4, end: 79.97 },
+  { id: 'g43', start: 79.97, end: 112.14 }] };
 
 export function timing() {
   const T = (typeof window !== 'undefined' && window.STUDIO_TIMING) || DEFAULT;
