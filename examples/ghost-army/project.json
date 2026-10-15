@@ -145,7 +145,10 @@
         "page": "pieces/mg-map/index.html",
         "era": true
       },
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "badge_pos": "bl"
     },
     {
@@ -171,7 +174,10 @@
         "piece": "pieces/crosshatch",
         "era": true
       },
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "historical-illustrated"
     },
     {
@@ -367,7 +373,10 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "premium-whiteboard",
       "params": {
         "page": "pieces/lemo-whiteboard/index.html",
@@ -479,7 +488,10 @@
         ]
       },
       "look": "data-editorial",
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g10",
@@ -502,7 +514,10 @@
         "era": true
       },
       "look": "historical-illustrated",
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g11",
@@ -550,7 +565,10 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "premium-whiteboard",
       "params": {
         "page": "pieces/lemo-whiteboard/index.html",
@@ -586,7 +604,10 @@
         }
       ],
       "look": "historical-illustrated",
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g14",
@@ -629,7 +650,10 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "hand-drawn-illustration",
       "params": {
         "src": "assets/art/g15.png",
@@ -787,7 +811,10 @@
           "78%"
         ]
       },
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g18",
@@ -862,7 +889,10 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "military-map",
       "params": {
         "page": "pieces/mg-map/index.html",
@@ -872,45 +902,11 @@
     {
       "id": "g21",
       "chapter": "normandy",
-      "engine": "archival",
+      "engine": "animate_piece",
       "purpose": "recreation",
       "narration": "On June fourteenth, nineteen forty-four, a sixteen-man detachment called Task Force Mason set up dummy artillery to draw enemy fire away from a real American artillery battalion. It was the unit's first battlefield deception in France.",
       "visual": "Archival-style sketch of dummy guns in a field.",
-      "elements": [
-        {
-          "type": "icon",
-          "name": "flame",
-          "pos": [
-            0.3,
-            0.45
-          ],
-          "size": 0.08,
-          "at": "cue:fire",
-          "label": "draws fire"
-        },
-        {
-          "type": "icon",
-          "name": "box",
-          "pos": [
-            0.55,
-            0.5
-          ],
-          "size": 0.07,
-          "at": "cue:dummy",
-          "label": "dummy artillery"
-        },
-        {
-          "type": "text",
-          "text": "June 14, 1944 · Task Force Mason",
-          "pos": [
-            0.5,
-            0.14
-          ],
-          "style": "h2",
-          "at": "cue:june",
-          "font": "serif_bold"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C21"
       ],
@@ -919,8 +915,15 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g22",
@@ -1022,7 +1025,10 @@
           }
         ]
       },
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g23",
@@ -1053,7 +1059,10 @@
         "page": "pieces/mg-map/index.html",
         "era": true
       },
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g24",
@@ -1088,45 +1097,11 @@
     {
       "id": "g25",
       "chapter": "lux",
-      "engine": "archival",
+      "engine": "animate_piece",
       "purpose": "recreation",
       "narration": "For three months, from late September to just before Christmas nineteen forty-four, most of the unit was housed in a building in the Limpertsberg district of Luxembourg City. Luxembourg's government says more than a third of the unit's missions took place in Luxembourg.",
       "visual": "Archival-style sketch of a city building and calendar.",
-      "elements": [
-        {
-          "type": "icon",
-          "name": "building",
-          "pos": [
-            0.32,
-            0.5
-          ],
-          "size": 0.14,
-          "at": 0.3,
-          "label": "Limpertsberg, Luxembourg City"
-        },
-        {
-          "type": "text",
-          "text": "Sept 25 – Dec 22, 1944",
-          "pos": [
-            0.72,
-            0.36
-          ],
-          "style": "h2",
-          "at": "cue:three",
-          "font": "serif_bold"
-        },
-        {
-          "type": "text",
-          "text": "> 1/3 of missions in Luxembourg (per Luxembourg government)",
-          "pos": [
-            0.72,
-            0.6
-          ],
-          "style": "body",
-          "at": "cue:third",
-          "max_width": 0.4
-        }
-      ],
+      "elements": [],
       "claims": [
         "C27"
       ],
@@ -1135,8 +1110,15 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g26",
@@ -1166,41 +1148,19 @@
         "page": "pieces/mg-map/index.html",
         "era": true
       },
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g27",
       "chapter": "viersen",
-      "engine": "artistic",
+      "engine": "animate_piece",
       "purpose": "atmosphere",
       "narration": "Deception was not safe work. In March nineteen forty-five, during Operation Bouzonville, the unit simulated the Eightieth Infantry Division. It became its costliest operation: two men killed and fifteen wounded. In all, three soldiers of the 23rd were killed in the war, and dozens were wounded.",
       "visual": "Dark sky, silhouettes, a single line of text.",
-      "elements": [
-        {
-          "type": "text",
-          "text": "Operation Bouzonville · March 1945",
-          "pos": [
-            0.5,
-            0.22
-          ],
-          "style": "h3",
-          "at": 0.6,
-          "font": "serif_bold",
-          "color": "light"
-        },
-        {
-          "type": "text",
-          "text": "2 killed · 15 wounded",
-          "pos": [
-            0.5,
-            0.36
-          ],
-          "style": "h2",
-          "at": "cue:costliest",
-          "font": "serif_bold",
-          "color": "light"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C29",
         "C30"
@@ -1211,19 +1171,15 @@
         "tail": 0.8
       },
       "params": {
-        "layers": [
-          "hills",
-          "city"
-        ],
-        "sky": [
-          "night",
-          "night2"
-        ]
+        "piece": "pieces/crosshatch",
+        "era": true
       },
-      "transition": "fade_black",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "emotion": "melancholy",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "historical-illustrated"
     },
     {
       "id": "g28",
@@ -1248,7 +1204,10 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "military-map",
       "params": {
         "page": "pieces/mg-map/index.html",
@@ -1336,7 +1295,10 @@
           }
         ]
       },
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g30",
@@ -1360,7 +1322,10 @@
         "page": "pieces/lemo-whiteboard/index.html",
         "era": true
       },
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g31",
@@ -1386,7 +1351,10 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "military-map",
       "params": {
         "page": "pieces/mg-map/index.html",
@@ -1396,34 +1364,11 @@
     {
       "id": "g32",
       "chapter": "silence",
-      "engine": "archival",
+      "engine": "animate_piece",
       "purpose": "evidence",
       "narration": "The war in Europe ended in May nineteen forty-five. For the Ghost Army, a different kind of silence was about to begin. In September nineteen forty-five, Captain Fred Fox wrote the unit's official history. It is held today at the National Archives in College Park, Maryland.",
       "visual": "Typewritten report on a desk.",
-      "elements": [
-        {
-          "type": "icon",
-          "name": "document",
-          "pos": [
-            0.38,
-            0.5
-          ],
-          "size": 0.16,
-          "at": 0.3,
-          "label": "Official History, Sept. 1945"
-        },
-        {
-          "type": "text",
-          "text": "National Archives · Record Group 407",
-          "pos": [
-            0.72,
-            0.5
-          ],
-          "style": "h3",
-          "at": "cue:archives",
-          "font": "serif_bold"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C38"
       ],
@@ -1432,31 +1377,24 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "fade_black",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      }
     },
     {
       "id": "g33",
       "chapter": "silence",
-      "engine": "artistic",
+      "engine": "animate_piece",
       "purpose": "atmosphere",
       "narration": "Then the story went quiet. The records were classified. A few newspaper articles appeared in August nineteen forty-five, and after that, very little, until a Smithsonian magazine article in April nineteen eighty-five.",
       "visual": "Night city; lights go out one by one.",
-      "elements": [
-        {
-          "type": "text",
-          "text": "Classified",
-          "pos": [
-            0.5,
-            0.3
-          ],
-          "style": "h1",
-          "at": "cue:classified.",
-          "font": "serif_bold",
-          "color": "light"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C37"
       ],
@@ -1466,18 +1404,11 @@
         "tail": 0.8
       },
       "params": {
-        "layers": [
-          "towers",
-          "city"
-        ],
-        "sky": [
-          "night",
-          "night2"
-        ],
-        "lights_out_at": "cue:classified."
+        "piece": "pieces/crosshatch",
+        "era": true
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "historical-illustrated",
+      "transition": "cut"
     },
     {
       "id": "g34",
@@ -1555,50 +1486,19 @@
           }
         ]
       },
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g35",
       "chapter": "silence",
-      "engine": "handdrawn",
+      "engine": "animate_piece",
       "purpose": "story",
       "narration": "Many veterans stayed quiet for decades. The Associated Press reported that the son of one officer, Captain Oscar Seale, learned only after his father's death in two thousand one that he had served in the Ghost Army. Some of their voices survive: the Library of Congress Veterans History Project holds an interview with veteran Elmer Mellebrand about the decoys and the sound deception.",
       "visual": "Sketched family scene; a tape recorder icon for the oral history.",
-      "elements": [
-        {
-          "type": "character",
-          "pos": [
-            0.22,
-            0.9
-          ],
-          "height": 0.48,
-          "pose": "think",
-          "at": 0.3,
-          "color": "muted"
-        },
-        {
-          "type": "icon",
-          "name": "document",
-          "pos": [
-            0.5,
-            0.4
-          ],
-          "size": 0.07,
-          "at": "cue:learned",
-          "label": "a family discovers"
-        },
-        {
-          "type": "icon",
-          "name": "phone",
-          "pos": [
-            0.78,
-            0.4
-          ],
-          "size": 0.07,
-          "at": "cue:library",
-          "label": "Veterans History Project"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C40",
         "C57"
@@ -1608,8 +1508,15 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g36",
@@ -1627,7 +1534,10 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "premium-whiteboard",
       "params": {
         "page": "pieces/lemo-whiteboard/index.html",
@@ -1650,7 +1560,10 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "kinetic-type",
       "params": {
         "grammar": "y5_kinetic_type",
@@ -1955,55 +1868,11 @@
     {
       "id": "g41",
       "chapter": "medal",
-      "engine": "handdrawn",
+      "engine": "animate_piece",
       "purpose": "character",
       "narration": "Three of the seven then-known surviving veterans attended: Bernard Bluestein, John Christman and Seymour Nussenbaum. They were ninety-nine and one hundred years old.",
       "visual": "Three sketched veterans at the ceremony.",
-      "elements": [
-        {
-          "type": "character",
-          "pos": [
-            0.28,
-            0.9
-          ],
-          "height": 0.46,
-          "pose": "stand",
-          "at": "cue:bernard",
-          "color": "cool"
-        },
-        {
-          "type": "character",
-          "pos": [
-            0.5,
-            0.9
-          ],
-          "height": 0.46,
-          "pose": "stand",
-          "at": "cue:john",
-          "color": "cool"
-        },
-        {
-          "type": "character",
-          "pos": [
-            0.72,
-            0.9
-          ],
-          "height": 0.46,
-          "pose": "stand",
-          "at": "cue:seymour",
-          "color": "cool"
-        },
-        {
-          "type": "text",
-          "text": "Bluestein · Christman · Nussenbaum",
-          "pos": [
-            0.5,
-            0.14
-          ],
-          "style": "h3",
-          "at": "cue:attended:"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C50"
       ],
@@ -2012,8 +1881,15 @@
         "lead": 0.5,
         "tail": 0.8
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "historical-illustrated",
+      "params": {
+        "piece": "pieces/crosshatch",
+        "era": true
+      },
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g42",
@@ -2037,7 +1913,10 @@
         "page": "pieces/lemo-whiteboard/index.html",
         "era": true
       },
-      "transition": "cut"
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     },
     {
       "id": "g43",
@@ -2132,13 +2011,16 @@
           }
         ]
       },
-      "transition": "cut",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      },
       "look": "kinetic-type"
     },
     {
       "id": "g45",
       "chapter": "medal",
-      "engine": "kinetic",
+      "engine": "animate_piece",
       "purpose": "cta",
       "narration": "If you have a family story connected to the 23rd Headquarters Special Troops, we would be glad to hear it in the comments. In our next documentary, we'll look at another group of Americans whose wartime work stayed secret for decades. Thanks for watching.",
       "visual": "End card.",
@@ -2150,13 +2032,14 @@
         "tail": 0.8
       },
       "params": {
-        "emphasis": [
-          "secret",
-          "decades."
-        ]
+        "piece": "pieces/crosshatch",
+        "era": true
       },
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "historical-illustrated",
+      "transition": {
+        "type": "crossfade",
+        "dur": 0.5
+      }
     }
   ],
   "rights_issues": [

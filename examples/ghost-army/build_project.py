@@ -580,6 +580,7 @@ def N5(value, at, sub, label=None, prefix="", suffix=""):
 
 REBUILD.update({k: MAP for k in ("g20", "g23", "g24", "g26", "g28", "g31")})
 REBUILD.update({k: WB for k in ("g30", "g36", "g42", "g43")})
+REBUILD.update({k: XH for k in ("g21", "g25", "g27", "g32", "g33", "g35", "g41", "g45")})
 REBUILD.update({
     "g22": HU({"theme": PAPER, "shots": [
         {"grammar": "y5_kinetic_type", "cues": [
@@ -652,9 +653,11 @@ for _s in S:
         if _s["id"] in ("g02", "g07", "g16"):  # map date / kinetic-type progress rail live top-right
             _s["badge_pos"] = "bl"
     else:
-        # g20-g45 are outside the g01-g19 rebuild: native visuals kept, reported by visual QA
-        _s["allow_native"] = True
-        _s["native_reason"] = "outside the g01-g19 visual-fidelity rebuild (pending)"
+        raise SystemExit(f"scene {_s['id']} has no premium look")  # every scene is rebuilt now
+# a change of look dissolves (unless the scene sets its own transition); same-look cuts stay hard
+for _a, _b in zip(S, S[1:]):
+    if _b["id"] not in LOOK_TRANSITIONS and _a.get("look") != _b.get("look"):
+        _b["transition"] = {"type": "crossfade", "dur": 0.5}
 
 # Shorts are published before the long documentary (market test), so their call to action asks viewers to
 # follow the channel instead of pointing to a related video that does not exist yet.

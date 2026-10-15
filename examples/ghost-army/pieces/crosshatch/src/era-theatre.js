@@ -48,7 +48,8 @@ function gaEffects(s) {
   gaCap('fake shoulder patches, false vehicle markings', gaAt(s, 0.08, 0.6, 1.4));
   gaDefer(() => gaNote(['BETTEMBOURG, SEPT 1944', 'about 500 men played the', '~8,000-man 6th Armored Division'], 560, 40, 28, { t: tBett, colors: [C.ink, C.ink, GA.fake] }));
 }
-function gaEffectsCam(s, t) { return push(t, s.start + 0.3, gaAt(s, 0.14, 1.6), { z: 1.12, p: [420, 600], to: [560, 560] }, gaAt(s, 0.3, 3.2), gaAt(s, 0.37, 4.0)); }
+// a gentle push about a point chosen so the whole truck (x <= 1830) stays in frame at full zoom
+function gaEffectsCam(s, t) { return push(t, s.start + 0.3, s.end, { z: 1.04, p: [900, 560], to: [900, 560] }); }
 
 const thDozerX = (s) => lerp(TH.dozer.x0, TH.dozer.x1, EZ.io(clamp((TT - s.start - 0.4) / Math.max(1, s.dur - 1.2))));
 function gaEngineers(s) {
@@ -88,4 +89,4 @@ function gaEngineers(s) {
   gaTag(s, '406th Engineers');
   gaCap('fake tank tracks, a guarded perimeter, soldiers posing as MPs', gaAt(s, 0.08, 0.6, 1.4), { y: 996, size: 40 });
 }
-const thBlade = (s) => { const { y, s: ds } = TH.dozer, dx = thDozerX(s); return [dx - ds * 0.53, y - ds * 0.34, ds * 0.12, ds * 0.36]; };
+const thBlade = (s) => { const { y, s: ds } = TH.dozer, dx = thDozerX(s); return [dx - ds * 0.5, y - ds * 0.36, ds * 0.11, ds * 0.37]; };

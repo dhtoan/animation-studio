@@ -7,6 +7,7 @@
   "style": "crosshatch",
   "build": ["src/head.html", "src/timing.js", "src/timeline.js", "kit/core.js", "style", "src/ga-kit.js", "src/ga-figures.js",
             "src/era-rhine.js", "src/era-unit.js", "src/era-recruits.js", "src/era-decoys.js", "src/era-theatre.js",
+            "src/era-normandy-lux.js", "src/era-silence.js", "src/era-medal.js",
             "src/bridges.js", "kit/morph.js", "kit/board.js", "kit/score-head.js", "src/score.js", "kit/score-tail.js"],
   "review": { "safe": { "top": 60, "bottom": 110, "right": 60 }, "refs": {} }
 }

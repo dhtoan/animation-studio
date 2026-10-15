@@ -21,6 +21,8 @@ function gaPose(name, ph = 0) {
     paint: { hn: [0.3, -0.02 + 0.04 * s], hf: [0.13, 0.18], fn: [0.06, 0.47], ff: [-0.08, 0.47] },
     direct: { hn: [0.39, -0.03 + 0.03 * s], hf: [0.02, 0.32], fn: [0.08, 0.47], ff: [-0.06, 0.47] },
     sentry: { hn: [0.07, 0.04], hf: [-0.06, 0.3], fn: [0.14 * s, 0.47], ff: [-0.14 * s, 0.47], bob: -0.012 * Math.abs(c) },
+    read: { hn: [0.22, -0.03], hf: [0.18, 0.01], fn: [0.05, 0.47], ff: [-0.05, 0.47] },
+    rest: { hn: [0.07, 0.27], hf: [0.05, 0.28], fn: [0.05, 0.47], ff: [-0.04, 0.47] },
     spray: { hn: [0.33, 0.02 + 0.03 * s], hf: [0.24, 0.1], fn: [0.1, 0.47], ff: [-0.08, 0.47], lean: 0.08 },
   };
   return P[name] || P.stand;
@@ -168,8 +170,9 @@ function gaBulldozer(x, y, s, key = 'doz') {
   paint(T([[0.15, -0.64], [0.37, -0.64], [0.37, -0.46], [0.15, -0.46]]), { fill: '#9fb4c0', key: key + 'win', w: lw * 0.8 });
   ink(T([[-0.1, -0.44], [-0.1, -0.68]]), { w: s * 0.025, color: '#3b3a33', key: key + 'ex' });
   for (let i = 0; i < 3; i++) { const u = mod(TT * 0.9 + i / 3, 1), [ex, ey] = T([[-0.1 - u * 0.12, -0.72 - u * 0.25]])[0]; ctx.fillStyle = `rgba(70,64,58,${0.45 * (1 - u)})`; ctx.beginPath(); ctx.arc(ex, ey, s * (0.03 + u * 0.05), 0, TAU); ctx.fill(); }
-  const blade = [x - s * 0.53, y - s * 0.34, s * 0.12, s * 0.36];
-  ink(T([[-0.36, -0.24], [-0.43, -0.14]]), { w: s * 0.02, color: '#3b3a33', key: key + 'arm' });
+  const blade = [x - s * 0.5, y - s * 0.36, s * 0.11, s * 0.37];   // its back edge touches the track's nose
+  ink(T([[-0.12, -0.3], [-0.42, -0.22]]), { w: s * 0.026, color: '#3b3a33', key: key + 'arm' });
+  ink(T([[-0.3, -0.12], [-0.42, -0.08]]), { w: s * 0.022, color: '#3b3a33', key: key + 'arm2' });
   paint(box(...blade), { fill: '#8d7a3a', key: key + 'bl', w: lw, tex: [{ k: 'cross', c: '#4b3f1a', al: 0.45, gap: 5 }] });
   return blade;
 }

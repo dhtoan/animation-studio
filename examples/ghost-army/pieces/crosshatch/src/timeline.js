@@ -29,8 +29,11 @@ const GA_DRAW = {
   g01: (s) => gaRhine(s, false), g03: (s) => gaRhine(s, true), g04: (s) => gaTitle(s), g05: (s) => gaPlan(s),
   g10: (s) => gaRecruit(s), g11: (s) => gaNames(s), g13: (s) => gaInflate(s), g14: (s) => gaLift(s),
   g18: (s) => gaEffects(s), g19: (s) => gaEngineers(s),
+  g21: (s) => gaMason(s), g25: (s) => gaLimpertsberg(s), g27: (s) => gaBouzonville(s), g32: (s) => gaFox(s),
+  g33: (s) => gaCity(s), g35: (s) => gaFamily(s), g41: (s) => gaVeterans(s), g45: (s) => gaEndCard(s),
 };
-const GA_BG = { g01: '#0c0d1c', g03: '#0c0d1c', g04: '#d6a466', g05: '#cdbb94', g10: '#e6dcc3', g11: '#c99a62', g13: '#e8e0c8', g14: '#ece4cc', g18: '#d6a466', g19: '#e9cfa0' };
+const GA_BG = { g01: '#0c0d1c', g03: '#0c0d1c', g04: '#d6a466', g05: '#cdbb94', g10: '#e6dcc3', g11: '#c99a62', g13: '#e8e0c8', g14: '#ece4cc', g18: '#d6a466', g19: '#e9cfa0',
+  g21: '#e6e2cc', g25: '#e4e1d4', g27: '#0a0b16', g32: '#d6a466', g33: '#0c0d1c', g35: '#d8c8a8', g41: '#e6e0d2', g45: '#d6a466' };
 // eras: each runs to the next scene's start (a gap in the timing holds the previous era)
 const ERA_LIST = GA_SCENES.map((s) => [s.start, s.next ? s.next.start : s.end, () => (GA_DRAW[s.id] || gaUnknown)(s)]);
 function gaUnknown(s) { paperSheet('unk' + s.id); handText(s.id, 120, 200, 80, C.ink, { key: 'unk' }); }
