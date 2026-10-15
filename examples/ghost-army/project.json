@@ -841,53 +841,11 @@
     {
       "id": "g20",
       "chapter": "normandy",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "story",
       "narration": "We've seen the tools. Now let's follow the unit across Europe, starting on the beaches of Normandy. The Ghost Army's war began there. Four of its members landed on D-Day itself, and two became casualties while building false beach landing sites. Seymour Nussenbaum, who had studied art at the Pratt Institute, landed on Omaha Beach about two weeks later.",
       "visual": "Map of Normandy with Omaha Beach marker.",
-      "elements": [
-        {
-          "type": "map",
-          "geojson": "assets/ne_110m_admin_0_countries.geojson",
-          "bounds": [
-            -6.5,
-            45.5,
-            11.0,
-            54.5
-          ],
-          "box": [
-            0.04,
-            0.12,
-            0.92,
-            0.8
-          ],
-          "at": 0.2,
-          "dur": 1.2,
-          "highlight": [
-            {
-              "name": "France",
-              "color": "light"
-            }
-          ],
-          "markers": [
-            {
-              "lon": -0.87,
-              "lat": 49.37,
-              "label": "Omaha Beach",
-              "at": "cue:d-day"
-            }
-          ],
-          "routes": [],
-          "labels": [
-            {
-              "lon": -2.5,
-              "lat": 50.3,
-              "text": "ENGLISH CHANNEL",
-              "at": 0.6
-            }
-          ]
-        }
-      ],
+      "elements": [],
       "claims": [
         "C19",
         "C56"
@@ -904,9 +862,12 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "fade_black",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": "cut",
+      "look": "military-map",
+      "params": {
+        "page": "pieces/mg-map/index.html",
+        "era": true
+      }
     },
     {
       "id": "g21",
@@ -1066,72 +1027,11 @@
     {
       "id": "g23",
       "chapter": "normandy",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "story",
       "narration": "In August, the unit moved to Brittany, supporting the Allied advance and the siege of the port city of Brest. According to one detailed nonprofit account, it was at Brest that the unit first combined visual, sonic and radio deception in a single operation.",
       "visual": "Map: route from Normandy to Brest.",
-      "elements": [
-        {
-          "type": "map",
-          "geojson": "assets/ne_110m_admin_0_countries.geojson",
-          "bounds": [
-            -6.5,
-            45.5,
-            11.0,
-            54.5
-          ],
-          "box": [
-            0.04,
-            0.12,
-            0.92,
-            0.8
-          ],
-          "at": 0.2,
-          "dur": 1.2,
-          "highlight": [
-            {
-              "name": "France",
-              "color": "light"
-            }
-          ],
-          "markers": [
-            {
-              "lon": -0.87,
-              "lat": 49.37,
-              "label": "Normandy",
-              "at": 0.4
-            },
-            {
-              "lon": -4.49,
-              "lat": 48.39,
-              "label": "Brest",
-              "at": "cue:brest."
-            }
-          ],
-          "routes": [
-            {
-              "path": [
-                [
-                  -1.09,
-                  49.12
-                ],
-                [
-                  -2.0,
-                  48.6
-                ],
-                [
-                  -4.49,
-                  48.39
-                ]
-              ],
-              "at": "cue:august",
-              "dur": 3.0,
-              "color": "accent"
-            }
-          ],
-          "labels": []
-        }
-      ],
+      "elements": [],
       "claims": [
         "C24",
         "C25"
@@ -1148,79 +1048,21 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "military-map",
+      "params": {
+        "page": "pieces/mg-map/index.html",
+        "era": true
+      },
+      "transition": "cut"
     },
     {
       "id": "g24",
       "chapter": "lux",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "story",
       "narration": "By the end of the summer of nineteen forty-four, the unit had worked in Normandy and in Brittany. Next came Luxembourg. In September came one of the boldest bluffs. Patton's Third Army had a thinly held stretch of line in Luxembourg. In Operation Bettembourg, about five hundred men impersonated the roughly eight thousand men of the Sixth Armored Division.",
       "visual": "Map of Luxembourg; Bettembourg marker; 500 vs 8,000.",
-      "elements": [
-        {
-          "type": "map",
-          "geojson": "assets/ne_110m_admin_0_countries.geojson",
-          "bounds": [
-            -1.0,
-            46.5,
-            13.0,
-            54.0
-          ],
-          "box": [
-            0.03,
-            0.1,
-            0.55,
-            0.82
-          ],
-          "at": 0.2,
-          "dur": 1.2,
-          "highlight": [
-            {
-              "name": "Luxembourg",
-              "color": "accent"
-            }
-          ],
-          "markers": [
-            {
-              "lon": 6.1,
-              "lat": 49.52,
-              "label": "Bettembourg",
-              "at": "cue:bettembourg,"
-            }
-          ],
-          "routes": [],
-          "labels": []
-        },
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 500,
-          "pos": [
-            0.78,
-            0.32
-          ],
-          "at": "cue:five",
-          "dur": 1.0,
-          "style": "h1",
-          "label": "real men"
-        },
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 8000,
-          "pos": [
-            0.78,
-            0.66
-          ],
-          "at": "cue:eight",
-          "dur": 1.4,
-          "style": "h1",
-          "label": "men of the division they impersonated",
-          "color": "accent"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C26"
       ],
@@ -1236,9 +1078,12 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "fade_black",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": "cut",
+      "look": "military-map",
+      "params": {
+        "page": "pieces/mg-map/index.html",
+        "era": true
+      }
     },
     {
       "id": "g25",
@@ -1296,63 +1141,11 @@
     {
       "id": "g26",
       "chapter": "lux",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "story",
       "narration": "During the Battle of the Bulge, the 23rd broadcast fake radio traffic suggesting that parts of Patton's Third Army were moving toward the besieged town of Bastogne.",
       "visual": "Map: radio waves pointing toward Bastogne.",
-      "elements": [
-        {
-          "type": "map",
-          "geojson": "assets/ne_110m_admin_0_countries.geojson",
-          "bounds": [
-            -1.0,
-            46.5,
-            13.0,
-            54.0
-          ],
-          "box": [
-            0.04,
-            0.12,
-            0.92,
-            0.8
-          ],
-          "at": 0.2,
-          "dur": 1.2,
-          "highlight": [
-            {
-              "name": "Belgium",
-              "color": "light"
-            }
-          ],
-          "markers": [
-            {
-              "lon": 5.72,
-              "lat": 50.0,
-              "label": "Bastogne (besieged)",
-              "at": "cue:bastogne."
-            }
-          ],
-          "routes": [
-            {
-              "path": [
-                [
-                  6.13,
-                  49.61
-                ],
-                [
-                  5.72,
-                  50.0
-                ]
-              ],
-              "at": "cue:fake",
-              "dur": 2.5,
-              "color": "accent",
-              "dashed": true
-            }
-          ],
-          "labels": []
-        }
-      ],
+      "elements": [],
       "claims": [
         "C28"
       ],
@@ -1368,8 +1161,12 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "look": "military-map",
+      "params": {
+        "page": "pieces/mg-map/index.html",
+        "era": true
+      },
+      "transition": "cut"
     },
     {
       "id": "g27",
@@ -1431,61 +1228,11 @@
     {
       "id": "g28",
       "chapter": "viersen",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "reveal",
       "narration": "Then came Viersen, the last and largest deception, from March eighteenth to twenty-fourth, nineteen forty-five. The Ghost Army impersonated two infantry divisions, the Thirtieth and the Seventy-Ninth, to draw German attention away from the Ninth Army's real crossing point on the Rhine.",
       "visual": "Map: decoy position at Viersen vs. the real crossing to the north.",
-      "elements": [
-        {
-          "type": "map",
-          "geojson": "assets/ne_110m_admin_0_countries.geojson",
-          "bounds": [
-            -1.0,
-            47.0,
-            14.0,
-            55.0
-          ],
-          "box": [
-            0.04,
-            0.12,
-            0.92,
-            0.8
-          ],
-          "at": 0.2,
-          "dur": 1.2,
-          "highlight": [
-            {
-              "name": "Germany",
-              "color": "light"
-            }
-          ],
-          "markers": [
-            {
-              "lon": 6.39,
-              "lat": 51.26,
-              "label": "decoy: 30th & 79th Inf. Div. (simulated)",
-              "at": "cue:impersonated",
-              "color": "accent"
-            },
-            {
-              "lon": 6.6,
-              "lat": 51.55,
-              "label": "real crossing (approx.)",
-              "at": "cue:real",
-              "color": "negative"
-            }
-          ],
-          "routes": [],
-          "labels": [
-            {
-              "lon": 6.75,
-              "lat": 51.85,
-              "text": "RHINE",
-              "at": 0.5
-            }
-          ]
-        }
-      ],
+      "elements": [],
       "claims": [
         "C31"
       ],
@@ -1501,9 +1248,12 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "crash_zoom",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": "cut",
+      "look": "military-map",
+      "params": {
+        "page": "pieces/mg-map/index.html",
+        "era": true
+      }
     },
     {
       "id": "g29",
@@ -1623,76 +1373,11 @@
     {
       "id": "g31",
       "chapter": "viersen",
-      "engine": "motion",
+      "engine": "html_seek",
       "purpose": "story",
       "narration": "Meanwhile, in Italy, the 3133rd Signal Service Company carried out its own deceptions. In April nineteen forty-five, in Operation Craftsman, it supported an offensive against the German Gothic Line north of Florence, working alongside British deception units. About two hundred soldiers served in the 3133rd. They spent nineteen days in combat and lost almost seventy percent of their thirty-five dummy tanks to German fire.",
       "visual": "Map of Italy with Florence marker; counters.",
-      "elements": [
-        {
-          "type": "map",
-          "geojson": "assets/ne_110m_admin_0_countries.geojson",
-          "bounds": [
-            4.0,
-            39.0,
-            18.5,
-            48.5
-          ],
-          "box": [
-            0.03,
-            0.1,
-            0.55,
-            0.82
-          ],
-          "at": 0.2,
-          "dur": 1.2,
-          "highlight": [
-            {
-              "name": "Italy",
-              "color": "light"
-            }
-          ],
-          "markers": [
-            {
-              "lon": 11.25,
-              "lat": 43.77,
-              "label": "Florence · Gothic Line to the north",
-              "at": "cue:florence,"
-            }
-          ],
-          "routes": [],
-          "labels": []
-        },
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 19,
-          "suffix": " days",
-          "pos": [
-            0.78,
-            0.3
-          ],
-          "at": "cue:nineteen",
-          "dur": 1.0,
-          "style": "h2",
-          "label": "in combat"
-        },
-        {
-          "type": "counter",
-          "from": 0,
-          "to": 70,
-          "prefix": "≈ ",
-          "suffix": "%",
-          "pos": [
-            0.78,
-            0.62
-          ],
-          "at": "cue:seventy",
-          "dur": 1.0,
-          "style": "h2",
-          "label": "of 35 dummy tanks lost",
-          "color": "negative"
-        }
-      ],
+      "elements": [],
       "claims": [
         "C35",
         "C36"
@@ -1709,9 +1394,12 @@
           "source": "naturalearthdata.com via nvkelso/natural-earth-vector v5.1.2"
         }
       ],
-      "transition": "fade_black",
-      "allow_native": true,
-      "native_reason": "outside the g01-g19 visual-fidelity rebuild (pending)"
+      "transition": "cut",
+      "look": "military-map",
+      "params": {
+        "page": "pieces/mg-map/index.html",
+        "era": true
+      }
     },
     {
       "id": "g32",

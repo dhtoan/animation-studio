@@ -4,6 +4,7 @@
 // GeoJSON -> d3.geoPath on a canvas), with an animated orthographic projection as the camera.
 // Every frame is a pure function of t. Positions of roads, columns and the Rhine course are approximate.
 import { timing, cues } from './timing.js';
+import { makeEras, NARRATIONS } from './eras.js';
 
 const W = 1920, H = 1080, TAU = Math.PI * 2;
 const NARRATION = 'Not far from the front, they could see it: the trucks, the tanks and the artillery of two American infantry divisions moving into position. They could hear engines at night. They could pick up the radio traffic.';
@@ -60,9 +61,12 @@ export function build({ topo50, topo110 }) {
   const texts = [];   // legibility record per frame: {s, size}
 
   const TM = timing();
-  const eras = TM.scenes.filter((s) => s.id === 'g02').map((s) => ({ s, cue: cues(NARRATION, s) }));
+  const ERA = { g02: null };   // g02 draws with renderLocal below; the later map eras come from eras.js (built lazily)
+  let LATER = null;
+  const eras = TM.scenes.filter((s) => s.id === 'g02' || NARRATIONS[s.id]).map((s) => ({ s, cue: cues(s.id === 'g02' ? NARRATION : NARRATIONS[s.id], s) }));
   if (!eras.length) eras.push({ s: { id: 'g02', start: 0, end: TM.dur || 14.4667 }, cue: null });
   for (const e of eras) if (!e.cue) e.cue = cues(NARRATION, e.s);
+  void ERA;
 
   function label(s, x, y, font, size, col, align = 'left', ls = 0, halo = 'rgba(6,12,17,0.88)', record = true) {
     g.font = font; g.textAlign = align; g.textBaseline = 'middle'; g.letterSpacing = ls + 'px';
@@ -287,11 +291,13 @@ export function build({ topo50, topo110 }) {
   }
 
   const find = (t) => eras.find((e) => t >= e.s.start && t < e.s.end) || eras[eras.length - 1];
+  const kit = () => (LATER = LATER || makeEras({ g, proj, path, LAND, BORDERS, CTRY: topojson.feature(topo110, topo110.objects.countries), C, F, label, rr, vis, crPath, sampleCR, along, glyph, observer, GRAIN, rng, RHINE, ROADS, DIV, OBS, TOWNS }));
+  const draw = (e, t) => { const lt = clamp(t - e.s.start, 0, e.s.end - e.s.start); texts.length = 0; if (e.s.id === 'g02') renderLocal(lt, e); else kit()[e.s.id](lt, e.cue); };
   return {
     dur: Math.max(TM.dur, ...eras.map((e) => e.s.end)),
     scenes: eras.map((e) => ({ id: e.s.id, start: e.s.start, end: e.s.end, words: !!e.cue.fromWords })),
-    render: (t) => { const e = find(t); renderLocal(clamp(t - e.s.start, 0, e.s.end - e.s.start), e); },
-    minText: (t) => { const e = find(t); renderLocal(clamp(t - e.s.start, 0, e.s.end - e.s.start), e);
+    render: (t) => draw(find(t), t),
+    minText: (t) => { const e = find(t); draw(e, t);
       let m = 1e9, which = ''; for (const x of texts) if (x.size < m) { m = x.size; which = x.s; } return { scene: e.s.id, px: m === 1e9 ? null : m, text: which }; },
   };
 }

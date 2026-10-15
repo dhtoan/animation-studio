@@ -3,7 +3,9 @@
 // before any page script runs (params.timing; params.era picks the scene and adds its words).
 // Without it the production default below applies. The page clock is the piece clock: scene X spans
 // [start_X, end_X) and the pipeline renders it with offset = start_X for end_X - start_X seconds.
-export const DEFAULT = { fps: 30, scenes: [{ id: 'g02', start: 0, end: 14.4667 }] };
+// Production defaults: the map eras laid end to end in film order (scene durations from the narration timeline).
+export const DEFAULT = { fps: 30, scenes: (() => { let t = 0; return [['g02', 14.4667], ['g20', 24.4333], ['g23', 18.9333], ['g24', 24.7667], ['g26', 12.2], ['g28', 20.6667], ['g31', 33.8]]
+  .map(([id, d]) => { const s = { id, start: +t.toFixed(4), end: +(t + d).toFixed(4) }; t += d; return s; }); })() };
 
 export function timing() {
   const T = (typeof window !== 'undefined' && window.STUDIO_TIMING) || DEFAULT;

@@ -18,6 +18,7 @@ PIECE = PROJECT / "pieces" / "mg-map"
 PAGE = "pieces/mg-map/index.html"
 # g02 as the second era of a piece clock, so the offset must come from the timing (5 s), not be 0
 TIMING = {"fps": 30, "scenes": [{"id": "g01", "start": 0, "end": 5}, {"id": "g02", "start": 5, "end": 19.4667}]}
+LATER = ["g20", "g23", "g24", "g26", "g28", "g31"]
 WORDS = [(0.625, "Not"), (3.458, "trucks,"), (6.167, "two"), (10.347, "engines"), (12.347, "radio")]
 
 
@@ -47,6 +48,14 @@ class PackageTests(unittest.TestCase):
         js = (PIECE / "film.js").read_text(encoding="utf-8")
         for bad in ("SIMULATED", "contested", "decoy"):
             self.assertFalse(bad in js, bad)
+
+    def test_later_eras_are_registered(self):
+        eras = (PIECE / "eras.js").read_text(encoding="utf-8")
+        timing = (PIECE / "timing.js").read_text(encoding="utf-8")
+        for sid in LATER:
+            self.assertIn(f"function {sid}(", eras)
+            self.assertIn(f"'{sid}'", timing)                        # production default clock lists every era
+        self.assertIn("SIMULATED", eras)                              # the g28 reveal is labelled; g02 is not
 
     def test_era_true_means_this_scene(self):
         e = HS.HtmlSeekEngine(_ctx({"page": PAGE, "era": True, "timing": TIMING}))
@@ -94,6 +103,36 @@ class BrowserTests(unittest.TestCase):
         self.assertEqual(im.shape, (1080, 1920, 3))
         self.assertGreater(im.std(), 8.0)                                     # frame 0 is a map, not a blank fill
         self.assertGreater(im.mean(), 8.0)
+
+
+@unittest.skipUnless(_browser_ok(), "Chromium (Playwright) is unavailable")
+class LaterEraTests(unittest.TestCase):
+    def test_every_later_era_renders_readably_from_its_offset(self):
+        import numpy as np
+
+        durs = {"g20": 24.43, "g23": 18.93, "g24": 24.77, "g26": 12.2, "g28": 20.67, "g31": 33.8}
+        t, scenes = 0.0, []
+        for sid in ["g02"] + LATER:
+            d = 14.4667 if sid == "g02" else durs[sid]
+            scenes.append({"id": sid, "start": round(t, 4), "end": round(t + d, 4)})
+            t += d
+        timing = {"fps": 30, "scenes": scenes}
+        scene = {"id": "g28", "params": {"page": PAGE, "era": True, "timing": timing, "workers": 1, "capture": "png"},
+                 "_project_dir": str(PROJECT)}
+        e = HS.HtmlSeekEngine(SceneContext(scene=scene, width=1920, height=1080, ss=1, fps=30, duration=1.0, theme=Theme()))
+        try:
+            self.assertAlmostEqual(e.offset, scenes[5]["start"], places=3)
+            im = np.asarray(e.grab(19.0), dtype=float)               # g28 near its end: the reveal is on screen
+            self.assertGreater(im.std(), 8.0)
+            pg = e._page
+            self.assertEqual([s["id"] for s in pg.evaluate("window.SCENES")], ["g02"] + LATER)
+            for s in scenes[1:]:
+                for frac in (0.5, 0.95):
+                    r = pg.evaluate(f"window.MIN_TEXT({s['start'] + frac * (s['end'] - s['start'])})")
+                    self.assertEqual(r["scene"], s["id"])
+                    self.assertGreaterEqual(r["px"], 28, (s["id"], frac, r))
+        finally:
+            e.close()
 
 
 if __name__ == "__main__":

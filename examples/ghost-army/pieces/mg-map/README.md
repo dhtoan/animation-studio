@@ -12,6 +12,21 @@ There are no "simulated" labels and no contested figures here.
 
 It is drawn on a 2D canvas (no WebGL) and works in headless Chromium without a GPU.
 
+## Later map eras (`eras.js`)
+
+These share one piece clock with g02 (`params.era: true`; the default clock lays them end to end in film order). Each era starts clean with its own camera. g02's drawing code is unchanged.
+
+| Era | Content |
+|---|---|
+| g20 | Normandy: the journey ahead, then Omaha Beach. The D-Day card (four landed; two became casualties building false beach landing sites) is shown as muted figures, with no injury imagery. A Seymour Nussenbaum card follows. |
+| g23 | Route Normandy → Brittany → the siege of Brest (Aug 1944). Visual, sonic and radio deception combine, labelled "according to one nonprofit account" (a contested claim). |
+| g24 | Recap, then Luxembourg: a schematic Third Army line with its thinly held stretch near Bettembourg, a simulated 6th Armored Division, and bars comparing about 500 men with about 8,000. |
+| g26 | Bastogne besieged. The fake radio traffic and the Third Army moves it suggested are drawn as dashed arrows. |
+| g28 | The reveal, on g02's sector geometry. Solid units and columns flip to dashed **SIMULATED** decoys, German attention is drawn to them, and the Ninth Army's real crossing to the north appears (approximate position). |
+| g31 | Italy: the 3133rd Signal Service Company, Operation Craftsman (April 1945) and a schematic Gothic Line north of Florence. Panels show about 200 soldiers, 19 days in combat, and 35 dummy tanks with "almost 70%" lost to German fire, drawn as dimmed glyphs. |
+
+Fronts, routes, arrows and the Gothic Line are schematic. Every era carries an "approximate positions" note.
+
 ## Narration beats (`timing.js`)
 
 g02 narration: *"Not far from the front, they could see it: the trucks, the tanks and the artillery of two American infantry divisions moving into position. They could hear engines at night. They could pick up the radio traffic."*

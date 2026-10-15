@@ -578,6 +578,7 @@ def N5(value, at, sub, label=None, prefix="", suffix=""):
     return {"at": at, "kind": "number", "sub": sub, "data": {"value": value, "prefix": prefix, "suffix": suffix, **({"label": label} if label else {})}}
 
 
+REBUILD.update({k: MAP for k in ("g20", "g23", "g24", "g26", "g28", "g31")})
 REBUILD.update({
     "g22": HU({"theme": PAPER, "shots": [
         {"grammar": "y5_kinetic_type", "cues": [
